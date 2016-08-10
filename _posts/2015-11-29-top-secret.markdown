@@ -35,7 +35,7 @@ We can clearly see three other pages. Home, Find Friends, and Logout. I tried a 
    <figcaption>Find Friends </figcaption>
 </figure>
 
-The home page involves typing in some secret to store and show it on a table. The Friends page shows other users. Trying to put it together, we need to find some way to get another person's secret using the two pages. In other words, we need to find the admin's secrets. After figuring this out, I tried to look at the actual requests.
+The home page involves typing in some secret to store and displays it in a table. The Friends page shows other users. Trying to put it together, we need to find some way to get another person's secret using the two pages. In other words, we need to find the admin's secrets. After figuring this out, I tried to look at the actual requests.
 
 
 <figure>

@@ -3,93 +3,41 @@
 	{
 		"selected_items":
 		[
-			[
-				"st",
-				"style	Tag"
-			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "_posts/2015-11-27-v1ew-s0urce.markdown",
-			"settings":
-			{
-				"buffer_size": 1278,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "stylesheets/stylesheet.css",
-			"settings":
-			{
-				"buffer_size": 7539,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_layouts/default.html",
-			"settings":
-			{
-				"buffer_size": 295,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_config.yml",
-			"settings":
-			{
-				"buffer_size": 1182,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_includes/header.html",
-			"settings":
-			{
-				"buffer_size": 344,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "robots.txt",
-			"settings":
-			{
-				"buffer_size": 68,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "feed.xml",
-			"settings":
-			{
-				"buffer_size": 1323,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 2278,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 152.0,
-		"last_filter": "hex",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
 				"hex",
-				"Hex Viewer: Generate Hash"
+				"Hex Viewer: Toggle Hex View"
 			],
 			[
 				"insta",
@@ -112,7 +60,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 392.0
+		"width": 485.0
 	},
 	"console":
 	{
@@ -133,46 +81,17 @@
 	},
 	"expanded_folders":
 	[
-		"/home/viviturtle/Github/blog"
+		"/home/viviturtle/Github/viviturtle.github.io"
 	],
 	"file_history":
 	[
-		"/home/viviturtle/DefCon24/Badge Contest/output/jpg/00000930.jpg",
-		"/home/viviturtle/DefCon24/Badge Contest/output/jpg/hexdump.txt",
-		"/home/viviturtle/Github/blog/_posts/2015-11-27-goal.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-11-28-super-secrets.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-11-29-top-secret.markdown",
-		"/home/viviturtle/Github/blog/_layouts/page.html",
-		"/home/viviturtle/Github/blog/_posts/2015-11-28-OpenW0tM8.markdown",
-		"/home/viviturtle/Github/blog/assets/rc3/decme.enc",
-		"/home/viviturtle/Github/blog/assets/rc3/key",
-		"/home/viviturtle/Github/blog/_posts/2015-09-19-transfer.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-09-18-keep-calm-and-ctf.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-09-17-julian-cohen.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-09-17-flash.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-03-10-haymarket.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-03-30-math.markdown",
-		"/home/viviturtle/Github/blog/_posts/2014-12-21-new-beginnings.html",
-		"/home/viviturtle/Github/blog/_posts/2014-05-09-the-hackers-weapon.html",
-		"/home/viviturtle/Github/blog/_posts/2014-05-07-capture-flag-competitions.html",
-		"/home/viviturtle/Github/blog/_posts/2014-04-01-tech-blogs-we-must-follow.html",
-		"/home/viviturtle/Github/blog/_posts/2015-03-28-Bach.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-09-18-alexander-taylor.markdown",
-		"/home/viviturtle/Github/blog/_posts/2015-09-19-flash.markdown",
-		"/home/viviturtle/Github/blog/_posts/2014-03-11-the-ports-of-cyber-security.html",
-		"/home/viviturtle/Github/blog/_posts/example.markdown",
-		"/home/viviturtle/Github/blog/_posts/2014-02-25-summary.html",
-		"/home/viviturtle/Github/blog/_posts/2015-02-11-facebook.html",
-		"/home/viviturtle/Github/blog/_posts/2014-03-04-to-be-or-not-to-be-open-source.html",
-		"/home/viviturtle/Github/blog/_posts/2014-04-29-beta-testing.html",
-		"/home/viviturtle/Github/blog/_posts/2014-04-08-usability-testing.html",
-		"/home/viviturtle/Github/blog/assets/csaw/answer.txt",
-		"/home/viviturtle/Github/blog/_posts/2015-04-01-reddits-open2all-writeup.html",
-		"/home/viviturtle/Github/blog/_posts/README.md",
-		"/home/viviturtle/Github/blog/_config.yml",
-		"/home/viviturtle/myblog/index.html",
+		"/home/viviturtle/Github/Projects/.gitignore",
+		"/etc/rc.local",
+		"/etc/bluetooth/main.conf",
+		"/etc/NetworkManager/NetworkManager.conf",
+		"/home/viviturtle/Github/Projects/Queercon/Metadata.txt",
 		"/home/viviturtle/Github/blog/.gitignore",
-		"/home/viviturtle/Github/blog/_posts/2016-07-09-math.markdown",
+		"/home/viviturtle/myblog/index.html",
 		"/home/viviturtle/CrackTheClue/4.txt",
 		"/home/viviturtle/Queercon/App/tq~[j_bzgom`_bk�",
 		"/home/viviturtle/CrackTheClue/2.txt",
@@ -187,6 +106,7 @@
 		"/home/viviturtle/Github/myblog/_site/about/index.html",
 		"/home/viviturtle/Github/blog/_site/index.html",
 		"/home/viviturtle/Queercon/Metadata.txt",
+		"/home/viviturtle/Github/blog/_config.yml",
 		"/home/viviturtle/Github/myblog/_includes/footer.html",
 		"/home/viviturtle/myblog/_posts/2016-06-30-welcome-to-jekyll.markdown",
 		"/home/viviturtle/Queercon/spectrogram.py",
@@ -211,7 +131,6 @@
 		"/mnt/HDD/steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/autoexec.cfg",
 		"/home/viviturtle/Tohou/Th8/Read me.txt",
 		"/home/viviturtle/etc/X11/xorg.conf.d/90-mouse.conf",
-		"/etc/rc.local",
 		"/home/viviturtle/mydockerbuild/Dockerfile",
 		"/home/viviturtle/.local/share/applications/Eclipse.desktop",
 		"/home/viviturtle/.local/share/applications/burpsuite.desktop",
@@ -219,7 +138,7 @@
 	],
 	"find":
 	{
-		"height": 45.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -233,27 +152,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"page-header",
-			"cover.jpg",
-			"cover",
-			"({{site.url}}/images/rc3/TopSecret/",
-			"({{site.url}}/images/rc3/TopSecret/flag.png)",
-			"({{site.url}}/images/rc3/TopSecret/",
-			"{{site.url}}/images/rc3/TopSecret/",
-			"![",
-			"images",
-			"d PWD 257 \"/\" is current directory. EPSV 229",
-			"![",
-			"images/",
-			"![",
-			"images",
-			"![",
-			"images",
-			"[![",
-			"![",
-			"!",
-			"images/",
-			"Haymarket_images",
+			" ",
+			",",
+			"\n",
+			"1",
+			".",
+			"Nf3",
+			"2.Nf3",
+			".",
+			"H",
+			"7",
+			"G",
+			"F",
+			"E",
+			"D",
+			"C",
+			"B",
+			"A",
+			"9",
+			"8",
+			"7",
+			"D",
+			"C",
+			"B",
+			"A",
+			",",
+			"R",
+			".",
+			" ",
 			"'",
 			"|",
 			";",
@@ -267,7 +193,14 @@
 		"regex": false,
 		"replace_history":
 		[
-			"{{site.url}}/images/bkpctf/",
+			"8",
+			"7",
+			"6",
+			"5",
+			"4",
+			"3",
+			"2",
+			"1",
 			""
 		],
 		"reverse": false,
@@ -279,247 +212,14 @@
 	"groups":
 	[
 		{
-			"selected": 5,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "_posts/2015-11-27-v1ew-s0urce.markdown",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1278,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								169,
-								169
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "stylesheets/stylesheet.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7539,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2471,
-								2471
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2062.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "_layouts/default.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 295,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								90,
-								90
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "_config.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1182,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								731,
-								731
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "_includes/header.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 344,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								344,
-								344
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "robots.txt",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 68,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								68,
-								68
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "feed.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1323,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2278,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								356,
-								356
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 783.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 37.0
 	},
 	"input":
 	{
@@ -548,6 +248,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 166.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -560,7 +264,7 @@
 	"project": "blog.sublime-project",
 	"replace":
 	{
-		"height": 84.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -580,7 +284,7 @@
 		[
 			[
 				"",
-				"~/Queercon/Queercon.sublime-workspace"
+				"~/Github/blog/blog.sublime-workspace"
 			]
 		],
 		"width": 380.0
@@ -602,7 +306,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 258.0,
+	"side_bar_width": 212.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
