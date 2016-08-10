@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RC3 2015 ~ Goal!: Web 100</title>
+    <meta name="description" content="">
+  
+    
+    <meta name="keywords" content="web, CTF, RC3">
+    
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+	
+    <!-- Open Graph data -->
+
+	<meta property="og:title" content="RC3 2015 ~ Goal!: Web 100">
+	<meta property="og:type" content="article">
+
+
+
+
+<meta property="og:image" content="/images/cover.png">
+
+
+<meta property="og:site_name" content="Black Magic Exploitation">
+<meta property="og:description" content="">
+
+
+<meta property="og:url" content="/blog/web/ctf/all/goal">
+
+
+    
+	<meta property="article:author" content="http://jwillmer.de/about">
+	<link rel="author" href="http://jwillmer.de/about">
+
+
+
+<meta property="article:published_time" content="2015-11-27T21:59:33-08:00">
+
+
+
+<meta property="article:tag" content="web">
+
+<meta property="article:tag" content="CTF">
+
+<meta property="article:tag" content="RC3">
+
+<!-- End: Open Graph data -->	
+	<!-- Twitter data -->
+    
+
+<meta name="twitter:card" content="summary">
+
+
+<meta name="twitter:site" content="@VivieTurtle">
+
+
+
+<meta name="twitter:title" content="RC3 2015 ~ Goal!: Web 100">
+
+
+
+
+<meta name="twitter:url" content="/blog/web/ctf/all/goal">
+
+
+<meta name="twitter:description" content="">
+
+<meta name="twitter:image:src" content="/images/cover.png">
+<!-- End: Twitter data -->	
+
+    <link href="https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield%7CMerriweather:300italic,700,300,700italic%7COpen+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/screen.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
+
+    <link rel="icon" href="/images/vivi.jpg" sizes="16x16" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="32x32" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="48x48" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="62x62" type="image/png">
+</head>
+
+<body class="home-template">
+    <div class="site-wrapper">
+        
+
+<header class="main-header detail-page image-bg  has-cover" style="background-image: url(/images/cover.png)">
+    <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
+    <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
+    <div class="nav">
+        <ul>
+            <li><a class="page-link" href="/" title="Home">Home</a></li>
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/offline-warning/" title="Offline">Offline</a></li>
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/about/" title="About">About</a></li>
+            
+            
+        </ul>
+    </div>
+</header>
+        <main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">RC3 2015 ~ Goal!: Web 100</h1>
+            <section class="post-meta">
+                <time datetime="2015-11-27T21:59:33-08:00" itemprop="datePublished">Nov 27, 2015</time> 
+                on
+                
+                <span>web</span>
+                
+                <span>CTF</span>
+                
+                <span>RC3</span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <p><a href="http://localhost:4000/images/rc3/Goal/Start.png"><img src="http://localhost:4000/images/rc3/Goal/Start.png" alt="Start"></a></p>
+
+<p>Another baby CTF question. It was very simple, even though it did throw me off quite a bit… We are given a link: <a href="http://129.21.39.225:82/">http://129.21.39.225:82/</a>. When visiting the site all it had was a gif of some guys playing soccer</p>
+
+<p><a href="http://localhost:4000/images/rc3/Goal/goal.gif"><img src="http://localhost:4000/images/rc3/Goal/goal.gif" alt="goal"></a></p>
+
+<p>Maybe we should look at the <a href="http://localhost:4000/assets/rc3/Goal/source.html">source</a>?</p>
+
+<pre><code class="language-html">&lt;html&gt;
+&lt;title&gt;GOOOOOAAAAALLLLLLLL!!!!!!!!!1&lt;/title&gt;
+
+&lt;img src="goal.gif" alt="goal"/&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<p>No helpful data in there. I tried doing a quick directory search such as /flag, /.git, and /admin and none of those worked. I also tried looking at the metadeta</p>
+
+<blockquote>
+  <p>exiftool goal.gif</p>
+</blockquote>
+
+<pre><code>ExifTool Version Number         : 9.46
+File Name                       : goal.gif
+Directory                       : .
+File Size                       : 3.0 MB
+File Modification Date/Time     : 2015:11:21 12:06:36-08:00
+File Access Date/Time           : 2015:11:21 12:06:36-08:00
+File Inode Change Date/Time     : 2015:11:21 12:06:36-08:00
+File Permissions                : rw-r-----
+File Type                       : GIF
+MIME Type                       : image/gif
+GIF Version                     : 89a
+Image Width                     : 407
+Image Height                    : 211
+Has Color Map                   : Yes
+Color Resolution Depth          : 7
+Bits Per Pixel                  : 7
+Background Color                : 121
+Animation Iterations            : Infinite
+Frame Count                     : 78
+Duration                        : 4.68 s
+Image Size                      : 407x211
+</code></pre>
+
+<p>Nothing showed up there either. Luckily I always keep <strong>Burp Suite</strong> and <strong>Zap Proxy</strong> up. Let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>. I opened my Burp, searched for the ip address, searched for the page, and looked at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>.</p>
+
+<p><a href="http://localhost:4000/images/rc3/Goal/Request.png"><img src="http://localhost:4000/images/rc3/Goal/Request.png" alt="Request"></a></p>
+
+<pre><code>GET http://129.21.39.225:82/ HTTP/1.1
+Host: 129.21.39.225:82
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:42.0) Gecko/20100101 Firefox/42.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+</code></pre>
+
+<p>Everything looks normal there. Now let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/response">response</a> from the web server.</p>
+
+<p><a href="http://localhost:4000/images/rc3/Goal/Response.png"><img src="http://localhost:4000/images/rc3/Goal/Response.png" alt="Response"></a></p>
+
+<pre><code>HTTP/1.1 200 OK
+Date: Sat, 21 Nov 2015 20:07:23 GMT
+Server: Apache
+Flag: RC3-SOCCER-8675309
+Vary: Accept-Encoding
+Content-Length: 95
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+
+&lt;html&gt;
+&lt;title&gt;GOOOOOAAAAALLLLLLLL!!!!!!!!!1&lt;/title&gt;
+
+&lt;img src="goal.gif" alt="goal"/&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<p>We see something very interesting here. There’s a section called “Flag” with the value: RC3-SOCCER-8675309.  Finally we have the flag: <strong>RC3-SOCCER-8675309</strong></p>
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.12.0.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/photoswipe.js"></script>
+<script src="/js/photoswipe-ui-default.js"></script>
+<script src="/js/post.js"></script>        
+        <footer class="site-footer">
+    <button class="go-to-top"></button>
+    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> © 2016 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
+</footer>
+    </div>
+</body>
+
+<script src="/js/global.js"></script>
+</html>

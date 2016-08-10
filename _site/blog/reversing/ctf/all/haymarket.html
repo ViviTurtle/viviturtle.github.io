@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BKPCTF 2015 ~ Haymarket: Reversing 150</title>
+    <meta name="description" content="This challenge was a fairly easy Reversing challenge. In simple terms all you had to do was read a a set of punch cards. We were first given this description.">
+  
+    
+    <meta name="keywords" content="OpenToAll, Reversing, CTF">
+    
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+	
+    <!-- Open Graph data -->
+
+	<meta property="og:title" content="BKPCTF 2015 ~ Haymarket: Reversing 150">
+	<meta property="og:type" content="article">
+
+
+
+
+<meta property="og:image" content="/images/cover.png">
+
+
+<meta property="og:site_name" content="Black Magic Exploitation">
+<meta property="og:description" content="This challenge was a fairly easy Reversing challenge. In simple terms all you had to do was read a a set of punch cards. We were first given this description.">
+
+
+<meta property="og:url" content="/blog/reversing/ctf/all/haymarket">
+
+
+    
+	<meta property="article:author" content="http://jwillmer.de/about">
+	<link rel="author" href="http://jwillmer.de/about">
+
+
+
+<meta property="article:published_time" content="2015-03-10T22:59:33-07:00">
+
+
+
+<meta property="article:tag" content="OpenToAll">
+
+<meta property="article:tag" content="Reversing">
+
+<meta property="article:tag" content="CTF">
+
+<!-- End: Open Graph data -->	
+	<!-- Twitter data -->
+    
+
+<meta name="twitter:card" content="summary">
+
+
+<meta name="twitter:site" content="@VivieTurtle">
+
+
+
+<meta name="twitter:title" content="BKPCTF 2015 ~ Haymarket: Reversing 150">
+
+
+
+
+<meta name="twitter:url" content="/blog/reversing/ctf/all/haymarket">
+
+
+<meta name="twitter:description" content="This challenge was a fairly easy Reversing challenge. In simple terms all you had to do was read a a set of punch cards. We were first given this description.">
+
+<meta name="twitter:image:src" content="/images/cover.png">
+<!-- End: Twitter data -->	
+
+    <link href="https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield%7CMerriweather:300italic,700,300,700italic%7COpen+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/screen.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
+
+    <link rel="icon" href="/images/vivi.jpg" sizes="16x16" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="32x32" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="48x48" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="62x62" type="image/png">
+</head>
+
+<body class="home-template">
+    <div class="site-wrapper">
+        
+
+<header class="main-header detail-page image-bg  has-cover" style="background-image: url(/images/cover.png)">
+    <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
+    <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
+    <div class="nav">
+        <ul>
+            <li><a class="page-link" href="/" title="Home">Home</a></li>
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/offline-warning/" title="Offline">Offline</a></li>
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/about/" title="About">About</a></li>
+            
+            
+        </ul>
+    </div>
+</header>
+        <main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">BKPCTF 2015 ~ Haymarket: Reversing 150</h1>
+            <section class="post-meta">
+                <time datetime="2015-03-10T22:59:33-07:00" itemprop="datePublished">Mar 10, 2015</time> 
+                on
+                
+                <span>OpenToAll</span>
+                
+                <span>Reversing</span>
+                
+                <span>CTF</span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <p>This challenge was a fairly easy Reversing challenge. In simple terms all you had to do was read a a set of punch cards. We were first given this description.</p>
+
+<blockquote>
+  <p>Monty Hall wrote a script of how he was supposed to run one of his game shows for his trusty accounting computer some time ago, but hes not really sure what the punch cards mean any more. I mean, that was a while ago. Only, hes sure his key is hidden somewhere in these punch-cards, if he could figure out how to run them…*</p>
+</blockquote>
+
+<p>Along with a link to<br>
+http://bostonkeyparty.net/haymarket.tar.gz.fe35f59bfa869a0555e9972efa3ddd2d.</p>
+
+<p>If the above link is down, you can probably get it at <a href="http://localhost:4000/assets/bkpctf/haymarket.tar">haymarket.tar</a></p>
+
+<p>So, after renaming the file to haymarket.tar.gz and extracting it via cmd line with “tar -zxvf haymarket.tar.gz” We were given 32 PNG’s of punch cards.</p>
+
+<p><a href="http://localhost:4000/images/bkpctf//L1.png"><img src="http://localhost:4000/images/bkpctf//L1.png" alt="Punchcard 1"></a></p>
+
+<p><a href="http://localhost:4000/images/bkpctf//L20.png"><img src="http://localhost:4000/images/bkpctf//L20.png" alt="Punchcard 20"></a></p>
+
+<p>Doing what we hackers do best, I went and Googled how to read Punch Cards. I eventually found this fairly descriptive History of Punchcards (http://www.masswerk.at/keypunch/) . Sorry, but I have no time to read history. After more Googling, I found this virtual keyboard (http://www.masswerk.at/keypunch/). I figured I take my chances here and quickly learn the translation of keys to bullet points. Indeed, the translation went well. I quickly typed out every letter and every available punctuation to get a quick translation.</p>
+
+<p><a href="http://localhost:4000/images/bkpctf//Keyboard.png"><img src="http://localhost:4000/images/bkpctf//Keyboard.png" alt="Virtual Keyboard"></a></p>
+
+<p>Now that I had the translation of bullets to ASCII, I just had to write a program. I Googled how to read images from Python and it was fairly simple. Using that code I got to business. I was of course missing things like rows, columns, RGB color, and pixel offesets. Most of these I was able to get looking at each image in GIMP’s (a very bad free Linux version of Photoshop in my opinion) color picker and image properties.</p>
+
+<p><a href="http://localhost:4000/images/bkpctf//GIMP.png"><img src="http://localhost:4000/images/bkpctf//GIMP.png" alt="Virtual Keyboard"></a></p>
+
+<p>The hosts were kind enough to provide us with a uniform size and offset for each row and column. The first bullet was at (17,24), the next column was 7 pixels across, and the next row was 20 pixels down. The color of the bullets were RGB (20,20,20). All that was left was a simple nested for loop of recording RGB’s and translating their row locations to ASCII. If you want to see the output for all the PNG’s you can find it at My GitHub. After running my script on all the PNGs you get to a line that says display key(set alextrebekisasocialengineer) and indeed “alextrebekisasocialengineer” is the flag. Congratulations! I did it.</p>
+
+<p>In conclusion, I would like to thank Boston Key Party 2015 for this great challenge. It was a great way for me to refresh my Python programming while learning about punch cards. Again I look forward for next years competition.</p>
+
+<p><a href="http://localhost:4000/assets/bkpctf/Punchcard.py">Punchcard.py</a></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">Note</span><span class="p">:</span> <span class="n">I</span> <span class="n">ignored</span> <span class="n">the</span> <span class="n">numbers</span> <span class="ow">and</span> <span class="n">just</span> <span class="n">went</span> <span class="kn">from</span> <span class="err">1-13</span> <span class="nn">rows</span> <span class="nn">with</span> <span class="nn">zero</span><span class="err">'</span><span class="nn">s</span> <span class="nn">as</span> <span class="nn">the</span> <span class="nn">default</span> <span class="nn">value.</span><span class="err">
+
+#!/</span><span class="nn">usr</span><span class="err">/</span><span class="nn">bin</span><span class="err">/</span><span class="nn">env</span> <span class="nn">python</span><span class="err">
+#
+#</span> <span class="nn">Haymarket</span> <span class="err">
+#</span> <span class="nn">Reversing</span> <span class="err">150
+#</span> <span class="nn">From</span> <span class="nn">Boston</span> <span class="nn">Key</span> <span class="nn">Party</span> <span class="nn">CTF</span> <span class="err">2015
+#
+#</span><span class="nn">Monty</span> <span class="nn">Hall</span> <span class="nn">wrote</span> <span class="nn">a</span> <span class="nn">script</span> <span class="nn">of</span> <span class="nn">how</span> <span class="nn">he</span> <span class="nn">was</span> <span class="nn">supposed</span> <span class="nn">to</span> <span class="nn">run</span> <span class="nn">one</span> <span class="nn">of</span> <span class="nn">his</span> <span class="nn">game</span> <span class="err">
+#</span><span class="nn">shows</span> <span class="nn">for</span> <span class="nn">his</span> <span class="nn">trusty</span> <span class="nn">accounting</span> <span class="nn">computer</span> <span class="nn">some</span> <span class="nn">time</span> <span class="nn">ago</span><span class="err">,</span> <span class="nn">but</span> <span class="nn">hes</span> <span class="nn">not</span> <span class="nn">really</span> <span class="err">
+#</span><span class="nn">sure</span> <span class="nn">what</span> <span class="nn">the</span> <span class="nn">punch</span> <span class="nn">cards</span> <span class="nn">mean</span> <span class="nn">any</span> <span class="nn">more.</span> <span class="nn">I</span> <span class="nn">mean</span><span class="err">,</span> <span class="nn">that</span> <span class="nn">was</span> <span class="nn">a</span> <span class="nn">while</span> <span class="nn">ago.</span> <span class="nn">Only</span><span class="err">,</span> <span class="err">
+#</span><span class="nn">hes</span> <span class="nn">sure</span> <span class="nn">his</span> <span class="nn">key</span> <span class="nn">is</span> <span class="nn">hidden</span> <span class="nn">somewhere</span> <span class="nn">in</span> <span class="nn">these</span> <span class="nn">punch</span><span class="err">-</span><span class="nn">cards</span><span class="err">,</span> <span class="nn">if</span> <span class="nn">he</span> <span class="nn">could</span> <span class="nn">figure</span> <span class="err">
+#</span><span class="nn">out</span> <span class="nn">how</span> <span class="nn">to</span> <span class="nn">run</span> <span class="nn">them...</span><span class="err">
+
+#</span><span class="nn">http</span><span class="err">://</span><span class="nn">bostonkeyparty.net</span><span class="err">/</span><span class="nn">haymarket.tar.gz.fe35f59bfa869a0555e9972efa3ddd2d</span> <span class="err">
+
+#</span><span class="nn">Author</span><span class="err">:</span> <span class="nn">Vivi</span> <span class="nn">Langga</span><span class="err">
+</span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c">#Row 1, Column 1 = (17,24)</span>
+<span class="n">START_PIXEL_X</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">START_PIXEL_Y</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="c">#Next row/column was (7,20)</span>
+<span class="n">X_NEXT_PIXEL</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">Y_NEXT_PIXEL</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">TOTAL_ROWS</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">TOTAL_COLUMNS</span> <span class="o">=</span> <span class="mi">80</span>
+
+<span class="c">#Looked at Color from GIMP</span>
+<span class="c"># 588x264 All pictures</span>
+<span class="c">#20,20,20,255 = bulleted</span>
+<span class="c">#235,230,172,255 = yellow background</span>
+<span class="c">#60,60,60,255 = digit color</span>
+
+<span class="c">#Translates indexes to ASCII</span>
+<span class="k">def</span> <span class="nf">getASCII</span><span class="p">(</span><span class="n">index1</span><span class="p">,</span> <span class="n">index2</span><span class="p">,</span> <span class="n">index3</span><span class="p">):</span>
+ <span class="k">if</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'a'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'b'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'.'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'c'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'&lt;'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'d'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'('</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'e'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'+'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'f'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'g'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'h'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'i'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'&amp;'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'j'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'!'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'k'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'$'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'l'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'*'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'m'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">')'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'n'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'o'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'p'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'q'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'r'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'-'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'s'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'/'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">','</span>
+   <span class="k">else</span><span class="p">:</span><span class="k">return</span> <span class="s">'t'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'</span><span class="si">%</span><span class="s">'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'u'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'v'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'&gt;'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'w'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">index3</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">'?'</span>
+   <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'x'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'y'</span>
+  <span class="k">elif</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'z'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+  <span class="k">return</span> <span class="s">'1'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">':'</span>
+  <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'2'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'#'</span>
+  <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'3'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'"'</span>
+  <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'7'</span>
+
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">''</span>
+  <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'5'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'='</span>
+  <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'6'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">index2</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+   <span class="k">return</span> <span class="s">'@'</span>
+  <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="s">'4'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+  <span class="k">return</span> <span class="s">'8'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+  <span class="k">return</span> <span class="s">'9'</span>
+ <span class="k">elif</span> <span class="n">index1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="k">return</span> <span class="s">''</span>
+ <span class="k">return</span> <span class="s">'~'</span>
+
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c">#Can be many different formats.</span>
+<span class="n">pix</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">rgb_im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s">'RGB'</span><span class="p">)</span>
+<span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">rgb_im</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">START_PIXEL_X</span><span class="p">,</span><span class="n">START_PIXEL_Y</span><span class="p">))</span>
+<span class="n">stringbuilder</span> <span class="o">=</span> <span class="s">''</span>
+<span class="c">#For each column</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">TOTAL_COLUMNS</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+ <span class="c">#resets indexes (0 = blank, not used)</span>
+ <span class="c">#i.e. 6,0,0 means only a black spot a row 0, nothing else)</span>
+ <span class="n">bulletedindex</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+ <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+ <span class="c">#For Each row</span>
+ <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">TOTAL_ROWS</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+  <span class="c">#4,10 are offseed for the image</span>
+  <span class="c">#Sets RGBS</span>
+  <span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">rgb_im</span><span class="o">.</span><span class="n">getpixel</span><span class="p">((</span><span class="n">X_NEXT_PIXEL</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span><span class="n">Y_NEXT_PIXEL</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">4</span><span class="p">))</span>
+  <span class="c">#20,20,20 is the color for a bullet</span>
+  <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">20</span> <span class="ow">and</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">20</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+   <span class="c">#keeps index parallel to current row</span>
+   <span class="n">bulletedindex</span><span class="p">[</span><span class="n">count</span><span class="p">]</span><span class="o">=</span> <span class="n">y</span> 
+   <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+ <span class="c">#builds the string</span>
+ <span class="n">stringbuilder</span> <span class="o">=</span> <span class="n">stringbuilder</span> <span class="o">+</span> <span class="n">getASCII</span><span class="p">(</span><span class="n">bulletedindex</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">bulletedindex</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">bulletedindex</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span> <span class="n">stringbuilder</span></code></pre></figure>
+
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.12.0.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/photoswipe.js"></script>
+<script src="/js/photoswipe-ui-default.js"></script>
+<script src="/js/post.js"></script>        
+        <footer class="site-footer">
+    <button class="go-to-top"></button>
+    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> © 2016 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
+</footer>
+    </div>
+</body>
+
+<script src="/js/global.js"></script>
+</html>

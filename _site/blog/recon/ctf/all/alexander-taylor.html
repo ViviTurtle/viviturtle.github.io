@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CSAW 2015 ~ Alexander Taylor: Recon 100</title>
+    <meta name="description" content="Alexander Taylor: Recon 100">
+  
+    
+    <meta name="keywords" content="Recon, CTF, CSAW">
+    
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+	
+    <!-- Open Graph data -->
+
+	<meta property="og:title" content="CSAW 2015 ~ Alexander Taylor: Recon 100">
+	<meta property="og:type" content="article">
+
+
+
+
+<meta property="og:image" content="/images/cover.png">
+
+
+<meta property="og:site_name" content="Black Magic Exploitation">
+<meta property="og:description" content="Alexander Taylor: Recon 100">
+
+
+<meta property="og:url" content="/blog/recon/ctf/all/alexander-taylor">
+
+
+    
+	<meta property="article:author" content="http://jwillmer.de/about">
+	<link rel="author" href="http://jwillmer.de/about">
+
+
+
+<meta property="article:published_time" content="2015-09-18T22:59:33-07:00">
+
+
+
+<meta property="article:tag" content="Recon">
+
+<meta property="article:tag" content="CTF">
+
+<meta property="article:tag" content="CSAW">
+
+<!-- End: Open Graph data -->	
+	<!-- Twitter data -->
+    
+
+<meta name="twitter:card" content="summary">
+
+
+<meta name="twitter:site" content="@VivieTurtle">
+
+
+
+<meta name="twitter:title" content="CSAW 2015 ~ Alexander Taylor: Recon 100">
+
+
+
+
+<meta name="twitter:url" content="/blog/recon/ctf/all/alexander-taylor">
+
+
+<meta name="twitter:description" content="Alexander Taylor: Recon 100">
+
+<meta name="twitter:image:src" content="/images/cover.png">
+<!-- End: Twitter data -->	
+
+    <link href="https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield%7CMerriweather:300italic,700,300,700italic%7COpen+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/screen.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
+
+    <link rel="icon" href="/images/vivi.jpg" sizes="16x16" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="32x32" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="48x48" type="image/png">
+    <link rel="icon" href="/images/vivi.jpg" sizes="62x62" type="image/png">
+</head>
+
+<body class="home-template">
+    <div class="site-wrapper">
+        
+
+<header class="main-header detail-page image-bg  has-cover" style="background-image: url(/images/cover.png)">
+    <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
+    <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
+    <div class="nav">
+        <ul>
+            <li><a class="page-link" href="/" title="Home">Home</a></li>
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/offline-warning/" title="Offline">Offline</a></li>
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/about/" title="About">About</a></li>
+            
+            
+        </ul>
+    </div>
+</header>
+        <main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">CSAW 2015 ~ Alexander Taylor: Recon 100</h1>
+            <section class="post-meta">
+                <time datetime="2015-09-18T22:59:33-07:00" itemprop="datePublished">Sep 18, 2015</time> 
+                on
+                
+                <span>Recon</span>
+                
+                <span>CTF</span>
+                
+                <span>CSAW</span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <h2 id="alexander-taylor-recon-100">Alexander Taylor: Recon 100</h2>
+
+<blockquote>
+  <p><a href="http://fuzyll.com/csaw2015/start">http://fuzyll.com/csaw2015/start</a></p>
+</blockquote>
+
+<p>Yay more Recon. For those that don’t know what recon is, it is pretty much what you would call information gathering. You always first do recon when you do a pentest to get a scope of your target. In that way, the more information you have, the better ways you develop weaknesses, whether the weakness is a phishing attack or some physical penetration test. In this question we have to do some Reconnaissance on Alexander Taylor.</p>
+
+<p>This time around we are given a link.</p>
+
+<p><a href="http://fuzyll.com/csaw2015/start">http://fuzyll.com/csaw2015/start</a></p>
+
+<p><a href="http://localhost:4000/images/csaw/step1.png"><img src="http://localhost:4000/images/csaw/step1.png" alt="Start"></a></p>
+
+<p>Upon entering link we are greeted with just a few lines of text:</p>
+
+<pre><code> CSAW 2015 FUZYLL RECON PART 1 OF ?: Oh, good, you can use HTTP! The next part is at /csaw2015/&lt;the acronym for my universitys hacking club&gt;
+</code></pre>
+
+<p>From here we can google “Alexander Taylor” After looking through some github pages, twitter, and possible facebook, I started thinking, where is a sure place for Mr. Taylor to have his school? !! <strong>HIS LINKEDIN</strong></p>
+
+<p>I found his <a href="https://www.linkedin.com/in/fuzyll">LinkedIn</a> by using the same domain as his website (https://www.linkedin.com/in/fuzyll). We can assume this his online handle.</p>
+
+<p><a href="http://localhost:4000/images/csaw/LinkedIn.png"><img src="http://localhost:4000/images/csaw/LinkedIn.png" alt="LinkedinScreen"></a></p>
+
+<p>Upon checking his LinkedIn, we see he went to the University of South Florida.</p>
+
+<pre><code>Current:	Ratheon
+Previous:	The Brand Book, Sypris Electronics, LLC, University of South Florida
+Education: 	University of South Florida
+</code></pre>
+
+<p>After which we can google “University of south florida hacking club” which brings us to:</p>
+
+<p><a href="http://www.wcsc.usf.edu/">Whitehatters Computer Security Club</a>
+<a href="http://localhost:4000/images/csaw/wcsc.png"><img src="http://localhost:4000/images/csaw/wcsc.png" alt="wcsc"></a></p>
+
+<p>On this page we can clearly see the acronym: wcsc</p>
+
+<p>Moving onto <a href="http://fuzyll.com/csaw2015/wcsc">http://fuzyll.com/csaw2015/wcsc</a> We are greeted with a similar string of hints.</p>
+
+<pre><code>&gt; CSAW 2015 FUZYLL RECON PART 2 OF ?: TmljZSB3b3JrISBUaGUgbmV4dCBwYXJ0IGlzIGF0IC9jc2F3MjAxNS88bXkgc3VwZXIgc21hc2ggYnJvdGhlcnMgbWFpbj4uCg==
+</code></pre>
+
+<p>This is obviously Base64 encoding so putting that into an online decoder such as <a href="https://www.base64decode.org/">https://www.base64decode.org/</a> we get:</p>
+
+<pre><code>Nice work! The next part is at /csaw2015/&lt;my super smash brothers main&gt;.
+</code></pre>
+<p>I googled “Fuzyll Smash” and arrived at a few <a href="https://www.youtube.com/watch?v=59QQ9UevSuE">YouTube</a> Pages.</p>
+
+<p><a href="http://localhost:4000/images/csaw/youtube.png"><img src="http://localhost:4000/images/csaw/youtube.png" alt="youtube"></a></p>
+
+<p>The answer here is from the title is Yoshi:</p>
+
+<pre><code>	&gt; Smash 4 Weekly (2015-08-07) - Fuzyll (Yoshi) vs. Stiitch (Ike)
+</code></pre>
+
+<p>One step closer, we move on to the next page: <a href="http://fuzyll.com/csaw2015/yoshi">http://fuzyll.com/csaw2015/yoshi</a>. We see a picture of yoshi here.</p>
+
+<p><a href="http://localhost:4000/images/csaw/yoshi.txt"><img src="http://localhost:4000/images/csaw/yoshi.txt" alt="Yoshi"></a></p>
+
+<p>Noticing we have a picture, a good step would probably be to look at the metadeta. After downloading the picture, you can either upload it to <a href="http://regex.info/exif.cgi">Jeffrey’s Exif viewer</a> or run exiftool, a tool to look at metadeta for like everything.</p>
+
+<blockquote>
+  <p>exiftool yoshi.txt (it was named yoshi.txt i guess to throw us off)</p>
+</blockquote>
+
+<p>This gives us:</p>
+
+<pre><code>ExifTool Version Number         : 9.46
+File Name                       : yoshi.txt
+Directory                       : .
+File Size                       : 198 kB
+File Modification Date/Time     : 2015:09:19 12:52:48-07:00
+File Access Date/Time           : 2015:09:20 13:25:40-07:00
+File Inode Change Date/Time     : 2015:09:20 13:25:40-07:00
+File Permissions                : rw-r-----
+File Type                       : PNG
+MIME Type                       : image/png
+Image Width                     : 500
+Image Height                    : 537
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+Background Color                : 255 255 255
+Pixels Per Unit X               : 2835
+Pixels Per Unit Y               : 2835
+Pixel Units                     : Meters
+Modify Date                     : 2015:09:18 03:00:11
+Comment                         : CSAW 2015 FUZYLL RECON PART 3 OF ?: Isn't Yoshi the best?! The next egg in your hunt can be found at /csaw2015/&lt;the cryptosystem I had to break in my first defcon qualifier&gt;.
+Image Size                      : 500x537
+</code></pre>
+
+<p>Looking at the comment we need to find the cryptosystem he did in his first defcon.</p>
+
+<pre><code>Comment: CSAW 2015 FUZYLL RECON PART 3 OF ?: Isn't Yoshi the best?! The next egg in your hunt can be found at /csaw2015/&lt;the cryptosystem I had to break in my first defcon qualifier&gt;.
+</code></pre>
+
+<p>From here I googled every iteration with words like fuzyll, decon, qualifier, cryptography, writeups, and cryptosystem, but nothing showed up.I then started to guess since they isn’t that many to guess with. Some examples include:</p>
+
+<blockquote>
+  <p>http://fuzyll.com/csaw2015/rsa</p>
+</blockquote>
+
+<blockquote>
+  <p>http://fuzyll.com/csaw2015/enigma</p>
+</blockquote>
+
+<p>Enigma somehow worked. Going on to <a href="http://fuzyll.com/csaw2015/enigma">http://fuzyll.com/csaw2015/enigma</a>. We are greeted with another text.</p>
+
+<pre><code> CSAW 2015 FUZYLL RECON PART 4 OF 5: Okay, okay. This isn't Engima, but the next location was "encrypted" with the JavaScript below: Pla$ja|p$wpkt$kj$}kqv$uqawp$mw&gt;$+gwes6451+pla}[waa[ia[vkhhmj
+		
+		var s = "THIS IS THE INPUT"
+		var c = ""
+		for (i = 0; i &lt; s.length; i++) {
+		    c += String.fromCharCode((s[i]).charCodeAt(0) ^ 0x4);
+		}
+		console.log(c);
+</code></pre>
+
+<p>Looks like he took some input and xor’d it with the hex character ‘0x4’. If you guys know your cryptography you can xor with ‘0x4 again to get the original text’(Crpypto 101)</p>
+
+<p>I modified the js to pretty much do the same exact thing, but with the string given.</p>
+
+<p><a href="http://localhost:4000/assets/csaw/javascript_decode.js">javascript_decode.js</a></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">"Pla$ja|p$wpkt$kj$}kqv$uqawp$mw&gt;$+gwes6451+pla}[waa[ia[vkhhmj"</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
+<span class="p">{</span>
+	<span class="nx">c</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">((</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x4</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span></code></pre></figure>
+
+<p>I put this code into <a href="http://www.webtoolkitonline.com/javascript-tester.html">an online javascript interpreter</a> and was given the string</p>
+
+<blockquote>
+  <p>The next stop on your quest is: /csaw2015/they_see_me_rollin</p>
+</blockquote>
+
+<p>Finally, we arrive at the final page:	<a href="http://fuzyll.com/csaw2015/they_see_me_rollin">http://fuzyll.com/csaw2015/they_see_me_rollin</a> with a string</p>
+
+<blockquote>
+  <p>CSAW 2015 FUZYLL RECON PART 5 OF 5: Congratulations! Here’s your flag{I_S3ARCH3D_HI6H_4ND_L0W_4ND_4LL_I_F0UND_W4S_TH1S_L0USY_FL4G}!</p>
+</blockquote>
+
+<p>flag{I_S3ARCH3D_HI6H_4ND_L0W_4ND_4LL_I_F0UND_W4S_TH1S_L0USY_FL4G}!</p>
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.12.0.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/photoswipe.js"></script>
+<script src="/js/photoswipe-ui-default.js"></script>
+<script src="/js/post.js"></script>        
+        <footer class="site-footer">
+    <button class="go-to-top"></button>
+    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> © 2016 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
+</footer>
+    </div>
+</body>
+
+<script src="/js/global.js"></script>
+</html>

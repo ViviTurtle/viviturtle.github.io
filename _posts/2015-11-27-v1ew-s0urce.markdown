@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "RC3 2015 ~ v1ew-s0urce: Web 50"
+author: Vivi
+date:   2015-11-27 21:59:33 -0700
+categories: CTF Web All
+tags: RC3 Forensics CTF
+---
+
+[![Start]({{site.url}}/images/rc3/Start.png)]({{site.url}}/images/rc3/Start.png)
+
+This a baby CTF question. It was very simple. We are given a link: [http://129.21.39.225:81/](http://129.21.39.225:81/). Upon visiting the site we are greeted with a simple text
+
+> nothing to see here..
+
+Now look at the title of the web page.
+
+[![bots]({{site.url}}/images/rc3/bots.png)]({{site.url}}/images/rc3/bots.png)
+
+It says Go away bots! This means they don't want a web crawler to be at this website. If you guys know basic web, the way you keep web crawlers from visiting certain web pages is to write it in the **robots.txt** file.
+
+Let's visit [http://129.21.39.225:81/robots.txt](http://129.21.39.225:81/robots.txt)
+
+[robots.txt]({{site.url}}/assets/rc3/robots.txt)
+
+```
+#Now those silly bots can't crawl my site :3
+
+User-agent: *
+Disallow: /admin/
+Disallow: /secret/
+```
+
+
+This means they don't want the web page to visit /admin or /secret.
+
+Let's visit [http://129.21.39.225:81/secret](http://129.21.39.225:81/secret) too
+
+[![flag]({{site.url}}/images/rc3/flag.png)]({{site.url}}/images/rc3/flag.png)
+
+Now we have the flag:
+
+**RC3-ROBOTZ-559672**
