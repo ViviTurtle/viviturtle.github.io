@@ -5,8 +5,8 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Wed, 10 Aug 2016 02:22:11 -0700</pubDate>
-    <lastBuildDate>Wed, 10 Aug 2016 02:22:11 -0700</lastBuildDate>
+      <pubDate>Wed, 10 Aug 2016 02:53:44 -0700</pubDate>
+    <lastBuildDate>Wed, 10 Aug 2016 02:53:44 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -25,16 +25,22 @@
 
 &lt;p&gt;We can clearly see three other pages. Home, Find Friends, and Logout. I tried a few of the pages.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Home&lt;/strong&gt;
-&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/home.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/home.png&quot; alt=&quot;home&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/home.png&quot; /&gt;
+   &lt;figcaption&gt;Home &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;Find Friends&lt;/strong&gt;
-&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/friends.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/friends.png&quot; alt=&quot;friends&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/friends.png&quot; /&gt;
+   &lt;figcaption&gt;Find Friends &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;The home page involves typing in some secret to store and show it on a table. The Friends page shows other users. Trying to put it together, we need to find some way to get another person’s secret using the two pages. In other words, we need to find the admin’s secrets. After figuring this out, I tried to look at the actual requests.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/TopSecret/friend_request.txt&quot;&gt;Friends Request&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/burp_friends.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/burp_friends.png&quot; alt=&quot;burp_friends&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/burp_friends.png&quot; /&gt;
+   &lt;figcaption&gt;Friends Request&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;pre&gt;&lt;code&gt;POST http://162.243.171.85/find.php HTTP/1.1
 Host: 162.243.171.85
@@ -51,8 +57,10 @@ Content-Length: 14
 username=admin
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/TopSecret/home_request.txt&quot;&gt;Home Request&lt;/a&gt;
-&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/burp_home.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/burp_home.png&quot; alt=&quot;burp_home&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/burp_home.png&quot; /&gt;
+   &lt;figcaption&gt;Home Request&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;pre&gt;&lt;code&gt;POST http://162.243.171.85/ HTTP/1.1
 Host: 162.243.171.85

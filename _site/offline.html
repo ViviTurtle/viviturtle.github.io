@@ -182,16 +182,22 @@
 
 <p>We can clearly see three other pages. Home, Find Friends, and Logout. I tried a few of the pages.</p>
 
-<p><strong>Home</strong>
-<a href="http://localhost:4000/images/rc3/TopSecret/home.png"><img src="http://localhost:4000/images/rc3/TopSecret/home.png" alt="home"></a></p>
+<figure>
+   <img src="http://localhost:4000/images/rc3/TopSecret/home.png">
+   <figcaption>Home </figcaption>
+</figure>
 
-<p><strong>Find Friends</strong>
-<a href="http://localhost:4000/images/rc3/TopSecret/friends.png"><img src="http://localhost:4000/images/rc3/TopSecret/friends.png" alt="friends"></a></p>
+<figure>
+   <img src="http://localhost:4000/images/rc3/TopSecret/friends.png">
+   <figcaption>Find Friends </figcaption>
+</figure>
 
 <p>The home page involves typing in some secret to store and show it on a table. The Friends page shows other users. Trying to put it together, we need to find some way to get another person’s secret using the two pages. In other words, we need to find the admin’s secrets. After figuring this out, I tried to look at the actual requests.</p>
 
-<p><a href="http://localhost:4000/assets/rc3/TopSecret/friend_request.txt">Friends Request</a>
-<a href="http://localhost:4000/images/rc3/TopSecret/burp_friends.png"><img src="http://localhost:4000/images/rc3/TopSecret/burp_friends.png" alt="burp_friends"></a></p>
+<figure>
+   <img src="http://localhost:4000/images/rc3/TopSecret/burp_friends.png">
+   <figcaption>Friends Request</figcaption>
+</figure>
 
 <pre><code>POST http://162.243.171.85/find.php HTTP/1.1
 Host: 162.243.171.85
@@ -208,8 +214,10 @@ Content-Length: 14
 username=admin
 </code></pre>
 
-<p><a href="http://localhost:4000/assets/rc3/TopSecret/home_request.txt">Home Request</a>
-<a href="http://localhost:4000/images/rc3/TopSecret/burp_home.png"><img src="http://localhost:4000/images/rc3/TopSecret/burp_home.png" alt="burp_home"></a></p>
+<figure>
+   <img src="http://localhost:4000/images/rc3/TopSecret/burp_home.png">
+   <figcaption>Home Request</figcaption>
+</figure>
 
 <pre><code>POST http://162.243.171.85/ HTTP/1.1
 Host: 162.243.171.85

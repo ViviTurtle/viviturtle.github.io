@@ -22,16 +22,26 @@ First thing you do for any Web Application Penetration Test is Recon and mapping
 
 We can clearly see three other pages. Home, Find Friends, and Logout. I tried a few of the pages.
 
-**Home**
-[![home]({{site.url}}/images/rc3/TopSecret/home.png)]({{site.url}}/images/rc3/TopSecret/home.png)
-	
-**Find Friends**
-[![friends]({{site.url}}/images/rc3/TopSecret/friends.png)]({{site.url}}/images/rc3/TopSecret/friends.png)
+
+<figure>
+   <img src="{{site.url}}/images/rc3/TopSecret/home.png" />
+   <figcaption>Home </figcaption>
+</figure>
+
+
+
+<figure>
+   <img src="{{site.url}}/images/rc3/TopSecret/friends.png" />
+   <figcaption>Find Friends </figcaption>
+</figure>
 
 The home page involves typing in some secret to store and show it on a table. The Friends page shows other users. Trying to put it together, we need to find some way to get another person's secret using the two pages. In other words, we need to find the admin's secrets. After figuring this out, I tried to look at the actual requests.
 
-[Friends Request]({{site.url}}/assets/rc3/TopSecret/friend_request.txt)
-[![burp_friends]({{site.url}}/images/rc3/TopSecret/burp_friends.png)]({{site.url}}/images/rc3/TopSecret/burp_friends.png)
+
+<figure>
+   <img src="{{site.url}}/images/rc3/TopSecret/burp_friends.png" />
+   <figcaption>Friends Request</figcaption>
+</figure>
 
 ```
 POST http://162.243.171.85/find.php HTTP/1.1
@@ -49,8 +59,11 @@ Content-Length: 14
 username=admin
 ```
 
-[Home Request]({{site.url}}/assets/rc3/TopSecret/home_request.txt)
-[![burp_home]({{site.url}}/images/rc3/TopSecret/burp_home.png)]({{site.url}}/images/rc3/TopSecret/burp_home.png)
+
+<figure>
+   <img src="{{site.url}}/images/rc3/TopSecret/burp_home.png" />
+   <figcaption>Home Request</figcaption>
+</figure>
 
 ```
 POST http://162.243.171.85/ HTTP/1.1
