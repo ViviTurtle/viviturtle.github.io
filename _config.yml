@@ -14,6 +14,7 @@ language:     "en" # default language of the blog. Language codes: http://www.w3
 
 baseurl:      "" # the subpath of your site, e.g. /blog
 url:          "https://viviturtle.github.io" # the base hostname & protocol for your site. Have a look at robots.txt as well!
+#url:          "http://localhost:4000" 
 permalink:    /blog/:categories/:title
 cover:        /images/cover.png
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "OpenToAll 2015 ~ BACH: CRYPTO 150"
+title:  "OpenToAll 2015 ~ BACH: Crypto 150"
 date:   2015-03-28 22:59:33 -0700
 categories: CTF Crypto All
 tags: OpenToAll Crypto CTF

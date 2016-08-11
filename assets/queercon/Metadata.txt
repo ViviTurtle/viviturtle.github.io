@@ -1,0 +1,48 @@
+ExifTool Version Number         : 10.10
+File Name                       : Crypto [QueerCon13].mp3
+Directory                       : .
+File Size                       : 7.0 MB
+File Modification Date/Time     : 2016:06:29 21:57:59-07:00
+File Access Date/Time           : 2016:06:29 22:00:16-07:00
+File Inode Change Date/Time     : 2016:06:29 21:57:59-07:00
+File Permissions                : rw-rw-r--
+File Type                       : MP3
+File Type Extension             : mp3
+MIME Type                       : audio/mpeg
+MPEG Audio Version              : 1
+Audio Layer                     : 3
+Audio Bitrate                   : 320 kbps
+Sample Rate                     : 44100
+Channel Mode                    : Joint Stereo
+MS Stereo                       : Off
+Intensity Stereo                : Off
+Copyright Flag                  : False
+Original Media                  : True
+Emphasis                        : None
+Encoder                         : LAME3.99r
+Lame VBR Quality                : 4
+Lame Quality                    : 3
+Lame Method                     : CBR
+Lame Low Pass Filter            : 20.5 kHz
+Lame Bitrate                    : 255 kbps
+Lame Stereo Mode                : Joint Stereo
+ID3 Size                        : 4987
+Album                           : Crypto (single)
+Artist                          : Stemodity
+Band                            : Stemodity
+Genre                           : Big Room House
+Publisher                       : Tiemann-Belzer
+Title                           : Crypto
+Track                           : 1
+Year                            : 2016
+User Defined Text               : (Band) and
+WM Media Class Secondary ID     : 00000000-0000-0000-0000-000000000000
+WM Media Class Primary ID       : D1607DBC-E323-4BE2-86A1-48A42A28441E
+WM Provider                     : AMG
+WM Content ID                   : 0FBB0CAE-A631-4CDE-B2B7-B81FBE26132D
+WM Collection ID                : 02DFA6E0-D853-48D3-9CD8-92F843CF36A6
+WM Collection Group ID          : 02DFA6E0-D853-48D3-9CD8-92F843CF36A6
+WM Unique File Identifier       : (Binary data 114 bytes, use -b option to extract)
+Comment                         : 
+Date/Time Original              : 2016
+Duration                        : 0:03:03 (approx)

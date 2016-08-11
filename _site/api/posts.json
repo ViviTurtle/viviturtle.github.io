@@ -2,6 +2,17 @@
 
   
     {
+        "title": "QueerCon 2015 ~ QC13 Soundcheck: Stego	",
+        "category": "",
+        "url": "/blog/ctf/stego/crypto/all/QC13-Soundcheck",
+        "tags": ["Stego","QueerCon","Crypto"],
+        "date": "2016-08-11 04:29:33 -0700",
+        "language": "en"
+    },
+  
+
+  
+    {
         "title": "RC3 2015 ~ Top Secret: Web 400",
         "category": "",
         "url": "/blog/ctf/web/all/top-secret",
@@ -26,8 +37,8 @@
     {
         "title": "RC3 2015 ~ Super Secrets: Misc 300",
         "category": "",
-        "url": "/blog/misc/ctf/all/super-secrets",
-        "tags": ["RC3","Misc"],
+        "url": "/blog/stego/ctf/all/super-secrets",
+        "tags": ["RC3","Stego"],
         "date": "2015-11-28 01:59:33 -0800",
         "language": "en"
     },
@@ -59,7 +70,7 @@
     {
         "title": "CSAW 2015 ~ Transfer: Forensics 100",
         "category": "",
-        "url": "/blog/forensics/ctf/all/transfer",
+        "url": "/blog/forensics/ctf/all/crypto/transfer",
         "tags": ["Forensics","CTF","CSAW"],
         "date": "2015-09-19 21:59:33 -0700",
         "language": "en"
@@ -81,8 +92,8 @@
     {
         "title": "CSAW 2015 ~ Keep Calm and CTF: Forensics 100",
         "category": "",
-        "url": "/blog/ctf/forensics/all/keep-calm-and-ctf",
-        "tags": ["Forensics","CTF","CSAW"],
+        "url": "/blog/ctf/stego/all/keep-calm-and-ctf",
+        "tags": ["Stego","CTF","CSAW"],
         "date": "2015-09-18 21:59:33 -0700",
         "language": "en"
     },
@@ -112,9 +123,9 @@
 
   
     {
-        "title": "OpenToAll 2015 ~ Math is Hard: MISC 200",
+        "title": "OpenToAll 2015 ~ Math is Hard: Misc 200",
         "category": "",
-        "url": "/blog/misc/ctf/all/math",
+        "url": "/blog/programming/ctf/all/math",
         "tags": ["OpenToAll","Misc","CTF"],
         "date": "2015-03-30 22:59:33 -0700",
         "language": "en"
@@ -123,7 +134,7 @@
 
   
     {
-        "title": "OpenToAll 2015 ~ BACH: CRYPTO 150",
+        "title": "OpenToAll 2015 ~ BACH: Crypto 150",
         "category": "",
         "url": "/blog/ctf/crypto/all/Bach",
         "tags": ["OpenToAll","Crypto","CTF"],

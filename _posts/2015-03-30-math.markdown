@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "OpenToAll 2015 ~ Math is Hard: MISC 200"
+title:  "OpenToAll 2015 ~ Math is Hard: Misc 200"
 date:   2015-03-30 22:59:33 -0700
-categories: Misc CTF All
+categories: Programming CTF All
 tags: OpenToAll Misc CTF
 ---
 

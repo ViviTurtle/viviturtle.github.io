@@ -90,7 +90,7 @@
     <div class="site-wrapper">
         
 
-<header class="main-header detail-page image-bg  has-cover" style=" background-size: 100% 100%; background-image: url(/images/cover.png)">
+<header class="main-header detail-page image-bg  has-cover" style=" background-size: cover; background-image: url(/images/cover.png)">
     <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
     <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
     <div class="nav">
@@ -170,13 +170,13 @@
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><a href="https://viviturtle.github.io/images/rc3/Goal/Start.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Start.png" alt="Start"></a></p>
+            <p><a href="http://localhost:4000/images/rc3/Goal/Start.png"><img src="http://localhost:4000/images/rc3/Goal/Start.png" alt="Start"></a></p>
 
 <p>Another baby CTF question. It was very simple, even though it did throw me off quite a bit… We are given a link: <a href="http://129.21.39.225:82/">http://129.21.39.225:82/</a>. When visiting the site all it had was a gif of some guys playing soccer</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/goal.gif"><img src="https://viviturtle.github.io/images/rc3/Goal/goal.gif" alt="goal"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/goal.gif"><img src="http://localhost:4000/images/rc3/Goal/goal.gif" alt="goal"></a></p>
 
-<p>Maybe we should look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/source.html">source</a>?</p>
+<p>Maybe we should look at the <a href="http://localhost:4000/assets/rc3/Goal/source.html">source</a>?</p>
 
 <pre><code class="language-html">&lt;html&gt;
 &lt;title&gt;GOOOOOAAAAALLLLLLLL!!!!!!!!!1&lt;/title&gt;
@@ -215,9 +215,9 @@ Duration                        : 4.68 s
 Image Size                      : 407x211
 </code></pre>
 
-<p>Nothing showed up there either. Luckily I always keep <strong>Burp Suite</strong> and <strong>Zap Proxy</strong> up. Let’s look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/request">request</a>. I opened my Burp, searched for the ip address, searched for the page, and looked at the <a href="https://viviturtle.github.io/assets/rc3/Goal/request">request</a>.</p>
+<p>Nothing showed up there either. Luckily I always keep <strong>Burp Suite</strong> and <strong>Zap Proxy</strong> up. Let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>. I opened my Burp, searched for the ip address, searched for the page, and looked at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/Request.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Request.png" alt="Request"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/Request.png"><img src="http://localhost:4000/images/rc3/Goal/Request.png" alt="Request"></a></p>
 
 <pre><code>GET http://129.21.39.225:82/ HTTP/1.1
 Host: 129.21.39.225:82
@@ -228,9 +228,9 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 </code></pre>
 
-<p>Everything looks normal there. Now let’s look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/response">response</a> from the web server.</p>
+<p>Everything looks normal there. Now let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/response">response</a> from the web server.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/Response.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Response.png" alt="Response"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/Response.png"><img src="http://localhost:4000/images/rc3/Goal/Response.png" alt="Response"></a></p>
 
 <pre><code>HTTP/1.1 200 OK
 Date: Sat, 21 Nov 2015 20:07:23 GMT
