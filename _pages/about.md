@@ -11,7 +11,7 @@ excerpt:   This page contains info about Vivi
 
 ## Profile
 
-Vivi is graduated from SJSU in Computer Science in 2016. She is a tinkerer of technology with a passion for Information Security. She not only knows how to build applications, but to tinker, break, and modify all aspects of technology.  She founded the SJSU's Information Security Club which is still going strong today. She has lead her club in many collegiate competitions and mentored many other students. Technology is her playground and she isn't leaving anytime soon.
+Vivi graduated from SJSU in Computer Science in 2016. She is a tinkerer of technology with a passion for Information Security. She not only knows how to build applications, but to break and modify all aspects of technology.  She founded the SJSU's Information Security Club which is still going strong today. She has lead her club in many collegiate competitions and mentored many other students. She is currently working for Crowe Horwath doing Risk Consulting. Feel free to contact her at her twitter: vivieturtle
 
 ---
 
