@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "QueerCon 2015 ~ QC13 Soundcheck: Stego	"
+title:  "QueerCon 2016 ~ QC13 Soundcheck: Stego	"
 author: Vivi
 date:   2016-08-11 04:29:33 -0700
 categories: CTF Stego Crypto All
