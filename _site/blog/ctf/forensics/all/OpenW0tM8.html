@@ -84,10 +84,10 @@
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
 
-    <link rel="icon" href="/images/vivi.jpg" sizes="16x16" type="image/png">
-    <link rel="icon" href="/images/vivi.jpg" sizes="32x32" type="image/png">
-    <link rel="icon" href="/images/vivi.jpg" sizes="48x48" type="image/png">
-    <link rel="icon" href="/images/vivi.jpg" sizes="62x62" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="62x62" type="image/png">
 </head>
 
 <body class="home-template">
@@ -178,11 +178,11 @@
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Start.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Start.png" alt="Start"></a></p>
+            <p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Start.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Start.png" alt="Start"></a></p>
 
 <p>This wasn’t so bad for a 400 Forensics question. I spent a good few hours trying to find the flag for this, even though it should of taken only 30 minutes.</p>
 
-<p>We are given a link to a pcap file: <a href="http://localhost:4000/assets/rc3/for400.pcapng">for400.pcapng</a>. Whenever I do any CTF, I ALWAYS strings the file. Given that the string layout is “RC3-XXXXX-XXX”, I stringed the pcap file looking for “RC3” and flag”</p>
+<p>We are given a link to a pcap file: <a href="https://viviturtle.github.io/assets/rc3/for400.pcapng">for400.pcapng</a>. Whenever I do any CTF, I ALWAYS strings the file. Given that the string layout is “RC3-XXXXX-XXX”, I stringed the pcap file looking for “RC3” and flag”</p>
 
 <blockquote>
   <table>
@@ -228,7 +228,7 @@ v4226 Successfully transferred "/flag"
 
 <p>Knowing this information, it was time to enter Wireshark, our great packet analysis tool and extract the data transfer. Upon opening the pcap, we can follow a few TCP streams (right click packet &gt; Follow TCP Stream) to find some kind of secure webchat on some website.</p>
 
-<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Secure_chat.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Secure_chat.png" alt="Secure_chat"></a></p>
+<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Secure_chat.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Secure_chat.png" alt="Secure_chat"></a></p>
 
 <pre><code>GET /licence/4427091/tunnel_callback.cgi?ya3hbWK4jtBrljUv0ZPN&amp;callback=_jqjsp&amp;command=IWCS0116C%5ES1445994676.f232961d2e%5E4427091%5E8%5E&amp;_1447612614575= HTTP/1.1
 Host: secure.livechatinc.com
@@ -250,7 +250,7 @@ Content-Encoding: gzip
 
 <p>Since we know that there was a file transfer for forFlag.image.tar.gz, we can assume the File Transfer Protocal (FTP) was used. Let’s look at some FTP Data. Around the 3000 packet mark, we find some FTP stuff.</p>
 
-<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Flag.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Flag.png" alt="Flag"></a></p>
+<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Flag.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Flag.png" alt="Flag"></a></p>
 
 <pre><code>211 End
 PWD
@@ -272,14 +272,14 @@ CWD flag
 
 <p>Looking inside the stream, we see that our strings data from earlier is here. Since we know the file was transferred around the 3000 mark, let’s look for the actual packet transfer in this range of packets. After finding it (TCP_Data), we can “Follow TCP Stream” for this file transfer. (Note we cannot export objects to get FTP data)</p>
 
-<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/data_raw.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/data_raw.png" alt="data_raw"></a></p>
+<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/data_raw.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/data_raw.png" alt="data_raw"></a></p>
 
 <pre><code>....^.DV.....\...?.g.].qu..HR5.b.MD.."..Yb... h4.$.....L.=Q../;;Y./5...^.B.k.^.&amp;.1..".h....!.wG.&amp;.K....4.}..].$.s.^{.\?.W....y....&lt;3...........mu..ba...e....[FF...s..u....5#S..9.s2.....s..[0.^.=.1w..................i.M.!.....?$._~..0_.....(...."..{....Pe2f..^..q...d..U..........5F....K..jkz........*.E.NQ[.PN?~.....[.b..2.l..+..,....wW.......}.....%...U...l..e...N....x..]...8..|2k...Gf......Z..f{.X.es..ha.......7l.F{.".7-.v.m....}.$.o.o.D.Z..._...........+.........l.rQ..h..MU;.UV.j.U....b
 </code></pre>
 
-<p>A whole bunch of gibberish, so we can assume this is some kind of non-ascii file. Since we know the flag is in this data, let’s save it as raw data and see what we can do to pull the flag from here. I saved it as <a href="http://localhost:4000/assets/rc3/FTP_DATA_ORIGINAL">FTP_DATA</a> (In this case it’s saved as FTP_DATA_ORGINAL in this repo) and started analyzing the data.</p>
+<p>A whole bunch of gibberish, so we can assume this is some kind of non-ascii file. Since we know the flag is in this data, let’s save it as raw data and see what we can do to pull the flag from here. I saved it as <a href="https://viviturtle.github.io/assets/rc3/FTP_DATA_ORIGINAL">FTP_DATA</a> (In this case it’s saved as FTP_DATA_ORGINAL in this repo) and started analyzing the data.</p>
 
-<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/Analysis.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/Analysis.png" alt="Analysis"></a></p>
+<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/Analysis.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/Analysis.png" alt="Analysis"></a></p>
 
 <p>Let’s dissect what we did here.</p>
 
@@ -345,7 +345,7 @@ I renamed it to TCP_DATA.tar and extracted it again.</p>
 3) binwalk
 4) Manual mount and analysis</p>
 
-<p>Using strings and foremost we didn’t find anything except a few htm’s and images. If you guys don’t know what foremost is, it’s a tool to carve out files from another file. It pretty much looks at header and footer bytes to check for file signatures. Looking into them didn’t really give me much. All of it is saved in the <a href="http://localhost:4000/assets/rc3/output">output</a> folder.</p>
+<p>Using strings and foremost we didn’t find anything except a few htm’s and images. If you guys don’t know what foremost is, it’s a tool to carve out files from another file. It pretty much looks at header and footer bytes to check for file signatures. Looking into them didn’t really give me much. All of it is saved in the <a href="https://viviturtle.github.io/assets/rc3/output">output</a> folder.</p>
 
 <p>Last thing I did was binwalk -e (-e for extract)</p>
 
@@ -353,20 +353,20 @@ I renamed it to TCP_DATA.tar and extracted it again.</p>
   <p>binwalk -e OpenW0tM8.image</p>
 </blockquote>
 
-<p><a href="http://localhost:4000/images/rc3/OpenW0tM8/binwalk.png"><img src="http://localhost:4000/images/rc3/OpenW0tM8/binwalk.png" alt="binwalk"></a></p>
+<p><a href="https://viviturtle.github.io/images/rc3/OpenW0tM8/binwalk.png"><img src="https://viviturtle.github.io/images/rc3/OpenW0tM8/binwalk.png" alt="binwalk"></a></p>
 
-<p>This gave us a bunch of files. A lot of it we can ignore. Towards the end we can see a few tar files. Upon opening the <a href="http://localhost:4000/assets/rc3/576200.tar">576200.tar</a> file up, we get something very interesting. A <a href="http://localhost:4000/assets/rc3/read">read</a> file, a <a href="http://localhost:4000/assets/rc3/key">key</a>, <a href="http://localhost:4000/assets/rc3/decme.enc">decme.enc</a>.</p>
+<p>This gave us a bunch of files. A lot of it we can ignore. Towards the end we can see a few tar files. Upon opening the <a href="https://viviturtle.github.io/assets/rc3/576200.tar">576200.tar</a> file up, we get something very interesting. A <a href="https://viviturtle.github.io/assets/rc3/read">read</a> file, a <a href="https://viviturtle.github.io/assets/rc3/key">key</a>, <a href="https://viviturtle.github.io/assets/rc3/decme.enc">decme.enc</a>.</p>
 
 <p><a href="read">read</a>
 &gt; openssl enc -d -in {encrypted file} -out {output file} -kfile {key} -aes-256-ecb</p>
 
-<p><a href="http://localhost:4000/assets/rc3/key">key</a></p>
+<p><a href="https://viviturtle.github.io/assets/rc3/key">key</a></p>
 
 <pre><code>60e9 8211 8077 1fc5 69b8 29f1 3e00 d8c2
 ce9a 7523 e8b7 44bc 48a4 3815 72b6 546a
 </code></pre>
 
-<p><a href="http://localhost:4000/assets/rc3/decme.enc">decme.enc</a></p>
+<p><a href="https://viviturtle.github.io/assets/rc3/decme.enc">decme.enc</a></p>
 
 <pre><code>Salted__vg*©ÄÛ»¡¿SÏÛÏðíïIÊÌd8³
 </code></pre>

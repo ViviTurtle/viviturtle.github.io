@@ -79,10 +79,6 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/viviturtle/Github/spartansecurity.github.io"
-	],
 	"file_history":
 	[
 		"/home/viviturtle/Github/viviturtle.github.io/_includes/header.html",
@@ -285,7 +281,7 @@
 		[
 			[
 				"",
-				"~/DefCon24/DefCon24.sublime-project"
+				"~/Github/spartansecurity.github.io/InfoSecBlog.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -80,10 +80,10 @@
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
 
-    <link rel="icon" href="/images/vivi.jpg" sizes="16x16" type="image/png">
-    <link rel="icon" href="/images/vivi.jpg" sizes="32x32" type="image/png">
-    <link rel="icon" href="/images/vivi.jpg" sizes="48x48" type="image/png">
-    <link rel="icon" href="/images/vivi.jpg" sizes="62x62" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="62x62" type="image/png">
 </head>
 
 <body class="home-template">
@@ -176,12 +176,12 @@ Help me find flag through all these packets.</p>
 </blockquote>
 
 <blockquote>
-  <p><a href="http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a></p>
+  <p><a href="https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a></p>
 </blockquote>
 
 <p>This was a fairly easy forensics question, although it could of easily been worth 150 considering how much easier the other forensics ones were. It combined a packet capture with some python programming for basic cryptographic ciphers.</p>
 
-<p>We given a link to a pcap file: <a href="http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a>. Thinking it would be quite easy, I strings the pcap file looking for “flag”</p>
+<p>We given a link to a pcap file: <a href="https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a>. Thinking it would be quite easy, I strings the pcap file looking for “flag”</p>
 
 <blockquote>
   <table>
@@ -213,16 +213,16 @@ Help me find flag through all these packets.</p>
 
 <p>After that didn’t work, I inspected it in wireshark, our great packet inspection tool, and was given a huge list of packets(2000 to be exact).I spent some time following several TCP streams (right click packet -&gt; Follow TCP Stream) and we can see the packets included traffic from reddit, facebook and symantec to name a few.</p>
 
-<p><a href="http://localhost:4000/images/csaw/Example.png"><img src="http://localhost:4000/images/csaw/Example.png" alt="Example"></a></p>
+<p><a href="https://viviturtle.github.io/images/csaw/Example.png"><img src="https://viviturtle.github.io/images/csaw/Example.png" alt="Example"></a></p>
 
 <p>When we get to packets 150-300ish, we see something very interesting.</p>
 
-<p><a href="http://localhost:4000/images/csaw/Python.png"><img src="http://localhost:4000/images/csaw//Python.png" alt="Python"></a></p>
+<p><a href="https://viviturtle.github.io/images/csaw/Python.png"><img src="https://viviturtle.github.io/images/csaw//Python.png" alt="Python"></a></p>
 
 <p>We can clearly see the flag is somewhere in there, so I saved the file on my pc.
 After dissecting what this is, it is clearly python code in which some “flag” was encrypted with caesar ciphers, rot13, and base64, all of which are broken.</p>
 
-<p><a href="http://localhost:4000/assets/csaw/net_original.py">net_original.py</a></p>
+<p><a href="https://viviturtle.github.io/assets/csaw/net_original.py">net_original.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">string</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -282,7 +282,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 <p>From this code we clearly see what we have to do is take the first integer of the output (which is the long string after the print), subtract one, and apply the decryption cipers (which we had to make) based on that integer. We can keep doing this until the final string contains the word flag. The following code is my final code to get the flag.</p>
 
-<p><a href="http://localhost:4000/assets/csaw/net_solution.py">net_solution.py</a></p>
+<p><a href="https://viviturtle.github.io/assets/csaw/net_solution.py">net_solution.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">string</span>
 <span class="kn">import</span> <span class="nn">random</span>

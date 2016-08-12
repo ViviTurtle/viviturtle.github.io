@@ -7,16 +7,8 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "_includes/header.html",
-			"settings":
-			{
-				"buffer_size": 1257,
-				"line_ending": "Unix"
-			}
-		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
 	[
 		[
@@ -89,12 +81,18 @@
 	},
 	"expanded_folders":
 	[
-		"/home/viviturtle/Github/viviturtle.github.io",
-		"/home/viviturtle/Github/viviturtle.github.io/_includes",
-		"/home/viviturtle/Github/viviturtle.github.io/media"
+		"/home/viviturtle/Github/viviturtle.github.io"
 	],
 	"file_history":
 	[
+		"/home/viviturtle/Github/Projects/Queercon/Queercon.sublime-project",
+		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/Chess_Config.jpg",
+		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/asciifull.gif",
+		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/Badge.py",
+		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/Notes.txt",
+		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/Vim.txt",
+		"/home/viviturtle/Github/Projects/Projects.sublime-project",
+		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/Maniac.txt",
 		"/home/viviturtle/Github/Projects/.gitignore",
 		"/etc/rc.local",
 		"/etc/bluetooth/main.conf",
@@ -148,7 +146,7 @@
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -162,6 +160,50 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"whiteMoves",
+			"149",
+			"176",
+			"161",
+			"164",
+			"a",
+			"9",
+			"170",
+			"187",
+			"155",
+			"62",
+			"137",
+			"189",
+			"140",
+			"157",
+			"147",
+			"172",
+			"142",
+			"137",
+			"152",
+			"133",
+			"179",
+			"176",
+			"161",
+			"164",
+			"149",
+			"7",
+			"6",
+			"4",
+			"'",
+			"c",
+			"a",
+			"f",
+			"14",
+			"f",
+			"c",
+			"a",
+			"a2",
+			"a",
+			"c",
+			"e",
+			"d",
+			"b",
+			",",
 			" ",
 			",",
 			"\n",
@@ -222,45 +264,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "_includes/header.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1257,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								224,
-								224
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 37.0
+		"height": 39.0
 	},
 	"input":
 	{
@@ -291,7 +302,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 166.0
+		"height": 263.0
 	},
 	"output.find_results":
 	{
@@ -305,7 +316,7 @@
 	"project": "blog.sublime-project",
 	"replace":
 	{
-		"height": 70.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -325,7 +336,7 @@
 		[
 			[
 				"",
-				"~/DefCon24/DefCon24.sublime-project"
+				"~/Github/Projects/Projects.sublime-project"
 			]
 		],
 		"width": 380.0
