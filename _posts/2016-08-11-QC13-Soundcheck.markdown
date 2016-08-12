@@ -9,7 +9,7 @@ tags: Stego QueerCon Crypto
 
 
 
-For those that don't know - QueerCon is an LGBTQ subgroup of DefCon, the worlds largest hacking convention in the world. Every year they have 1-3 challenges a year. This the first and can be located at the [QueerCon Contest Link](https://www.queercon.org/contests/2016/06/29/qc13-soundcheck/) where I was able to win a QueerCon 13 Badge for this years DefCon.
+For those that don't know - QueerCon is an LGBTQ subgroup of DefCon, the worlds largest hacking convention in the world. Every year they have 1-3 challenges a year. This was the first and can be located at the [QueerCon Contest Link](https://www.queercon.org/contests/2016/06/29/qc13-soundcheck/) where I was able to win a QueerCon 13 Badge for this years DefCon.
 
 	
 **Contest Details**
@@ -152,4 +152,4 @@ This was the 13th year for QueerCon so this made sense. I emailed contests@queer
    <figcaption>QueerCon Badge <br> *Photo from hackaday by Eric Evenchick*</figcaption>
 </figure>
 
-If you want a review of this year's badge feel free to head to [http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/](http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/)
+If you want a review of this year's badge feel free to head to [http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/](http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/) Thanks again QueerCon for the awesome and fun challenge
