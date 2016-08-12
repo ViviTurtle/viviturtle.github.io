@@ -141,7 +141,7 @@ Thinking I missed something back at [http://rumkin.com/tools/cipher](http://rumk
 
 > **QCOA PARTY ROCK THIS HOUSE**
 
-Something was obviously wrong with the first word so I looked back the spectrograms and realized the "LD" in "SALD" was actually a "13" to make "SA13". This translates the final ciphertext to:
+Something was obviously wrong with the first word so I looked back at the spectrograms and realized the "LD" in "SALD" was actually a "13" to make "SA13". This translates the final ciphertext to:
 
 > **QC13 PARTY ROCK THIS HOUSE**
 

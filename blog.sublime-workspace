@@ -7,6 +7,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "_includes/head.html",
+			"settings":
+			{
+				"buffer_size": 2115,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/2016-08-11-QC13-Soundcheck.markdown",
+			"settings":
+			{
+				"buffer_size": 7778,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -81,7 +97,10 @@
 	},
 	"expanded_folders":
 	[
-		"/home/viviturtle/Github/viviturtle.github.io"
+		"/home/viviturtle/Github/viviturtle.github.io",
+		"/home/viviturtle/Github/viviturtle.github.io/_includes",
+		"/home/viviturtle/Github/viviturtle.github.io/_posts",
+		"/home/viviturtle/Github/viviturtle.github.io/images"
 	],
 	"file_history":
 	[
@@ -146,7 +165,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -160,6 +179,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"jpg",
 			"whiteMoves",
 			"149",
 			"176",
@@ -264,8 +284,69 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "_includes/head.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2115,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1837,
+								1837
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_posts/2016-08-11-QC13-Soundcheck.markdown",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6821,
+								6821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3806.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
