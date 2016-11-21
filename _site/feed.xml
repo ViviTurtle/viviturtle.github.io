@@ -5,8 +5,8 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sun, 20 Nov 2016 21:09:42 -0800</pubDate>
-    <lastBuildDate>Sun, 20 Nov 2016 21:09:42 -0800</lastBuildDate>
+      <pubDate>Sun, 20 Nov 2016 21:20:04 -0800</pubDate>
+    <lastBuildDate>Sun, 20 Nov 2016 21:20:04 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -37,7 +37,7 @@ author: wumb0
    &lt;figcaption&gt; nc goodtime.ctf.rc3.club 5866&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;After trying out the netcat server, when we input a flag that has the correct format it takes longer to respond. Since the title of this challenge is called goodtime - I’m going to assume the exploit is a timing attack. I would assume the server checks the input one character at a time. Thus an input of “Apple” have a shorter response time than “RC” simply because the server would check the “A” in “Apple” and stop - while the server would check “R”, then “C” then look for a “3” (RC3) in “RC”. Let’s validate this by creating a script and testing it out.&lt;/p&gt;
+&lt;p&gt;After trying out the netcat server, when we input a flag that has the correct format it takes longer to respond. Since the title of this challenge is called goodtime - I’m going to assume the exploit is a timing attack. I would assume the server checks the input one character at a time. Thus an input of &lt;strong&gt;Apple&lt;/strong&gt; have a shorter response time than &lt;strong&gt;RC&lt;/strong&gt; simply because the server would check the “A” in “Apple” and stop - while the server would check &lt;strong&gt;R&lt;/strong&gt;, then &lt;strong&gt;C&lt;/strong&gt; then look for a &lt;strong&gt;3&lt;/strong&gt; (RC3) in &lt;strong&gt;RC&lt;/strong&gt;. Let’s validate this by creating a script and testing it out.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/assets/rc3/goodtime/manualTime.py&quot;&gt;manualTime.py&lt;/a&gt;&lt;/p&gt;
 
@@ -205,7 +205,7 @@ for x in range(0,50):
    &lt;figcaption&gt;manualTime.py&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;The hardest part of this was a lot of the time the connection was inconsistent. Any new characters I recieved from my script I had to triple check manually. When I saw the words &lt;strong&gt;itz-al&lt;/strong&gt;, I already knew it was a carly rae reference. I manually input every version of &lt;strong&gt;always&lt;/strong&gt; like &lt;strong&gt;alw4ys&lt;/strong&gt; and &lt;strong&gt;alw@ys&lt;/strong&gt; - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after &lt;strong&gt;g00d-t1m&lt;/strong&gt;. I thought I was done because I assumed the flag was &lt;strong&gt;itz always a good time.&lt;/strong&gt; I had to bruteforce the second &lt;strong&gt;1&lt;/strong&gt; for t1m1ng. I had no clue why it was a 1. Not only that but the &lt;strong&gt;@tt@ck&lt;/strong&gt; at the end threw me off because I initially assumed the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the &lt;strong&gt;@&lt;/strong&gt; it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn’t crash. At last though I was able to get the flag.&lt;/p&gt;
+&lt;p&gt;The hardest part of this was a lot of the time the connection was inconsistent. Any new characters I recieved from my script I had to triple check manually. When I saw the words &lt;strong&gt;itz-al&lt;/strong&gt;, I already knew it was a carly rae reference. I manually input every version of &lt;strong&gt;always&lt;/strong&gt; like &lt;strong&gt;alw4ys&lt;/strong&gt; and &lt;strong&gt;alw@ys&lt;/strong&gt; - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after &lt;strong&gt;g00d-t1m&lt;/strong&gt;. I thought I was done because I assumed the flag was &lt;strong&gt;itz always a good time.&lt;/strong&gt; I had to bruteforce the second &lt;strong&gt;1&lt;/strong&gt; for &lt;strong&gt;t1m1ng&lt;/strong&gt;. I had no clue why it was a 1. Not only that but the &lt;strong&gt;@tt@ck&lt;/strong&gt; at the end threw me off because I initially assumed the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the &lt;strong&gt;@&lt;/strong&gt; it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn’t crash. At last though I was able to get the flag.&lt;/p&gt;
 </description>
         <pubDate>Sun, 20 Nov 2016 03:29:33 -0800</pubDate>
         <link>/blog/ctf/misc/all/goodtime</link>
