@@ -7,7 +7,7 @@ categories: CTF Misc All
 tags: RC3 Programming
 ---	
 
-This is a challenge from RC3 2016. RC3 generally hosts a CTF every year and have been one of my favorite CTFs simply because it's a lot easier than the DefCon qualifying CTFs. This challenge in particular was extremely long for a measly 150 points. It's not very hard - just really annoying and inconsistent.
+This is a misc challenge from RC3 2016. RC3 hosts a CTF every year and have been one of my favorite CTFs simply because it's a lot easier than the DefCon qualifying CTFs. This challenge in particular was extremely long for a measly 150 points. It's not very hard - just really annoying and inconsistent.
 
 
 **Challenge Details**
@@ -25,18 +25,21 @@ NOTE: there should be a prompt when you connect. if there isn't it went down so 
 author: wumb0
 ```
 
-Like any person would - the first I did was viewed the youtube video:
+Like any person would - the first thing I did was view the [YouTube](https://www.youtube.com/watch?v=H7HmzwI67ec) video:
 
+<figure>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/H7HmzwI67ec" frameborder="0" allowfullscreen></iframe>
+   <figcaption>Good Time - Owl City & Carly Rae Jepson</figcaption>
+</figure>
 
-Obviously no clues here - it's just a video of Carly Rae Jepson. I did however get a good laugh when some guy posted a fake flag in the comments. Next thing to do was check out the netcat connection.
+Obviously no clues here - it's just a video of Carly Rae Jepson; However, I did notice some guy posted a fake flag in the comments. That gave me a good laugh. Next thing to do was check out the netcat connection.
 
 <figure>
 <script height="800" type="text/javascript" src="https://asciinema.org/a/93602.js" id="asciicast-93602" async ></script>
    <figcaption> nc goodtime.ctf.rc3.club 5866</figcaption>
 </figure>
 
-After trying out the netcat server, when we input a flag that has the correct format it takes longer to respond. Since the title of this challenge is called goodtime - I'm going to assume the exploit is a timing attack. I would assume the server checks the input one character at a time. Thus an input of **Apple** have a shorter response time than **RC** simply because the server would check the **A** in **Apple** and stop - while the server would check **R**, then **C** then look for a **3** (to make RC3) in **RC**. Let's validate this by creating a script and testing it out.
+After trying out the netcat server, we noticed the server took longer to respond when we input something in the flag format (RC3-2016-XXXX). Since the title of this challenge was called goodtime - I'm going to assume the exploit is a lineariation attack via response time. In other words, we'll try to deduce the flag by comparing the response times of different inputs. I would assume the server checks the input - one character at a time. Thus an input of **Apple** have a shorter response time than **RC** simply because the server would check the **A** in **Apple** and stop - meanwhile the server would check **R**, then **C** then look for a **3** (to make RC3) in **RC**. Let's validate this by creating a script and testing it out.
 
 [manualTime.py]({{site.github.url}}/assets/rc3/goodtime/manualTime.py)
 
@@ -80,14 +83,14 @@ data2 = s.recv(1024)
 print timer()-start
 ```
 
-This script pretty much creates a socket and connects to the netcat server via the host and port provided. I then connect to the server using that socket and read any incoming bytes. We then send our attempt for the flag. We then wait for a response and print out the time. This kind of socket scripting is useful when the server response is consistant. Here's what it looks like in usage.
+This script creates a socket and connects to the netcat server via the host and port provided. It then connects to the server using that socket and reads any incoming bytes. After which, we send our attempt on the flag. We wait for a response and print out the response time. This kind of socket scripting is useful when the server response is consistant. Here's what it looks like in usage.
 
 <figure>
 <script height="800" type="text/javascript" src="https://asciinema.org/a/93604.js" id="asciicast-93604" async ></script>
    <figcaption>python manualTime.py</figcaption>
 </figure>
 
-Since now we know it's a timing attack and the flag format is "RC3-2016-XXXXX", we only need to guess the last line of the flag. The way to go about doing is to test every single character - like a brute-force attack.
+Since now we know it's a linearization attack on response time, and the flag format is "RC3-2016-XXXXX", we only need to solve the last line of the flag. To do this, we need to test every single character - like a brute-force attack - and check the reponse time:
 
 > RC3-2016-a
 
@@ -101,7 +104,7 @@ Since now we know it's a timing attack and the flag format is "RC3-2016-XXXXX", 
 
 > RC3-2016-f
 
-Assuming we hit the right character - that response would be be quite larger than the other inputs. Thus we can just save the character with the longest response time and assume that's the next character in the flag. I automated this process in 
+Assuming we hit the right character - that response would be be quite larger than the other inputs. Thus we can save the character with the longest response time and assume that's the next character in the flag. I automated this process in 
 
 [goodtime.py]({{site.github.url}}/assets/rc3/goodtime/goodtime.py)
 
@@ -183,7 +186,7 @@ Let's check it out in use:
    <figcaption>python goodtime.py</figcaption>
 </figure>
 
-Combining both the automation and the manual check we were able to get the flag. 
+Combining both the automated and manual script, we were able to get the flag. 
 
 > RC3-2016-itz-alw4yz-a-g00d-t1m1ng-@tt@ck
 
@@ -194,4 +197,4 @@ Let's confirm
    <figcaption>Confirming the flag</figcaption>
 </figure>
 
-The hardest part of this was a lot of the time the connection was inconsistent. Any new characters I recieved from my script I had to triple check manually. When I saw the words **itz-al**, I already knew it was a carly rae reference. I manually input every version of **always** like **alw4ys** and **alw@ys** - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after **g00d-t1m**. I thought I was done because I assumed the flag was **itz always a good time.** I had to bruteforce the second **1** for **t1m1ng**. I had no clue why it was a 1. Not only that but the **@tt@ck** at the end threw me off because I initially assumed the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the **@** it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn't crash. At last though I was able to get the flag.
+The hardest part was due to inconsistency in the netcat connection. Any new characters I received from my script, I had to triple check manually. 9/10 it was just a false positive due to the netcat connection. It might've been better if I was connected with a wired connection rather than WIFI. Luckily, it wasn't so bad to guess some of the flag. When I saw the words **itz-al**, I already knew it was a Carly Rae reference - "It's always a good time". I manually input every version of **always** like **alw4ys** and **alw@ys** - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after **g00d-t1m**. I thought I was done because I assumed the flag was **itz alwayz a good time**. I had to bruteforce the second **1** for **t1m1ng**. I had no clue why it was a **1** at the time only to realize an hour later it was **timing** and not **time**. Additionally, the last part of the flag - **@tt@ck** -  threw me off because I assumed the last word in the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the **@** it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn't crash. At last though I was able to get the flag.

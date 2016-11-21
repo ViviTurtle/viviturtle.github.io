@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>RC3 2016 ~ Goodtime: Misc 150</title>
-    <meta name="description" content="This is a challenge from RC3 2016. RC3 generally hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCo...">
+    <meta name="description" content="This is a misc challenge from RC3 2016. RC3 hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCon qua...">
   
     
     <meta name="keywords" content="RC3, Programming">
@@ -29,7 +29,7 @@
 
 
 <meta property="og:site_name" content="Black Magic Exploitation">
-<meta property="og:description" content="This is a challenge from RC3 2016. RC3 generally hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCo...">
+<meta property="og:description" content="This is a misc challenge from RC3 2016. RC3 hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCon qua...">
 
 
 <meta property="og:url" content="/blog/ctf/misc/all/goodtime">
@@ -68,7 +68,7 @@
 <meta name="twitter:url" content="/blog/ctf/misc/all/goodtime">
 
 
-<meta name="twitter:description" content="This is a challenge from RC3 2016. RC3 generally hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCo...">
+<meta name="twitter:description" content="This is a misc challenge from RC3 2016. RC3 hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCon qua...">
 
 <meta name="twitter:image:src" content="/images/cover.png">
 <!-- End: Twitter data -->	
@@ -166,7 +166,7 @@
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p>This is a challenge from RC3 2016. RC3 generally hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCon qualifying CTFs. This challenge in particular was extremely long for a measly 150 points. It’s not very hard - just really annoying and inconsistent.</p>
+            <p>This is a misc challenge from RC3 2016. RC3 hosts a CTF every year and have been one of my favorite CTFs simply because it’s a lot easier than the DefCon qualifying CTFs. This challenge in particular was extremely long for a measly 150 points. It’s not very hard - just really annoying and inconsistent.</p>
 
 <h2 id="challenge-details"><strong>Challenge Details</strong></h2>
 
@@ -181,18 +181,21 @@ NOTE: there should be a prompt when you connect. if there isn't it went down so 
 author: wumb0
 </code></pre>
 
-<p>Like any person would - the first I did was viewed the youtube video:</p>
+<p>Like any person would - the first thing I did was view the <a href="https://www.youtube.com/watch?v=H7HmzwI67ec">YouTube</a> video:</p>
 
+<figure>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/H7HmzwI67ec" frameborder="0" allowfullscreen=""></iframe>
+   <figcaption>Good Time - Owl City &amp; Carly Rae Jepson</figcaption>
+</figure>
 
-<p>Obviously no clues here - it’s just a video of Carly Rae Jepson. I did however get a good laugh when some guy posted a fake flag in the comments. Next thing to do was check out the netcat connection.</p>
+<p>Obviously no clues here - it’s just a video of Carly Rae Jepson; However, I did notice some guy posted a fake flag in the comments. That gave me a good laugh. Next thing to do was check out the netcat connection.</p>
 
 <figure>
 <script height="800" type="text/javascript" src="https://asciinema.org/a/93602.js" id="asciicast-93602" async=""></script>
    <figcaption> nc goodtime.ctf.rc3.club 5866</figcaption>
 </figure>
 
-<p>After trying out the netcat server, when we input a flag that has the correct format it takes longer to respond. Since the title of this challenge is called goodtime - I’m going to assume the exploit is a timing attack. I would assume the server checks the input one character at a time. Thus an input of <strong>Apple</strong> have a shorter response time than <strong>RC</strong> simply because the server would check the “A” in “Apple” and stop - while the server would check <strong>R</strong>, then <strong>C</strong> then look for a <strong>3</strong> (RC3) in <strong>RC</strong>. Let’s validate this by creating a script and testing it out.</p>
+<p>After trying out the netcat server, we noticed the server took longer to respond when we input something in the flag format (RC3-2016-XXXX). Since the title of this challenge was called goodtime - I’m going to assume the exploit is a lineariation attack via response time. In other words, we’ll try to deduce the flag by comparing the response times of different inputs. I would assume the server checks the input - one character at a time. Thus an input of <strong>Apple</strong> have a shorter response time than <strong>RC</strong> simply because the server would check the <strong>A</strong> in <strong>Apple</strong> and stop - meanwhile the server would check <strong>R</strong>, then <strong>C</strong> then look for a <strong>3</strong> (to make RC3) in <strong>RC</strong>. Let’s validate this by creating a script and testing it out.</p>
 
 <p><a href="/assets/rc3/goodtime/manualTime.py">manualTime.py</a></p>
 
@@ -234,14 +237,14 @@ data2 = s.recv(1024)
 print timer()-start
 </code></pre>
 
-<p>This script pretty much creates a socket and connects to the netcat server via the host and port provided. I then connect to the server using that socket and read any incoming bytes. We then send our attempt for the flag. We then wait for a response and print out the time. This kind of socket scripting is useful when the server response is consistant. Here’s what it looks like in usage.</p>
+<p>This script creates a socket and connects to the netcat server via the host and port provided. It then connects to the server using that socket and reads any incoming bytes. After which, we send our attempt on the flag. We wait for a response and print out the response time. This kind of socket scripting is useful when the server response is consistant. Here’s what it looks like in usage.</p>
 
 <figure>
 <script height="800" type="text/javascript" src="https://asciinema.org/a/93604.js" id="asciicast-93604" async=""></script>
-   <figcaption>manualTime.py</figcaption>
+   <figcaption>python manualTime.py</figcaption>
 </figure>
 
-<p>Since now we know it’s a timing attack and the flag format is “RC3-2016-XXXXX”, we only need to guess the last line of the flag. The way to go about doing is to test every single character - like a brute-force attack.</p>
+<p>Since now we know it’s a linearization attack on response time, and the flag format is “RC3-2016-XXXXX”, we only need to solve the last line of the flag. To do this, we need to test every single character - like a brute-force attack - and check the reponse time:</p>
 
 <blockquote>
   <p>RC3-2016-a</p>
@@ -267,7 +270,7 @@ print timer()-start
   <p>RC3-2016-f</p>
 </blockquote>
 
-<p>Assuming we hit the right character - that response would be be quite larger than the other inputs. Thus we can just save the character with the longest response time and assume that’s the next character in the flag. I automated this process in</p>
+<p>Assuming we hit the right character - that response would be be quite larger than the other inputs. Thus we can save the character with the longest response time and assume that’s the next character in the flag. I automated this process in</p>
 
 <p><a href="/assets/rc3/goodtime/goodtime.py">goodtime.py</a></p>
 
@@ -344,10 +347,10 @@ for x in range(0,50):
 
 <figure>
 <script height="800" type="text/javascript" src="https://asciinema.org/a/93590.js" id="asciicast-93590" async=""></script>
-   <figcaption>manualTime.py</figcaption>
+   <figcaption>python goodtime.py</figcaption>
 </figure>
 
-<p>Combining both the automation and the manual check we were able to get the flag.</p>
+<p>Combining both the automated and manual script, we were able to get the flag.</p>
 
 <blockquote>
   <p>RC3-2016-itz-alw4yz-a-g00d-t1m1ng-<a href="https://github.com/tt" class="user-mention">@tt</a>@ck</p>
@@ -357,10 +360,10 @@ for x in range(0,50):
 
 <figure>
 <script height="800" type="text/javascript" src="https://asciinema.org/a/93610.js" id="asciicast-93610" async=""></script>
-   <figcaption>manualTime.py</figcaption>
+   <figcaption>Confirming the flag</figcaption>
 </figure>
 
-<p>The hardest part of this was a lot of the time the connection was inconsistent. Any new characters I recieved from my script I had to triple check manually. When I saw the words <strong>itz-al</strong>, I already knew it was a carly rae reference. I manually input every version of <strong>always</strong> like <strong>alw4ys</strong> and <strong>alw@ys</strong> - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after <strong>g00d-t1m</strong>. I thought I was done because I assumed the flag was <strong>itz always a good time.</strong> I had to bruteforce the second <strong>1</strong> for <strong>t1m1ng</strong>. I had no clue why it was a 1. Not only that but the <strong><a href="https://github.com/tt" class="user-mention">@tt</a>@ck</strong> at the end threw me off because I initially assumed the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the <strong>@</strong> it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn’t crash. At last though I was able to get the flag.</p>
+<p>The hardest part was due to inconsistency in the netcat connection. Any new characters I received from my script, I had to triple check manually. 9/10 it was just a false positive due to the netcat connection. It might’ve been better if I was connected with a wired connection rather than WIFI. Luckily, it wasn’t so bad to guess some of the flag. When I saw the words <strong>itz-al</strong>, I already knew it was a Carly Rae reference - “It’s always a good time”. I manually input every version of <strong>always</strong> like <strong>alw4ys</strong> and <strong>alw@ys</strong> - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after <strong>g00d-t1m</strong>. I thought I was done because I assumed the flag was <strong>itz alwayz a good time</strong>. I had to bruteforce the second <strong>1</strong> for <strong>t1m1ng</strong>. I had no clue why it was a <strong>1</strong> at the time only to realize an hour later it was <strong>timing</strong> and not <strong>time</strong>. Additionally, the last part of the flag - <strong><a href="https://github.com/tt" class="user-mention">@tt</a>@ck</strong> -  threw me off because I assumed the last word in the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the <strong>@</strong> it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn’t crash. At last though I was able to get the flag.</p>
 
         </section>
 
