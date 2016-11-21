@@ -8,25 +8,34 @@
 	"buffers":
 	[
 		{
-			"file": "_includes/head.html",
+			"contents": "strlen 16",
 			"settings":
 			{
-				"buffer_size": 2115,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_posts/2016-08-11-QC13-Soundcheck.markdown",
-			"settings":
-			{
-				"buffer_size": 7778,
-				"line_ending": "Unix"
+				"buffer_size": 9,
+				"line_ending": "Unix",
+				"name": "strlen 16"
 			}
 		}
 	],
-	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
 		[
 			[
 				[
@@ -99,11 +108,33 @@
 	[
 		"/home/viviturtle/Github/viviturtle.github.io",
 		"/home/viviturtle/Github/viviturtle.github.io/_includes",
+		"/home/viviturtle/Github/viviturtle.github.io/_layouts",
+		"/home/viviturtle/Github/viviturtle.github.io/_pages",
 		"/home/viviturtle/Github/viviturtle.github.io/_posts",
-		"/home/viviturtle/Github/viviturtle.github.io/images"
+		"/home/viviturtle/Github/viviturtle.github.io/_sass",
+		"/home/viviturtle/Github/viviturtle.github.io/assets",
+		"/home/viviturtle/Github/viviturtle.github.io/css"
 	],
 	"file_history":
 	[
+		"/home/viviturtle/hello.c",
+		"/home/viviturtle/Github/viviturtle.github.io/_posts/2016-08-22-test.markdown",
+		"/home/viviturtle/Github/viviturtle.github.io/_includes/header.html",
+		"/home/viviturtle/Desktop/coinslot.py",
+		"/mnt/HDD/Downloads/sleeping_dist.py",
+		"/home/viviturtle/Downloads/out/_out.img.extracted/ppt/notesSlides/notesSlide1.xml",
+		"/home/viviturtle/Downloads/out/_out.img.extracted/ppt/presentation.xml",
+		"/home/viviturtle/.bashrc",
+		"/home/viviturtle/Downloads/out/_out.img.extracted/ppt/notesMasters/notesMaster1.xml",
+		"/home/viviturtle/RE_learn/overflow.c",
+		"/home/viviturtle/RE_learn/smashstack/example1.c",
+		"/home/viviturtle/RE_learn/hello.",
+		"/home/viviturtle/Desktop/Screen reader users, click here to turn off Google Instant.\nGoogle\n\n\nbokken radare.txt",
+		"/home/viviturtle/RE_learn/bomb/bomb.c",
+		"/home/viviturtle/RE_learn/fake_openssh.c",
+		"/home/viviturtle/DefCon24/Badge Contest/Notes.txt",
+		"/home/viviturtle/Github/viviturtle.github.io/_posts/2016-08-11-QC13-Soundcheck.markdown",
+		"/home/viviturtle/Github/viviturtle.github.io/_includes/head.html",
 		"/home/viviturtle/Github/Projects/Queercon/Queercon.sublime-project",
 		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/Chess_Config.jpg",
 		"/home/viviturtle/Github/Projects/Queercon/Badge Contest/asciifull.gif",
@@ -129,7 +160,6 @@
 		"/mnt/HDD/Downloads/clue2.txt",
 		"/mnt/HDD/Downloads/clue.txt",
 		"/mnt/HDD/Downloads/cracktheclue",
-		"/home/viviturtle/.bashrc",
 		"/home/viviturtle/Github/myblog/_site/about/index.html",
 		"/home/viviturtle/Github/blog/_site/index.html",
 		"/home/viviturtle/Queercon/Metadata.txt",
@@ -165,7 +195,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
@@ -179,6 +209,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Fira Mono",
 			"jpg",
 			"whiteMoves",
 			"149",
@@ -284,64 +315,32 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "_includes/head.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2115,
+						"buffer_size": 9,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1837,
-								1837
+								9,
+								9
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"auto_name": "strlen 16",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 300.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "_posts/2016-08-11-QC13-Soundcheck.markdown",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7778,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6821,
-								6821
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3806.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -417,7 +416,7 @@
 		[
 			[
 				"",
-				"~/Github/Projects/Projects.sublime-project"
+				"~/Github/viviturtle.github.io/blog.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -439,7 +438,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 462.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

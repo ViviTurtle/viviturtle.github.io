@@ -5,9 +5,34 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Thu, 11 Aug 2016 21:39:58 -0700</pubDate>
-    <lastBuildDate>Thu, 11 Aug 2016 21:39:58 -0700</lastBuildDate>
+      <pubDate>Mon, 22 Aug 2016 18:37:09 -0700</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 18:37:09 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>test</title>
+        <description>&lt;h2 id=&quot;im-at-the-library&quot;&gt;Im at the library&lt;/h2&gt;
+</description>
+        <pubDate>Mon, 22 Aug 2016 04:29:33 -0700</pubDate>
+        <link>/blog/ctf/stego/crypto/all/test</link>
+        <guid isPermaLink="true">/blog/ctf/stego/crypto/all/test</guid>
+        
+        <category>Stego</category>
+        
+        <category>QueerCon</category>
+        
+        <category>Crypto</category>
+        
+        
+        <category>CTF</category>
+        
+        <category>Stego</category>
+        
+        <category>Crypto</category>
+        
+        <category>All</category>
+        
+      </item>
     
       <item>
         <title>QueerCon 2016 ~ QC13 Soundcheck: Stego	</title>
@@ -153,7 +178,7 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
   &lt;p&gt;&lt;strong&gt;QCOA PARTY ROCK THIS HOUSE&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Something was obviously wrong with the first word so I looked back the spectrograms and realized the “LD” in “SALD” was actually a “13” to make “SA13”. This translates the final ciphertext to:&lt;/p&gt;
+&lt;p&gt;Something was obviously wrong with the first word so I looked back at the spectrograms and realized the “LD” in “SALD” was actually a “13” to make “SA13”. This translates the final ciphertext to:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;QC13 PARTY ROCK THIS HOUSE&lt;/strong&gt;&lt;/p&gt;
@@ -1445,42 +1470,6 @@ Image Size                      : 600x700
         <category>CTF</category>
         
         <category>Stego</category>
-        
-        <category>All</category>
-        
-      </item>
-    
-      <item>
-        <title>CSAW 2015 ~ Julian Cohen: Recon 100</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;No Description&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;For those that don’t know what recon is, it is pretty much what you would call information gathering. You always do recon when you first do a pentest to get a scope of your target. In that way, the more information you have, the better ways you can exploit weaknesses, whether the weakness is a phishing attack or some physical penetration test. In this question we have to do some Reconnaissance on Julian Cohen. First thing we do? Google&lt;/p&gt;
-
-&lt;p&gt;The first thing that pops up is his &lt;a href=&quot;https://twitter.com/HockeyInJune&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Looking through his tweets we slowly find the answer.&lt;/p&gt;
-
-&lt;p&gt;https://twitter.com/HockeyInJune/status/641716034068684800
-&lt;a href=&quot;https://viviturtle.github.io/images/csaw/twitter.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/twitter.png&quot; alt=&quot;Twitter Screenshot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;flag{f7da7636727524d8681ab0d2a072d663}&lt;/p&gt;
-</description>
-        <pubDate>Thu, 17 Sep 2015 23:59:33 -0700</pubDate>
-        <link>/blog/recon/ctf/all/julian-cohen</link>
-        <guid isPermaLink="true">/blog/recon/ctf/all/julian-cohen</guid>
-        
-        <category>Recon</category>
-        
-        <category>CTF</category>
-        
-        <category>CSAW</category>
-        
-        
-        <category>Recon</category>
-        
-        <category>CTF</category>
         
         <category>All</category>
         
