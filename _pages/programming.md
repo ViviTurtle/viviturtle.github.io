@@ -1,11 +1,5 @@
 ---
 layout:    default
-permalink: "/Programming/"
-author:    ViviTurtle
-weight:    5
-menutitle: Programming
-title:     Programming
-excerpt:   All unique programming related blog posts
 ---
 
 <div id="content" class="content">
