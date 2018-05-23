@@ -1,8 +1,8 @@
 default:                                                      # Fallback if nothing is specified
-  initial:      jwillmer                                      # used for author lookup in posts and for first two characters in the about page back button
-  name:         "Jens Willmer"                                # used to display author name
-  cover:        /assets/mountain-alternative-cover.jpg        # OPTIONAL: defines location of cover image in about page
-  picture:      /assets/jwillmer.jpg                          # OPTIONAL: author picture
+  initial:      VL                                      # used for author lookup in posts and for first two characters in the about page back button
+  name:         "Vivi Langga"                                # used to display author name
+  cover:        /images/about.png        # OPTIONAL: defines location of cover image in about page
+  picture:      /images/Prof.jpg                          # OPTIONAL: author picture
   bio:          Technology is my playground                          # OPTIONAL: text below author name in posts
   location:     United States                                       # OPTIONAL: used to display location of the author
   website:      "http://jwillmer.de/about"                    # OPTIONAL: link to the author of a post
