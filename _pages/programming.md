@@ -1,5 +1,5 @@
 ---
-layout:    page
+layout:    default
 permalink: "/Programming/"
 author:    ViviTurtle
 weight:    5
