@@ -106,7 +106,7 @@ With the addition of PEP202, the  syntax for using list comprehensions is as fol
 my_list = [x,y,z for x in list-x for y list-y for z in list-z... if [x,y,z...conditonal]]
 ```
 
-Make sure to note the variables defined prior to the for loop. In short, this allows us to use a for loop to automate the creation of our lists. The list initialization code from the beginning would easily become:
+Make sure to note the variables defined prior to the *for* loop. In short, this allows us to use a *for* loop to automate the creation of our lists. The list initialization code from the beginning would easily become:
 ```python
 my_list = [x for x in range(1,1000)]
 ```
@@ -116,7 +116,7 @@ If want only even numbers we can do this:
 my_list = [x for x in range(1,1000) if x%2 == 0]
 ```
 
-The syntax for Dictionary Comphrensions are similar except that this time you add a colon for your key:value pair. The dictionary code from the beginning would become:
+The syntax for Dictionary Comphrensions is similar except that this time you add a colon for your key:value pair. The dictionary code from the beginning would become:
 
 ```python
 my_dict = {i : i*i for i in range(1000)}
