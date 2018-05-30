@@ -9,9 +9,9 @@ weight:    5
 ---
 
 <div id="content" class="content">
- <h3>Programming</h3>
+ <h2>Programming</h2>
     {% assign sorted_posts = site.categories.Programming | reversed %}
-    <h3 id="{{category[0] | uri_escape | downcase | slugify }}">{{category[0] | camelcase }}</h3>
+    <h2 id="{{category[0] | uri_escape | downcase | slugify }}">{{category[0] | camelcase }}</h2>
     <ul class="category {{category[0] | uri_escape | downcase | slugify}}">  
         {% for post in sorted_posts %}
         {% unless post.draft %}

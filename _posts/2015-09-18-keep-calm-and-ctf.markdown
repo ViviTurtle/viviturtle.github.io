@@ -3,7 +3,7 @@ layout: post
 title:  "CSAW 2015 ~ Keep Calm and CTF: Forensics 100"
 author: Vivi
 date:   2015-09-18 21:59:33 -0700
-categories: CTF Stego All
+categories: CTF Stego
 tags: Stego CTF CSAW
 ---
 

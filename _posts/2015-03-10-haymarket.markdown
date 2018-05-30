@@ -2,7 +2,7 @@
 layout: post
 title:  "BKPCTF 2015 ~ Haymarket: Reversing 150"
 date:   2015-03-10 22:59:33 -0700
-categories: Reversing CTF All
+categories: Reversing CTF
 tags: OpenToAll Reversing CTF
 ---
 

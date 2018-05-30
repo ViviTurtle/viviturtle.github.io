@@ -3,7 +3,7 @@ layout: post
 title:  "RC3 2015 ~ Goal!: Web 100"
 author: Vivi
 date:   2015-11-27 22:59:33 -0700
-categories: Web CTF All
+categories: Web CTF
 tags: web CTF RC3
 ---
 

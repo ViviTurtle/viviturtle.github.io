@@ -1,6 +1,6 @@
 ---
 layout:    about
-permalink: "/about/"
+permalink: "/about"
 author:    ViviTurtle
 keywords:  InfoSec Vivi
 title:     Vivi's playground

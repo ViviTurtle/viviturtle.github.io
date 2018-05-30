@@ -3,7 +3,7 @@ layout: post
 title:  "RC3 2016 ~ Goodtime: Misc 150"
 author: Vivi
 date:   2016-11-20 04:29:33 -0700
-categories: CTF Misc All
+categories: CTF Misc
 tags: RC3 Programming
 ---	
 

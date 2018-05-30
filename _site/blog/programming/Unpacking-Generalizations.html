@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Deciphering Python Dictionaries and Lists - Part 1</title>
+    <meta name="description" content="In an effort to retain my programming skills while I learn the ins-and-outs of Penetration Testing, I’ve decided to dive into the world of python programming...">
+  
+    
+    <meta name="keywords" content="Programming, Python" />
+    
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+	
+    <!-- Open Graph data -->
+
+	<meta property="og:title" content="Deciphering Python Dictionaries and Lists - Part 1" />
+	<meta property="og:type" content="article" />
+
+
+
+
+<meta property="og:image" content="/images/cover.png" />
+
+
+<meta property="og:site_name" content="Black Magic Exploitation" />
+<meta property="og:description" content="In an effort to retain my programming skills while I learn the ins-and-outs of Penetration Testing, I’ve decided to dive into the world of python programming..." />
+
+
+<meta property="og:url" content="/blog/programming/Unpacking-Generalizations" />
+
+
+    
+	<meta property="article:author" content="http://jwillmer.de/about" />
+	<link rel="author" href="http://jwillmer.de/about" />
+
+
+
+<meta property="article:published_time" content="2018-05-30T00:59:33-05:00" />
+
+
+
+<meta property="article:tag" content="Programming" />
+
+<meta property="article:tag" content="Python" />
+
+<!-- End: Open Graph data -->	
+	<!-- Twitter data -->
+    
+
+<meta name="twitter:card" content="summary">
+
+
+<meta name="twitter:site" content="@VivieTurtle">
+
+
+
+<meta name="twitter:title" content="Deciphering Python Dictionaries and Lists - Part 1">
+
+
+
+
+<meta name="twitter:url" content="/blog/programming/Unpacking-Generalizations">
+
+
+<meta name="twitter:description" content="In an effort to retain my programming skills while I learn the ins-and-outs of Penetration Testing, I’ve decided to dive into the world of python programming...">
+
+<meta name="twitter:image:src" content="/images/cover.png">
+<!-- End: Twitter data -->	
+
+    <link href='https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield|Merriweather:300italic,700,300,700italic|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/screen.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
+
+    <link rel="icon" href="/images/vivi.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="/images/vivi.png" sizes="62x62" type="image/png">
+</head>
+
+<body class="home-template">
+    <div class="site-wrapper">
+        
+
+<header class="main-header detail-page image-bg  has-cover" style=" background-size: cover; background-image: url(/images/cover.png)" >
+    <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
+    <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
+    <div class="nav">
+        <ul>
+            <li><a class="page-link" href="/" title="Home">Home</a></li>
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/Programming/" title="Programming">Programming</a></li>
+            
+            
+
+            
+
+            
+            <li><a class="page-link" href="/about" title="About">About</a></li>
+            
+            
+        </ul>
+    </div>
+</header>
+        <main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">Deciphering Python Dictionaries and Lists - Part 1</h1>
+            <section class="post-meta">
+                <time datetime="2018-05-30T00:59:33-05:00" itemprop="datePublished">May 30, 2018</time> 
+                on
+                
+                <span>Programming</span>
+                
+                <span>Python</span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <p>In an effort to retain my programming skills while I learn the ins-and-outs of Penetration Testing, I’ve decided to dive into the world of python programming past the basic scripting level. I’ve always loved the idea of one-liners and the little neat tricks when it comes to programming. Humble Bundle recently had a bundle called <a href="https://www.humblebundle.com/software/python-dev-kit-bundle">Python Development Books</a> that had the book <a href="https://www.amazon.com/Python-Tricks-Buffet-Awesome-Features/dp/1775093301">Python Tricks: A Buffet of Awesome Python Features</a>. Before we get into the of some the neat dictionary trick I learned, let’s start from the beginning.</p>
+
+<h2 id="in-the-beginning">In the Beginning</h2>
+<p>When we first start to learn python programming, one of the first things we come across are lists and dictionaries. A list, being a simple list of data such as numbers and strings. A dictionary, being a list of key:value tuples. A list is initialized via the square bracket - <strong>[]</strong>, and a dictionary is initialized with the curly brackets <strong>{}</strong>.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; list_x = [1,2,3,4,5]
+&gt;&gt;&gt; dict_y = {'a': 1, 'b': 2}
+&gt;&gt;&gt; list_x
+[1,2,3,4,5]
+&gt;&gt;&gt; dict_y
+{'a': 1, 'b': 2}
+</code></pre>
+
+<p>Both dictionaries and lists can be appended, deleted, counted, and modified whether its through the <strong>list.remove(n)</strong>, <strong>list.pop()</strong> or <strong>del dict[‘key’]</strong>…etc. The main difference between the two is that dictionaries contain key:value pairs, and lists contain single pieces of data. Lastly, one important attribute of ditionaries is that dictionaries can only have one unique key, while lists can have as many duplicate values as it wants.</p>
+
+<p>Dictionary Examples</p>
+<pre><code class="language-python">#Initializes dictionary
+my_dict = {'a': 1, 'b': 2}
+#Adds the folowwing key:value pair - 'new':'this will add a new key called new'
+my_dict['new'] = 'this will add a new key called new'
+#Changes the value of key 'a' to "this will change "a" to this value"
+my_dict['a'] = 'this will change "a" to this value'
+#deletes key 'b'
+del my_dict['b']
+#prints
+for key, value in my_dict.items():
+    print('\nKey: %s' % key)
+    print('Value: %s' % value)
+for key in my_dict.keys():
+  print("This will iterate through keys and print the its value: %s." % my_dict[key])
+my_dict2= {'c': 5, 'a': 2}
+#Updates my_dict with my_dict2 overwriting values if keys are the same
+my_dict.update(my_dict2)
+</code></pre>
+
+<p>List Examples</p>
+<pre><code class="language-python">my_list = [1,2,3,4,5]
+#deletes last item
+my_list.pop
+#appends new item to list
+my_list.append('new value')
+#removes 4th item in the list
+my_list.remove(3)
+#clears list - Python 3 Only
+my_list.clear()
+</code></pre>
+
+<h2 id="introducing-comprehensions">Introducing Comprehensions</h2>
+
+<p>As I read through some of the material in <a href="https://www.amazon.com/Python-Tricks-Buffet-Awesome-Features/dp/1775093301">Python Tricks: A Buffet of Awesome Python Features</a>, one of the things that came across my reading is the Python Enhancement Proposals - PEP for short. For those of you that don’t know what PEPs are, in short they are community enhancement proposals by the Python community. Anyone can submit an idea for a new feature or process at <a href="https://bugs.python.org">https://bugs.python.org</a>, which will then go through a review proccess prior to approval. Additional information on PEPs can be found at <a href="https://www.python.org/dev/peps/pep-0001">https://www.python.org/dev/peps/pep-0001</a>.</p>
+
+<p>Around 2000 and 2001 the idea that comprehensions should be created through these PEPs. Why? My guess is that initiating long lists and dictionaries was super tedious. Before comprehensions if you wanted to create a list of 1000+ items, you would either have to manually code a <em>for</em> loop OR manually insert each one to simply initiate a list.</p>
+
+<pre><code class="language-python">#List Initalizations prior to comprehensions
+my_list = [1,2,3,4,5]
+my_list.append(6)
+my_list.append(7)
+my_list.append(8)
+my_list.append(9)
+my_list.append(10)
+#... OR
+my_list2 = [1,2,3,4,5]
+for x in range(6,1000)
+  my_list2.append(x)
+</code></pre>
+
+<p>This was also the same case for dictionaries:</p>
+<pre><code class="language-python">#Dictionary Initalizations prior to comprehensions
+my_dict = {'1': 1, '2': 4}
+my_dict['3'] = 9
+my_dict['4'] = 16
+my_dict['5'] = 25
+my_dict['6'] = 36
+my_dict['7'] = 49
+my_dict['8'] = 64
+#... OR
+my_dict2 = {'1': 1, '2': 4}
+for x in range(3,1000):
+  my_dict2[str(x)] = x*x
+</code></pre>
+
+<p>Can you see how this can get annoying? Who would want to initialize a completly seperate function that would bloat your code just to initialize a list/dictionary? No one, so the community created <a href="https://www.python.org/dev/peps/pep-0202/">PEP 202</a>, and shortly after <a href="https://www.python.org/dev/peps/pep-0274/">PEP 274</a></p>
+
+<p><strong>PEP202:</strong></p>
+<blockquote>
+  <p>It is proposed to allow conditional construction of list literals using for and if clauses. They would nest in the same way for loops and if statements nest now.</p>
+</blockquote>
+
+<p><strong>PEP274:</strong></p>
+<blockquote>
+  <p>PEP 202 introduces a syntactical extension to Python called the “list comprehension”. This PEP proposes a similar syntactical extension called the “dictionary comprehension” or “dict comprehension” for short. You can use dict comprehensions in ways very similar to list comprehensions, except that they produce Python dictionary objects instead of list objects.</p>
+</blockquote>
+
+<p>With the addition of PEP202, the  syntax for using list comprehensions is as follows:</p>
+<pre><code class="language-python">my_list = [x,y,z for x in list-x for y list-y for z in list-z... if [x,y,z...conditonal]]
+</code></pre>
+
+<p>Make sure to note the variables defined prior to the for loop. In short, this allows us to use a for loop to automate the creation of our lists. The list initialization code from the beginning would easily become:</p>
+<pre><code class="language-python">my_list = [x for x in range(1,1000)]
+</code></pre>
+
+<p>If want only even numbers we can do this:</p>
+<pre><code class="language-python">my_list = [x for x in range(1,1000) if x%2 == 0]
+</code></pre>
+
+<p>The syntax for Dictionary Comphrensions are similar except that this time you add a colon for your key:value pair. The dictionary code from the beginning would become:</p>
+
+<pre><code class="language-python">my_dict = {i : i*i for i in range(1000)}
+</code></pre>
+
+<p>A common usage for this is creating a dictionary of characters and their corresponding position. For example {‘A’: 1, ‘B’: 2…}. A one liner to initate such a dictionary is:</p>
+<pre><code class="language-python">#Note this is 65+i because this converts the ASCII base 10 value to its correponding ASCII value
+alpha_dict = {chr(65+i): i  for i in range(26}
+</code></pre>
+
+<p>This is a common way to initialize list and dictionaries that won’t bloat your code. Remember to use it, and help the world create cleander code. I’ll be posting in the next blog about Key-Value Arguments and Packing/Unpacking generalizations and their usefulness with Dictionaries.</p>
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.12.0.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/js/photoswipe.js"></script>
+<script src="/js/photoswipe-ui-default.js"></script>
+<script src="/js/post.js"></script>        
+        <footer class="site-footer">
+    <button class="go-to-top"></button>
+    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> &copy; 2018 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
+</footer>
+    </div>
+</body>
+
+<script src="/js/global.js"></script>
+</html>

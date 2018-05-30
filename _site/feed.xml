@@ -5,9 +5,141 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Tue, 29 May 2018 22:29:55 -0500</pubDate>
-    <lastBuildDate>Tue, 29 May 2018 22:29:55 -0500</lastBuildDate>
+      <pubDate>Wed, 30 May 2018 03:34:43 -0500</pubDate>
+    <lastBuildDate>Wed, 30 May 2018 03:34:43 -0500</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Deciphering Python Dictionaries and Lists - Part 1</title>
+        <description>&lt;p&gt;In an effort to retain my programming skills while I learn the ins-and-outs of Penetration Testing, I’ve decided to dive into the world of python programming past the basic scripting level. I’ve always loved the idea of one-liners and the little neat tricks when it comes to programming. Humble Bundle recently had a bundle called &lt;a href=&quot;https://www.humblebundle.com/software/python-dev-kit-bundle&quot;&gt;Python Development Books&lt;/a&gt; that had the book &lt;a href=&quot;https://www.amazon.com/Python-Tricks-Buffet-Awesome-Features/dp/1775093301&quot;&gt;Python Tricks: A Buffet of Awesome Python Features&lt;/a&gt;. Before we get into the of some the neat dictionary trick I learned, let’s start from the beginning.&lt;/p&gt;
+
+&lt;h2 id=&quot;in-the-beginning&quot;&gt;In the Beginning&lt;/h2&gt;
+&lt;p&gt;When we first start to learn python programming, one of the first things we come across are lists and dictionaries. A list, being a simple list of data such as numbers and strings. A dictionary, being a list of key:value tuples. A list is initialized via the square bracket - &lt;strong&gt;[]&lt;/strong&gt;, and a dictionary is initialized with the curly brackets &lt;strong&gt;{}&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;&amp;gt;&amp;gt;&amp;gt; list_x = [1,2,3,4,5]
+&amp;gt;&amp;gt;&amp;gt; dict_y = {'a': 1, 'b': 2}
+&amp;gt;&amp;gt;&amp;gt; list_x
+[1,2,3,4,5]
+&amp;gt;&amp;gt;&amp;gt; dict_y
+{'a': 1, 'b': 2}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Both dictionaries and lists can be appended, deleted, counted, and modified whether its through the &lt;strong&gt;list.remove(n)&lt;/strong&gt;, &lt;strong&gt;list.pop()&lt;/strong&gt; or &lt;strong&gt;del dict[‘key’]&lt;/strong&gt;…etc. The main difference between the two is that dictionaries contain key:value pairs, and lists contain single pieces of data. Lastly, one important attribute of ditionaries is that dictionaries can only have one unique key, while lists can have as many duplicate values as it wants.&lt;/p&gt;
+
+&lt;p&gt;Dictionary Examples&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#Initializes dictionary
+my_dict = {'a': 1, 'b': 2}
+#Adds the folowwing key:value pair - 'new':'this will add a new key called new'
+my_dict['new'] = 'this will add a new key called new'
+#Changes the value of key 'a' to &quot;this will change &quot;a&quot; to this value&quot;
+my_dict['a'] = 'this will change &quot;a&quot; to this value'
+#deletes key 'b'
+del my_dict['b']
+#prints
+for key, value in my_dict.items():
+    print('\nKey: %s' % key)
+    print('Value: %s' % value)
+for key in my_dict.keys():
+  print(&quot;This will iterate through keys and print the its value: %s.&quot; % my_dict[key])
+my_dict2= {'c': 5, 'a': 2}
+#Updates my_dict with my_dict2 overwriting values if keys are the same
+my_dict.update(my_dict2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;List Examples&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;my_list = [1,2,3,4,5]
+#deletes last item
+my_list.pop
+#appends new item to list
+my_list.append('new value')
+#removes 4th item in the list
+my_list.remove(3)
+#clears list - Python 3 Only
+my_list.clear()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;introducing-comprehensions&quot;&gt;Introducing Comprehensions&lt;/h2&gt;
+
+&lt;p&gt;As I read through some of the material in &lt;a href=&quot;https://www.amazon.com/Python-Tricks-Buffet-Awesome-Features/dp/1775093301&quot;&gt;Python Tricks: A Buffet of Awesome Python Features&lt;/a&gt;, one of the things that came across my reading is the Python Enhancement Proposals - PEP for short. For those of you that don’t know what PEPs are, in short they are community enhancement proposals by the Python community. Anyone can submit an idea for a new feature or process at &lt;a href=&quot;https://bugs.python.org&quot;&gt;https://bugs.python.org&lt;/a&gt;, which will then go through a review proccess prior to approval. Additional information on PEPs can be found at &lt;a href=&quot;https://www.python.org/dev/peps/pep-0001&quot;&gt;https://www.python.org/dev/peps/pep-0001&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Around 2000 and 2001 the idea that comprehensions should be created through these PEPs. Why? My guess is that initiating long lists and dictionaries was super tedious. Before comprehensions if you wanted to create a list of 1000+ items, you would either have to manually code a &lt;em&gt;for&lt;/em&gt; loop OR manually insert each one to simply initiate a list.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#List Initalizations prior to comprehensions
+my_list = [1,2,3,4,5]
+my_list.append(6)
+my_list.append(7)
+my_list.append(8)
+my_list.append(9)
+my_list.append(10)
+#... OR
+my_list2 = [1,2,3,4,5]
+for x in range(6,1000)
+  my_list2.append(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This was also the same case for dictionaries:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#Dictionary Initalizations prior to comprehensions
+my_dict = {'1': 1, '2': 4}
+my_dict['3'] = 9
+my_dict['4'] = 16
+my_dict['5'] = 25
+my_dict['6'] = 36
+my_dict['7'] = 49
+my_dict['8'] = 64
+#... OR
+my_dict2 = {'1': 1, '2': 4}
+for x in range(3,1000):
+  my_dict2[str(x)] = x*x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Can you see how this can get annoying? Who would want to initialize a completly seperate function that would bloat your code just to initialize a list/dictionary? No one, so the community created &lt;a href=&quot;https://www.python.org/dev/peps/pep-0202/&quot;&gt;PEP 202&lt;/a&gt;, and shortly after &lt;a href=&quot;https://www.python.org/dev/peps/pep-0274/&quot;&gt;PEP 274&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PEP202:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;It is proposed to allow conditional construction of list literals using for and if clauses. They would nest in the same way for loops and if statements nest now.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;PEP274:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;PEP 202 introduces a syntactical extension to Python called the “list comprehension”. This PEP proposes a similar syntactical extension called the “dictionary comprehension” or “dict comprehension” for short. You can use dict comprehensions in ways very similar to list comprehensions, except that they produce Python dictionary objects instead of list objects.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With the addition of PEP202, the  syntax for using list comprehensions is as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;my_list = [x,y,z for x in list-x for y list-y for z in list-z... if [x,y,z...conditonal]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make sure to note the variables defined prior to the for loop. In short, this allows us to use a for loop to automate the creation of our lists. The list initialization code from the beginning would easily become:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;my_list = [x for x in range(1,1000)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If want only even numbers we can do this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;my_list = [x for x in range(1,1000) if x%2 == 0]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The syntax for Dictionary Comphrensions are similar except that this time you add a colon for your key:value pair. The dictionary code from the beginning would become:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;my_dict = {i : i*i for i in range(1000)}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A common usage for this is creating a dictionary of characters and their corresponding position. For example {‘A’: 1, ‘B’: 2…}. A one liner to initate such a dictionary is:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;#Note this is 65+i because this converts the ASCII base 10 value to its correponding ASCII value
+alpha_dict = {chr(65+i): i  for i in range(26}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a common way to initialize list and dictionaries that won’t bloat your code. Remember to use it, and help the world create cleander code. I’ll be posting in the next blog about Key-Value Arguments and Packing/Unpacking generalizations and their usefulness with Dictionaries.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 May 2018 00:59:33 -0500</pubDate>
+        <link>/blog/programming/Unpacking-Generalizations</link>
+        <guid isPermaLink="true">/blog/programming/Unpacking-Generalizations</guid>
+        
+        <category>Programming</category>
+        
+        <category>Python</category>
+        
+        
+        <category>Programming</category>
+        
+      </item>
     
       <item>
         <title>RC3 2016 ~ Goodtime: Misc 150</title>
@@ -211,8 +343,8 @@ for x in range(0,50):
 &lt;p&gt;The hardest part was due to inconsistency in the netcat connection. Any new characters I received from my script, I had to triple check manually. 9/10 it was just a false positive due to the netcat connection. It might’ve been better if I was connected with a wired connection rather than WIFI. Luckily, it wasn’t so bad to guess some of the flag. When I saw the words &lt;strong&gt;itz-al&lt;/strong&gt;, I already knew it was a Carly Rae reference - “It’s always a good time”. I manually input every version of &lt;strong&gt;always&lt;/strong&gt; like &lt;strong&gt;alw4ys&lt;/strong&gt; and &lt;strong&gt;alw@ys&lt;/strong&gt; - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after &lt;strong&gt;g00d-t1m&lt;/strong&gt;. I thought I was done because I assumed the flag was &lt;strong&gt;itz alwayz a good time&lt;/strong&gt;. I had to bruteforce the second &lt;strong&gt;1&lt;/strong&gt; for &lt;strong&gt;t1m1ng&lt;/strong&gt;. I had no clue why it was a &lt;strong&gt;1&lt;/strong&gt; at the time only to realize an hour later it was &lt;strong&gt;timing&lt;/strong&gt; and not &lt;strong&gt;time&lt;/strong&gt;. Additionally, the last part of the flag - &lt;strong&gt;@tt@ck&lt;/strong&gt; -  threw me off because I assumed the last word in the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the &lt;strong&gt;@&lt;/strong&gt; it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn’t crash. At last though I was able to get the flag.&lt;/p&gt;
 </description>
         <pubDate>Sun, 20 Nov 2016 05:29:33 -0600</pubDate>
-        <link>/blog/ctf/misc/all/goodtime</link>
-        <guid isPermaLink="true">/blog/ctf/misc/all/goodtime</guid>
+        <link>/blog/ctf/misc/goodtime</link>
+        <guid isPermaLink="true">/blog/ctf/misc/goodtime</guid>
         
         <category>RC3</category>
         
@@ -222,8 +354,6 @@ for x in range(0,50):
         <category>CTF</category>
         
         <category>Misc</category>
-        
-        <category>All</category>
         
       </item>
     
@@ -387,8 +517,8 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
 &lt;p&gt;If you want a review of this year’s badge feel free to head to &lt;a href=&quot;http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/&quot;&gt;http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/&lt;/a&gt; Thanks again QueerCon for the awesome and fun challenge&lt;/p&gt;
 </description>
         <pubDate>Thu, 11 Aug 2016 06:29:33 -0500</pubDate>
-        <link>/blog/ctf/stego/crypto/all/QC13-Soundcheck</link>
-        <guid isPermaLink="true">/blog/ctf/stego/crypto/all/QC13-Soundcheck</guid>
+        <link>/blog/ctf/stego/crypto/QC13-Soundcheck</link>
+        <guid isPermaLink="true">/blog/ctf/stego/crypto/QC13-Soundcheck</guid>
         
         <category>Stego</category>
         
@@ -402,8 +532,6 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
         <category>Stego</category>
         
         <category>Crypto</category>
-        
-        <category>All</category>
         
       </item>
     
@@ -700,8 +828,8 @@ secret=test
 &lt;p&gt;The flag is &lt;strong&gt;RC3-SECRETSS-6277598130&lt;/strong&gt;. Feel free to check out &lt;a href=&quot;http://localhost:4000/assets/rc3/TopSecret/sqlmap_notes.txt&quot;&gt;sqlmap_notes.txt&lt;/a&gt; to see the actual sqlmap requests.&lt;/p&gt;
 </description>
         <pubDate>Sun, 29 Nov 2015 03:59:33 -0600</pubDate>
-        <link>/blog/ctf/web/all/top-secret</link>
-        <guid isPermaLink="true">/blog/ctf/web/all/top-secret</guid>
+        <link>/blog/ctf/web/top-secret</link>
+        <guid isPermaLink="true">/blog/ctf/web/top-secret</guid>
         
         <category>Web</category>
         
@@ -715,8 +843,6 @@ secret=test
         <category>CTF</category>
         
         <category>Web</category>
-        
-        <category>All</category>
         
       </item>
     
@@ -927,8 +1053,8 @@ RC3-WOTM-8080
 &lt;p&gt;And thus, the flag is &lt;strong&gt;RC3-WOTM-8080&lt;/strong&gt;. Woo.&lt;/p&gt;
 </description>
         <pubDate>Sat, 28 Nov 2015 04:59:33 -0600</pubDate>
-        <link>/blog/ctf/forensics/all/OpenW0tM8</link>
-        <guid isPermaLink="true">/blog/ctf/forensics/all/OpenW0tM8</guid>
+        <link>/blog/ctf/forensics/OpenW0tM8</link>
+        <guid isPermaLink="true">/blog/ctf/forensics/OpenW0tM8</guid>
         
         <category>RC3</category>
         
@@ -944,8 +1070,6 @@ RC3-WOTM-8080
         <category>CTF</category>
         
         <category>Forensics</category>
-        
-        <category>All</category>
         
       </item>
     
@@ -1055,8 +1179,8 @@ Smitty
 &lt;p&gt;The flag is &lt;strong&gt;RC3-RedTeamGetRekt-1010101&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 28 Nov 2015 03:59:33 -0600</pubDate>
-        <link>/blog/stego/ctf/all/super-secrets</link>
-        <guid isPermaLink="true">/blog/stego/ctf/all/super-secrets</guid>
+        <link>/blog/stego/ctf/super-secrets</link>
+        <guid isPermaLink="true">/blog/stego/ctf/super-secrets</guid>
         
         <category>RC3</category>
         
@@ -1066,8 +1190,6 @@ Smitty
         <category>Stego</category>
         
         <category>CTF</category>
-        
-        <category>All</category>
         
       </item>
     
@@ -1156,8 +1278,8 @@ Content-Type: text/html; charset=UTF-8
 &lt;p&gt;We see something very interesting here. There’s a section called “Flag” with the value: RC3-SOCCER-8675309.  Finally we have the flag: &lt;strong&gt;RC3-SOCCER-8675309&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 27 Nov 2015 23:59:33 -0600</pubDate>
-        <link>/blog/web/ctf/all/goal</link>
-        <guid isPermaLink="true">/blog/web/ctf/all/goal</guid>
+        <link>/blog/web/ctf/goal</link>
+        <guid isPermaLink="true">/blog/web/ctf/goal</guid>
         
         <category>web</category>
         
@@ -1169,8 +1291,6 @@ Content-Type: text/html; charset=UTF-8
         <category>Web</category>
         
         <category>CTF</category>
-        
-        <category>All</category>
         
       </item>
     
@@ -1212,8 +1332,8 @@ Disallow: /secret/
 &lt;p&gt;&lt;strong&gt;RC3-ROBOTZ-559672&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 27 Nov 2015 22:59:33 -0600</pubDate>
-        <link>/blog/ctf/web/all/v1ew-s0urce</link>
-        <guid isPermaLink="true">/blog/ctf/web/all/v1ew-s0urce</guid>
+        <link>/blog/ctf/web/v1ew-s0urce</link>
+        <guid isPermaLink="true">/blog/ctf/web/v1ew-s0urce</guid>
         
         <category>RC3</category>
         
@@ -1225,8 +1345,6 @@ Disallow: /secret/
         <category>CTF</category>
         
         <category>Web</category>
-        
-        <category>All</category>
         
       </item>
     
@@ -1387,8 +1505,8 @@ After dissecting what this is, it is clearly python code in which some “flag�
 &lt;p&gt;Flag: flag{li0ns_and_tig3rs_4nd_b34rs_0h_mi}&lt;/p&gt;
 </description>
         <pubDate>Sat, 19 Sep 2015 23:59:33 -0500</pubDate>
-        <link>/blog/forensics/ctf/all/crypto/transfer</link>
-        <guid isPermaLink="true">/blog/forensics/ctf/all/crypto/transfer</guid>
+        <link>/blog/forensics/ctf/crypto/transfer</link>
+        <guid isPermaLink="true">/blog/forensics/ctf/crypto/transfer</guid>
         
         <category>Forensics</category>
         
@@ -1400,8 +1518,6 @@ After dissecting what this is, it is clearly python code in which some “flag�
         <category>Forensics</category>
         
         <category>CTF</category>
-        
-        <category>All</category>
         
         <category>Crypto</category>
         
@@ -1560,8 +1676,8 @@ Image Size                      : 500x537
 &lt;p&gt;flag{I_S3ARCH3D_HI6H_4ND_L0W_4ND_4LL_I_F0UND_W4S_TH1S_L0USY_FL4G}!&lt;/p&gt;
 </description>
         <pubDate>Sat, 19 Sep 2015 00:59:33 -0500</pubDate>
-        <link>/blog/recon/ctf/all/alexander-taylor</link>
-        <guid isPermaLink="true">/blog/recon/ctf/all/alexander-taylor</guid>
+        <link>/blog/recon/ctf/alexander-taylor</link>
+        <guid isPermaLink="true">/blog/recon/ctf/alexander-taylor</guid>
         
         <category>Recon</category>
         
@@ -1573,102 +1689,6 @@ Image Size                      : 500x537
         <category>Recon</category>
         
         <category>CTF</category>
-        
-        <category>All</category>
-        
-      </item>
-    
-      <item>
-        <title>CSAW 2015 ~ Keep Calm and CTF: Forensics 100</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;My friend sends me pictures before every ctf. He told me this one was special.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note: this flag doesn’t follow the “flag{}” format&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/img.jpg&quot;&gt;img.jpg&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This one had a super easy solution. First it gave us a jpg. 
-&lt;a href=&quot;http://localhost:4000/images/csaw/img.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/img.jpg&quot; alt=&quot;img.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;First thing I always do is run strings&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;table&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;strings img.jpg&lt;/td&gt;
-        &lt;td&gt;grep flag&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Nothing popped up.&lt;/p&gt;
-
-&lt;p&gt;Next thing you always do for any kind of picture, well any forensics for that matter is look at metadeta. Simply upload the data to &lt;a href=&quot;http://regex.info/exif.cgi&quot;&gt;Jeffrey’s Exif viewer&lt;/a&gt; or use some tools we gathered over years of experience (LOL) such as “exiftool”, a tool to look at metadeta for everything.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;exiftool img.jpg&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;which gives me&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ExifTool Version Number         : 9.46
-File Name                       : img.jpg
-Directory                       : .
-File Size                       : 92 kB
-File Modification Date/Time     : 2015:09:18 15:52:29-07:00
-File Access Date/Time           : 2015:09:20 13:25:40-07:00
-File Inode Change Date/Time     : 2015:09:20 13:25:40-07:00
-File Permissions                : rw-------
-File Type                       : JPEG
-MIME Type                       : image/jpeg
-JFIF Version                    : 1.01
-X Resolution                    : 72
-Y Resolution                    : 72
-Exif Byte Order                 : Big-endian (Motorola, MM)
-Resolution Unit                 : inches
-Y Cb Cr Positioning             : Centered
-Copyright                       : h1d1ng_in_4lm0st_pla1n_sigh7
-Image Width                     : 600
-Image Height                    : 700
-Encoding Process                : Baseline DCT, Huffman coding
-Bits Per Sample                 : 8
-Color Components                : 3
-Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
-Image Size                      : 600x700
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Looking at the copyright section&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Copyright                       : h1d1ng_in_4lm0st_pla1n_sigh7&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;you get the flag.&lt;/p&gt;
-
-&lt;p&gt;h1d1ng_in_4lm0st_pla1n_sigh7&lt;/p&gt;
-</description>
-        <pubDate>Fri, 18 Sep 2015 23:59:33 -0500</pubDate>
-        <link>/blog/ctf/stego/all/keep-calm-and-ctf</link>
-        <guid isPermaLink="true">/blog/ctf/stego/all/keep-calm-and-ctf</guid>
-        
-        <category>Stego</category>
-        
-        <category>CTF</category>
-        
-        <category>CSAW</category>
-        
-        
-        <category>CTF</category>
-        
-        <category>Stego</category>
-        
-        <category>All</category>
         
       </item>
     

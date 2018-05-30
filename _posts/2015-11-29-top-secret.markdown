@@ -3,7 +3,7 @@ layout: post
 title:  "RC3 2015 ~ Top Secret: Web 400"
 author: Vivi
 date:   2015-11-29 02:59:33 -0700
-categories: CTF Web All
+categories: CTF Web
 tags: Web RC3 SQLi sqlmap
 ---
 

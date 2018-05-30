@@ -3,7 +3,7 @@ layout: post
 title:  "RC3 2015 ~ Super Secrets: Misc 300"
 author: Vivi
 date:   2015-11-28 02:59:33 -0700
-categories:  Stego CTF All
+categories:  Stego CTF
 tags: RC3 Stego
 ---
 

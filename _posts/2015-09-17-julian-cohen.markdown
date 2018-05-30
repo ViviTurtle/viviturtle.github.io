@@ -3,7 +3,7 @@ layout: post
 title:  "CSAW 2015 ~ Julian Cohen: Recon 100"
 author: Vivi
 date:   2015-09-17 23:59:33 -0700
-categories: Recon CTF All
+categories: Recon CTF
 tags: Recon CTF CSAW
 ---
 

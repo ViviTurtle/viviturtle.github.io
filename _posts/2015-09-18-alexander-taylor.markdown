@@ -2,7 +2,7 @@
 layout: post
 title:  "CSAW 2015 ~ Alexander Taylor: Recon 100"
 date:   2015-09-18 22:59:33 -0700
-categories: Recon CTF All
+categories: Recon CTF
 tags: Recon CTF CSAW
 ---
 

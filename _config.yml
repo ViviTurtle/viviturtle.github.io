@@ -17,6 +17,11 @@ url:          "https://viviturtle.github.io" # the base hostname & protocol for 
 #url:          "http://localhost:4000" 
 permalink:    /blog/:categories/:title
 cover:        /images/cover.png
+about:        /images/about.png
+
+#pagination
+paginate:    10
+paginate_path: "page:num"
 
 # Build settings
 markdown: kramdown
@@ -30,3 +35,4 @@ gems:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-paginate

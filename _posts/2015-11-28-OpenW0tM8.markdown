@@ -3,7 +3,7 @@ layout: post
 title:  "RC3 2015 ~ OpenW0tM8: Forensics 400"
 author: Vivi
 date:   2015-11-28 03:59:33 -0700
-categories: CTF Forensics All
+categories: CTF Forensics
 tags: RC3 Forensics CTF Wireshark Crypto
 ---
 

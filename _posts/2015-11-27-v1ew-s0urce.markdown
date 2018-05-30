@@ -3,7 +3,7 @@ layout: post
 title:  "RC3 2015 ~ v1ew-s0urce: Web 50"
 author: Vivi
 date:   2015-11-27 21:59:33 -0700
-categories: CTF Web All
+categories: CTF Web
 tags: RC3 Forensics CTF
 ---
 

@@ -2,9 +2,20 @@
 
   
     {
+        "title": "Deciphering Python Dictionaries and Lists - Part 1",
+        "category": "",
+        "url": "/blog/programming/Unpacking-Generalizations",
+        "tags": ["Programming","Python"],
+        "date": "2018-05-30 00:59:33 -0500",
+        "language": "en"
+    },
+  
+
+  
+    {
         "title": "RC3 2016 ~ Goodtime: Misc 150",
         "category": "",
-        "url": "/blog/ctf/misc/all/goodtime",
+        "url": "/blog/ctf/misc/goodtime",
         "tags": ["RC3","Programming"],
         "date": "2016-11-20 05:29:33 -0600",
         "language": "en"
@@ -15,7 +26,7 @@
     {
         "title": "QueerCon 2016 ~ QC13 Soundcheck: Stego	",
         "category": "",
-        "url": "/blog/ctf/stego/crypto/all/QC13-Soundcheck",
+        "url": "/blog/ctf/stego/crypto/QC13-Soundcheck",
         "tags": ["Stego","QueerCon","Crypto"],
         "date": "2016-08-11 06:29:33 -0500",
         "language": "en"
@@ -26,7 +37,7 @@
     {
         "title": "RC3 2015 ~ Top Secret: Web 400",
         "category": "",
-        "url": "/blog/ctf/web/all/top-secret",
+        "url": "/blog/ctf/web/top-secret",
         "tags": ["Web","RC3","SQLi","sqlmap"],
         "date": "2015-11-29 03:59:33 -0600",
         "language": "en"
@@ -37,7 +48,7 @@
     {
         "title": "RC3 2015 ~ OpenW0tM8: Forensics 400",
         "category": "",
-        "url": "/blog/ctf/forensics/all/OpenW0tM8",
+        "url": "/blog/ctf/forensics/OpenW0tM8",
         "tags": ["RC3","Forensics","CTF","Wireshark","Crypto"],
         "date": "2015-11-28 04:59:33 -0600",
         "language": "en"
@@ -48,7 +59,7 @@
     {
         "title": "RC3 2015 ~ Super Secrets: Misc 300",
         "category": "",
-        "url": "/blog/stego/ctf/all/super-secrets",
+        "url": "/blog/stego/ctf/super-secrets",
         "tags": ["RC3","Stego"],
         "date": "2015-11-28 03:59:33 -0600",
         "language": "en"
@@ -59,7 +70,7 @@
     {
         "title": "RC3 2015 ~ Goal!: Web 100",
         "category": "",
-        "url": "/blog/web/ctf/all/goal",
+        "url": "/blog/web/ctf/goal",
         "tags": ["web","CTF","RC3"],
         "date": "2015-11-27 23:59:33 -0600",
         "language": "en"
@@ -70,7 +81,7 @@
     {
         "title": "RC3 2015 ~ v1ew-s0urce: Web 50",
         "category": "",
-        "url": "/blog/ctf/web/all/v1ew-s0urce",
+        "url": "/blog/ctf/web/v1ew-s0urce",
         "tags": ["RC3","Forensics","CTF"],
         "date": "2015-11-27 22:59:33 -0600",
         "language": "en"
@@ -81,7 +92,7 @@
     {
         "title": "CSAW 2015 ~ Transfer: Forensics 100",
         "category": "",
-        "url": "/blog/forensics/ctf/all/crypto/transfer",
+        "url": "/blog/forensics/ctf/crypto/transfer",
         "tags": ["Forensics","CTF","CSAW"],
         "date": "2015-09-19 23:59:33 -0500",
         "language": "en"
@@ -92,7 +103,7 @@
     {
         "title": "CSAW 2015 ~ Alexander Taylor: Recon 100",
         "category": "",
-        "url": "/blog/recon/ctf/all/alexander-taylor",
+        "url": "/blog/recon/ctf/alexander-taylor",
         "tags": ["Recon","CTF","CSAW"],
         "date": "2015-09-19 00:59:33 -0500",
         "language": "en"
@@ -103,7 +114,7 @@
     {
         "title": "CSAW 2015 ~ Keep Calm and CTF: Forensics 100",
         "category": "",
-        "url": "/blog/ctf/stego/all/keep-calm-and-ctf",
+        "url": "/blog/ctf/stego/keep-calm-and-ctf",
         "tags": ["Stego","CTF","CSAW"],
         "date": "2015-09-18 23:59:33 -0500",
         "language": "en"
@@ -114,7 +125,7 @@
     {
         "title": "CSAW 2015 ~ Julian Cohen: Recon 100",
         "category": "",
-        "url": "/blog/recon/ctf/all/julian-cohen",
+        "url": "/blog/recon/ctf/julian-cohen",
         "tags": ["Recon","CTF","CSAW"],
         "date": "2015-09-18 01:59:33 -0500",
         "language": "en"
@@ -125,7 +136,7 @@
     {
         "title": "CSAW 2015 ~ Flash: Forensics 100",
         "category": "",
-        "url": "/blog/forensics/ctf/all/flash",
+        "url": "/blog/forensics/ctf/flash",
         "tags": ["Forensics","CTF","CSAW"],
         "date": "2015-09-18 00:59:33 -0500",
         "language": "en"
@@ -136,7 +147,7 @@
     {
         "title": "OpenToAll 2015 ~ Math is Hard: Misc 200",
         "category": "",
-        "url": "/blog/programming/ctf/all/math",
+        "url": "/blog/programming/ctf/math",
         "tags": ["OpenToAll","Misc","CTF"],
         "date": "2015-03-31 00:59:33 -0500",
         "language": "en"
@@ -147,7 +158,7 @@
     {
         "title": "OpenToAll 2015 ~ BACH: Crypto 150",
         "category": "",
-        "url": "/blog/ctf/crypto/all/Bach",
+        "url": "/blog/ctf/crypto/Bach",
         "tags": ["OpenToAll","Crypto","CTF"],
         "date": "2015-03-29 00:59:33 -0500",
         "language": "en"
@@ -158,64 +169,9 @@
     {
         "title": "BKPCTF 2015 ~ Haymarket: Reversing 150",
         "category": "",
-        "url": "/blog/reversing/ctf/all/haymarket",
+        "url": "/blog/reversing/ctf/haymarket",
         "tags": ["OpenToAll","Reversing","CTF"],
         "date": "2015-03-11 00:59:33 -0500",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "New beginnings",
-        "category": "",
-        "url": "/blog/blog/all/new-beginnings",
-        "tags": ["SJSUInfoSec","CTF"],
-        "date": "2014-12-21 05:45:00 -0600",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "The Hacker's Weapon",
-        "category": "",
-        "url": "/blog/blog/all/the-hackers-weapon",
-        "tags": ["CTF","tools","clubs"],
-        "date": "2014-05-10 01:13:00 -0500",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "Capture the Flag Competitions",
-        "category": "",
-        "url": "/blog/blog/all/capture-flag-competitions",
-        "tags": ["CTF"],
-        "date": "2014-05-07 18:10:00 -0500",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "Tech Blogs we must follow",
-        "category": "",
-        "url": "/blog/blog/all/tech-blogs-we-must-follow",
-        "tags": ["blogs"],
-        "date": "2014-04-01 03:45:00 -0500",
-        "language": "en"
-    },
-  
-
-  
-    {
-        "title": "The Ports of Cyber-Security",
-        "category": "",
-        "url": "/blog/blog/all/the-ports-of-cyber-security",
-        "tags": [],
-        "date": "2014-03-11 04:02:00 -0500",
         "language": "en"
     }
   
