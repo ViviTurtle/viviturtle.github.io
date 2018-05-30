@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,7 @@
     <meta name="description" content="">
   
     
-    <meta name="keywords" content="web, CTF, RC3">
+    <meta name="keywords" content="web, CTF, RC3" />
     
 
     <meta name="HandheldFriendly" content="True">
@@ -19,37 +18,37 @@
 	
     <!-- Open Graph data -->
 
-	<meta property="og:title" content="RC3 2015 ~ Goal!: Web 100">
-	<meta property="og:type" content="article">
+	<meta property="og:title" content="RC3 2015 ~ Goal!: Web 100" />
+	<meta property="og:type" content="article" />
 
 
 
 
-<meta property="og:image" content="/images/cover.png">
+<meta property="og:image" content="/images/cover.png" />
 
 
-<meta property="og:site_name" content="Black Magic Exploitation">
-<meta property="og:description" content="">
+<meta property="og:site_name" content="Black Magic Exploitation" />
+<meta property="og:description" content="" />
 
 
-<meta property="og:url" content="/blog/web/ctf/all/goal">
+<meta property="og:url" content="/blog/web/ctf/all/goal" />
 
 
     
-	<meta property="article:author" content="http://jwillmer.de/about">
-	<link rel="author" href="http://jwillmer.de/about">
+	<meta property="article:author" content="http://jwillmer.de/about" />
+	<link rel="author" href="http://jwillmer.de/about" />
 
 
 
-<meta property="article:published_time" content="2015-11-27T21:59:33-08:00">
+<meta property="article:published_time" content="2015-11-27T23:59:33-06:00" />
 
 
 
-<meta property="article:tag" content="web">
+<meta property="article:tag" content="web" />
 
-<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="CTF" />
 
-<meta property="article:tag" content="RC3">
+<meta property="article:tag" content="RC3" />
 
 <!-- End: Open Graph data -->	
 	<!-- Twitter data -->
@@ -75,7 +74,7 @@
 <meta name="twitter:image:src" content="/images/cover.png">
 <!-- End: Twitter data -->	
 
-    <link href="https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield%7CMerriweather:300italic,700,300,700italic%7COpen+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield|Merriweather:300italic,700,300,700italic|Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/screen.css">
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
@@ -90,7 +89,7 @@
     <div class="site-wrapper">
         
 
-<header class="main-header detail-page image-bg  has-cover" style=" background-size: cover; background-image: url(/images/cover.png)">
+<header class="main-header detail-page image-bg  has-cover" style=" background-size: cover; background-image: url(/images/cover.png)" >
     <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
     <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
     <div class="nav">
@@ -138,7 +137,12 @@
             
 
             
-            <li><a class="page-link" href="/offline-warning/" title="Offline">Offline</a></li>
+            
+
+            
+
+            
+            <li><a class="page-link" href="/Programming/" title="Programming">Programming</a></li>
             
             
 
@@ -157,7 +161,7 @@
         <header class="post-header short-diver">
             <h1 class="post-title" itemprop="name headline">RC3 2015 ~ Goal!: Web 100</h1>
             <section class="post-meta">
-                <time datetime="2015-11-27T21:59:33-08:00" itemprop="datePublished">Nov 27, 2015</time> 
+                <time datetime="2015-11-27T23:59:33-06:00" itemprop="datePublished">Nov 27, 2015</time> 
                 on
                 
                 <span>web</span>
@@ -170,13 +174,13 @@
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <p><a href="https://viviturtle.github.io/images/rc3/Goal/Start.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Start.png" alt="Start"></a></p>
+            <p><a href="http://localhost:4000/images/rc3/Goal/Start.png"><img src="http://localhost:4000/images/rc3/Goal/Start.png" alt="Start" /></a></p>
 
 <p>Another baby CTF question. It was very simple, even though it did throw me off quite a bit… We are given a link: <a href="http://129.21.39.225:82/">http://129.21.39.225:82/</a>. When visiting the site all it had was a gif of some guys playing soccer</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/goal.gif"><img src="https://viviturtle.github.io/images/rc3/Goal/goal.gif" alt="goal"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/goal.gif"><img src="http://localhost:4000/images/rc3/Goal/goal.gif" alt="goal" /></a></p>
 
-<p>Maybe we should look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/source.html">source</a>?</p>
+<p>Maybe we should look at the <a href="http://localhost:4000/assets/rc3/Goal/source.html">source</a>?</p>
 
 <pre><code class="language-html">&lt;html&gt;
 &lt;title&gt;GOOOOOAAAAALLLLLLLL!!!!!!!!!1&lt;/title&gt;
@@ -215,9 +219,9 @@ Duration                        : 4.68 s
 Image Size                      : 407x211
 </code></pre>
 
-<p>Nothing showed up there either. Luckily I always keep <strong>Burp Suite</strong> and <strong>Zap Proxy</strong> up. Let’s look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/request">request</a>. I opened my Burp, searched for the ip address, searched for the page, and looked at the <a href="https://viviturtle.github.io/assets/rc3/Goal/request">request</a>.</p>
+<p>Nothing showed up there either. Luckily I always keep <strong>Burp Suite</strong> and <strong>Zap Proxy</strong> up. Let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>. I opened my Burp, searched for the ip address, searched for the page, and looked at the <a href="http://localhost:4000/assets/rc3/Goal/request">request</a>.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/Request.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Request.png" alt="Request"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/Request.png"><img src="http://localhost:4000/images/rc3/Goal/Request.png" alt="Request" /></a></p>
 
 <pre><code>GET http://129.21.39.225:82/ HTTP/1.1
 Host: 129.21.39.225:82
@@ -228,9 +232,9 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 </code></pre>
 
-<p>Everything looks normal there. Now let’s look at the <a href="https://viviturtle.github.io/assets/rc3/Goal/response">response</a> from the web server.</p>
+<p>Everything looks normal there. Now let’s look at the <a href="http://localhost:4000/assets/rc3/Goal/response">response</a> from the web server.</p>
 
-<p><a href="https://viviturtle.github.io/images/rc3/Goal/Response.png"><img src="https://viviturtle.github.io/images/rc3/Goal/Response.png" alt="Response"></a></p>
+<p><a href="http://localhost:4000/images/rc3/Goal/Response.png"><img src="http://localhost:4000/images/rc3/Goal/Response.png" alt="Response" /></a></p>
 
 <pre><code>HTTP/1.1 200 OK
 Date: Sat, 21 Nov 2015 20:07:23 GMT
@@ -313,7 +317,7 @@ Content-Type: text/html; charset=UTF-8
 <script src="/js/post.js"></script>        
         <footer class="site-footer">
     <button class="go-to-top"></button>
-    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> © 2016 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> &copy; 2018 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
     <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
 </footer>
     </div>

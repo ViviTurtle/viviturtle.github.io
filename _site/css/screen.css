@@ -175,7 +175,7 @@ html {
   height: 100%;
   max-height: 100%;
   font-size: 62.5%;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   height: 100%;
@@ -610,7 +610,7 @@ blockquote {
   display: block;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, transparent 0%, black 50%, transparent 100%); }
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 50%, rgba(0, 0, 0, 0) 100%); }
 
 .post-title {
   font-size: 3.6rem; }
@@ -867,7 +867,7 @@ blockquote {
     top: auto;
     color: #ffffff;
     text-align: center;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%); }
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%); }
     .single-post .album figcaption:before {
       display: none; }
 

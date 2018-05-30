@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,7 @@
     <meta name="description" content="  I was sniffing some web traffic for a while, I think i finally got something interesting. Help me find flag through all these packets.">
   
     
-    <meta name="keywords" content="Forensics, CTF, CSAW">
+    <meta name="keywords" content="Forensics, CTF, CSAW" />
     
 
     <meta name="HandheldFriendly" content="True">
@@ -19,37 +18,37 @@
 	
     <!-- Open Graph data -->
 
-	<meta property="og:title" content="CSAW 2015 ~ Transfer: Forensics 100">
-	<meta property="og:type" content="article">
+	<meta property="og:title" content="CSAW 2015 ~ Transfer: Forensics 100" />
+	<meta property="og:type" content="article" />
 
 
 
 
-<meta property="og:image" content="/images/cover.png">
+<meta property="og:image" content="/images/cover.png" />
 
 
-<meta property="og:site_name" content="Black Magic Exploitation">
-<meta property="og:description" content="  I was sniffing some web traffic for a while, I think i finally got something interesting. Help me find flag through all these packets.">
+<meta property="og:site_name" content="Black Magic Exploitation" />
+<meta property="og:description" content="  I was sniffing some web traffic for a while, I think i finally got something interesting. Help me find flag through all these packets." />
 
 
-<meta property="og:url" content="/blog/forensics/ctf/all/crypto/transfer">
+<meta property="og:url" content="/blog/forensics/ctf/all/crypto/transfer" />
 
 
     
-	<meta property="article:author" content="http://jwillmer.de/about">
-	<link rel="author" href="http://jwillmer.de/about">
+	<meta property="article:author" content="http://jwillmer.de/about" />
+	<link rel="author" href="http://jwillmer.de/about" />
 
 
 
-<meta property="article:published_time" content="2015-09-19T21:59:33-07:00">
+<meta property="article:published_time" content="2015-09-19T23:59:33-05:00" />
 
 
 
-<meta property="article:tag" content="Forensics">
+<meta property="article:tag" content="Forensics" />
 
-<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="CTF" />
 
-<meta property="article:tag" content="CSAW">
+<meta property="article:tag" content="CSAW" />
 
 <!-- End: Open Graph data -->	
 	<!-- Twitter data -->
@@ -75,7 +74,7 @@
 <meta name="twitter:image:src" content="/images/cover.png">
 <!-- End: Twitter data -->	
 
-    <link href="https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield%7CMerriweather:300italic,700,300,700italic%7COpen+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Mrs+Saint+Delafield|Merriweather:300italic,700,300,700italic|Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/screen.css">
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="alternate" type="application/rss+xml" title="Black Magic Exploitation" href="/feed.xml">
@@ -90,7 +89,7 @@
     <div class="site-wrapper">
         
 
-<header class="main-header detail-page image-bg  has-cover" style=" background-size: cover; background-image: url(/images/cover.png)">
+<header class="main-header detail-page image-bg  has-cover" style=" background-size: cover; background-image: url(/images/cover.png)" >
     <h1 class="page-title"><a href="/" title="Black Magic Exploitation">Black Magic Exploitation</a></h1>
     <h2 class="page-description">CTF's, Exploits, and Black Magic</h2>
     <div class="nav">
@@ -138,7 +137,12 @@
             
 
             
-            <li><a class="page-link" href="/offline-warning/" title="Offline">Offline</a></li>
+            
+
+            
+
+            
+            <li><a class="page-link" href="/Programming/" title="Programming">Programming</a></li>
             
             
 
@@ -157,7 +161,7 @@
         <header class="post-header short-diver">
             <h1 class="post-title" itemprop="name headline">CSAW 2015 ~ Transfer: Forensics 100</h1>
             <section class="post-meta">
-                <time datetime="2015-09-19T21:59:33-07:00" itemprop="datePublished">Sep 19, 2015</time> 
+                <time datetime="2015-09-19T23:59:33-05:00" itemprop="datePublished">Sep 19, 2015</time> 
                 on
                 
                 <span>Forensics</span>
@@ -176,12 +180,12 @@ Help me find flag through all these packets.</p>
 </blockquote>
 
 <blockquote>
-  <p><a href="https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a></p>
+  <p><a href="http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a></p>
 </blockquote>
 
 <p>This was a fairly easy forensics question, although it could of easily been worth 150 considering how much easier the other forensics ones were. It combined a packet capture with some python programming for basic cryptographic ciphers.</p>
 
-<p>We given a link to a pcap file: <a href="https://viviturtle.github.io/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a>. Thinking it would be quite easy, I strings the pcap file looking for “flag”</p>
+<p>We given a link to a pcap file: <a href="http://localhost:4000/assets/csaw/net_756d631588cb0a400cc16d1848a5f0fb.pcap">net_756d631588cb0a400cc16d1848a5f0fb.pcap</a>. Thinking it would be quite easy, I strings the pcap file looking for “flag”</p>
 
 <blockquote>
   <table>
@@ -213,16 +217,16 @@ Help me find flag through all these packets.</p>
 
 <p>After that didn’t work, I inspected it in wireshark, our great packet inspection tool, and was given a huge list of packets(2000 to be exact).I spent some time following several TCP streams (right click packet -&gt; Follow TCP Stream) and we can see the packets included traffic from reddit, facebook and symantec to name a few.</p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/Example.png"><img src="https://viviturtle.github.io/images/csaw/Example.png" alt="Example"></a></p>
+<p><a href="http://localhost:4000/images/csaw/Example.png"><img src="http://localhost:4000/images/csaw/Example.png" alt="Example" /></a></p>
 
 <p>When we get to packets 150-300ish, we see something very interesting.</p>
 
-<p><a href="https://viviturtle.github.io/images/csaw/Python.png"><img src="https://viviturtle.github.io/images/csaw//Python.png" alt="Python"></a></p>
+<p><a href="http://localhost:4000/images/csaw/Python.png"><img src="http://localhost:4000/images/csaw//Python.png" alt="Python" /></a></p>
 
 <p>We can clearly see the flag is somewhere in there, so I saved the file on my pc.
 After dissecting what this is, it is clearly python code in which some “flag” was encrypted with caesar ciphers, rot13, and base64, all of which are broken.</p>
 
-<p><a href="https://viviturtle.github.io/assets/csaw/net_original.py">net_original.py</a></p>
+<p><a href="http://localhost:4000/assets/csaw/net_original.py">net_original.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">string</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -282,7 +286,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 
 <p>From this code we clearly see what we have to do is take the first integer of the output (which is the long string after the print), subtract one, and apply the decryption cipers (which we had to make) based on that integer. We can keep doing this until the final string contains the word flag. The following code is my final code to get the flag.</p>
 
-<p><a href="https://viviturtle.github.io/assets/csaw/net_solution.py">net_solution.py</a></p>
+<p><a href="http://localhost:4000/assets/csaw/net_solution.py">net_solution.py</a></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">string</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -385,7 +389,7 @@ After dissecting what this is, it is clearly python code in which some “flag�
 <script src="/js/post.js"></script>        
         <footer class="site-footer">
     <button class="go-to-top"></button>
-    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> © 2016 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="copyright"><a href="" title="Black Magic Exploitation">Black Magic Exploitation</a> &copy; 2018 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
     <p class="poweredby">powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> with the <a href="https://github.com/jwillmer/jekyllDecent" title="jekyllDecent Theme">jekyllDecent</a> theme</p>
 </footer>
     </div>

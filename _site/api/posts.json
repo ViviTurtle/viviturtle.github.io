@@ -6,7 +6,7 @@
         "category": "",
         "url": "/blog/ctf/misc/all/goodtime",
         "tags": ["RC3","Programming"],
-        "date": "2016-11-20 03:29:33 -0800",
+        "date": "2016-11-20 05:29:33 -0600",
         "language": "en"
     },
   
@@ -17,7 +17,7 @@
         "category": "",
         "url": "/blog/ctf/stego/crypto/all/QC13-Soundcheck",
         "tags": ["Stego","QueerCon","Crypto"],
-        "date": "2016-08-11 04:29:33 -0700",
+        "date": "2016-08-11 06:29:33 -0500",
         "language": "en"
     },
   
@@ -28,7 +28,7 @@
         "category": "",
         "url": "/blog/ctf/web/all/top-secret",
         "tags": ["Web","RC3","SQLi","sqlmap"],
-        "date": "2015-11-29 01:59:33 -0800",
+        "date": "2015-11-29 03:59:33 -0600",
         "language": "en"
     },
   
@@ -39,7 +39,7 @@
         "category": "",
         "url": "/blog/ctf/forensics/all/OpenW0tM8",
         "tags": ["RC3","Forensics","CTF","Wireshark","Crypto"],
-        "date": "2015-11-28 02:59:33 -0800",
+        "date": "2015-11-28 04:59:33 -0600",
         "language": "en"
     },
   
@@ -50,7 +50,7 @@
         "category": "",
         "url": "/blog/stego/ctf/all/super-secrets",
         "tags": ["RC3","Stego"],
-        "date": "2015-11-28 01:59:33 -0800",
+        "date": "2015-11-28 03:59:33 -0600",
         "language": "en"
     },
   
@@ -61,7 +61,7 @@
         "category": "",
         "url": "/blog/web/ctf/all/goal",
         "tags": ["web","CTF","RC3"],
-        "date": "2015-11-27 21:59:33 -0800",
+        "date": "2015-11-27 23:59:33 -0600",
         "language": "en"
     },
   
@@ -72,7 +72,7 @@
         "category": "",
         "url": "/blog/ctf/web/all/v1ew-s0urce",
         "tags": ["RC3","Forensics","CTF"],
-        "date": "2015-11-27 20:59:33 -0800",
+        "date": "2015-11-27 22:59:33 -0600",
         "language": "en"
     },
   
@@ -83,7 +83,7 @@
         "category": "",
         "url": "/blog/forensics/ctf/all/crypto/transfer",
         "tags": ["Forensics","CTF","CSAW"],
-        "date": "2015-09-19 21:59:33 -0700",
+        "date": "2015-09-19 23:59:33 -0500",
         "language": "en"
     },
   
@@ -94,7 +94,7 @@
         "category": "",
         "url": "/blog/recon/ctf/all/alexander-taylor",
         "tags": ["Recon","CTF","CSAW"],
-        "date": "2015-09-18 22:59:33 -0700",
+        "date": "2015-09-19 00:59:33 -0500",
         "language": "en"
     },
   
@@ -105,7 +105,7 @@
         "category": "",
         "url": "/blog/ctf/stego/all/keep-calm-and-ctf",
         "tags": ["Stego","CTF","CSAW"],
-        "date": "2015-09-18 21:59:33 -0700",
+        "date": "2015-09-18 23:59:33 -0500",
         "language": "en"
     },
   
@@ -116,7 +116,7 @@
         "category": "",
         "url": "/blog/recon/ctf/all/julian-cohen",
         "tags": ["Recon","CTF","CSAW"],
-        "date": "2015-09-17 23:59:33 -0700",
+        "date": "2015-09-18 01:59:33 -0500",
         "language": "en"
     },
   
@@ -127,7 +127,7 @@
         "category": "",
         "url": "/blog/forensics/ctf/all/flash",
         "tags": ["Forensics","CTF","CSAW"],
-        "date": "2015-09-17 22:59:33 -0700",
+        "date": "2015-09-18 00:59:33 -0500",
         "language": "en"
     },
   
@@ -138,7 +138,7 @@
         "category": "",
         "url": "/blog/programming/ctf/all/math",
         "tags": ["OpenToAll","Misc","CTF"],
-        "date": "2015-03-30 22:59:33 -0700",
+        "date": "2015-03-31 00:59:33 -0500",
         "language": "en"
     },
   
@@ -149,7 +149,7 @@
         "category": "",
         "url": "/blog/ctf/crypto/all/Bach",
         "tags": ["OpenToAll","Crypto","CTF"],
-        "date": "2015-03-28 22:59:33 -0700",
+        "date": "2015-03-29 00:59:33 -0500",
         "language": "en"
     },
   
@@ -160,7 +160,7 @@
         "category": "",
         "url": "/blog/reversing/ctf/all/haymarket",
         "tags": ["OpenToAll","Reversing","CTF"],
-        "date": "2015-03-10 22:59:33 -0700",
+        "date": "2015-03-11 00:59:33 -0500",
         "language": "en"
     },
   
@@ -171,7 +171,7 @@
         "category": "",
         "url": "/blog/blog/all/new-beginnings",
         "tags": ["SJSUInfoSec","CTF"],
-        "date": "2014-12-21 03:45:00 -0800",
+        "date": "2014-12-21 05:45:00 -0600",
         "language": "en"
     },
   
@@ -182,7 +182,7 @@
         "category": "",
         "url": "/blog/blog/all/the-hackers-weapon",
         "tags": ["CTF","tools","clubs"],
-        "date": "2014-05-09 23:13:00 -0700",
+        "date": "2014-05-10 01:13:00 -0500",
         "language": "en"
     },
   
@@ -193,7 +193,7 @@
         "category": "",
         "url": "/blog/blog/all/capture-flag-competitions",
         "tags": ["CTF"],
-        "date": "2014-05-07 16:10:00 -0700",
+        "date": "2014-05-07 18:10:00 -0500",
         "language": "en"
     },
   
@@ -204,7 +204,7 @@
         "category": "",
         "url": "/blog/blog/all/tech-blogs-we-must-follow",
         "tags": ["blogs"],
-        "date": "2014-04-01 01:45:00 -0700",
+        "date": "2014-04-01 03:45:00 -0500",
         "language": "en"
     },
   
@@ -215,7 +215,7 @@
         "category": "",
         "url": "/blog/blog/all/the-ports-of-cyber-security",
         "tags": [],
-        "date": "2014-03-11 02:02:00 -0700",
+        "date": "2014-03-11 04:02:00 -0500",
         "language": "en"
     }
   
