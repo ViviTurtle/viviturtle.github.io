@@ -20,7 +20,7 @@ cover:        /images/cover.png
 about:        /images/about.png
 
 #pagination
-paginate:    10
+paginate:    6
 paginate_path: "page:num"
 
 # Build settings
