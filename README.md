@@ -26,8 +26,12 @@ Object Oriented Programming
 
 
 **Inheriting a class**
-class toInherit(Parent)
-> Parent is the parent class that inherits all variables and methods
+Parent is the parent class that inherits all variables and methods:
+```python
+class toInherit(Parent):
+  def method1():
+    pass
+```
 
 **Overriding Methods**
 You can override methods just by using the same function name as the parent class
