@@ -40,6 +40,7 @@ You can override methods just by using the same function name as the parent clas
 Inserting the **@staticmethod** property on top of a class makes it callable (Cannot be called within the same class)
 Use Class.method inorder to do recurstion here
 ```python
+class math():
     @staticmethod
     def method1(var1, var2):
         return var + var2
