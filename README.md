@@ -15,10 +15,10 @@ dict {'a' : method1(),
 dict['a'] 
 ```
 
-**Add-On**D
+**Add-On**
 >Dictionaries can also be iterated with a default value using get
 ```python
-dict.get('c', print "This variable does not exist - please debug)
+dict.get('c', print "This variable does not exist - please debug")
 ```
 
 Object Oriented Programming
