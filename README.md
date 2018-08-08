@@ -1,10 +1,59 @@
-# jekyllDecent
-[![Build Status](https://travis-ci.org/jwillmer/jekyllDecent.svg?branch=gh-pages)](https://travis-ci.org/jwillmer/jekyllDecent) 
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](#license)
-[![Release v1.1.5](https://img.shields.io/badge/release-v1.1.5-blue.svg)](https://github.com/jwillmer/jekyllDecent/releases/tag/1.1.5)
+Lessons Learned TODOs
 
-This is a blog template for a static site generator named [Jekyll](https://jekyllrb.com/docs/home/) based on a [Ghost](https://ghost.org) template named [Decent](https://github.com/serenader2014/decent). 
+All global variables are stored in globals()
+------------
+  See https://stackoverflow.com/questions/3972872/python-variables-as-keys-to-dict
+  
+You can use a switch statement in python via a Dictionary
+------------
+  dict {'a' : method1(), 'b' : method2()}
+ dict[a] #(Invokes method1())
 
-Installation instructions, features, previews and more can be found in the **[GitHub generated blog](http://jwillmer.github.io/jekyllDecent)**. This blog is automatically generated out of the source code in the `gh-pages` branch. If you like to see the theme in production have a look at [jwillmer.de](http://jwillmer.de).
+**Add-On**D
+>Dictionaries can also be iterated with a default value using get
+dict.get('c', print "This variable does not exist - please debug)
 
-[![](./media/img/2016-06-08-Readme-front-page-previewe.jpg)](http://jwillmer.github.io/jekyllDecent)
+
+Object Oriented Programming
+==========
+
+**Inheriting a class**
+class toInherit(Parent)
+> Parent is the parent class that inherits all variables and methods
+
+**Overriding Methods**
+You can override methods just by using the same function name as the parent class
+
+**Static Methods**
+Inserting the **@staticmethod** property on top of a class makes it callable (Cannot be called within the same class)
+Use Class.method inorder to do recurstion here
+```python
+    @staticmethod
+    def method1(var1, var2):
+        return var + var2
+```
+
+**{Un}Packing Varables**
+Functions can be packed:
+```python
+def method1(var1, var2):
+  return var + var2
+  
+numbers = [1, 5]
+print method1(*numbers)
+>>> 6
+```
+
+Functions can also be unpacked
+```python
+def method1(*many_numbers):
+  return sum(many_numbers)
+  
+numbers = [1, 5, 2, 2, 1, 2]
+print method1(numbers)
+>>> 13
+```
+
+
+
+  
