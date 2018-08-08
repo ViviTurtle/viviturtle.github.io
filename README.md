@@ -1,4 +1,5 @@
 Lessons Learned TODOs
+========
 
 All global variables are stored in globals()
 ------------
@@ -15,7 +16,8 @@ dict.get('c', print "This variable does not exist - please debug)
 
 
 Object Oriented Programming
-==========
+------------
+
 
 **Inheriting a class**
 class toInherit(Parent)
