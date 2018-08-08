@@ -7,13 +7,19 @@ All global variables are stored in globals()
   
 You can use a switch statement in python via a Dictionary
 ------------
-  dict {'a' : method1(), 'b' : method2()}
- dict[a] #(Invokes method1())
+```python
+dict {'a' : method1(),
+      'b' : method2()}
+      
+#Invokes method1()    
+dict['a'] 
+```
 
 **Add-On**D
 >Dictionaries can also be iterated with a default value using get
+```python
 dict.get('c', print "This variable does not exist - please debug)
-
+```
 
 Object Oriented Programming
 ------------
