@@ -102,7 +102,7 @@ First thing I tried to do was turn these into letters. It's less than 26 so it s
 B P I L A I A I D F L O E G F M A A A D G G G M G B G H C O H E H I H E A A E L M L E K E M K P C O M O C P M N E L C J I M E N K K E L I K K I K K E L I P E P M J E P C N M O C L H I M P C M K J O F A C A A K E D O A E D C B P A A A A A A A A A A
 ```
 
-With a little big more time, some teammates on OpenToAll pointed out that there at 16 unique notes, which we can probably translate to **hexidecimal**. I took the current numbers I had and subtracted 1 from all to translate it to 0-15. Anything after 10 was changed into it's corresponding hexidecimal letter. The end result here was:
+With a little more time, some teammates on OpenToAll pointed out that there at 16 unique notes, which we can probably translate to **hexidecimal**. I took the current numbers I had and subtracted 1 from all to translate it to 0-15. Anything after 10 was changed into it's corresponding hexidecimal letter. The end result here was:
 
 ```
 1F8B080835BE465C0003666C61672E747874004BCB494CAF2ECE2FCD4B298E4FCC4DACCACC4B8F4FC94F2DCE2B89CF2CA9E50200A43E04321F000000
