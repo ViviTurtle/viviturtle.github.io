@@ -70,7 +70,6 @@ I Googled some OSX transcribing software and after trying a few here and there, 
       <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Manual.png" />
        <figcaption>AnthemScore View</figcaption>
    </figure>
-   <figure>
 </div>
 
 Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music exported from AnthemScore, there are roughly 16 unique notes. 
