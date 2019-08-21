@@ -7,8 +7,6 @@ categories:  Stego CTF
 tags: RC3 Stego
 ---
 
-![start]({{site.url}}/images/rc3/start.png)
-
 This was a super easy misc question. This should of been worth 150 or so points instead.
 
 We given a link to a document : [SECRETS.doc]({{site.url}}/assets/rc3/SECRETS.doc). Opening it up in LibreWriter or Microsoft office showed us some text.
