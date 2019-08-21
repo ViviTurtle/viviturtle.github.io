@@ -1,16 +1,16 @@
 ---
 layout:    default
-permalink: "/Programming/"
+permalink: "/Hacking/"
 author:    ViviTurtle
-menutitle: Programming
-title:     Programming
-excerpt:   All unique programming related blog postsle
-weight:    3
+menutitle: Hacking
+title:     Hacking
+excerpt:   All Hacking and CTF Related Write-ups
+weight:    5
 ---
 
 <div id="content" class="content">
- <h2>Programming</h2>
-    {% assign sorted_posts = site.categories.Programming | reversed %}
+ <h2>Hacking</h2>
+    {% assign sorted_posts = site.categories.CTF | reversed %}
     <h2 id="{{category[0] | uri_escape | downcase | slugify }}">{{category[0] | camelcase }}</h2>
     <ul class="category {{category[0] | uri_escape | downcase | slugify}}">  
         {% for post in sorted_posts %}
