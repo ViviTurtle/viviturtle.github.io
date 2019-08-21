@@ -3,24 +3,26 @@ layout: post
 title:  "OpenCTF 2019 ~ Music"
 author: Vivi
 date:   2019-08-11 04:29:33 -0700
-categories: CTF Stego Crypto DefCon27
+categories: CTF Stego Crypto
 tags: Stego OpenCTF Misc DefCon27
 ---
 
-Finally got to play with some of the smartest members of OpenToAll this year in OpenCTF @ DefCon 27. Although I only played for a short amount of time it was really fun and it re-inspired me to play in a lot more CTFs this year. This particular music question seemed very similar to the [QueerCon Music Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) I did in 2016 and figured it wouldn't be too hard to tackle. 
+Finally got to play with some of the smartest members of OpenToAll this year in OpenCTF @ DefCon 27. Although I only played for a short amount of time it was really fun and it re-inspired me to play in a lot more CTFs this year. This particular [music question]((https://scoreboard.openctf.cat/challenges#Music) seemed very similar to the [QueerCon Music Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) I did in 2016 and figured it wouldn't be too hard to tackle. 
 
 
 	
 **Contest Details**
 ---
-[Music - 100](https://scoreboard.openctf.cat/challenges#Music) 
-<figure>
-   <img src="{{ site.github.url }}/images/openctf2019/Music.png" />
-   <figcaption>musical_notes.jpg</figcaption>
-</figure>''
 
+```
+Music - 100
+--------------
+I think my computer is trying to send me a message.
 
-Seems like the author decided to hide a secret message within a [flac file]({{site.url}}/assets/openctf2019/music.flac). Listening to the file results in a single series of notes. Nothing fancy, like a beat, harmonics, melody, or anything of the sorts.. Just to be sure I opened up a spectrogram to make sure no hidden messages were in the soundtrack.
+```
+Attached: [music.flac]({{site.url}}/assets/openctf2019/music.flac)
+
+Seems like the author decided to hide a secret message within a [flac file]({{site.url}}/assets/openctf2019/music.flac). Listening to the file results in a single series of notes. Nothing fancy, like a beat, harmonics, melody, or anything of the sorts. Just to be sure I opened up a spectrogram to make sure no hidden messages were in the soundtrack.
 
 <figure>
    <img src="{{ site.github.url }}/images/openctf2019/Spectogram-Music.png" />
@@ -30,13 +32,14 @@ Seems like the author decided to hide a secret message within a [flac file]({{si
 This spectrogram was created using [Sonic Visualizer](https://www.sonicvisualiser.org/download.html) which I discovered during the [QueerCon Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) I had mentioned before. Since than 2016, it has gone through a major rehaul and is very intuitive to use. I  can actually scroll, zoom, and export the Spectrogram using this tool. So much better than using:
 
 ```
- sox <audio file> -n spectrogram -o <ouput file>
+ sox <audio file> -n trim <time> <duration> spectrogram -o <ouput file>
+```audio file> -n spectrogram -o <ouput file>
 ```
 
 As you can see from the spectrogram no hidden high frequency tracks/sounds within the track. Next up was to look at the metadata:
 
 <figure>
-<script id="asciicast-UbjMQ77DjMCfxAX28DpoHotO1" src="https://asciinema.org/a/UbjMQ77DjMCfxAX28DpoHotO1.js" async></script>
+<script height="75%" id="asciicast-UbjMQ77DjMCfxAX28DpoHotO1" src="https://asciinema.org/a/UbjMQ77DjMCfxAX28DpoHotO1.js" async></script>
    <figcaption> Looking at the metadata</figcaption>
 </figure>
 
@@ -44,8 +47,20 @@ Nothing here either except for maybe that it was processed by Sox, the command-l
 
 My next approach was to decipher the actual notes. There are two reasons for doing this:
 
-1) The notes in this track are single notes. No overlapping notes nor magic frequencies. It seems a little too convenient that this music track was *considerably* easy to transcribe the notes. 
-2) I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created on on Reddit. In this challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
+#) The notes in this track are single notes. No overlapping notes nor magic frequencies. It seems a little too convenient that this music track was *considerably* easy to transcribe the notes.
+
+<figure>
+   <img src="{{ site.github.url }}/images/openctf2019/Spectogram-Music.png" />
+   <figcaption>Spectrogram</figcaption>
+</figure> 
+
+#) I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created on on Reddit. In this particular music challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
+
+|Normal|A|B|C|D|E|F|G|
+|------|-----|----|-----|-----|-----|-----|-----|
+|**Sharps**|H|I|J|K|L|M|N|
+|**Naturals**|O|P|Q|R|S|T|U|
+|**Flats**|V|W|X|Y|Z|
 
 I Googled some OSX transcribing software and after trying a few here and there, the one that worked best was a tool called [AnthemScore](https://www.lunaverus.com) I opened the Music file on AnthemScore and let it process the Notes
 
@@ -54,7 +69,7 @@ I Googled some OSX transcribing software and after trying a few here and there, 
       <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Transcribe.png" />
        <figcaption>AnthemScore Transcribing Default Options</figcaption>
    </figure>
-    </figure>
+ 
       <figure>
       <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Manual.png" />
        <figcaption>AnthemScore View</figcaption>
@@ -62,7 +77,7 @@ I Googled some OSX transcribing software and after trying a few here and there, 
    <figure>
       <embed src="{{ site.github.url }}/assets/openctf2019/music.pdf" type="application/pdf">
       <figcaption>Transcription output</figcaption>
-  
+    </figure> 
 </div>
 
 Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music, there is roughly 16 unique notes. I mistakenly tried to translate the 16 notes into 26 letters. The math here being two octaves + two notes is roughly 12 notes (if you include the sharps/flats plus two notes). The result of this was something like 
