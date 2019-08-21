@@ -2,8 +2,8 @@
 layout: post
 title:  "OpenCTF 2019 ~ Music"
 author: Vivi
-date:   2019-08-11 04:29:33 -0700
-categories: CTF Stego Crypto
+date:   2019-08-20 04:29:33 -0700
+categories: CTF Stego Misc
 tags: Stego OpenCTF Misc DefCon27
 ---
 
