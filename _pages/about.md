@@ -16,11 +16,12 @@ Vivi graduated from SJSU in Computer Science in 2016. She is a tinkerer of techn
 
 ## Experience
 
-Security Engineer
-: Credit Karma
+Credit Karma
+: Security Engineer (2018-2019)
 
-Sr. Technology Risk Consultant
-: Crowe LLP
+Crowe LLP
+: Sr. Technology Risk Consultant (2016-2018)
+
 
 ---
 
