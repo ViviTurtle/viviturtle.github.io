@@ -44,7 +44,7 @@ Nothing here either except for maybe that it was processed by Sox, the command-l
 
 My next approach was to decipher the actual notes. There are two reasons for doing this:
 
-1) The notes in this track are single notes. No overlapping notes nor magic frequencies. It seems a little too convenient that this music track was **considerably** easy to transcribe the notes.
+1) The notes in this track are single notes. No overlapping notes nor magic frequencies. It seems a little too convenient that this music track was **considerably** easy to transcribe.
 
 <figure>
    <img src="{{ site.github.url }}/images/openctf2019/Spectogram-Music.png" />
