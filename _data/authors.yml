@@ -5,10 +5,10 @@ default:                                                      # Fallback if noth
   picture:      /images/Prof.jpg                          # OPTIONAL: author picture
   bio:          Technology is my playground                          # OPTIONAL: text below author name in posts
   location:     United States                                       # OPTIONAL: used to display location of the author
-  website:      "http://jwillmer.de/about"                    # OPTIONAL: link to the author of a post
+  website:      "http://blackmagicexploits.com"                    # OPTIONAL: link to the author of a post
   email:                                                      # OPTIONAL: used in the about page
   twitter:      VivieTurtle                                   # OPTIONAL: used in the about page
-  linkedin:                                                   # OPTIONAL: used in the about page
+  linkedin:     vivilangga                                             # OPTIONAL: used in the about page
   xing:                                                       # OPTIONAL: used in the about page
   github:       ViviTurtle                                      # OPTIONAL: used in the about page
   stackoverflow:                                              # OPTIONAL: used in the about page
@@ -26,6 +26,6 @@ ViviTurtle:
   picture:      /images/Prof.jpg   
   bio:          Technology is my playground  
   location:     United States 
-  website:      
+  website:      http://blackmagicexploits.com
   twitter:      Vivieturtle
   github:       ViviTurtle
