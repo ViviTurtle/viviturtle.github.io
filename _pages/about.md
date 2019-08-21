@@ -13,6 +13,18 @@ excerpt:   This page contains info about Vivi
 
 Vivi graduated from SJSU in Computer Science in 2016. She is a tinkerer of technology with a passion for Information Security. She not only knows how to build applications, but to break and modify all aspects of technology.  She founded the SJSU's Information Security Club which is still going strong today. She has lead her club in many collegiate competitions and mentored many other students. She is currently working for Crowe Horwath doing Risk Consulting. If you feel the need to contact her, feel free at her twitter: vivieturtle
 
+
+## Experience
+
+- Credit Karma: Security Engineer
+2018 - 2019
+: Penetration Testing, Bug Bounty Management, and Design Reviews
+
+- Crowe Horwath LLP: Technology Risk Consultant
+2016 - 2018
+: Internal and External Penetration Testing
+
+
 ---
 
 ## Skills
@@ -23,6 +35,7 @@ Vivi graduated from SJSU in Computer Science in 2016. She is a tinkerer of techn
 - Reverse Engineering
 
 ---
+
 
 ## Education
 
