@@ -16,14 +16,11 @@ Vivi graduated from SJSU in Computer Science in 2016. She is a tinkerer of techn
 
 ## Experience
 
-- Credit Karma: 
-2018 - 2019
-: Security Engineer
+Security Engineer
+: Credit Karma
 
-- Crowe Horwath LLP: 
-2016 - 2018
-: Technology Risk Consultant
-
+Sr. Technology Risk Consultant
+: Crowe LLP
 
 ---
 
@@ -32,7 +29,7 @@ Vivi graduated from SJSU in Computer Science in 2016. She is a tinkerer of techn
 - Capture the Flags
 - Web Exploitation
 - Programming: Python, Java, C#
-- Reverse Engineering
+- Reverse Engineering 
 
 ---
 
