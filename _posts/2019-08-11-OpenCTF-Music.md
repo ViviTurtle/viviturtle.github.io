@@ -7,7 +7,7 @@ categories: CTF Stego Misc
 tags: Stego OpenCTF Misc DefCon27
 ---
 
-Finally got to play with some of the smartest members of OpenToAll this year in OpenCTF @ DefCon 27. Although I only played for a short amount of time it was really fun and it re-inspired me to play in a lot more CTFs this year. This particular [music question]((https://scoreboard.openctf.cat/challenges#Music) seemed very similar to the [QueerCon Music Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) I did in 2016 and figured it wouldn't be too hard to tackle. 
+Finally got to play with some of the smartest members of OpenToAll this year in OpenCTF @ DefCon 27. Although I only played for a short amount of time it was really fun and it re-inspired me to play in a lot more CTFs this year. This particular [music question](https://scoreboard.openctf.cat/challenges#Music) seemed very similar to the [QueerCon Music Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) I did in 2016 and figured it wouldn't be too hard to tackle. 
 
 
 	
@@ -52,7 +52,7 @@ My next approach was to decipher the actual notes. There are two reasons for doi
    <figcaption>Spectrogram</figcaption>
 </figure> 
 
-2.) I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created on on Reddit. In this particular music challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
+2. I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created on on Reddit. In this particular music challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
 
 |Normal|A|B|C|D|E|F|G|
 |------|-----|----|-----|-----|-----|-----|-----|
@@ -72,7 +72,8 @@ I Googled some OSX transcribing software and after trying a few here and there, 
        <figcaption>AnthemScore View</figcaption>
    </figure>
    <figure>
-      <embed src="{{ site.github.url }}/assets/openctf2019/music.pdf" type="application/pdf">
+      <embed src="https://drive.google.com/viewerng/
+viewer?embedded=true&url=http://blackmagicexploits.com/assets/openctf2019/music.pdf">
       <figcaption>Transcription output</figcaption>
     </figure> 
 </div>
