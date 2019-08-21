@@ -7,144 +7,105 @@ categories: CTF Stego Crypto DefCon27
 tags: Stego OpenCTF Misc DefCon27
 ---
 
-I was given to the opportunity to play with some of the smartest members of OpenToAll this year in OpenCTF @ DefCon 27. Although I only played for a short amount of time it was really fun and it re-inspired me to play in a lot more CTFs this year. This particular music question seemed very similar to the [QueerCon Music Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) and as such decided to tackle this down. 
+Finally got to play with some of the smartest members of OpenToAll this year in OpenCTF @ DefCon 27. Although I only played for a short amount of time it was really fun and it re-inspired me to play in a lot more CTFs this year. This particular music question seemed very similar to the [QueerCon Music Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) I did in 2016 and figured it wouldn't be too hard to tackle. 
 
-/blog/ctf/crypto/Bach
-
-I solved in 2016. lvedwas solved by me and can be found at at the  []()
 
 	
 **Contest Details**
 ---
 [Music - 100](https://scoreboard.openctf.cat/challenges#Music) 
 <figure>
-   <img src="{{ site.github.url }}/images/openctf/Music.png" />
+   <img src="{{ site.github.url }}/images/openctf2019/Music.png" />
    <figcaption>musical_notes.jpg</figcaption>
 </figure>''
 
-```
-Think you have solved the puzzle? Care to find out? 
 
-Send your find to answer (at) queercon (dot) org; and we will let you know.   
-
-Give up? Stay tuned for clues! They will be posted around in various places; such as on our Mobile App or Facebook page.  
-```
-
-Looks like we were given a song from Sound cloud. Given the clues, looks like there is some kind of hidden message in the song. Because the contest hinted: 
-
-> Listen closely! Good luck!
-
-I turned on the song for the next four hours while solving this puzzle to make sure it got stuck in my head.
-
-Like any stego expert I downloaded the [full song]({{site.url}}/assets/queercon/Crypto [QueerCon13].mp3) from SoundCloud and looked at its metadata using exiftool which I saved [here]({{site.url}}/assets/queercon/Metadata.txt)
-
+Seems like the author decided to hide a secret message within a [flac file]({{site.url}}/assets/openctf2019/music.flac). Listening to the file results in a single series of notes. Nothing fancy, like a beat, harmonics, melody, or anything of the sorts.. Just to be sure I opened up a spectrogram to make sure no hidden messages were in the soundtrack.
 
 <figure>
-<script type="text/javascript" src="https://asciinema.org/a/82493.js" id="asciicast-82493" async></script>
+   <img src="{{ site.github.url }}/images/openctf2019/Spectogram-Music.png" />
+   <figcaption>Spectrogram</figcaption>
+</figure>
+
+This spectrogram was created using [Sonic Visualizer](https://www.sonicvisualiser.org/download.html) which I discovered during the [QueerCon Puzzle]({{site.url}}/blog/ctf/stego/crypto/QC13-Soundcheck) I had mentioned before. Since than 2016, it has gone through a major rehaul and is very intuitive to use. I  can actually scroll, zoom, and export the Spectrogram using this tool. So much better than using:
+
+```
+ sox <audio file> -n spectrogram -o <ouput file>
+```
+
+As you can see from the spectrogram no hidden high frequency tracks/sounds within the track. Next up was to look at the metadata:
+
+<figure>
+<script id="asciicast-UbjMQ77DjMCfxAX28DpoHotO1" src="https://asciinema.org/a/UbjMQ77DjMCfxAX28DpoHotO1.js" async></script>
    <figcaption> Looking at the metadata</figcaption>
 </figure>
 
-As you can see, we got nothing from here. Referencing a few audio [writeups](https://github.com/ctfs/write-ups-2015/tree/master/polictf-2015/forensics/its-hungry), I thought I should try looking at its spectrogram. Using sox, the swiss army knife for audio manipulation, I made a spectrogram for the song. I did have some issues using sox with mp3 but I referenced [this super user post](http://superuser.com/questions/421153/how-to-add-a-mp3-handler-to-sox/421168) to convert it to a wav file or allow sox to run with mp3's. After which I ran spectrogram command:
+Nothing here either except for maybe that it was processed by Sox, the command-line audio processing tool. I'm thinking if there are any unique transformations unique to Sox, it might be worth investigating. For now - I decided to put this on the backburner since this would require a lot of reading/guessing.
 
-<figure>
-<script type="text/javascript" src="https://asciinema.org/a/c9ysl2rg2y2qixhgzd8btxlgh.js" id="asciicast-c9ysl2rg2y2qixhgzd8btxlgh" async></script>
-   <figcaption> Making the spectrogram</figcaption>
-</figure>
+My next approach was to decipher the actual notes. There are two reasons for doing this:
 
-<figure>
-   <img src="{{ site.github.url }}/images/queercon/spectrogram.png" />
-   <figcaption>spectrogram.png</figcaption>
-</figure>
+1) The notes in this track are single notes. No overlapping notes nor magic frequencies. It seems a little too convenient that this music track was *considerably* easy to transcribe the notes. 
+2) I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created on on Reddit. In this challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
 
-As you can see there are few areas where the signal magnitude values (dBFS) are super high (where its yellow). Next step is to isolate each of these areas using Sox. The command I used was:
-
-```
- sox <audio file> -n trim <time> <duration> spectrogram -o <ouput file>
-```
-> sox Crypto\ \[QueerCon13\].mp3 -n trim 1 1 spectrogram -o spectrogram-1-1.png
-
-> sox Crypto\ \[QueerCon13\].mp3 -n trim 10 5 spectrogram -o spectrogram-10-5.png
-
-> sox Crypto\ \[QueerCon13\].mp3 -n trim 65 5	 spectrogram -o spectrogram-65-5.png
-
-> sox Crypto\ \[QueerCon13\].mp3 -n trim 110 5 spectrogram -o spectrogram-110-5.png
-
-> sox Crypto\ \[QueerCon13\].mp3 -n trim 169 5 spectrogram -o spectrogram-169-5.png
-
-The results were:
+I Googled some OSX transcribing software and after trying a few here and there, the one that worked best was a tool called [AnthemScore](https://www.lunaverus.com) I opened the Music file on AnthemScore and let it process the Notes
 
 <div class="album">
    <figure>
-      <img src="{{site.url}}/images/queercon/spectrogram-1-1.png" />
-      <figcaption>spectrogram-1-1.png</figcaption>
+      <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Transcribe.png" />
+       <figcaption>AnthemScore Transcribing Default Options</figcaption>
+   </figure>
+    </figure>
+      <figure>
+      <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Manual.png" />
+       <figcaption>AnthemScore View</figcaption>
    </figure>
    <figure>
-      <img src="{{site.url}}/images/queercon/spectrogram-10-5.png" />
-      <figcaption>spectrogram-10-5.png</figcaption>
-   </figure>
-    <figure>
-      <img src="{{site.url}}/images/queercon/spectrogram-65-5.png" />
-      <figcaption>spectrogram-65-5.png</figcaption>
-   </figure>   
-   <figure>
-      <img src="{{site.url}}/images/queercon/spectrogram-110-5.png" />
-      <figcaption>spectrogram-110-5.png</figcaption>
-   </figure>   
-   <figure>
-      <img src="{{site.url}}/images/queercon/spectrogram-169-5.png" />
-      <figcaption>spectrogram-169-5.png</figcaption>
-   </figure>
+      <embed src="{{ site.github.url }}/assets/openctf2019/music.pdf" type="application/pdf">
+      <figcaption>Transcription output</figcaption>
+  
 </div>
 
-This was amazingly hard to decipher so I pulled up [Sonic Visualizer](http://www.sonicvisualiser.org/) which lets me see a live spectrogram. It also has more room for users to zoom in and out in the spectrogram. Usage: Open Audio File ->  Shift + G (Spectrogram layer) -> Double Click Bottom Right Visible Range scale to adjust to according dBFS level. This were the results:
+Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music, there is roughly 16 unique notes. I mistakenly tried to translate the 16 notes into 26 letters. The math here being two octaves + two notes is roughly 12 notes (if you include the sharps/flats plus two notes). The result of this was something like 
 
-<div class="album">
-   <figure>
-      <img src="{{site.url}}/images/queercon/sonic1.png" />
-      <figcaption>sonic1.png</figcaption>
-   </figure>
-   <figure>
-      <img src="{{site.url}}/images/queercon/sonic2.png" />
-      <figcaption>sonic2.png</figcaption>
-   </figure>
-    <figure>
-      <img src="{{site.url}}/images/queercon/sonic3.png" />
-      <figcaption>sonic3.png</figcaption>
-   </figure>   
-   <figure>
-      <img src="{{site.url}}/images/queercon/sonic4.png" />
-      <figcaption>sonic4.png</figcaption>
-   </figure>   
-   <figure>
-      <img src="{{site.url}}/images/queercon/sonic5.png" />
-      <figcaption>sonic5.png</figcaption>
-   </figure>
-</div>
+After trying for a good 30 minutes of failing, I figure I should just turn the notes into numbers. Keep it simple and just turn the notes into numbers, something thats easier to see. The first note being a very low D is only the *second* lowest note in the whole sheet music. I marked this as two. The second note being the *highest* note in the whole sheet music. I marked this as 16 (since there were only actually 16 unique notes total)
 
-My deciphering got me to think this text was: 
+With the help of the sheet music and the AnthemScore, The end result was something along the lines of 
 
-> **SALD LESUW TNDI UIKX NPTUC**
+```
+2 16 9 12 1 9 1 9 4 6 12 15 5 7 6 13 1 1 1 4 7 7 7 13 7 2 7 8 3 15 8 5 8 9 8 5 1 1 5 12 13 12 5 11 5 13 11 16 3 15 13 15 3 16 13 14 5 12 3 10 9 13 5 14 11 11 5 12 9 11 11 9 11 11 5 12 9 16 5 16 13 10 5 16 3 14 13 15 3 12 8 9 13 16 3 13 11 10 15 6 1 3 1 1 11 5 4 15 1 5 4 3 2 16 1 1 1 1 1 1 1 1 1 1
+```
 
-At this point in time I wasted a whole bunch time with ciphers at [http://rumkin.com/tools/cipher](http://rumkin.com/tools/cipher) such as caesars, vigenere...etc. Don't get me wrong I know how most of these work, why rebuild the wheel? I didn't really find anything here for a while. I tried other approaches such as looking at the metadata of the image that came along with the contest, but that didn't give me anything either. I even listened to the song like 50 more times to see if I missed anything. You can say I wasted like four hours here:
+With some a little big more time, some teamates on OpenToAll pointed out to me that there at 16 unique notes, which we can probably translate to *hex*. I took the current numbers I had and subtracted 1 from all to translate it to 0-15. Anything after 10 was changed into corresponding letter. The end result here was:
+
+```
+1F8B080835BE465C0003666C61672E747874004BCB494CAF2ECE2FCD4B298E4FCC4DACCACC4B8F4FC94F2DCE2B89CF2CA9E50200A43E04321F000000
+```
+
+I'm now thinking this might be an actual file and I need to write these bytes into one. I asked one of my teamates @uafio how to write raw text into a file and he gave me this piece of python code back
+
+[WriteFile.py]({{site.github.url}}/assets/openctf2019/WriteFile.py)
+
+```python
+open('filename.raw', 'wb').write('1F8B080835BE465C0003666C61672E747874004BCB494CAF2ECE2FCD4B298E4FCC4DACCACC4B8F4FC94F2DCE2B89CF2CA9E50200A43E04321F000000'.decode('hex'))
+```
+
+I figure after running this and checking its file signatures we might have more insight onto how to get the flag
 
 <figure>
-   <img src="{{ site.github.url }}/images/queercon/musical_notes.jpg" />
-   <figcaption>musical_notes.jpg</figcaption>
+<script id="asciicast-dTWaF0dQ5wEcJMoW6ILPVH5oI" src="https://asciinema.org/a/dTWaF0dQ5wEcJMoW6ILPVH5oI.js" async></script>
+   <figcaption> Getting the final flag</figcaption>
 </figure>
 
-Thinking I missed something back at [http://rumkin.com/tools/cipher](http://rumkin.com/tools/cipher), I tried the ciphers again and eventually got a hit with the playfair cipher. **NOTE: MAKE SURE YOU CHANGE TO DECRYPT INSTEAD OF ENCRYPT THE FIRST TIME TO MAKE SURE YOU DON'T WASTE FOUR HOURS TRYING OTHER CIPHERS**. As such I input the text we had *SALD LESUW TNDI UIKX NPTUC* and I got:
+Viola! We have the flag
 
-> **QCOA PARTY ROCK THIS HOUSE**
 
-Something was obviously wrong with the first word so I looked back at the spectrograms and realized the "LD" in "SALD" was actually a "13" to make "SA13". This translates the final ciphertext to:
+>**flag{sounds_amazing_doesnt_it}**
 
-> **QC13 PARTY ROCK THIS HOUSE**
-
-This was the 13th year for QueerCon so this made sense. I emailed contests@queercon.org which resulted in no response for a couple weeks. After which I saw on the QueerCon Facebook page that many people didn't get replies. I emailed one of the other QC ubers and was finally able to confirm I got the right answer along with a cool QC badge!
+I submitted this flag on the scoreboard ahd got us another 100 points. At end of the day we OpenToAll was able to place second on the scoreboard. 
 
 <figure>
-   <img src="{{ site.github.url }}/images/queercon/QC13-Badge.jpg" />
-   <figcaption>QueerCon Badge <br> *Photo from hackaday by Eric Evenchick*</figcaption>
+   <img src="{{ site.github.url }}/images/openctf2019/FinalScore.png" />
+   <figcaption>Final Score</figcaption>
 </figure>
 
-If you want a review of this year's badge feel free to head to [http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/](http://hackaday.com/2016/08/10/what-we-learned-from-the-2016-queercon-badge/) Thanks again QueerCon for the awesome and fun challenge 
+We had a lot of fun and want to thank everyone that helped organize OpenCTF this year at DefCon. Hope to see everyone next year
