@@ -40,7 +40,6 @@ As you can see from the spectrogram no hidden high frequency tracks/sounds withi
 <script id="asciicast-UbjMQ77DjMCfxAX28DpoHotO1" src="https://asciinema.org/a/UbjMQ77DjMCfxAX28DpoHotO1.js" async></script>
    <figcaption> Looking at the metadata</figcaption>
 </figure>
-
 Nothing here either except for maybe that it was processed by Sox, the command-line audio processing tool. I'm thinking if there are any unique transformations unique to Sox, it might be worth investigating. For now - I decided to put this on the backburner since this would require a lot of reading/guessing.
 
 My next approach was to decipher the actual notes. There are two reasons for doing this:
@@ -52,7 +51,7 @@ My next approach was to decipher the actual notes. There are two reasons for doi
    <figcaption>Spectrogram</figcaption>
 </figure> 
 
-2. I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created on on Reddit. In this particular music challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
+2. I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created through Reddit. In this particular music challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
 
 |Normal|A|B|C|D|E|F|G|
 |------|-----|----|-----|-----|-----|-----|-----|
@@ -72,13 +71,17 @@ I Googled some OSX transcribing software and after trying a few here and there, 
        <figcaption>AnthemScore View</figcaption>
    </figure>
    <figure>
-      <embed src="https://drive.google.com/viewerng/
-viewer?embedded=true&url=http://blackmagicexploits.com/assets/openctf2019/music.pdf">
-      <figcaption>Transcription output</figcaption>
-    </figure> 
 </div>
 
-Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music, there is roughly 16 unique notes. I mistakenly tried to translate the 16 notes into 26 letters. The math here being two octaves + two notes is roughly 12 notes (if you include the sharps/flats plus two notes). The result of this was something like 
+Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music exported from AnthemScore, there are roughly 16 unique notes. 
+
+<figure>
+<embed src="https://drive.google.com/viewerng/
+viewer?embedded=true&url=http://blackmagicexploits.com/assets/openctf2019/music.pdf">
+<figcaption>Transcription output</figcaption>
+</figure> 
+
+I mistakenly tried to translate the 16 notes into 26 letters. The math here being two octaves + two notes is roughly 12 notes (if you include the sharps/flats plus two notes). The result of this was something like 
 
 After trying for a good 30 minutes of failing, I figure I should just turn the notes into numbers. Keep it simple and just turn the notes into numbers, something thats easier to see. The first note being a very low D is only the *second* lowest note in the whole sheet music. I marked this as two. The second note being the *highest* note in the whole sheet music. I marked this as 16 (since there were only actually 16 unique notes total)
 
