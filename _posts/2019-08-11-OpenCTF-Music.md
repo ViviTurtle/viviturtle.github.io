@@ -77,7 +77,7 @@ Now that we had the notesm, the rest of the work was to identfy a common pattern
 
 <figure>
 <embed src="https://drive.google.com/viewerng/
-viewer?embedded=true&url=http://blackmagicexploits.com/assets/openctf2019/music.pdf">
+viewer?embedded=true&url=https://drive.google.com/open?id=1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53">
    <figcaption> Transcription output </figcaption>
 </figure>
 
