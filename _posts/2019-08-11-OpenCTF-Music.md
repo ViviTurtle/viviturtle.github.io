@@ -96,6 +96,12 @@ With the help of the sheet music and the AnthemScore, The end result was somethi
 2 16 9 12 1 9 1 9 4 6 12 15 5 7 6 13 1 1 1 4 7 7 7 13 7 2 7 8 3 15 8 5 8 9 8 5 1 1 5 12 13 12 5 11 5 13 11 16 3 15 13 15 3 16 13 14 5 12 3 10 9 13 5 14 11 11 5 12 9 11 11 9 11 11 5 12 9 16 5 16 13 10 5 16 3 14 13 15 3 12 8 9 13 16 3 13 11 10 15 6 1 3 1 1 11 5 4 15 1 5 4 3 2 16 1 1 1 1 1 1 1 1 1 1
 ```
 
+Firt thing I tried to do was turn these into letters. It's less than 26 so it should work right? Inputting this into http://rumkin.com/tools/cipher/numbers.php gave me no luck.
+
+```
+B P I L A I A I D F L O E G F M A A A D G G G M G B G H C O H E H I H E A A E L M L E K E M K P C O M O C P M N E L C J I M E N K K E L I K K I K K E L I P E P M J E P C N M O C L H I M P C M K J O F A C A A K E D O A E D C B P A A A A A A A A A A
+```
+
 With a little big more time, some teammates on OpenToAll pointed out that there at 16 unique notes, which we can probably translate to **hexidecimal**. I took the current numbers I had and subtracted 1 from all to translate it to 0-15. Anything after 10 was changed into it's corresponding hexidecimal letter. The end result here was:
 
 ```
