@@ -75,13 +75,14 @@ I Googled some OSX transcribing software and after trying a few here and there, 
 
 Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music exported from AnthemScore, there are roughly 16 unique notes. 
 
+
 <figure>
 <embed src="https://drive.google.com/viewerng/
 viewer?embedded=true&url=http://blackmagicexploits.com/assets/openctf2019/music.pdf">
-<figcaption>Transcription output</figcaption>
-</figure> 
+   <figcaption> Transcription output </figcaption>
+</figure>
 
-I mistakenly tried to translate the 16 notes into 26 letters. The math here being two octaves + two notes is roughly 12 notes (if you include the sharps/flats plus two notes). The result of this was something like 
+I mistakenly tried to translate the 16 notes into 26 letters. The math here being two octaves + two notes is roughly 12 notes * 2 + 2 (if you include the sharps/flats plus two notes).
 
 After trying for a good 30 minutes of failing, I figure I should just turn the notes into numbers. Keep it simple and just turn the notes into numbers, something thats easier to see. The first note being a very low D is only the *second* lowest note in the whole sheet music. I marked this as two. The second note being the *highest* note in the whole sheet music. I marked this as 16 (since there were only actually 16 unique notes total)
 
