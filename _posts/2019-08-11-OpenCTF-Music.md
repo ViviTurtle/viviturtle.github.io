@@ -36,8 +36,8 @@ This spectrogram was created using [Sonic Visualizer](https://www.sonicvisualise
 
 As you can see from the spectrogram no hidden high frequency tracks/sounds within the track. Next up was to look at the metadata:
 
-<figure>
-<script id="asciicast-UbjMQ77DjMCfxAX28DpoHotO1" src="https://asciinema.org/a/UbjMQ77DjMCfxAX28DpoHotO1.js" style="height: 75%"async></script>
+<figure style="height: 75%">
+<script id="asciicast-UbjMQ77DjMCfxAX28DpoHotO1" src="https://asciinema.org/a/UbjMQ77DjMCfxAX28DpoHotO1.js" async></script>
    <figcaption> Looking at the metadata</figcaption>
 </figure>
 
@@ -67,7 +67,6 @@ I Googled some OSX transcribing software and after trying a few here and there, 
       <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Transcribe.png" />
        <figcaption>AnthemScore Transcribing Default Options</figcaption>
    </figure>
- 
       <figure>
       <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Manual.png" />
        <figcaption>AnthemScore View</figcaption>
