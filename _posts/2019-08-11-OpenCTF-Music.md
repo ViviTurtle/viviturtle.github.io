@@ -70,19 +70,17 @@ I Googled some OSX transcribing software and after trying a few here and there, 
       <img src="{{ site.github.url }}/images/openctf2019/AnthemScore-Manual.png" />
        <figcaption>AnthemScore View</figcaption>
    </figure>
-</div>
-
-Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music exported from AnthemScore, there are roughly 16 unique notes. 
-
-
-
-<figure>
-<object data="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview"  width="600" height="500">
-    <embed src="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview" width="600px" height="500px" />
+   <figure>
+<object data="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview" >
+    <embed src="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview" />
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview">View the PDF</a>.</p>
     </embed></object>
    <figcaption> Transcription output </figcaption>
 </figure>
+</div>
+
+Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music exported from AnthemScore, there are roughly 16 unique notes. 
+
 
 I mistakenly tried to translate the 16 notes into 26 letters. The math here being two octaves + two notes is roughly 12 notes * 2 + 2 (if you include the sharps/flats plus two notes).
 
