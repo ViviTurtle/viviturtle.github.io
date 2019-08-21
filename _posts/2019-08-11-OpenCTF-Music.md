@@ -44,14 +44,14 @@ Nothing here either except for maybe that it was processed by Sox, the command-l
 
 My next approach was to decipher the actual notes. There are two reasons for doing this:
 
-1. The notes in this track are single notes. No overlapping notes nor magic frequencies. It seems a little too convenient that this music track was *considerably* easy to transcribe the notes.
+1) The notes in this track are single notes. No overlapping notes nor magic frequencies. It seems a little too convenient that this music track was *considerably* easy to transcribe the notes.
 
 <figure>
    <img src="{{ site.github.url }}/images/openctf2019/Spectogram-Music.png" />
    <figcaption>Spectrogram</figcaption>
 </figure> 
 
-2. I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created through Reddit. In this particular music challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
+2) I figure if we can transcribe the notes, it might just be similar to a music challenge I solved called [Bach]({{site.url}}/blog/ctf/crypto/Bach) created by OpenToAll back in 2015 when the team was first created through Reddit. In this particular music challenge, the notes eventually had a pattern that was easy to translate into letters of the alphabet.
 
 |Normal|A|B|C|D|E|F|G|
 |------|-----|----|-----|-----|-----|-----|-----|
@@ -75,9 +75,12 @@ I Googled some OSX transcribing software and after trying a few here and there, 
 Now that we had the notesm, the rest of the work was to identfy a common pattern. A lot of trial and error was followed. First thing I did was try to figure out the full range of the notes. Looking at the sheet music exported from AnthemScore, there are roughly 16 unique notes. 
 
 
+
 <figure>
-<embed src="https://drive.google.com/viewerng/
-viewer?embedded=true&url=https://drive.google.com/open?id=1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53">
+<object data="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview"  width="600" height="500">
+    <embed src="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview" width="600px" height="500px" />
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://drive.google.com/file/d/1DNGZlBBBd6XHL2lImybJYirUrCL-Gt53/preview">View the PDF</a>.</p>
+    </embed></object>
    <figcaption> Transcription output </figcaption>
 </figure>
 
